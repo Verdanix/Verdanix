@@ -2,7 +2,7 @@
 <hr>
 <ul>
     <li>I am 15 years old</li>
-    <li>I am a BoyScout trying to get Eagle Sout</li>
+    <li>I am a BoyScout trying to get Eagle Scout</li>
     <li>Been programming since 12 years old</li>
     <li>I <em><b>love</b></em> and I am very proficient at Java</li>
     <li>Trying to get certifications for future jobs</li>
