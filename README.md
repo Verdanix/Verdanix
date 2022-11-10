@@ -2,7 +2,7 @@
 <hr>
 <ul>
     <li>I am 15 years old</li>
-    <li>I am a BoyScout trying to get Eagle Sout</li>
+    <li>I am a Boy Scout trying to get Eagle Scout</li>
     <li>Been programming since 12 years old</li>
     <li>I <em><b>love</b></em> and I am very proficient at Java</li>
     <li>Trying to get certifications for future jobs</li>
@@ -31,7 +31,7 @@
 <details>
     <summary>🔖 What I'm proud of</summary>
     <ul>
-        <li>Getting First Class in BoyScouts</li>
+        <li>Getting First Class in Boy Scouts</li>
         <li>Learned everything to take the Oracle Java 8 professional exam</li>
         <li>Getting better at Full Stack Development with <img height="12px"
                 src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg"> Spring Boot</li>
