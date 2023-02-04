@@ -7,6 +7,8 @@
     <li>I <em><b>love</b></em> and I am very proficient at Java</li>
     <li>Trying to get certifications for future jobs</li>
     <li>I play games on a potato</li>
+    <li>Switched to Linux at 15, never switching to Windows again! Linux FTW!</li>
+    <li>Taking Intro to Linux at school which is fun</li>
 </ul>
 <hr>
 <details>
