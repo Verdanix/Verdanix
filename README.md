@@ -1,14 +1,15 @@
 <h2>Hello there! I'm Prismoid also known as Mason!</h2>
 <hr>
 <ul>
-    <li>I am 15 years old</li>
+    <li>I am 16 years old</li>
     <li>I am a Boy Scout trying to get Eagle Scout</li>
     <li>Been programming since 12 years old</li>
     <li>I <em><b>love</b></em> and I am very proficient at Java</li>
     <li>Trying to get certifications for future jobs</li>
     <li>I play games on a potato</li>
     <li>Switched to Linux at 15, never switching to Windows again! Linux FTW!</li>
-    <li>Taking Intro to Linux at school which is fun</li>
+    <li>Taking Intro to Linux at school</li>
+    <li>If you want to have a custom Minecraft plugin/Discord bot made for as cheap as possible, email me at <a href="mailto:prismoid@galactic-star.dev">prismoid@galactic-star.dev</a> or <a href="mailto:support@cimeyclust.com">support@cimeyclust.com</a></li>
 </ul>
 <hr>
 <details>
