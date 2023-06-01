@@ -4,14 +4,14 @@
     <li>Been programming since 11 years old</li>
     <li>I <em><b>love</b></em> and I am very proficient at Java</li>
     <li>I play games on a potato</li>
-    <li>Switched to Linux at 15, never switching to Windows again! Linux FTW!</li>
+    <li>Linux is better than any OS <em><strong>EVER</strong></em>.</li>
 </ul>
 <hr>
 <details>
         <summary>📄 Certifications</summary>
         <ul>
-            <li><img src="./hyperskill-java-core.pdf" alt="Hyperskill.org's Java Core track"></li>
-            <li><img src="./lpi-certification.pdf" alt="LPI Linux Essentials">
+            <li>Hyperskill.org Java Core Track</li>
+            <li>LPI Linux Essentials</li>
         </ul>
     </details>
 <details>
