@@ -30,9 +30,7 @@
 <details>
     <summary>⭐ Favorite Languages</summary>
     <img height="20" src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java">
-    <img height="20"
-        src="https://img.shields.io/badge/js-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E" alt="Javascript">
-</details>
+    </details>
 <details>
     <summary>🔖 What I'm proud of</summary>
     <ul>
