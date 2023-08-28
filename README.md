@@ -1,4 +1,4 @@
-<h2>Hello there! I'm Cyphex (Or CyphexDev) also known as Mason!</h2>
+<h2>Hello there! I'm Verdanix, also known as Mason!</h2>
 <hr>
 <ul>
     <li>Been programming since 11 years old</li>
