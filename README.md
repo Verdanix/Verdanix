@@ -1,85 +1,86 @@
-<h2>Hello there! I'm Verdanix, also known as Mason!</h2>
+<h2 align="center">Hi 👋! My name is Mason and I'm a software developer, from California.</h2>
+
+**About Me**
+
+I'm a software developer based in California with a strong passion for building innovative solutions. As an Eagle Scout, I've developed valuable leadership interpersonal, and life skills that complement my technical expertise.
+
+**Technical Focus**
+My primary focus areas are Java and Spring Boot development, with a current project, [Nora](https://github.com/NoraAssistant/Nora), aiming to create a secure, fast, robust, and reliable voice assistant. I'm also exploring the intersection of software development and electrical engineering through self-study in computer architecture and electrical engineering.
+
+**Personal Values**
+I believe in using technology for good, which drives my work on an e-learning startup focused on accessible, affordable, and high-quality education. My projects aim to positively impact people's lives while fostering growth and giving back to the world.
+
 <hr>
-<ul>
-    <li>Been programming since 11 years old</li>
-    <li>I <em><b>love</b></em> and I am very proficient at Java</li>
-    <li>I play games on a potato</li>
-    <li>Linux is better than any OS <em><strong>EVER</strong></em>.</li>
-</ul>
+
+###
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Verdanix&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false" height="150" alt="stats graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false" height="150" alt="languages graph"  />
+</div>
+
 <hr>
-<details>
-        <summary>📄 Certifications</summary>
-        <ul>
-            <li>Hyperskill.org Java Core Track</li>
-            <li>LPI Linux Essentials</li>
-        </ul>
-    </details>
-<details>
-    <summary>🌐 Frontend</summary>
-    <img height="20"
-        src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white" alt="HTML">
-    <img height="20"
-        src="https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white" alt="CSS">
-    <img height="20"
-        src="https://img.shields.io/badge/js-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E" alt="Javascript">
-</details>
-<details>
-    <summary>📠 Backend</summary>
-    <img src="https://img.shields.io/badge/Spring%20Boot-gray.svg?style=flat-square&logo=springboot&logoColor=green" alt="Spring boot">
-</details>
-<details>
-    <summary>⭐ Favorite Languages</summary>
-    <img height="20" src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white" alt="Java">
-    </details>
-<details>
-    <summary>🔖 What I'm proud of</summary>
-    <ul>
-        <li>Learned everything to take the Oracle Java 8 professional exam</li>
-        <li>Getting better at Full Stack Development with <img height="12px"
-                src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg"> Spring Boot</li>
-    </ul>
-</details>
-<details>
-    <summary>📖 What I am currently learning</summary>
-    <img height="20"
-        src="https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white" alt="HTML">
-    <img height="20"
-        src="https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white" alt="CSS">
-    <img height="20"
-        src="https://img.shields.io/badge/js-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E" alt="Javascript">
-    <img src="https://img.shields.io/badge/Spring%20Boot-gray.svg?style=flat-square&logo=springboot&logoColor=green" alt="Spring boot">
-    <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
-</details>
-<details>
-    <summary>📕 What I want to learn</summary>
-    <ul>
-        <details>
-            <summary>💽 Database</summary><img
-                src="https://img.shields.io/badge/Firebase-039BE5?style=flat-square&logo=Firebase&logoColor=white" alt="Firebase">
-            <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB">
-            <img src="https://img.shields.io/badge/MariaDB-003545?style=flat-square&logo=mariadb&logoColor=white" alt="MariaDB">
-        </details>
-        <details>
-            <summary>📦 Containers</summary>
-            <img
-                src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes">
-            <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=flat-square&logo=docker&logoColor=white" alt="Docker">
-        </details>
-        <details>
-            <summary>💻Terminals</summary>
-            <img src="https://img.shields.io/badge/GIT-E44C30?flat-square&logo=git&logoColor=white" alt="Git">
-            <img src="https://img.shields.io/badge/GNU%20Bash-4EAA25?style=flat-square&logo=GNU%20Bash&logoColor=white" alt="GNU Bash">
-        </details>
-        <details>
-            <summary>🎛 APIs</summary><img
-                src="https://img.shields.io/badge/React-20232A?style=flat-square&style=flat-square&logo=react&logoColor=61DAFB" alt="React.js">
-        </details>
-        <details>
-            <summary>❓ Other</summary>
-            <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=flat-square&logo=c%2B%2B&logoColor=white" alt="C++">
-            <img src="https://img.shields.io/badge/Ruby-CC342D?style=flat-square&logo=ruby&logoColor=white" alt="Ruby">
-            <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" alt="Typescript">
-            <img src="https://img.shields.io/badge/Node.js-43853D?style=flat-square&logo=node.js&logoColor=white" alt="Node.js">
-        </details>
-    </ul>
-</details>
+
+<div>
+  <div> 
+    <h2>My Education</h2>
+    <div>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" height="50" alt="intellij logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg" height="50" alt="maven logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="50" alt="java logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" height="50" alt="spring logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/junit/junit-original.svg" height="50" alt="junit logo"/>
+    </div>
+    <div>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" height="50" alt="pycharm logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="50" alt="python logo"/>
+    </div>
+    <div>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webstorm/webstorm-original.svg" height="50" alt="webstorm logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="50" alt="html5 logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="50" alt="javascript logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="50" alt="typescript logo"/>
+    </div>
+  </div>
+
+###
+
+  <div> 
+    <h2>My Future Education</h2>
+    <div>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="50" alt="linux logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" height="50" alt="docker logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" height="50" alt="kubernetes logo"/>
+      <img width="12"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" height="50" alt="amazon web services logo"/>
+    </div>
+    <div>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" height="50" alt="rust logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="50" alt="php logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" height="50" alt="golang logo"/>
+    </div>
+    <div>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" height="50" alt="express logo"/>
+      <img width="12" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" height="50" alt="laravel logo"/>
+    </div>
+  </div>
+</div>
+
+<br clear="both">
+
+<img src="https://raw.githubusercontent.com/Verdanix/Verdanix/output/snake.svg" alt="Snake animation" />
+
+###
