@@ -15,8 +15,8 @@ I believe in using technology for good, which drives my work on an e-learning st
 ###
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Verdanix&show=merged_prs&show_icons=true&theme=material-palenight&custom_title=My%20Statistics&include_all_commits=true" height="150" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Verdanix&layout=compact&langs_count=5&theme=material-palenight&hide=brainfuck&card_width=320" height="150" alt="languages graph"  />
+  <img src="https://github-readme-stats.vercel.app/api?username=Verdanix&show_icons=true&show=merged_prs&include_all_commits=true&count_private=true&theme=material-palenight&locale=en&custom_title=My%20Statistics" height="150" alt="stats graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&theme=material-palenight&hide_border=false&lang_count=10" height="150" alt="languages graph"  />
 </div>
 
 <hr>
