@@ -4,7 +4,7 @@
 I'm a software developer based in California with a strong passion for building innovative solutions. As an Eagle Scout, I've developed valuable leadership interpersonal, and life skills that complement my technical expertise.
 
 **Technical Focus**:<br>
-My primary focus areas are Java and Spring Boot development, with a current project, [Nora](https://github.com/NoraAssistant/Nora), aiming to create a secure, fast, robust, and reliable voice assistant. I'm also exploring the intersection of software development and electrical engineering through self-study in computer architecture and electrical engineering.
+My primary focus areas are Java and Spring Boot development, with a current project, [Nora](https://github.com/Verdanix/Nora), aiming to create a secure, fast, robust, and reliable voice assistant. I'm also exploring the intersection of software development and electrical engineering through self-study in computer architecture and electrical engineering.
 
 **Personal Values**:<br>
 I believe in using technology for good, which drives my work on an e-learning startup focused on accessible, affordable, and high-quality education. My projects aim to positively impact people's lives while fostering growth and giving back to the world.
