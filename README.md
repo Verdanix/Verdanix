@@ -14,7 +14,7 @@ I believe in using technology for good, which drives my work on an e-learning st
 ###
 
 <div align="center">
-  <img src="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&show_icons=true&show=merged_prs&include_all_commits=true&count_private=true&theme=material-palenight&locale=en&custom_title=My%20Statistics" height="150" alt="stats graph"  />
+  <img src="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&show_icons=true&show=merged_prs,reviews&include_all_commits=true&count_private=true&theme=material-palenight&locale=en&custom_title=My%20Statistics" height="150" alt="stats graph"  />
   <img src="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&theme=material-palenight&hide_border=false&lang_count=10" height="150" alt="languages graph"  />
 </div>
 
