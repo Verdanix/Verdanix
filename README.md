@@ -22,7 +22,7 @@ I believe in using technology for good, which drives my work on an e-learning st
 
 <div>
   <div> 
-    <h2>My Education</h2>
+    <h2>My Current Expertise</h2>
     <div>
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" height="50" alt="intellij logo"/>
       <img width="12" />
@@ -53,7 +53,7 @@ I believe in using technology for good, which drives my work on an e-learning st
 ###
 
   <div> 
-    <h2>My Future Education</h2>
+    <h2>My Future Expertise</h2>
     <div>
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="50" alt="linux logo"/>
       <img width="12" />
