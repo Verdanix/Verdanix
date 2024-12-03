@@ -78,6 +78,8 @@ I believe in using technology for good, which drives my work on an e-learning st
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" height="50" alt="laravel logo" />
       <img width="12" />
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" height="50" alt="django logo" />
+      <img width="12"/>
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-original-wordmark.svg" height="50" alt="ruby on  rails logo" />
     </div>
   </div>
 </div>
