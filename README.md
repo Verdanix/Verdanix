@@ -17,14 +17,14 @@ I believe in using technology for good, which drives my work on an e-learning st
 <div align="center">
   <picture>
     <source
-      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true&theme=material-palenight"
+      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true&theme=material-palenight&custom_title=My%20Statistics"
       media="(prefers-color-scheme: dark)"
     />
     <source
-      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true"
+      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true&custom_title=My%20Statistics"
       media="(prefers-color-scheme: light)"
     />
-    <img src="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true" height="150" alt="Statistics graph"/>
+    <img src="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true&custom_title=My%20Statistics" height="150" alt="Github statistics graph"/>
 </picture>
 
   <picture>
@@ -36,7 +36,7 @@ I believe in using technology for good, which drives my work on an e-learning st
         srcset="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10"
         media="(prefers-color-scheme: light)"
       />
-      <img src="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10" height="150" alt="Statistics graph"/>
+      <img src="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10" height="150" alt="Programming languages graph"/>
   </picture>
 </div>
 
