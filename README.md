@@ -84,8 +84,7 @@ I believe in using technology for good, which drives my work on an e-learning st
   </div>
 </div>
 
-<br clear="both">
-
-<img src="https://raw.githubusercontent.com/Verdanix/Verdanix/output/snake.svg" alt="Snake animation" />
+![Dark mode Snake](https://raw.githubusercontent.com/Verdanix/Verdanix/output/github-snake-dark.svg#gh-dark-mode-only)
+![Light Mode Snake](https://raw.githubusercontent.com/Verdanix/Verdanix/output/github-snake.svg#gh-light-mode-only)
 
 ###
