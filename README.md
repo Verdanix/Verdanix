@@ -15,15 +15,27 @@ I believe in using technology for good, which drives my work on an e-learning st
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&show_icons=true&show=merged_prs,reviews&include_all_commits=true&count_private=true&locale=en&custom_title=My%20Statistics"/>
-     <source media="(prefers-color-scheme: dark)" srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&show_icons=true&show=merged_prs,reviews&include_all_commits=true&count_private=true&locale=en&custom_title=My%20Statistics&theme=material-palenight"/>
-    <img src="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&show_icons=true&show=merged_prs,reviews&include_all_commits=true&count_private=true&locale=en&custom_title=My%20Statistics" height="150" alt="stats graph"/>
-  </picture>
+    <source
+      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&show_icons=true&theme=material-palenight"
+      media="(prefers-color-scheme: dark)"
+    />
+    <source
+      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&show_icons=true"
+      media="(prefers-color-scheme: light)"
+    />
+    <img src="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&show_icons=true" height="150" alt="Statistics graph"/>
+</picture>
 
   <picture>
-    <source media="(prefers-color-scheme: light)" srcset="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10"/>
-     <source media="(prefers-color-scheme: dark)" srcset="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10&theme=material-palenight"/>
-    <img src="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10" height="150" alt="stats graph"/>
+      <source
+        srcset="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10&theme=material-palenight"
+        media="(prefers-color-scheme: dark)"
+      />
+      <source
+        srcset="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10"
+        media="(prefers-color-scheme: light)"
+      />
+      <img src="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10" height="150" alt="Statistics graph"/>
   </picture>
 </div>
 
