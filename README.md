@@ -1,3 +1,4 @@
+
 <h2 align="center">Hi 👋! My name is Mason and I'm a software developer, from California.</h2>
 
 **About Me**:<br>
@@ -16,14 +17,14 @@ I believe in using technology for good, which drives my work on an e-learning st
 <div align="center">
   <picture>
     <source
-      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&show_icons=true&theme=material-palenight"
+      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true&theme=material-palenight"
       media="(prefers-color-scheme: dark)"
     />
     <source
-      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&show_icons=true"
+      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true"
       media="(prefers-color-scheme: light)"
     />
-    <img src="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&show_icons=true" height="150" alt="Statistics graph"/>
+    <img src="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true" height="150" alt="Statistics graph"/>
 </picture>
 
   <picture>
