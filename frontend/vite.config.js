@@ -1,12 +1,11 @@
+
+import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite';
-import preact from '@preact/preset-vite';
 import dotenv from 'dotenv';
 dotenv.config();
-
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [preact()],
-  appType: 'mpa',
+  plugins: [react()],
   base: './',
   mode: process.env.MODE,
   define: {
