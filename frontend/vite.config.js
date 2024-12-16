@@ -35,12 +35,5 @@ export default defineConfig({
     build: {
         minimize: true,
         cssMinify: true,
-    },
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@import "src/styles/variables.scss";`
-            }
-        }
-    },
+    }
 })
