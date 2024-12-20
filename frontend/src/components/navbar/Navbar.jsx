@@ -1,6 +1,6 @@
 import { useResizeDetector } from 'react-resize-detector';
 import logo from '../../assets/logo.svg';
-import { md } from '../../variables';
+import { sm } from '../../variables';
 import './Navbar.scss';
 
 import { useState } from 'react';
@@ -75,7 +75,7 @@ export default function Navbar({ activeName }) {
 
   return (
     <div ref={ref}>
-      {width <= md ? (
+      {width <= sm ? (
         <MobileNavbar activeName={activeName} />
       ) : (
         <DesktopNavbar activeName={activeName} />
