@@ -87,6 +87,11 @@ nav {
       background-color 0.3s,
       border 0.3s,
       color 0.3s;
+
+      
+      &:hover {
+        background-color: transparent;
+      }
   }
 }
 
@@ -189,11 +194,6 @@ nav {
       border: $desktop-border-size solid $primary-color;
       background-color: $primary-color;
       border-radius: 0.6rem;
-
-      &:hover {
-        color: $primary-color;
-        background-color: transparent;
-      }
     }
   }
 }
@@ -225,11 +225,6 @@ nav {
       border: $desktop-border-size solid $primary-color;
       background-color: $primary-color;
       border-radius: 0.6rem;
-
-      &:hover {
-        color: $primary-color;
-        background-color: transparent;
-      }
     }
   }
 }
