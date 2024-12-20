@@ -1,6 +1,6 @@
 import { useResizeDetector } from 'react-resize-detector';
-import logo from '../assets/logo.svg';
-import { md } from '../variables';
+import logo from '../../assets/logo.svg';
+import { md } from '../../variables';
 import './Navbar.scss';
 
 import { useState } from 'react';
