@@ -7,9 +7,9 @@ import './styles/style.scss';
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        </Routes>
-    </BrowserRouter>
-  );
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+    </Routes>
+  </BrowserRouter>
+);
