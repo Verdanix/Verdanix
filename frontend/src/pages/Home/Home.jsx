@@ -1,6 +1,10 @@
-import './Home.scss';
+
+import Navbar from '../../components/Navbar.jsx';
+
 export default function Home() {
     return (
-        <>Home</>
+        <>
+            <Navbar activeName={'home'} />
+        </>
     )
 }
