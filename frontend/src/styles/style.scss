@@ -1,11 +1,19 @@
-@use 'variables.scss';
+@use 'variables.scss' as *;
 
 * {
-  font-family: variables.$font;
+  font-family: $font;
+  margin: 0;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+#root {
+  min-width: 200px;
+  width: auto !important;
+  width: 200px;
+
+  min-height: 100vh;
+  height: auto !important;
+  height: 100vh;
+
+  background: -webkit-linear-gradient(top, $background-color1, $background-color2, $background-color3);
+  background-repeat: no-repeat;
 }
