@@ -10,230 +10,226 @@ $mobile-hamburger-menu-size: 2.2rem;
 $mobile-links-font-size: 1.2rem;
 
 nav {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #header-logo {
-    height: auto;
+  height: auto;
 }
 
 .links {
-    display: none;
-    position: absolute;
-    top: 0;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $primary-color;
+  list-style: none;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 9;
+
+  &.open {
+    display: flex;
     right: 0;
-    background-color: $primary-color;
-    list-style: none;
-    flex-direction: column;
-    align-items: flex-start;
-    z-index: 9;
+  }
 
-    &.open {
-        display: flex;
-        right: 0;
+  li {
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: $mobile-links-font-size;
+      transition: color 0.3s;
     }
 
-    li {
-        a {
-            color: white;
-            text-decoration: none;
-            font-size: $mobile-links-font-size;
-            transition: color 0.3s;
-        }
-
-        &.active a {
-            font-weight: bold;
-        }
-
+    &.active a {
+      font-weight: bold;
     }
+  }
 }
 
 #mobile-nav {
-    .hamburger {
-        display: inherit;
-        justify-content: space-around;
-        flex-flow: column nowrap;
-        z-index: 10;
-        color: white;
+  .hamburger {
+    display: inherit;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 10;
+    color: white;
 
-        .burger {
-            background-color: white;
-            transition: all 0.3s linear;
-        }
+    .burger {
+      background-color: white;
+      transition: all 0.3s linear;
     }
+  }
 }
 
 #desktop-nav {
-    justify-content: space-between;
+  justify-content: space-between;
 
-    #centerlinks {
-        display: inherit;
+  #centerlinks {
+    display: inherit;
 
-        a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
+    a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
 
-            &:hover {
-                color: $primary-color;
-            }
-        }
+      &:hover {
+        color: $primary-color;
+      }
     }
+  }
 
-    #loginbutton {
-        color: white;
-        text-decoration: none;
-        transition: background-color 0.3s, border 0.3s, color 0.3s;
-    }
+  #loginbutton {
+    color: white;
+    text-decoration: none;
+    transition:
+      background-color 0.3s,
+      border 0.3s,
+      color 0.3s;
+  }
 }
 
 @media screen and (max-width: $xsm) {
-    #mobile-nav {
-        padding: 0.6rem;
-        justify-content: space-between;
+  #mobile-nav {
+    padding: 0.6rem;
+    justify-content: space-between;
 
-        #header-logo {
-            width: 1.8rem;
-        }
-
-        .hamburger {
-            display: inherit;
-            justify-content: space-around;
-            flex-flow: column nowrap;
-            z-index: 10;
-            color: white;
-            width: $xs-mobile-hamburger-menu-size;
-            height: $xs-mobile-hamburger-menu-size;
-
-            .burger {
-                width: $xs-mobile-hamburger-menu-size;
-                height: 0.25rem;
-                background-color: white;
-                border-radius: 10px;
-                transition: all 0.3s linear;
-            }
-        }
+    #header-logo {
+      width: 1.8rem;
     }
 
+    .hamburger {
+      display: inherit;
+      justify-content: space-around;
+      flex-flow: column nowrap;
+      z-index: 10;
+      color: white;
+      width: $xs-mobile-hamburger-menu-size;
+      height: $xs-mobile-hamburger-menu-size;
 
-    .links {
-        padding: 2.6rem 2rem;
-        li {
-            margin: 0.2rem 0;
-        }
+      .burger {
+        width: $xs-mobile-hamburger-menu-size;
+        height: 0.25rem;
+        background-color: white;
+        border-radius: 10px;
+        transition: all 0.3s linear;
+      }
     }
+  }
+
+  .links {
+    padding: 2.6rem 2rem;
+    li {
+      margin: 0.2rem 0;
+    }
+  }
 }
-
 
 @media screen and (min-width: $xsm) and (max-width: $md) {
-    #mobile-nav {
-        padding: 0.6rem;
-        justify-content: space-between;
+  #mobile-nav {
+    padding: 0.6rem;
+    justify-content: space-between;
 
-        #header-logo {
-            width: 2.5rem;
-        }
-
-        .hamburger {
-            display: inherit;
-            justify-content: space-around;
-            flex-flow: column nowrap;
-            z-index: 10;
-            color: white;
-            width: $mobile-hamburger-menu-size;
-            height: $mobile-hamburger-menu-size;
-
-            .burger {
-                width: $mobile-hamburger-menu-size;
-                height: 0.25rem;
-                background-color: white;
-                border-radius: 10px;
-                transition: all 0.3s linear;
-            }
-        }
+    #header-logo {
+      width: 2.5rem;
     }
 
+    .hamburger {
+      display: inherit;
+      justify-content: space-around;
+      flex-flow: column nowrap;
+      z-index: 10;
+      color: white;
+      width: $mobile-hamburger-menu-size;
+      height: $mobile-hamburger-menu-size;
 
-    .links {
-        padding: 3.4rem 2.2rem;
-        li {
-            margin: 0.2rem 0;
-        }
+      .burger {
+        width: $mobile-hamburger-menu-size;
+        height: 0.25rem;
+        background-color: white;
+        border-radius: 10px;
+        transition: all 0.3s linear;
+      }
     }
+  }
+
+  .links {
+    padding: 3.4rem 2.2rem;
+    li {
+      margin: 0.2rem 0;
+    }
+  }
 }
 
-
 @media screen and (min-width: $md) and (max-width: $lg) {
-    #desktop-nav {
-        padding: 1rem;
+  #desktop-nav {
+    padding: 1rem;
 
-        #header-logo {
-            width: 2.7rem;
-        }
-
-        #centerlinks {
-            gap: 0.9rem;
-
-            a {
-                font-size: $desktop-font-size2;
-            }
-
-
-            .active {
-                border-bottom: $desktop-border-size solid $primary-color;
-                border-radius: 0.2rem;
-            }
-        }
-
-        #loginbutton {
-            padding: 0.3rem 0.7rem;
-            font-size: $desktop-font-size2;
-            border: $desktop-border-size solid $primary-color;
-            background-color: $primary-color;
-            border-radius: 0.6rem;
-
-            &:hover {
-                color: $primary-color;
-                background-color: transparent;
-            }
-        }
+    #header-logo {
+      width: 2.7rem;
     }
+
+    #centerlinks {
+      gap: 0.9rem;
+
+      a {
+        font-size: $desktop-font-size2;
+      }
+
+      .active {
+        border-bottom: $desktop-border-size solid $primary-color;
+        border-radius: 0.2rem;
+      }
+    }
+
+    #loginbutton {
+      padding: 0.3rem 0.7rem;
+      font-size: $desktop-font-size2;
+      border: $desktop-border-size solid $primary-color;
+      background-color: $primary-color;
+      border-radius: 0.6rem;
+
+      &:hover {
+        color: $primary-color;
+        background-color: transparent;
+      }
+    }
+  }
 }
 
 @media screen and (min-width: $lg) {
-    #desktop-nav {
-        padding: 1rem;
+  #desktop-nav {
+    padding: 1rem;
 
-        #header-logo {
-            width: 3.5rem;
-        }
-
-        #centerlinks {
-            gap: 0.9rem;
-
-            a {
-                font-size: $desktop-font-size;
-            }
-
-
-            .active {
-                border-bottom: $desktop-border-size solid $primary-color;
-                border-radius: 0.2rem;
-            }
-        }
-
-        #loginbutton {
-            padding: 0.5rem 0.7rem;
-            font-size: $desktop-font-size;
-            border: $desktop-border-size solid $primary-color;
-            background-color: $primary-color;
-            border-radius: 0.6rem;
-
-            &:hover {
-                color: $primary-color;
-                background-color: transparent;
-            }
-        }
+    #header-logo {
+      width: 3.5rem;
     }
+
+    #centerlinks {
+      gap: 0.9rem;
+
+      a {
+        font-size: $desktop-font-size;
+      }
+
+      .active {
+        border-bottom: $desktop-border-size solid $primary-color;
+        border-radius: 0.2rem;
+      }
+    }
+
+    #loginbutton {
+      padding: 0.5rem 0.7rem;
+      font-size: $desktop-font-size;
+      border: $desktop-border-size solid $primary-color;
+      background-color: $primary-color;
+      border-radius: 0.6rem;
+
+      &:hover {
+        color: $primary-color;
+        background-color: transparent;
+      }
+    }
+  }
 }
