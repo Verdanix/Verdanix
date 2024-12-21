@@ -14,11 +14,6 @@
   height: auto !important;
   height: 100vh;
 
-  background: -webkit-linear-gradient(
-    top,
-    $background-color1,
-    $background-color2,
-    $background-color3
-  );
-  background-repeat: no-repeat;
+  background-color: $background-color1;
+  background-blend-mode: overlay;
 }
