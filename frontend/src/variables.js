@@ -1,4 +1,4 @@
-const xsm = 320;
+const xsm = 400;
 const sm = 576;
 const md = 768;
 const lg = 992;
