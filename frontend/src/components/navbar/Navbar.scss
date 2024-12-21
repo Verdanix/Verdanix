@@ -114,8 +114,6 @@ $lg-logo-size: calc($xsm-logo-size + 50px);
 // Media queries
 @media screen and (max-width: $xsm) {
   #mobile-nav {
-    padding: 1rem;
-
     .hamburger {
       width: $xsm-hamburger-width;
       height: $xsm-hamburger-height;
@@ -144,8 +142,6 @@ $lg-logo-size: calc($xsm-logo-size + 50px);
 
 @media screen and (min-width: $xsm) and (max-width: $md) {
   #desktop-nav {
-    padding: 1rem;
-
     .centerlinks {
       a {
         margin: 0 0.3rem;
@@ -167,7 +163,6 @@ $lg-logo-size: calc($xsm-logo-size + 50px);
 @media screen and (min-width: $lg) {
   #desktop-nav {
     font-size: $md-lg-font-size;
-    padding: 1rem;
 
     .centerlinks {
       a {
