@@ -1,193 +1,98 @@
 @use '../../styles/variables.scss' as *;
 
-$desktop-font-size: 1.4rem;
-$desktop-font-size2: 0.8rem;
-$desktop-border-size: 0.25rem;
+$xsm-logo-size: 30px;
+$xsm-hamburger-width: calc($xsm-logo-size * 0.6);
+$xsm-hamburger-height: calc($xsm-logo-size * 0.5);
 
-$xs-mobile-hamburger-menu-size: 1.4rem;
-$mobile-hamburger-menu-size: 2.2rem;
+$xsm-sm-font-size: 0.8rem;
+$xsm-sm-logo-size: calc($xsm-logo-size + 5px);
 
-$mobile-links-font-size: 1.2rem;
-
-nav {
-  display: flex;
-  align-items: center;
-}
-
-#header-logo {
+.header-logo {
   height: auto;
 }
 
-.links {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: $primary-color;
-  list-style: none;
-  flex-direction: column;
-  align-items: flex-start;
-  z-index: 9;
-
-  &.open {
-    display: flex;
-    right: 0;
-  }
-
-  li {
-    a {
-      color: white;
-      text-decoration: none;
-      font-size: $mobile-links-font-size;
-      transition: color 0.3s;
-    }
-
-    &.active a {
-      font-weight: bold;
-    }
-  }
-}
-
 #mobile-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   .hamburger {
-    display: inherit;
-    justify-content: space-around;
-    flex-flow: column nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
     z-index: 10;
-    color: white;
+
+    transition: all 0.3s ease-in-out;
 
     .burger {
       background-color: white;
-      transition: all 0.3s linear;
-    }
-  }
-}
-
-#desktop-nav {
-  justify-content: space-between;
-
-  #centerlinks {
-    display: inherit;
-
-    a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s;
-
-      &:hover {
-        color: $primary-color;
-      }
-    }
-  }
-
-  #loginbutton {
-    color: white;
-    text-decoration: none;
-    transition:
-      background-color 0.3s,
-      border 0.3s,
-      color 0.3s;
-
-    &:hover {
-      background-color: transparent;
-    }
-  }
-}
-
-@media screen and (max-width: $sm) {
-  #mobile-nav {
-    padding: 0.6rem;
-    justify-content: space-between;
-
-    #header-logo {
-      width: 1.8rem;
-    }
-
-    .hamburger {
-      display: inherit;
-      justify-content: space-around;
-      flex-flow: column nowrap;
-      z-index: 10;
-      color: white;
-      width: $xs-mobile-hamburger-menu-size;
-      height: $xs-mobile-hamburger-menu-size;
-
-      .burger {
-        width: $xs-mobile-hamburger-menu-size;
-        height: 0.25rem;
-        background-color: white;
-        border-radius: 10px;
-        transition: all 0.3s linear;
-      }
     }
   }
 
   .links {
-    padding: 2.6rem 2rem;
+    position: absolute;
+    display: none;
+    list-style-type: none;
+    background-color: $secondary-color1;
+    z-index: 9;
+
     li {
-      margin: 0.2rem 0;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      &.active {
+        color: white;
+        font-weight: bolder;
+      }
+
+      :hover {
+        color: $primary-color1;
+      }
     }
+  }
+
+  .open {
+    display: flex;
+    flex-direction: column;
+    color: white;
   }
 }
 
-@media screen and (min-width: $sm) and (max-width: $lg) {
-  #desktop-nav {
-    padding: 1rem;
-
-    #header-logo {
-      width: 2.3rem;
-    }
-
-    #centerlinks {
-      gap: 0.9rem;
-
-      a {
-        font-size: $desktop-font-size2;
-      }
-
-      .active {
-        border-bottom: $desktop-border-size solid $primary-color;
-        border-radius: 0.2rem;
-      }
-    }
-
-    #loginbutton {
-      padding: 0.2rem 0.5rem;
-      font-size: $desktop-font-size2;
-      border: $desktop-border-size solid $primary-color;
-      background-color: $primary-color;
-      border-radius: 0.6rem;
-    }
-  }
+#desktop-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@media screen and (min-width: $lg) {
-  #desktop-nav {
+@media screen and (max-width: $xsm) {
+  #mobile-nav {
     padding: 1rem;
 
-    #header-logo {
-      width: 3.5rem;
-    }
+    .hamburger {
+      width: $xsm-hamburger-width;
+      height: $xsm-hamburger-height;
 
-    #centerlinks {
-      gap: 0.9rem;
-
-      a {
-        font-size: $desktop-font-size;
-      }
-
-      .active {
-        border-bottom: $desktop-border-size solid $primary-color;
-        border-radius: 0.2rem;
+      .burger {
+        height: 2px;
       }
     }
 
-    #loginbutton {
-      padding: 0.5rem 0.7rem;
-      font-size: $desktop-font-size;
-      border: $desktop-border-size solid $primary-color;
-      background-color: $primary-color;
+    .links {
+      top: 1.2rem;
+      right: 0.4rem;
       border-radius: 0.6rem;
+      padding: 2.5rem 0 1.5rem;
+
+      li {
+        padding: 0.2rem 1rem;
+      }
     }
+  }
+
+  .header-logo {
+    width: $xsm-logo-size;
   }
 }

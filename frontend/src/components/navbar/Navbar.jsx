@@ -1,6 +1,6 @@
 import { useResizeDetector } from 'react-resize-detector';
 import logo from '../../assets/logo.svg';
-import { sm } from '../../variables';
+import { xsm } from '../../variables';
 import './Navbar.scss';
 
 import { useState } from 'react';
@@ -12,7 +12,7 @@ function MobileNavbar({ activeName }) {
     <>
       <nav id="mobile-nav">
         <a href="/">
-          <img id="header-logo" src={logo} alt="Mason Root's Logo" />
+          <img className="header-logo" src={logo} alt="Mason Root's Logo" />
         </a>
 
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
@@ -20,21 +20,22 @@ function MobileNavbar({ activeName }) {
           <div className="burger burger2"></div>
           <div className="burger burger3"></div>
         </div>
+
+        <ul className={`links ${menuOpen ? 'open' : ''}`}>
+          <li className={activeName === 'home' ? 'active' : ''}>
+            <a href="/">Home</a>
+          </li>
+          <li className={activeName === 'about' ? 'active' : ''}>
+            <a href="/about">About</a>
+          </li>
+          <li className={activeName === 'projects' ? 'active' : ''}>
+            <a href="/projects">Projects</a>
+          </li>
+          <li className={activeName === 'resume' ? 'active' : ''}>
+            <a href="/resume">Resume</a>
+          </li>
+        </ul>
       </nav>
-      <ul className={`links ${menuOpen ? 'open' : ''}`}>
-        <li className={activeName === 'home' ? 'active' : ''}>
-          <a href="/">Home</a>
-        </li>
-        <li className={activeName === 'about' ? 'active' : ''}>
-          <a href="/about">About</a>
-        </li>
-        <li className={activeName === 'projects' ? 'active' : ''}>
-          <a href="/projects">Projects</a>
-        </li>
-        <li className={activeName === 'resume' ? 'active' : ''}>
-          <a href="/resume">Resume</a>
-        </li>
-      </ul>
     </>
   );
 }
@@ -48,9 +49,9 @@ function DesktopNavbar({ activeName }) {
   return (
     <nav id="desktop-nav">
       <a href="/">
-        <img id="header-logo" src={logo} alt="Mason Root's Logo" />
+        <img className="header-logo" src={logo} alt="Mason Root's Logo" />
       </a>
-      <div id="centerlinks">
+      <div className="centerlinks">
         <a className={isHome ? 'active' : ''} href="/">
           Home
         </a>
@@ -64,18 +65,18 @@ function DesktopNavbar({ activeName }) {
           Resume
         </a>
       </div>
-      <a id="loginbutton" href="/login">
+      <a className="loginbutton" href="/login">
         Login
       </a>
     </nav>
   );
 }
 export default function Navbar({ activeName }) {
-  const { width, height, ref } = useResizeDetector();
+  const { width, ref } = useResizeDetector();
 
   return (
     <div ref={ref}>
-      {width <= sm ? (
+      {width <= xsm ? (
         <MobileNavbar activeName={activeName} />
       ) : (
         <DesktopNavbar activeName={activeName} />
