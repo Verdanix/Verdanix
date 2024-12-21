@@ -3,10 +3,23 @@ import logo from '../../assets/logo.svg';
 import { xsm } from '../../variables';
 import './Navbar.scss';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function MobileNavbar({ activeName }) {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('#mobile-nav') && menuOpen) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
     <>

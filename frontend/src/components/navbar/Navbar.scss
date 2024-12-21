@@ -1,16 +1,28 @@
 @use '../../styles/variables.scss' as *;
 
+// Extra small devices (phones, 400px and down)
 $xsm-logo-size: 30px;
 $xsm-hamburger-width: calc($xsm-logo-size * 0.6);
 $xsm-hamburger-height: calc($xsm-logo-size * 0.5);
 
+// Small devices (portrait tablets and large phones, between 400px and 576px)
 $xsm-sm-font-size: 0.8rem;
 $xsm-sm-logo-size: calc($xsm-logo-size + 5px);
 
+// Medium devices (landscape tablets, between 768px and 992px)
+$md-lg-font-size: 1.5rem;
+$md-lg-logo-size: calc($xsm-logo-size + 25px);
+
+// Large devices (laptops/desktops, 992px and up)
+$lg-font-size: 2rem;
+$lg-logo-size: calc($xsm-logo-size + 50px);
+
+// Common styles
 .header-logo {
   height: auto;
 }
 
+// Mobile styles
 #mobile-nav {
   display: flex;
   justify-content: space-between;
@@ -20,7 +32,6 @@ $xsm-sm-logo-size: calc($xsm-logo-size + 5px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    cursor: pointer;
     z-index: 10;
 
     transition: all 0.3s ease-in-out;
@@ -61,12 +72,46 @@ $xsm-sm-logo-size: calc($xsm-logo-size + 5px);
   }
 }
 
+// Desktop styles
 #desktop-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .centerlinks {
+    color: white;
+
+    a {
+      transition: color 0.3s ease-in-out;
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary-color1;
+      }
+    }
+
+    .active {
+      font-weight: bolder;
+      text-decoration: 2px underline $accent-color1;
+      text-underline-offset: 0.2rem;
+    }
+  }
+
+  .loginbutton {
+    background-color: $primary-color1;
+    transition: background-color 0.3s ease-in-out;
+    color: white;
+    text-decoration: none;
+    line-height: 1rem;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
 }
 
+// Media queries
 @media screen and (max-width: $xsm) {
   #mobile-nav {
     padding: 1rem;
@@ -94,5 +139,50 @@ $xsm-sm-logo-size: calc($xsm-logo-size + 5px);
 
   .header-logo {
     width: $xsm-logo-size;
+  }
+}
+
+@media screen and (min-width: $xsm) and (max-width: $md) {
+  #desktop-nav {
+    padding: 1rem;
+
+    .centerlinks {
+      a {
+        margin: 0 0.3rem;
+      }
+    }
+
+    .loginbutton {
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.6rem;
+      border: 2px solid $primary-color1;
+    }
+  }
+
+  .header-logo {
+    width: $xsm-sm-logo-size;
+  }
+}
+
+@media screen and (min-width: $lg) {
+  #desktop-nav {
+    font-size: $md-lg-font-size;
+    padding: 1rem;
+
+    .centerlinks {
+      a {
+        margin: 0 0.5rem;
+      }
+    }
+
+    .loginbutton {
+      padding: 0.8rem 1.2rem;
+      border-radius: 0.6rem;
+      border: 3px solid $primary-color1;
+    }
+  }
+
+  .header-logo {
+    width: $md-lg-logo-size;
   }
 }
