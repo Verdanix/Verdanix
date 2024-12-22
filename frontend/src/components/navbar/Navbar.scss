@@ -1,19 +1,19 @@
 @use '../../styles/variables.scss' as *;
 
-// Extra small devices (phones, 400px and down)
+// Extra small devices
 $xsm-logo-size: 30px;
 $xsm-hamburger-width: calc($xsm-logo-size * 0.6);
 $xsm-hamburger-height: calc($xsm-logo-size * 0.5);
 
-// Small devices (portrait tablets and large phones, between 400px and 576px)
+// Extra small to small devices
 $xsm-sm-font-size: 0.8rem;
 $xsm-sm-logo-size: calc($xsm-logo-size + 5px);
 
-// Medium devices (landscape tablets, between 768px and 992px)
+// Medium devices to large devices
 $md-lg-font-size: 1.5rem;
 $md-lg-logo-size: calc($xsm-logo-size + 25px);
 
-// Large devices (laptops/desktops, 992px and up)
+// Large devices and up
 $lg-font-size: 2rem;
 $lg-logo-size: calc($xsm-logo-size + 50px);
 
