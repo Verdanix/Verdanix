@@ -5,6 +5,9 @@
   margin: 0;
 }
 
+body {
+  min-width: 200px;
+}
 #root {
   min-width: 200px;
   width: auto !important;
