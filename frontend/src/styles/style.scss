@@ -1,0 +1,19 @@
+@use 'variables.scss' as *;
+
+* {
+  font-family: $font;
+  margin: 0;
+}
+
+#root {
+  min-width: 200px;
+  width: auto !important;
+  width: 200px;
+
+  min-height: 100vh;
+  height: auto !important;
+  height: 100vh;
+
+  background-color: $primary-color2;
+  background-blend-mode: overlay;
+}
