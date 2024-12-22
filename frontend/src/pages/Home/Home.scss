@@ -1,5 +1,80 @@
 @use '../../styles//variables.scss' as *;
 
+// Extra small devices
+$xsm-hero-h1-font-size: calc($font-size + 2px);
+$xsm-sec2-h2-font-size: calc($xsm-hero-h1-font-size - 2px);
+$xsm-sec2-pgraph-font-size: calc($xsm-sec2-h2-font-size - 4px);
+$xsm-h1-padding: 1rem 0 2rem;
+
 #root {
   padding: 1rem;
+}
+
+#hero {
+  color: white;
+
+  h1 {
+    font-weight: normal;
+    text-wrap: nowrap;
+  }
+}
+
+#section2 {
+  color: white;
+
+  .buttons {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  h2 {
+    text-wrap: nowrap;
+    font-weight: bolder;
+  }
+}
+
+@media screen and (max-width: $xsm) {
+  #hero {
+    h1 {
+      margin: $xsm-h1-padding;
+      font-size: $xsm-hero-h1-font-size;
+    }
+  }
+
+  #section2 {
+    display: flex;
+    align-items: top;
+    gap: 1rem;
+
+    .text {
+      h2 {
+        font-size: $xsm-sec2-h2-font-size;
+      }
+
+      p {
+        font-size: $xsm-sec2-pgraph-font-size;
+      }
+
+      .buttons {
+        margin-top: 1.5rem;
+      }
+      .button {
+        color: white;
+        text-decoration: none;
+        border: 2px solid $primary-color1;
+        border-radius: 0.5rem;
+        font-size: $xsm-sec2-pgraph-font-size;
+        padding: 0.3rem 0.6rem;
+        background-color: $primary-color1;
+      }
+
+      .empty {
+        background-color: transparent;
+      }
+    }
+
+    img {
+      max-height: 125px;
+    }
+  }
 }
