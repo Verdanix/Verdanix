@@ -20,8 +20,20 @@ $xsm-h1-padding: 1rem 0 2rem;
 }
 
 #section2 {
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
   color: white;
 
+  .button {
+    color: white;
+    text-decoration: none;
+    background-color: $primary-color1;
+  }
+
+  .empty {
+    background-color: transparent;
+  }
   .buttons {
     display: flex;
   }
@@ -41,10 +53,6 @@ $xsm-h1-padding: 1rem 0 2rem;
   }
 
   #section2 {
-    display: flex;
-    align-items: top;
-    justify-content: space-between;
-
     gap: 0.5rem;
 
     .buttons {
@@ -64,17 +72,10 @@ $xsm-h1-padding: 1rem 0 2rem;
       }
 
       .button {
-        color: white;
-        text-decoration: none;
         border: 2px solid $primary-color1;
         border-radius: 0.5rem;
         font-size: $xsm-sec2-pgraph-font-size;
         padding: 0.2rem 0.5rem;
-        background-color: $primary-color1;
-      }
-
-      .empty {
-        background-color: transparent;
       }
     }
 
