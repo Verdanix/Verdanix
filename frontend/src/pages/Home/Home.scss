@@ -24,7 +24,6 @@ $xsm-h1-padding: 1rem 0 2rem;
 
   .buttons {
     display: flex;
-    gap: 1.5rem;
   }
 
   h2 {
@@ -44,9 +43,18 @@ $xsm-h1-padding: 1rem 0 2rem;
   #section2 {
     display: flex;
     align-items: top;
-    gap: 1rem;
+    justify-content: space-between;
+
+    gap: 0.5rem;
+
+    .buttons {
+      margin-top: 1rem;
+      gap: 1rem;
+    }
 
     .text {
+      max-width: 50%;
+
       h2 {
         font-size: $xsm-sec2-h2-font-size;
       }
@@ -55,16 +63,13 @@ $xsm-h1-padding: 1rem 0 2rem;
         font-size: $xsm-sec2-pgraph-font-size;
       }
 
-      .buttons {
-        margin-top: 1.5rem;
-      }
       .button {
         color: white;
         text-decoration: none;
         border: 2px solid $primary-color1;
         border-radius: 0.5rem;
         font-size: $xsm-sec2-pgraph-font-size;
-        padding: 0.3rem 0.6rem;
+        padding: 0.2rem 0.5rem;
         background-color: $primary-color1;
       }
 
@@ -75,6 +80,7 @@ $xsm-h1-padding: 1rem 0 2rem;
 
     img {
       max-height: 125px;
+      display: hidden;
     }
   }
 }
