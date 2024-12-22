@@ -89,7 +89,7 @@ export default function Navbar({ activeName }) {
 
   return (
     <div ref={ref}>
-      {width <= xsm ? (
+      {width < xsm ? (
         <MobileNavbar activeName={activeName} />
       ) : (
         <DesktopNavbar activeName={activeName} />

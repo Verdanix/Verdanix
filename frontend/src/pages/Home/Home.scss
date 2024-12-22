@@ -6,9 +6,10 @@ $xsm-sec2-h2-font-size: calc($xsm-hero-h1-font-size - 2px);
 $xsm-sec2-pgraph-font-size: calc($xsm-sec2-h2-font-size - 4px);
 $xsm-h1-padding: 1rem 0 2rem;
 
-#root {
-  padding: 1rem;
-}
+// Extra small to medium devices
+$md-hero-h1-font-size: calc($xsm-hero-h1-font-size + 2px);
+$md-sec2-h2-font-size: calc($md-hero-h1-font-size - 2px);
+$md-sec2-pgraph-font-size: calc($md-sec2-h2-font-size - 4px);
 
 #hero {
   color: white;
@@ -81,7 +82,47 @@ $xsm-h1-padding: 1rem 0 2rem;
 
     img {
       max-height: 125px;
-      display: hidden;
+    }
+  }
+}
+
+@media screen and (min-width: $xsm) and (max-width: $md) {
+  #hero {
+    h1 {
+      margin: $xsm-h1-padding;
+      font-size: $md-hero-h1-font-size;
+    }
+  }
+
+  #section2 {
+    gap: 0.5rem;
+
+    .buttons {
+      margin-top: 1rem;
+      gap: 1rem;
+    }
+
+    .text {
+      max-width: 50%;
+
+      h2 {
+        font-size: $md-sec2-h2-font-size;
+      }
+
+      p {
+        font-size: $md-sec2-pgraph-font-size;
+      }
+
+      .button {
+        border: 2px solid $primary-color1;
+        border-radius: 0.5rem;
+        font-size: $md-sec2-pgraph-font-size;
+        padding: 0.2rem 0.5rem;
+      }
+    }
+
+    img {
+      max-height: 125px;
     }
   }
 }
