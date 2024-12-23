@@ -25,25 +25,29 @@ p {
 }
 
 @media screen and (max-width: $xsm) {
-  h1,
-  h2,
-  h3 {
-    font-size: 1.3rem;
-  }
+  #about {
+    h1,
+    h2,
+    h3 {
+      font-size: 1.3rem;
+    }
 
-  p {
-    font-size: 1rem;
+    p {
+      font-size: 1rem;
+    }
   }
 }
 
 @media screen and (min-width: $xsm) and (max-width: $lg) {
-  h1,
-  h2,
-  h3 {
-    font-size: 1.5rem;
-  }
+  #about {
+    h1,
+    h2,
+    h3 {
+      font-size: 1.5rem;
+    }
 
-  p {
-    font-size: 1rem;
+    p {
+      font-size: 1rem;
+    }
   }
 }
