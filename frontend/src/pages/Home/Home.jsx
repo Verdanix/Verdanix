@@ -42,10 +42,12 @@ function Section2() {
 export default function Home() {
   return (
     <>
-      <div className="background">
-        <Navbar activeName="home" />
-        <HeroSection />
-        <Section2 />
+      <div id="home">
+        <div className="background">
+          <Navbar activeName="home" />
+          <HeroSection />
+          <Section2 />
+        </div>
       </div>
     </>
   );
