@@ -140,7 +140,7 @@ $lg-logo-size: calc($xsm-logo-size + 50px);
   }
 }
 
-@media screen and (min-width: $xsm) and (max-width: $md) {
+@media screen and (min-width: $xsm) and (max-width: $lg) {
   #desktop-nav {
     .centerlinks {
       a {
