@@ -5,17 +5,13 @@ $xsm-logo-size: 30px;
 $xsm-hamburger-width: calc($xsm-logo-size * 0.6);
 $xsm-hamburger-height: calc($xsm-logo-size * 0.5);
 
-// Extra small to small devices
-$xsm-sm-font-size: 0.8rem;
-$xsm-sm-logo-size: calc($xsm-logo-size + 5px);
-
-// Medium devices to large devices
-$md-lg-font-size: 1.5rem;
-$md-lg-logo-size: calc($xsm-logo-size + 25px);
+// Extra small to large devices
+$xsm-md-font-size: 0.8rem;
+$xsm-md-logo-size: calc($xsm-logo-size + 5px);
 
 // Large devices and up
-$lg-font-size: 2rem;
-$lg-logo-size: calc($xsm-logo-size + 50px);
+$lg-font-size: 1.5rem;
+$lg-logo-size: calc($xsm-logo-size + 25px);
 
 // Common styles
 .header-logo {
@@ -142,6 +138,7 @@ $lg-logo-size: calc($xsm-logo-size + 50px);
 
 @media screen and (min-width: $xsm) and (max-width: $lg) {
   #desktop-nav {
+    font-size: $xsm-md-font-size;
     .centerlinks {
       a {
         margin: 0 0.3rem;
@@ -156,13 +153,13 @@ $lg-logo-size: calc($xsm-logo-size + 50px);
   }
 
   .header-logo {
-    width: $xsm-sm-logo-size;
+    width: $xsm-md-logo-size;
   }
 }
 
 @media screen and (min-width: $lg) {
   #desktop-nav {
-    font-size: $md-lg-font-size;
+    font-size: $lg-font-size;
 
     .centerlinks {
       a {
@@ -178,6 +175,6 @@ $lg-logo-size: calc($xsm-logo-size + 50px);
   }
 
   .header-logo {
-    width: $md-lg-logo-size;
+    width: $lg-logo-size;
   }
 }
