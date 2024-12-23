@@ -86,7 +86,7 @@ $md-sec2-pgraph-font-size: calc($md-sec2-h2-font-size - 4px);
   }
 }
 
-@media screen and (min-width: $xsm) and (max-width: $md) {
+@media screen and (min-width: $xsm) and (max-width: $lg) {
   #hero {
     h1 {
       margin: $xsm-h1-padding;
