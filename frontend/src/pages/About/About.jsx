@@ -56,7 +56,7 @@ function SoftSkills() {
 export default function About() {
   return (
     <>
-      <div className="about">
+      <div id="about">
         <Navbar activeName="about" />
         <main>
           <AboutMe />
