@@ -42,9 +42,11 @@ function Section2() {
 export default function Home() {
   return (
     <>
-      <Navbar activeName="home" />
-      <HeroSection />
-      <Section2 />
+      <div className="background">
+        <Navbar activeName="home" />
+        <HeroSection />
+        <Section2 />
+      </div>
     </>
   );
 }
