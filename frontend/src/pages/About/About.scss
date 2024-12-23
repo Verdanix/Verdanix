@@ -1,44 +1,51 @@
 @use '../../styles/variables.scss' as *;
 
 .about {
-  h1,
-  h2,
-  h3 {
-    color: white;
-    font-weight: medium;
-    text-align: center;
-    margin: 1rem 0;
-    text-decoration: 2px underline $accent-color1;
-    text-underline-offset: 0.3rem;
-    font-size: 2rem;
-  }
+    height: 100vh;
+    background-image: url('/images/spaceBackground.png');
+    background-size: cover;
+    background-position: center;
+
+    h1,
+    h2,
+    h3 {
+        color: white;
+        font-weight: medium;
+        text-align: center;
+        margin: 1rem 0;
+        text-decoration: 2px underline $accent-color1;
+        text-underline-offset: 0.3rem;
+        font-size: 2rem;
+    }
 }
 
 p {
-  color: white;
-  font-size: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
 }
 
 @media screen and (max-width: $xsm) {
-  h1,
-  h2,
-  h3 {
-    font-size: 1.3rem;
-  }
 
-  p {
-    font-size: 1rem;
-  }
+    h1,
+    h2,
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
 }
 
 @media screen and (min-width: $xsm) and (max-width: $lg) {
-  h1,
-  h2,
-  h3 {
-    font-size: 1.5rem;
-  }
 
-  p {
-    font-size: 1rem;
-  }
+    h1,
+    h2,
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
 }
