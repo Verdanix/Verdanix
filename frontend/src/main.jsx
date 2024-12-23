@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router';
 import Home from './pages/Home/Home.jsx';
 import './styles/style.scss';
+import About from './pages/About/About.jsx';
 
 const root = document.getElementById('root');
 
-ReactDOM.createRoot(root).render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-    </Routes>
-  </BrowserRouter>,
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/">
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+    </Route>,
+  ),
 );
+
+ReactDOM.createRoot(root).render(<RouterProvider router={router} />);
