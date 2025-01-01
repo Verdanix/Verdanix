@@ -27,28 +27,32 @@ export default function Home({
                             <p>
                                 <span>0+</span>
                                 <br />
-                                Projects
-                                <br className="nl" /> completed
+                                {t('hero.stats.projects')}
+                                <br className="nl" />
+                                {t('hero.stats.completed')}
                             </p>
                             <p>
                                 <span>0+</span>
                                 <br />
-                                Pending
-                                <br className="nl" /> projects
+                                {t('hero.stats.pending')}
+                                <br className="nl" />
+                                {t('hero.stats.projects')}
                             </p>
                         </div>
                         <div className="col2">
                             <p>
                                 <span>0+</span>
                                 <br />
-                                Happy
-                                <br className="nl" /> clients
+                                {t('hero.stats.happy')}
+                                <br className="nl" />
+                                {t('hero.stats.clients')}
                             </p>
                             <p>
                                 <span>0+</span>
                                 <br />
-                                Hours
-                                <br className="nl" /> worked
+                                {t('hero.stats.hours')}
+                                <br className="nl" />
+                                {t('hero.stats.worked')}
                             </p>
                         </div>
                     </div>
