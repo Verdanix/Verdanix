@@ -1,58 +1,9 @@
 @use 'variables' as *;
 @use 'Components/Navbar';
 
+// Common
 :root {
     font-family: $font-family;
-    @include media('mobile') {
-        p {
-            font-size: 16px;
-        }
-        h1 {
-            font-size: 30px;
-        }
-
-        h2 {
-            font-size: 25px;
-        }
-
-        h3 {
-            font-size: 20px;
-        }
-    }
-
-    @include media('tablet') {
-        p {
-            font-size: 16px;
-        }
-        h1 {
-            font-size: 40px;
-        }
-
-        h2 {
-            font-size: 35px;
-        }
-
-        h3 {
-            font-size: 30px;
-        }
-    }
-
-    @include media('desktop') {
-        p {
-            font-size: 25px;
-        }
-        h1 {
-            font-size: 60px;
-        }
-
-        h2 {
-            font-size: 50px;
-        }
-
-        h3 {
-            font-size: 30px;
-        }
-    }
 }
 
 html {
@@ -64,3 +15,54 @@ html {
     padding: 0;
 }
 
+// Responsive styles
+@include media('mobile') {
+    p {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+}
+
+@include media('tablet') {
+    p {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+}
+
+@include media('desktop') {
+    p {
+        font-size: 25px;
+    }
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+}
