@@ -16,14 +16,17 @@ $font-family: "Inter", sans-serif;
 $min-website-width: 300px;
 
 $breakpoints: (
-  'mobile' : "(min-width: #{$min-website-width}) and (max-width: 766px)",
+    'mobile-small' : "(min-width: #{$min-website-width}) and (max-width: 567px)",
+    'mobile' : "(min-width: 568px) and (max-width: 766px)",
     'tablet' : "(min-width: 767px) and (max-width: 991px)",
     'desktop' : "(min-width: 992px)",
 );
 
 
-@mixin media($breakpoint) {
-    @media screen and #{map.get($breakpoints, $breakpoint)} {
-        @content;
+@mixin media($points...) {
+    @each $breakpoint in $points {
+        @media screen and #{map.get($breakpoints, $breakpoint)} {
+            @content;
+        }
     }
 }
