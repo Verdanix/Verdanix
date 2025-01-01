@@ -55,6 +55,7 @@ export default function Home({
                         </div>
                     </div>
                 </div>
+                {/* TODO: ADD OTHER SECTIONS */}
             </div>
         </>
     );
