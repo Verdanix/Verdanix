@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Navbar({ view }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const { t } = useTranslation('common');
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -36,7 +39,7 @@ export default function Navbar({ view }) {
                                     href="/"
                                     id={view === 'home' ? 'current-view' : ''}
                                 >
-                                    Home
+                                    {t('navbar.home')}
                                 </a>
                             </li>
                             <li>
@@ -48,7 +51,7 @@ export default function Navbar({ view }) {
                                             : ''
                                     }
                                 >
-                                    Projects
+                                    {t('navbar.projects')}
                                 </a>
                             </li>
                             <li>
@@ -56,7 +59,7 @@ export default function Navbar({ view }) {
                                     href="/about"
                                     id={view === 'about' ? 'current-view' : ''}
                                 >
-                                    About Me
+                                    {t('navbar.aboutme')}
                                 </a>
                             </li>
                             <li>
@@ -64,7 +67,7 @@ export default function Navbar({ view }) {
                                     href="/resume"
                                     id={view === 'resume' ? 'current-view' : ''}
                                 >
-                                    Resume
+                                    {t('navbar.resume')}
                                 </a>
                             </li>
                             <li>
@@ -72,16 +75,16 @@ export default function Navbar({ view }) {
                                     href="/pricing"
                                     id={view === 'resume' ? 'current-view' : ''}
                                 >
-                                    Pricing
+                                    {t('navbar.pricing')}
                                 </a>
                             </li>
                         </ul>
                         <ul id="cta">
                             <li id="login-button">
-                                <a href="/login">Login</a>
+                                <a href="/login"> {t('navbar.login')}</a>
                             </li>
                             <li id="contact-button">
-                                <a href="/register">Contact</a>
+                                <a href="/register"> {t('navbar.contact')}</a>
                             </li>
                         </ul>
                     </div>
