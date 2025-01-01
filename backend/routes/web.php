@@ -7,9 +7,9 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Home', [
-        'meta_title' => trans('message.my_full_name'),
-        'meta_description' => trans('message.seo_base_description'),
-        'meta_keywords' => trans('message.seo_keywords')
+        'meta_title' => trans('seo.home.title'),
+        'meta_description' => trans('seo.home.meta.description'),
+        'meta_keywords' => trans('seo.home.meta.keywords')
     ]);
 });
 

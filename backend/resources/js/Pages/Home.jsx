@@ -1,5 +1,6 @@
 import Navbar from '@/Components/Navbar.jsx';
 import { useTranslation } from 'react-i18next';
+import '../../css/Pages/Home.scss';
 
 export default function Home({
     meta_title,
@@ -57,8 +58,8 @@ export default function Home({
                         </div>
                     </div>
                 </div>
-                {/* TODO: ADD OTHER SECTIONS */}
             </div>
+            {/* TODO: ADD OTHER SECTIONS */}
         </>
     );
 }
