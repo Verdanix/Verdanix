@@ -1,60 +1,62 @@
 @use 'variables' as *;
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@use 'Components/Navbar';
 
 :root {
     font-family: $font-family;
+    @include media('mobile') {
+        p {
+            font-size: 16px;
+        }
+        h1 {
+            font-size: 30px;
+        }
+
+        h2 {
+            font-size: 25px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+
+    @include media('tablet') {
+        p {
+            font-size: 16px;
+        }
+        h1 {
+            font-size: 40px;
+        }
+
+        h2 {
+            font-size: 35px;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+    }
+
+    @include media('desktop') {
+        p {
+            font-size: 25px;
+        }
+        h1 {
+            font-size: 60px;
+        }
+
+        h2 {
+            font-size: 50px;
+        }
+
+        h3 {
+            font-size: 30px;
+        }
+    }
+}
+
+html {
     min-width: $min-website-width;
-
-        @include media('mobile') {
-            p {
-                font-size: 16px;
-            }
-            h1 {
-                font-size: 30px;
-            }
-
-            h2 {
-                font-size: 25px;
-            }
-
-            h3 {
-                font-size: 20px;
-            }
-        }
-
-        @include media('tablet') {
-            p {
-                font-size: 16px;
-            }
-            h1 {
-                font-size: 40px;
-            }
-
-            h2 {
-                font-size: 35px;
-            }
-
-            h3 {
-                font-size: 30px;
-            }
-        }
-
-        @include media('desktop') {
-            p {
-                font-size: 25px;
-            }
-            h1 {
-                font-size: 60px;
-            }
-
-            h2 {
-                font-size: 50px;
-            }
-
-            h3 {
-                font-size: 30px;
-            }
-        }
 }
 
 * {
