@@ -1,12 +1,19 @@
 <?php
 
 return [
+    // SEO
+    'seo_base_description' => 'A full-stack software engineer and aspiring entrepreneur from the Bay Area with expertise in Java, Python, React, and scalable development.
+                Passionate about innovation, leadership, and making an impact through coding, problem-solving, and community-driven projects. Explore my journey and projects here.',
+
     // Common
     'hello_world' => 'Hello World!',
     'login' => 'Login',
     'register' => 'Register',
     'email' => 'Email',
     'password' => 'Password',
+    'my_first_name' => 'Mason',
+    'my_last_name' => 'Root',
+    'my_full_name' => 'Mason Root',
     'first_name' => 'First Name',
     'last_name' => 'Last Name',
 
