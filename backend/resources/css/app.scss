@@ -16,7 +16,7 @@ html {
 }
 
 // Responsive styles
-@include media('mobile') {
+@include media('mobile-small') {
     p {
         font-size: 16px;
     }
@@ -33,7 +33,7 @@ html {
     }
 }
 
-@include media('tablet') {
+@include media('tablet', 'mobile') {
     p {
         font-size: 16px;
     }
