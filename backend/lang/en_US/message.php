@@ -19,7 +19,7 @@ return [
     // Home page
     'home_quote_line1' => 'Future-focused.',
     'home_quote_line2' => 'Innovation fueled.',
-    'home_quote_line3' => 'Built to',
+    'home_quote_line3' => 'Built to ',
     'home_quote_line3_end_word' => 'disrupt.',
     'home_description' => 'I\'m Mason Root, a full-stack software engineer with 5 years of experience. My work quality is consistently exceptional as I strive to achieve the impossible. Working with me is an amazing experience due to my strong communication skills, fast development pace, excellent social abilities, and impressive work ethic.',
 
