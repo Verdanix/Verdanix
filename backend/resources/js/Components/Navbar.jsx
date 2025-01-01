@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import '../../css/Components/Navbar.scss'
 
 export default function Navbar({ view }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

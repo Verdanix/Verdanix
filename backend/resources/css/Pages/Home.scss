@@ -3,7 +3,6 @@
 :root {
     background-color: $primary-color;
     background-image: url("/images/home_hero_image.png");
-    height: auto;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -37,6 +36,9 @@ p > span {
 
 .nl {
     display: none;
+    @include media("mobile") {
+        display: block;
+    }
 }
 
 .stats, .text {
@@ -51,6 +53,7 @@ p > span {
 @include media("mobile-small") {
     :root {
         padding: 10px;
+        height: 35vh;
     }
 
     h1 {
@@ -81,6 +84,7 @@ p > span {
 @include media("tablet", 'mobile') {
     :root {
         padding: 20px;
+        height: 25vh;
     }
 
     p > span {
@@ -105,6 +109,7 @@ p > span {
 @include media("desktop") {
     :root {
         padding: 25px;
+        height: 20vh;
     }
 
     .text {
