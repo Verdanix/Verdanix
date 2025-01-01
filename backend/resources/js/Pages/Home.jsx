@@ -1,5 +1,5 @@
 import Navbar from '@/Components/Navbar.jsx';
-import { useLaravelReactI18n } from 'laravel-react-i18n';
+import { useTranslation } from 'react-i18next';
 
 export default function Home({
     meta_title,
@@ -7,21 +7,19 @@ export default function Home({
     meta_keywords,
     meta_twitter_card,
 }) {
-    const { t } = useLaravelReactI18n();
+    const { t } = useTranslation('home');
     return (
         <>
             <div className="hero">
                 <Navbar view="home" />
                 <div className="text">
                     <h1>
-                        {t('message.home_quote_line1')}
+                        {t('hero.quote.line.1')}
                         <br />
-                        {t('message.home_quote_line2')}
+                        {t('hero.quote.line.2')}
                         <br />
-                        {t('message.home_quote_line3')}
-                        <strong>
-                            {t('message.home_quote_line3_end_word')}
-                        </strong>
+                        {t('hero.quote.line.3')}
+                        <strong>{t('hero.quote.line.4.end.word')}</strong>
                     </h1>
 
                     <div className="stats">
