@@ -124,7 +124,7 @@ nav {
 }
 
 // Responsive Styles
-@include media('mobile') {
+@include media('mobile', 'mobile-small') {
   #logo {
     width: 20px;
     height: 20px;
