@@ -12,7 +12,7 @@ export default function Home({
     const { t } = useTranslation('home');
 
     return (
-        <GuestLayout>
+        <GuestLayout view="home">
             <div className="hero">
                 <div className="text">
                     <h1>
