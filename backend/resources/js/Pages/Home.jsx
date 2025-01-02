@@ -1,7 +1,6 @@
-import Navbar from '@/Components/Navbar.jsx';
+import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import { useTranslation } from 'react-i18next';
 import '../../css/Pages/Home.scss';
-import { router } from '@inertiajs/react';
 
 export default function Home({
     meta_title,
@@ -13,9 +12,8 @@ export default function Home({
     const { t } = useTranslation('home');
 
     return (
-        <>
+        <GuestLayout>
             <div className="hero">
-                <Navbar view="home" />
                 <div className="text">
                     <h1>
                         {t('hero.quote.line.1')}
@@ -63,6 +61,6 @@ export default function Home({
                 </div>
             </div>
             {/* TODO: ADD OTHER SECTIONS */}
-        </>
+        </GuestLayout>
     );
 }
