@@ -37,7 +37,9 @@ export default function Navbar({ view }) {
                         <li>
                             <a
                                 href="/"
-                                id={view === 'home' ? 'current-view' : ''}
+                                className={
+                                    view === 'home' ? 'current-view' : ''
+                                }
                             >
                                 {t('navbar.home')}
                             </a>
@@ -45,7 +47,9 @@ export default function Navbar({ view }) {
                         <li>
                             <a
                                 href="/projects"
-                                className={view === 'projects' ? 'current-view' : ''}
+                                className={
+                                    view === 'projects' ? 'current-view' : ''
+                                }
                             >
                                 {t('navbar.projects')}
                             </a>
@@ -53,7 +57,9 @@ export default function Navbar({ view }) {
                         <li>
                             <a
                                 href="/about"
-                                className={view === 'about' ? 'current-view' : ''}
+                                className={
+                                    view === 'about' ? 'current-view' : ''
+                                }
                             >
                                 {t('navbar.aboutme')}
                             </a>
@@ -61,7 +67,9 @@ export default function Navbar({ view }) {
                         <li>
                             <a
                                 href="/pricing"
-                                className={view === 'resume' ? 'current-view' : ''}
+                                className={
+                                    view === 'resume' ? 'current-view' : ''
+                                }
                             >
                                 {t('navbar.pricing')}
                             </a>
