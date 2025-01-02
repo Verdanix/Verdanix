@@ -13,6 +13,14 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/about', function () {
+    return Inertia::render('About', [
+        'meta_title' => trans('seo.about.title'),
+        'meta_description' => trans('seo.about.meta.description'),
+        'meta_keywords' => trans('seo.about.meta.keywords')
+    ]);
+});
+
 Route::get('/translations/{locale}/{page}', function (string $locale, string $page) {
     $commonPath = base_path("lang/{$locale}/pages/common.php");
     $path = base_path("lang/{$locale}/pages/{$page}.php");
