@@ -1,6 +1,6 @@
+import '@/../css/Components/Navbar.scss';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import '../../css/Components/Navbar.scss';
 
 export default function Navbar({ view }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,65 +30,49 @@ export default function Navbar({ view }) {
     return (
         <>
             <nav onClick={(e) => e.stopPropagation()}>
-                <div>
+                <div className="nav">
                     {/* TODO: ADD LOGO */}
                     <div id="logo"></div>
-                    <div id={isMenuOpen ? 'menu-open' : 'menu-closed'}>
-                        <ul id="links">
-                            <li>
-                                <a
-                                    href="/"
-                                    id={view === 'home' ? 'current-view' : ''}
-                                >
-                                    {t('navbar.home')}
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="/projects"
-                                    id={
-                                        view === 'projects'
-                                            ? 'current-view'
-                                            : ''
-                                    }
-                                >
-                                    {t('navbar.projects')}
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="/about"
-                                    id={view === 'about' ? 'current-view' : ''}
-                                >
-                                    {t('navbar.aboutme')}
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="/resume"
-                                    id={view === 'resume' ? 'current-view' : ''}
-                                >
-                                    {t('navbar.resume')}
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="/pricing"
-                                    id={view === 'resume' ? 'current-view' : ''}
-                                >
-                                    {t('navbar.pricing')}
-                                </a>
-                            </li>
-                        </ul>
-                        <ul id="cta">
-                            <li id="login-button">
-                                <a href="/login"> {t('navbar.login')}</a>
-                            </li>
-                            <li id="contact-button">
-                                <a href="/register"> {t('navbar.contact')}</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul id={isMenuOpen ? 'menu-open' : 'menu-closed'}>
+                        <li>
+                            <a
+                                href="/"
+                                id={view === 'home' ? 'current-view' : ''}
+                            >
+                                {t('navbar.home')}
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/projects"
+                                id={view === 'projects' ? 'current-view' : ''}
+                            >
+                                {t('navbar.projects')}
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/about"
+                                id={view === 'about' ? 'current-view' : ''}
+                            >
+                                {t('navbar.aboutme')}
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                href="/pricing"
+                                id={view === 'resume' ? 'current-view' : ''}
+                            >
+                                {t('navbar.pricing')}
+                            </a>
+                        </li>
+                        <li>
+                            <a id="cta" href="/login">
+                                {' '}
+                                {t('navbar.contact')}
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
                 <div id="hamburger-menu" onClick={toggleMenu}>
