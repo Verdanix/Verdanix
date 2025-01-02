@@ -1,9 +1,9 @@
 import Navbar from '@/Components/Navbar.jsx';
 
-export default function GuestLayout({ children }) {
+export default function GuestLayout({ children, view }) {
     return (
         <>
-            <Navbar />
+            <Navbar view={view} />
             {children}
             {/* TODO: ADD OTHER SECTIONS */}
         </>
