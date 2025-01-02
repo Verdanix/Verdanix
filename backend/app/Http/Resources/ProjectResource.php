@@ -30,6 +30,11 @@ class ProjectResource extends JsonResource
         return Project::where('is_pending', true)->count();
     }
 
+    public static function getRecentProjects(): array
+    {
+        return Project::orderBy('created_at', 'desc')->take(20)->get()->toArray();
+    }
+
     public function toArray(Request $request): array
     {
         return [
@@ -43,9 +48,18 @@ class ProjectResource extends JsonResource
             'solutions_description' => $this->solutions_description,
             'conclusion_description' => $this->conclusion_description,
             'hours_worked' => $this->hours_worked,
-            'is_pending' => $this->is_pending,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
+    }
+
+    public static function getFeaturedProjects(): array
+    {
+        return Project::where('is_featured', true)->get()->toArray();
+    }
+
+    public static function getClientProjects(): array
+    {
+        return Project::where('is_customer_project', true)->where('is_pending', false)->get()->toArray();
     }
 }
