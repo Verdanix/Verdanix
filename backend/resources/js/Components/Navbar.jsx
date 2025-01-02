@@ -32,8 +32,8 @@ export default function Navbar({ view }) {
             <nav onClick={(e) => e.stopPropagation()}>
                 <div className="nav">
                     {/* TODO: ADD LOGO */}
-                    <div id="logo"></div>
-                    <ul id={isMenuOpen ? 'menu-open' : 'menu-closed'}>
+                    <div className="logo"></div>
+                    <ul className={isMenuOpen ? 'menu-open' : 'menu-closed'}>
                         <li>
                             <a
                                 href="/"
@@ -45,7 +45,7 @@ export default function Navbar({ view }) {
                         <li>
                             <a
                                 href="/projects"
-                                id={view === 'projects' ? 'current-view' : ''}
+                                className={view === 'projects' ? 'current-view' : ''}
                             >
                                 {t('navbar.projects')}
                             </a>
@@ -53,7 +53,7 @@ export default function Navbar({ view }) {
                         <li>
                             <a
                                 href="/about"
-                                id={view === 'about' ? 'current-view' : ''}
+                                className={view === 'about' ? 'current-view' : ''}
                             >
                                 {t('navbar.aboutme')}
                             </a>
@@ -61,13 +61,13 @@ export default function Navbar({ view }) {
                         <li>
                             <a
                                 href="/pricing"
-                                id={view === 'resume' ? 'current-view' : ''}
+                                className={view === 'resume' ? 'current-view' : ''}
                             >
                                 {t('navbar.pricing')}
                             </a>
                         </li>
                         <li>
-                            <a id="cta" href="/login">
+                            <a className="cta" href="/login">
                                 {' '}
                                 {t('navbar.contact')}
                             </a>
@@ -75,7 +75,7 @@ export default function Navbar({ view }) {
                     </ul>
                 </div>
 
-                <div id="hamburger-menu" onClick={toggleMenu}>
+                <div className="hamburger-menu" onClick={toggleMenu}>
                     <span></span>
                     <span></span>
                     <span></span>
