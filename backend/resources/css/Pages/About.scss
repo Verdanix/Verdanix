@@ -1,0 +1,41 @@
+@use '../variables' as *;
+
+// Common
+h1, h2 {
+    text-decoration-skip-ink: none;
+}
+
+// Responsive styles
+@include media('mobile-small', 'mobile') {
+    :root {
+        padding: $mobile-small-padding;
+    }
+
+    h1,h2 {
+        text-decoration: underline solid 2px $secondary-color;
+        margin: 10px 0 5px;
+    }
+}
+
+@include media('tablet') {
+    :root {
+        padding: $tablet-padding;
+    }
+
+    h1,h2 {
+        text-decoration: underline solid 3px $secondary-color;
+        margin: 15px 0 8px;
+    }
+}
+
+@include media('desktop') {
+    :root {
+        padding: $desktop-padding;
+    }
+
+    h1,h2 {
+        text-decoration: underline solid 4px $secondary-color;
+        margin: 20px 0 10px;
+    }
+}
+
