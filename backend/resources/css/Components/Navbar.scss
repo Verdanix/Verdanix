@@ -45,15 +45,15 @@ nav, .nav {
     align-items: center;
 }
 
-#logo {
+.logo {
     background-color: white;
 }
 
-#menu-closed, #menu-open, #hamburger-menu {
+.menu-closed, .menu-open, .hamburger-menu {
     display: flex;
 }
 
-#hamburger-menu {
+.hamburger-menu {
     z-index: 1;
 }
 
@@ -69,24 +69,24 @@ a {
 
 // Responsive styles
 @include media('mobile', 'tablet', 'desktop') {
-    #menu-closed {
+    .menu-closed {
         justify-content: space-between;
         width: 100%;
     }
 }
 
 @include media('small-mobile') {
-    #logo {
+    .logo {
         min-width: 2rem;
         min-height: 2rem;
     }
 
-    #current-view {
+    .current-view {
         text-decoration: 2px $secondary-color solid underline;
         text-decoration-skip-ink: none;
     }
 
-    #menu-open, #menu-closed {
+    .menu-open, .menu-closed {
         padding: 28px 30px;
         border-radius: 20px 0 0 20px;
         position: absolute;
@@ -97,16 +97,16 @@ a {
         flex-direction: column;
         gap: 10px;
     }
-    #menu-open {
+    .menu-open {
         @include animation('slide-in', 0.5s);
 
     }
 
-    #menu-closed {
+    .menu-closed {
         @include animation('slide-out', 0.5s);
     }
 
-    #hamburger-menu {
+    .hamburger-menu {
         flex-direction: column;
         justify-content: space-evenly;
 
@@ -121,7 +121,7 @@ a {
 }
 
 @include media('mobile') {
-    #logo {
+    .logo {
         min-width: 2rem;
         min-height: 2rem;
     }
@@ -130,7 +130,7 @@ a {
         gap: 10%;
     }
 
-    #current-view {
+    .current-view {
         text-decoration: 3px $secondary-color solid underline;
         text-decoration-skip-ink: none;
     }
@@ -139,7 +139,7 @@ a {
         font-size: 1.1rem;
     }
 
-    #cta {
+    .cta {
         padding: 5px 10px;
         background-color: $secondary-color;
         border-radius: 10px;
@@ -147,7 +147,7 @@ a {
 }
 
 @include media('tablet') {
-    #logo {
+    .logo {
         min-width: 2.5rem;
         min-height: 2.5rem;
     }
@@ -156,7 +156,7 @@ a {
         gap: 5%;
     }
 
-    #current-view {
+    .current-view {
         text-decoration: 4px $secondary-color solid underline;
         text-decoration-skip-ink: none;
     }
@@ -165,7 +165,7 @@ a {
         font-size: 1.4rem;
     }
 
-    #cta {
+    .cta {
         padding: 10px 15px;
         background-color: $secondary-color;
         border-radius: 15px
@@ -173,7 +173,7 @@ a {
 }
 
 @include media('desktop') {
-    #logo {
+    .logo {
         min-width: 3rem;
         min-height: 3rem;
     }
@@ -182,7 +182,7 @@ a {
         gap: 5%;
     }
 
-    #current-view {
+    .current-view {
         text-decoration: 5px $secondary-color solid underline;
         text-decoration-skip-ink: none;
     }
@@ -191,7 +191,7 @@ a {
         font-size: 1.4rem;
     }
 
-    #cta {
+    .cta {
         padding: 10px 15px;
         background-color: $secondary-color;
         border-radius: 15px
