@@ -22,16 +22,21 @@ class Project extends Model
         'conclusion_description',
         'hours_worked',
         'is_customer_project',
-        'is_pending'
+        'is_pending',
+        'is_featured'
     ];
 
     protected $hidden = [
         'created_at',
         'updated_at',
+        'is_pending',
         'id'
     ];
 
     protected $casts = [
+        'is_customer_project' => 'boolean',
+        'is_pending' => 'boolean',
+        'is_featured' => 'boolean',
         'hours_worked' => 'integer',
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
