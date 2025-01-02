@@ -1,0 +1,174 @@
+@use '../variables.scss' as *;
+
+// Common
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.contact-button {
+  background-color: $secondary-color;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.pricing-button {
+  background-color: transparent;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+.hero-button {
+  transition: all 0.5s;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.stats {
+  display: inline-flex;
+  justify-content: space-evenly;
+
+  p {
+    text-align: center;
+
+    span {
+      font-weight: bold;
+      color: $secondary-color;
+    }
+  }
+
+  width: 100%;
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+
+
+  strong {
+    color: $secondary-color;
+    font-weight: bolder;
+  }
+}
+
+
+// Responsive styles
+@include media('small-mobile', 'mobile') {
+  :root {
+    padding: 25px;
+  }
+}
+
+@include media('tablet', 'desktop') {
+  :root {
+    padding: 30px;
+  }
+}
+
+@include media('small-mobile', 'mobile') {
+  h1, h1 > strong {
+    font-size: 2rem;
+  }
+
+  h1 {
+    margin: 10px;
+  }
+
+  .buttons {
+    margin: 15px;
+    gap: 15px;
+  }
+
+  .hero-button {
+    padding: 10px 10px;
+    border: 1px solid $secondary-color;
+    border-radius: 10px;
+  }
+
+  .stats {
+    p {
+      font-size: 1rem;
+
+      span {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@include media('tablet') {
+  h1, h1 > strong {
+    font-size: 2rem;
+  }
+
+  h1 {
+    margin: 10px;
+  }
+
+  .buttons {
+    margin: 20px;
+  }
+
+  .hero-button {
+    padding: 10px 15px;
+    border: 2px solid $secondary-color;
+    border-radius: 15px;
+  }
+
+  .stats {
+    p {
+      font-size: 1.2rem;
+
+      span {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+
+@include media('desktop') {
+  h1, h1 > strong {
+    font-size: 2.5rem;
+  }
+
+  h1 {
+    margin: 20px;
+  }
+
+  .buttons {
+    margin: 30px;
+  }
+
+  .hero-button {
+    padding: 10px 20px;
+    border: 3px solid $secondary-color;
+    border-radius: 20px;
+  }
+
+  .stats {
+    p {
+      font-size: 1.4rem;
+
+      span {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
