@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Resources\ProjectResource;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -9,7 +10,13 @@ Route::get('/', function () {
     return Inertia::render('Home', [
         'meta_title' => trans('seo.home.title'),
         'meta_description' => trans('seo.home.meta.description'),
-        'meta_keywords' => trans('seo.home.meta.keywords')
+        'meta_keywords' => trans('seo.home.meta.keywords'),
+        'stats' => [
+            'totalProjects' => ProjectResource::allProjectsCount(),
+            'totalPendingProjects' => ProjectResource::allPendingProjects(),
+            'totalClientProjects' => ProjectResource::allClientProjects(),
+            'totalHoursWorked' => ProjectResource::allHoursWorked(),
+        ],
     ]);
 });
 
