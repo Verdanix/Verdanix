@@ -62,6 +62,15 @@ export default function Home({
                     </p>
                 </div>
             </div>
+            <div id="sec2">
+                <div className="bio">
+                    <h2>{t('sec2.title')}</h2>
+                    <p>{t('sec2.description')}</p>
+                </div>
+                <div className="profile-pic">
+                    {/*  TODO: Add profile image  */}
+                </div>
+            </div>
         </GuestLayout>
     );
 }
