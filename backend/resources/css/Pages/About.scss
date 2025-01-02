@@ -11,9 +11,10 @@ h1, h2 {
         padding: $mobile-small-padding;
     }
 
-    h1,h2 {
+    h1, h2 {
         text-decoration: underline solid 2px $secondary-color;
         margin: 10px 0 5px;
+        font-size: 1.5rem;
     }
 }
 
@@ -22,9 +23,10 @@ h1, h2 {
         padding: $tablet-padding;
     }
 
-    h1,h2 {
+    h1, h2 {
         text-decoration: underline solid 3px $secondary-color;
         margin: 15px 0 8px;
+        font-size: 1.5rem;
     }
 }
 
@@ -33,9 +35,10 @@ h1, h2 {
         padding: $desktop-padding;
     }
 
-    h1,h2 {
+    h1, h2 {
         text-decoration: underline solid 4px $secondary-color;
         margin: 20px 0 10px;
+        font-size: 1.7rem;
     }
 }
 
