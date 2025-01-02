@@ -7,63 +7,76 @@
   justify-content: center;
   align-items: center;
   margin-top: 5vh;
-}
 
-.contact-button {
-  background-color: $secondary-color;
-
-  &:hover {
-    background-color: transparent;
-  }
-}
-
-.pricing-button {
-  background-color: transparent;
-
-  &:hover {
+  .contact-button {
     background-color: $secondary-color;
-  }
-}
 
-.hero-button {
-  transition: all 0.5s;
-
-  &:hover {
-    color: white;
-  }
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-evenly;
-  width: 50%;
-}
-
-.stats {
-  display: inline-flex;
-  justify-content: space-evenly;
-
-  p {
-    text-align: center;
-
-    span {
-      font-weight: bold;
-      color: $secondary-color;
+    &:hover {
+      background-color: transparent;
     }
   }
 
-  width: 100%;
+  .pricing-button {
+    background-color: transparent;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+
+  .hero-button {
+    transition: all 0.5s;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+  }
+
+  .stats {
+    display: inline-flex;
+    justify-content: space-evenly;
+
+    p {
+      text-align: center;
+
+      span {
+        font-weight: bold;
+        color: $secondary-color;
+      }
+    }
+
+    width: 100%;
+  }
+
+  h1 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+
+
+    strong {
+      color: $secondary-color;
+      font-weight: bolder;
+    }
+  }
 }
 
-h1 {
-  color: white;
-  font-weight: bold;
-  text-align: center;
+#sec2 {
+  display: flex;
+  justify-content: space-evenly;
 
+  .profile-pic {
+    background-color: white;
+  }
 
-  strong {
-    color: $secondary-color;
-    font-weight: bolder;
+  .bio {
+    text-align: left;
   }
 }
 
@@ -82,93 +95,169 @@ h1 {
 }
 
 @include media('small-mobile', 'mobile') {
-  h1, h1 > strong {
-    font-size: 2rem;
+  #hero {
+    h1, h1 > strong {
+      font-size: 2rem;
+    }
+
+    h1 {
+      margin: 10px;
+    }
+
+    .buttons {
+      margin: 15px;
+      gap: 15px;
+    }
+
+    .hero-button {
+      padding: 10px 10px;
+      border: 1px solid $secondary-color;
+      border-radius: 10px;
+    }
+
+    .stats {
+      p {
+        font-size: 1rem;
+
+        span {
+          font-size: 1.4rem;
+        }
+      }
+    }
   }
 
-  h1 {
-    margin: 10px;
-  }
+  #sec2 {
+    margin: 8vh 0;
 
-  .buttons {
-    margin: 15px;
-    gap: 15px;
-  }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1vh;
+    }
 
-  .hero-button {
-    padding: 10px 10px;
-    border: 1px solid $secondary-color;
-    border-radius: 10px;
-  }
-
-  .stats {
     p {
       font-size: 1rem;
+    }
 
-      span {
-        font-size: 1.4rem;
-      }
+    .profile-pic {
+      width: 8rem;
+      height: 15rem;
+      border-radius: 20px;
+    }
+
+    .bio {
+      width: 50%;
     }
   }
 }
 
 @include media('tablet') {
-  h1, h1 > strong {
-    font-size: 2rem;
+  #hero {
+    h1, h1 > strong {
+      font-size: 2rem;
+    }
+
+    h1 {
+      margin: 10px;
+    }
+
+    .buttons {
+      margin: 20px;
+    }
+
+    .hero-button {
+      padding: 10px 15px;
+      border: 2px solid $secondary-color;
+      border-radius: 15px;
+    }
+
+    .stats {
+      p {
+        font-size: 1.2rem;
+
+        span {
+          font-size: 1.6rem;
+        }
+      }
+    }
   }
 
-  h1 {
-    margin: 10px;
-  }
+  #sec2 {
+    margin: 10vh 0;
 
-  .buttons {
-    margin: 20px;
-  }
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1vh;
+    }
 
-  .hero-button {
-    padding: 10px 15px;
-    border: 2px solid $secondary-color;
-    border-radius: 15px;
-  }
-
-  .stats {
     p {
       font-size: 1.2rem;
+    }
 
-      span {
-        font-size: 1.6rem;
-      }
+    .profile-pic {
+      width: 10rem;
+      height: 20rem;
+      border-radius: 30px;
+    }
+
+    .bio {
+      width: 50%;
     }
   }
 }
 
 
 @include media('desktop') {
-  h1, h1 > strong {
-    font-size: 2.5rem;
+  #hero {
+    h1, h1 > strong {
+      font-size: 2.5rem;
+    }
+
+    h1 {
+      margin: 20px;
+    }
+
+    .buttons {
+      margin: 30px;
+    }
+
+    .hero-button {
+      padding: 10px 20px;
+      border: 3px solid $secondary-color;
+      border-radius: 20px;
+    }
+
+    .stats {
+      p {
+        font-size: 1.4rem;
+
+        span {
+          font-size: 1.8rem;
+        }
+      }
+    }
   }
 
-  h1 {
-    margin: 20px;
-  }
+  #sec2 {
+    margin: 10vh 0;
 
-  .buttons {
-    margin: 30px;
-  }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1vh;
+    }
 
-  .hero-button {
-    padding: 10px 20px;
-    border: 3px solid $secondary-color;
-    border-radius: 20px;
-  }
-
-  .stats {
     p {
       font-size: 1.4rem;
+    }
 
-      span {
-        font-size: 1.8rem;
-      }
+    .profile-pic {
+      width: 15rem;
+      height: 25rem;
+      border-radius: 40px;
+    }
+
+
+    .bio {
+      width: 30%;
     }
   }
 }
