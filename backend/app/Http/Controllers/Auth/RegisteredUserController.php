@@ -20,7 +20,11 @@ class RegisteredUserController extends Controller
      */
     public function create(): Response
     {
-        return Inertia::render('Auth/Register');
+        return Inertia::render('Auth/Register', [
+            'meta_title' => trans('seo.register.title'),
+            'meta_description' => trans('seo.register.meta.description'),
+            'meta_keywords' => trans('seo.register.meta.keywords')
+        ]);
     }
 
     /**
