@@ -21,6 +21,10 @@ class ProjectsFactory extends Factory
             'problems_description' => $this->faker->text(),
             'solutions_description' => $this->faker->text(),
             'conclusion_description' => $this->faker->text(),
+            'hours_worked' => $this->faker->numberBetween(1, 100),
+            'is_customer_project' => $this->faker->boolean(),
+            'is_pending' => $this->faker->boolean(),
+            'is_featured' => $this->faker->boolean(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];
