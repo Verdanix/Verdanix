@@ -52,7 +52,7 @@ p > span {
 
 @include media("mobile-small") {
     :root {
-        padding: 10px;
+        padding: $mobile-small-padding;
         height: 35vh;
     }
 
@@ -83,7 +83,7 @@ p > span {
 
 @include media("tablet", 'mobile') {
     :root {
-        padding: 20px;
+        padding: $tablet-padding;
         height: 25vh;
     }
 
@@ -108,7 +108,7 @@ p > span {
 
 @include media("desktop") {
     :root {
-        padding: 25px;
+        padding: $desktop-padding;
         height: 20vh;
     }
 
