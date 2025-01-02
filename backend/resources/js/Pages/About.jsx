@@ -10,7 +10,7 @@ export default function About({
 }) {
     const { t } = useTranslation('about');
     return (
-        <GuestLayout>
+        <GuestLayout view="about">
             <h1>{t('story.title')}</h1>
             <p>{t('story.description')}</p>
             <h2>{t('skillset.title')}</h2>
