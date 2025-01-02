@@ -1,0 +1,195 @@
+@use '../../variables' as *;
+
+#form {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $primary-color2;
+    padding: 40px;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+p {
+    background-color: $error-color;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    text-wrap: nowrap;
+}
+
+a {
+    color: $secondary-color;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+    }
+}
+
+input {
+    width: 100%;
+    background-color: #1D1D23;
+    color: white;
+
+    &::placeholder {
+        color: white;
+    }
+
+    &:focus {
+        outline: none;
+        border: white 2px solid;
+    }
+}
+
+.loginOptions {
+    display: flex;
+    flex-direction: column;
+}
+
+#remember {
+    display: inline-flex;
+    width: fit-content;
+    transform: scale(2);
+}
+
+#rememberMe {
+    display: inherit;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    background: none;
+    border: none;
+    color: white;
+    transition: background-color 0.5s;
+
+    &:hover {
+        background-color: $secondary-color2;
+    }
+}
+
+@include media('mobile-small', 'mobile') {
+    #form {
+        padding: 30px 40px;
+        gap: 10px;
+    }
+
+    #remember {
+        transform: scale(1.5);
+    }
+
+    p {
+        padding: 5px 10px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    input {
+        padding: 10px 15px;
+        border-radius: 15px;
+        border: #1D1D23 2px solid;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px 15px;
+        border: 4px solid $secondary-color;
+        border-radius: 15px;
+    }
+}
+
+@include media('tablet') {
+    #form {
+        padding: 30px;
+        gap: 10px;
+    }
+
+    #remember {
+        transform: scale(1.5);
+    }
+
+    p {
+        padding: 5px 10px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        padding: 10px 15px;
+        border-radius: 15px;
+        border: #1D1D23 2px solid;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px 15px;
+        border: 4px solid $secondary-color;
+        border-radius: 15px;
+    }
+}
+
+@include media('desktop') {
+    #form {
+        padding: 40px;
+        gap: 10px;
+    }
+
+    #remember {
+        transform: scale(2);
+    }
+
+    #rememberMe {
+        gap: 15px;
+    }
+
+    p {
+        padding: 5px 15px;
+        width: 100%;
+        border-radius: 15px;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    input {
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: #1D1D23 2px solid;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px 20px;
+        border: 4px solid $secondary-color;
+        border-radius: 20px;
+    }
+}
