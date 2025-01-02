@@ -51,7 +51,7 @@ export default function Navbar({ view }) {
                                     view === 'projects' ? 'current-view' : ''
                                 }
                             >
-                                {t('navbar.projects')}
+                                {t('projects')}
                             </a>
                         </li>
                         <li>
