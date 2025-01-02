@@ -68,13 +68,6 @@ a {
 
 
 // Responsive styles
-@include media('small-mobile', 'mobile', 'tablet', 'desktop') {
-    #current-view {
-        text-decoration: 3px $secondary-color solid underline;
-        text-decoration-skip-ink: none;
-    }
-}
-
 @include media('mobile', 'tablet', 'desktop') {
     #menu-closed {
         justify-content: space-between;
@@ -86,6 +79,11 @@ a {
     #logo {
         width: 2rem;
         height: 2em;
+    }
+
+    #current-view {
+        text-decoration: 2px $secondary-color solid underline;
+        text-decoration-skip-ink: none;
     }
 
     #menu-open, #menu-closed {
@@ -128,9 +126,13 @@ a {
         height: 2em;
     }
 
-
     .nav {
         gap: 10%;
+    }
+
+    #current-view {
+        text-decoration: 3px $secondary-color solid underline;
+        text-decoration-skip-ink: none;
     }
 
     * {
@@ -154,6 +156,11 @@ a {
         gap: 5%;
     }
 
+    #current-view {
+        text-decoration: 4px $secondary-color solid underline;
+        text-decoration-skip-ink: none;
+    }
+
     * {
         font-size: 1.4rem;
     }
@@ -173,6 +180,11 @@ a {
 
     .nav {
         gap: 5%;
+    }
+
+    #current-view {
+        text-decoration: 5px $secondary-color solid underline;
+        text-decoration-skip-ink: none;
     }
 
     * {
