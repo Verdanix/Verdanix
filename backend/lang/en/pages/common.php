@@ -8,7 +8,7 @@ return [
     // Navbar
     'navbar.home' => 'Home',
     'navbar.aboutme' => 'About',
-    'navbar.projects' => 'Projects',
+    'projects' => 'Projects',
     'navbar.pricing' => 'Pricing',
     'navbar.contact' => 'Contact',
     'navbar.login' => 'Login',
