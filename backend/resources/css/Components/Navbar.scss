@@ -77,8 +77,8 @@ a {
 
 @include media('small-mobile') {
     #logo {
-        width: 2rem;
-        height: 2em;
+        min-width: 2rem;
+        min-height: 2rem;
     }
 
     #current-view {
@@ -122,8 +122,8 @@ a {
 
 @include media('mobile') {
     #logo {
-        width: 2rem;
-        height: 2em;
+        min-width: 2rem;
+        min-height: 2rem;
     }
 
     .nav {
@@ -148,8 +148,8 @@ a {
 
 @include media('tablet') {
     #logo {
-        width: 2.5rem;
-        height: 2.5rem;
+        min-width: 2.5rem;
+        min-height: 2.5rem;
     }
 
     .nav {
@@ -174,8 +174,8 @@ a {
 
 @include media('desktop') {
     #logo {
-        width: 3rem;
-        height: 3rem;
+        min-width: 3rem;
+        min-height: 3rem;
     }
 
     .nav {
