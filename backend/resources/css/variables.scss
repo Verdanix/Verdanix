@@ -3,12 +3,10 @@
 
 // Colors
 $primary-color: #0C0C13;
-$primary-color2: #373747;
+$primary-color2: #2D2D38;
 
-$secondary-color: #22AFF0;
-$secondary-color2: #066E9D;
-
-$error-color: #E13D3D;
+$secondary-color: #EA2B2B;
+$secondary-color2: #B80909;
 
 // Common Padding
 $desktop-padding: 25px;
@@ -21,13 +19,13 @@ $font-family: "Inter", sans-serif;
 
 
 // Breakpoints
-$min-website-width: 300px;
+$min-website-width: 320x;
 
 $breakpoints: (
-    'mobile-small' : "(min-width: #{$min-website-width}) and (max-width: 567px)",
-    'mobile' : "(min-width: 568px) and (max-width: 766px)",
-    'tablet' : "(min-width: 767px) and (max-width: 991px)",
-    'desktop' : "(min-width: 992px)",
+    'small-mobile' : "(min-width: #{$min-website-width}) and (max-width: 480px)",
+    'mobile' : "(min-width: 480px) and (max-width: 767px)",
+    'tablet' : "(min-width: 768px) and (max-width: 1023px)",
+    'desktop' : "(min-width: 1024px)",
 );
 
 

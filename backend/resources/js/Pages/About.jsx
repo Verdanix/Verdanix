@@ -9,12 +9,8 @@ export default function About({
     meta_twitter_card,
 }) {
     const { t } = useTranslation('about');
+
     return (
-        <GuestLayout view="about">
-            <h1>{t('story.title')}</h1>
-            <p>{t('story.description')}</p>
-            <h2>{t('skillset.title')}</h2>
-            <p>{t('skillset.description')}</p>
-        </GuestLayout>
-    );
+        <></>
+    )
 }
