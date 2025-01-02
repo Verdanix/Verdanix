@@ -73,6 +73,16 @@ a {
         justify-content: space-between;
         width: 100%;
     }
+
+    .cta {
+        border: 3px solid $secondary-color;
+        transition: background-color 0.5s;
+
+        &:hover {
+            background-color: transparent;
+            color: white;
+        }
+    }
 }
 
 @include media('small-mobile') {
