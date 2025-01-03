@@ -11,6 +11,17 @@ export default function About({
     const { t } = useTranslation('about');
 
     return (
-        <></>
-    )
+        <GuestLayout view="about">
+            <h1>{t('origin.story.title')}</h1>
+            <p>
+                {t('origin.story.1')}
+                <br />
+                <br />
+                {t('origin.story.2')}
+                <br />
+                <br />
+                {t('origin.story.3')}
+            </p>
+        </GuestLayout>
+    );
 }

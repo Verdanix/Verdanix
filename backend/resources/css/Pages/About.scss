@@ -1,0 +1,23 @@
+@use '../variables.scss' as *;
+
+// Common
+
+// Responsive styles
+
+
+
+@include media('desktop', 'tablet') {
+    :root {
+        padding: 30px;
+    }
+
+    h1, h2 {
+        margin: 30px 0;
+        text-align: center;
+        text-decoration: underline 5px solid $secondary-color;
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+}
