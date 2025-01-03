@@ -38,6 +38,19 @@ export default function About({
                     <strong>{t('awards.certs.end')}</strong>
                 </p>
             </div>
+            <div id="education">
+                <h2>{t('education.title')}</h2>
+                <p>
+                    <strong>{t('education.start')}</strong>
+                    <br />
+                    <br />
+                    <ul>
+                        <li>- {t('education.1')}</li>
+                        <li>- {t('education.2')}</li>
+                        <li>- {t('education.3')}</li>
+                    </ul>
+                </p>
+            </div>
         </GuestLayout>
     );
 }
