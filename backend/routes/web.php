@@ -20,6 +20,14 @@ Route::middleware('guest')->group(function () {
         ]);
     });
 
+    Route::get('/about', function () {
+        return Inertia::render('About', [
+            'meta_title' => 'About Mason Root',
+            'meta_description' => trans('seo.about.meta.description'),
+            'meta_keywords' => trans('seo.about.meta.description')
+        ]);
+    });
+
     Route::get('/translations/{locale}/{page}', function (string $locale, string $page) {
         $commonPath = base_path("lang/{$locale}/pages/common.php");
         $path = base_path("lang/{$locale}/pages/{$page}.php");
