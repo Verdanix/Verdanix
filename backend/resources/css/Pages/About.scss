@@ -1,13 +1,22 @@
 @use '../variables.scss' as *;
 
 // Common
-
-// Responsive styles
+ul > li {
+    list-style-type: disc;
+    margin: 20px 2.5vw 20px;
+}
 
 h1, h2 {
     text-align: center;
 }
 
+#experiences {
+    li {
+        color: whitesmoke;
+    }
+}
+
+// Responsive styles
 @include media('small-mobile', 'mobile') {
     :root {
         padding: 25px;

@@ -7,7 +7,21 @@ function generateListItems(t, keyPrefix) {
         (num) =>
             t(`${keyPrefix}.${num}`, {
                 defaultValue: '',
-            }) && <li key={num}>- {t(`${keyPrefix}.${num}`)}</li>,
+            }) && <li key={num}>{t(`${keyPrefix}.${num}`)}</li>,
+    );
+}
+
+function generateExperiences(t) {
+    return Array.from({ length: 10000 }, (_, i) => i + 1).map(
+        (num) =>
+            t(`experience.${num}`, {
+                defaultValue: '',
+            }) && (
+                <li key={num}>
+                    <strong>{t(`experience.${num}.prefix`)}</strong>{' '}
+                    {t(`experience.${num}`)}
+                </li>
+            ),
     );
 }
 
@@ -51,6 +65,15 @@ export default function About({
                     <br />
                     <br />
                     <ul>{generateListItems(t, 'education')}</ul>
+                </p>
+            </div>
+            <div id="experiences">
+                <h2>{t('experience.title')}</h2>
+                <p>
+                    <strong>{t('experience.start')}</strong>
+                    <br />
+                    <br />
+                    <ul>{generateExperiences(t, 'experience')}</ul>
                 </p>
             </div>
         </GuestLayout>
