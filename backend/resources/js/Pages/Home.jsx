@@ -71,6 +71,32 @@ export default function Home({
                     {/*  TODO: Add profile image  */}
                 </div>
             </div>
+            <div id="sec3">
+                <h2>{t('sec3.whyme')}</h2>
+                <div className="reasons">
+                    <div className="security">
+                        <img
+                            src="/images/home/security.png"
+                            alt={t('sec3.reason1.alt')}
+                        />
+                        <p>{t('sec3.reason1')}</p>
+                    </div>
+                    <div className="performance">
+                        <img
+                            src="/images/home/speed.png"
+                            alt={t('sec3.reason2.alt')}
+                        />
+                        <p>{t('sec3.reason2')}</p>
+                    </div>
+                    <div className="scalability">
+                        <img
+                            src="/images/home/scalability.png"
+                            alt={t('sec3.reason3.alt')}
+                        />
+                        <p>{t('sec3.reason3')}</p>
+                    </div>
+                </div>
+            </div>
         </GuestLayout>
     );
 }
