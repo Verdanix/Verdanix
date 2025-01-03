@@ -11,4 +11,9 @@ return [
     'awards.certs.end' => 'These credentials not only demonstrate my technical expertise but also highlight my commitment to lifelong learning and personal growth.',
     'awards.certs.2' => 'Eagle Scout (2025)',
     'awards.certs.1' => 'LPI Linux Essentials Certified (2023)',
+    'education.title' => 'Education',
+    'education.start' => 'As a software engineer in the making, I\'ve pursued a wide range of courses to hone my skills. My academic background includes:',
+    'education.1' => 'JavaScript, TypeScript, Java, Python, HTML, CSS, React, SCSS, Laravel',
+    'education.2' => 'Git/Github + Actions, Linux, basic electrical engineering',
+    'education.3' => 'MS Word, MS Powerpoint, Figma'
 ];
