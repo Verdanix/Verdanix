@@ -12,16 +12,32 @@ export default function About({
 
     return (
         <GuestLayout view="about">
-            <h1>{t('origin.story.title')}</h1>
-            <p>
-                {t('origin.story.1')}
-                <br />
-                <br />
-                {t('origin.story.2')}
-                <br />
-                <br />
-                {t('origin.story.3')}
-            </p>
+            <div id="origin-story">
+                <h1>{t('origin.story.title')}</h1>
+                <p>
+                    {t('origin.story.1')}
+                    <br />
+                    <br />
+                    {t('origin.story.2')}
+                    <br />
+                    <br />
+                    {t('origin.story.3')}
+                </p>
+            </div>
+            <div id="certsAndAwards">
+                <h2>{t('awards.certs.title')}</h2>
+                <p>
+                    <strong>{t('awards.certs.start')}</strong>
+                    <br />
+                    <br />
+                    <ul>
+                        <li>- {t('awards.certs.1')}</li>
+                        <li>- {t('awards.certs.2')}</li>
+                    </ul>
+                    <br />
+                    <strong>{t('awards.certs.end')}</strong>
+                </p>
+            </div>
         </GuestLayout>
     );
 }
