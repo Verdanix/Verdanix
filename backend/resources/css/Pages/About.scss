@@ -1,9 +1,11 @@
 @use '../variables.scss' as *;
 
 // Common
-ul > li {
-    list-style-type: disc;
-    margin: 20px 2.5vw 20px;
+#origin-story, #certsAndAwards, #education, #experiences {
+    ul > li {
+        list-style-type: disc;
+        margin: 20px 2.5vw 20px;
+    }
 }
 
 h1, h2 {
