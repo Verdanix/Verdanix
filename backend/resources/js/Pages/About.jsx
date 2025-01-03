@@ -2,6 +2,15 @@ import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import { useTranslation } from 'react-i18next';
 import '../../css/Pages/About.scss';
 
+function generateListItems(t, keyPrefix) {
+    return Array.from({ length: 10000 }, (_, i) => i + 1).map(
+        (num) =>
+            t(`${keyPrefix}.${num}`, {
+                defaultValue: '',
+            }) && <li key={num}>- {t(`${keyPrefix}.${num}`)}</li>,
+    );
+}
+
 export default function About({
     meta_title,
     meta_description,
@@ -30,10 +39,7 @@ export default function About({
                     <strong>{t('awards.certs.start')}</strong>
                     <br />
                     <br />
-                    <ul>
-                        <li>- {t('awards.certs.1')}</li>
-                        <li>- {t('awards.certs.2')}</li>
-                    </ul>
+                    <ul>{generateListItems(t, 'awards.certs')}</ul>
                     <br />
                     <strong>{t('awards.certs.end')}</strong>
                 </p>
@@ -44,11 +50,7 @@ export default function About({
                     <strong>{t('education.start')}</strong>
                     <br />
                     <br />
-                    <ul>
-                        <li>- {t('education.1')}</li>
-                        <li>- {t('education.2')}</li>
-                        <li>- {t('education.3')}</li>
-                    </ul>
+                    <ul>{generateListItems(t, 'education')}</ul>
                 </p>
             </div>
         </GuestLayout>
