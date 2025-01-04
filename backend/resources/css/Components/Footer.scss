@@ -29,12 +29,12 @@ hr {
     }
 }
 
-
 @include media('small-mobile', 'mobile') {
-    strong, a, small {
+    strong,
+    a,
+    small {
         font-size: 0.7rem;
     }
-
 
     footer {
         margin-top: 3vh;
@@ -43,31 +43,36 @@ hr {
             width: 100px;
         }
     }
-    footer, .extra {
+    footer,
+    .extra {
         gap: 3vh;
     }
 }
 
 @include media('tablet') {
-    strong, a, small {
+    strong,
+    a,
+    small {
         font-size: 0.8rem;
     }
 
     footer {
         margin-top: 5vh;
 
-
         .logo {
             width: 200px;
         }
     }
-    footer, .extra {
+    footer,
+    .extra {
         gap: 5vh;
     }
 }
 
 @include media('desktop') {
-    strong, a, small {
+    strong,
+    a,
+    small {
         font-size: 1rem;
     }
 
@@ -78,7 +83,8 @@ hr {
             width: 275px;
         }
     }
-    footer, .extra {
+    footer,
+    .extra {
         gap: 7vh;
     }
 }

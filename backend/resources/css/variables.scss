@@ -2,11 +2,11 @@
 @use 'sass:meta';
 
 // Colors
-$primary-color: #0C0C13;
-$primary-color2: #2D2D38;
+$primary-color: #0c0c13;
+$primary-color2: #2d2d38;
 
-$secondary-color: #EA2B2B;
-$secondary-color2: #B80909;
+$secondary-color: #ea2b2b;
+$secondary-color2: #b80909;
 
 // Common Padding
 $desktop-padding: 25px;
@@ -15,19 +15,17 @@ $mobile-padding: 20px;
 $mobile-small-padding: 10px;
 
 // Fonts
-$font-family: "Inter", sans-serif;
-
+$font-family: 'Inter', sans-serif;
 
 // Breakpoints
 $min-website-width: 320px;
 
 $breakpoints: (
-    'small-mobile' : "(min-width: #{$min-website-width}) and (max-width: 479px)",
-    'mobile' : "(min-width: 480px) and (max-width: 767px)",
-    'tablet' : "(min-width: 768px) and (max-width: 1023px)",
-    'desktop' : "(min-width: 1024px)",
+    'small-mobile': '(min-width: #{$min-website-width}) and (max-width: 479px)',
+    'mobile': '(min-width: 480px) and (max-width: 767px)',
+    'tablet': '(min-width: 768px) and (max-width: 1023px)',
+    'desktop': '(min-width: 1024px)',
 );
-
 
 @mixin media($points...) {
     @each $breakpoint in $points {
