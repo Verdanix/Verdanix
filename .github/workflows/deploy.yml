@@ -30,7 +30,7 @@ jobs:
             ${{secrets.BUILD_CD}}
             ${{secrets.BUILD_SETUP}}
             composer install --optimize-autoloader --no-dev
-            npm build
+            npm run build
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
