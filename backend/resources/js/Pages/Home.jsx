@@ -13,7 +13,7 @@ export default function Home({
 
     return (
         <GuestLayout view="home">
-            <div id="hero">
+            <main id="hero">
                 <h1>
                     {t('hero.line1')}
                     <br />
@@ -61,8 +61,8 @@ export default function Home({
                         {t('stats.worked')}
                     </p>
                 </div>
-            </div>
-            <div id="sec2">
+            </main>
+            <section id="sec2">
                 <div className="bio">
                     <h2>{t('sec2.title')}</h2>
                     <p>{t('sec2.description')}</p>
@@ -70,8 +70,8 @@ export default function Home({
                 <div className="profile-pic">
                     {/*  TODO: Add profile image  */}
                 </div>
-            </div>
-            <div id="sec3">
+            </section>
+            <section id="sec3">
                 <h2>{t('sec3.whyme')}</h2>
                 <div className="reasons">
                     <div className="security">
@@ -96,7 +96,7 @@ export default function Home({
                         <p>{t('sec3.reason3')}</p>
                     </div>
                 </div>
-            </div>
+            </section>
         </GuestLayout>
     );
 }

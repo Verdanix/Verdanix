@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
-    const currentYear = new Date().getFullYear();
     const { t } = useTranslation('common');
 
     useEffect(() => {
@@ -16,6 +15,7 @@ export default function Footer() {
             });
         });
     }, []);
+
     return (
         <footer>
             <hr />

@@ -1,4 +1,3 @@
-import '@/../css/Pages/Auth/Login.scss';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { router, usePage } from '@inertiajs/react';
 import { useState } from 'react';

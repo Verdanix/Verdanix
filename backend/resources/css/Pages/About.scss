@@ -1,14 +1,18 @@
 @use '../variables.scss' as *;
 
 // Common
-#origin-story, #certsAndAwards, #education, #experiences {
+#origin-story,
+#certsAndAwards,
+#education,
+#experiences {
     ul > li {
         list-style-type: disc;
         margin: 20px 2.5vw 20px;
     }
 }
 
-h1, h2 {
+h1,
+h2 {
     text-align: center;
 }
 
@@ -24,7 +28,8 @@ h1, h2 {
         padding: 25px;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         margin: 15px 0;
         text-decoration: underline 3px solid $secondary-color;
         font-size: 1.5rem;
@@ -36,12 +41,14 @@ h1, h2 {
         padding: 30px;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         margin: 30px 0;
         text-decoration: underline 5px solid $secondary-color;
         font-size: 1.8rem;
     }
-    p, strong {
+    p,
+    strong {
         font-size: 1.2rem;
     }
 }
