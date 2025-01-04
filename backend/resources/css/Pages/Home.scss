@@ -95,12 +95,61 @@
 
 // Responsive styles
 @include media('small-mobile', 'mobile') {
-    :root {
-        padding: 25px;
+
+    h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1vh;
+        font-weight: normal;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    #hero {
+        h1,
+        h1 > strong {
+            font-size: 2rem;
+        }
+
+        h1 {
+            margin: 10px;
+        }
+
+        .buttons {
+            margin: 15px;
+            gap: 15px;
+        }
+
+        .hero-button {
+            padding: 10px 10px;
+            border: 1px solid $secondary-color;
+            border-radius: 10px;
+        }
+
+        .stats {
+            p {
+                font-size: 1rem;
+
+                span {
+                    font-size: 1.4rem;
+                }
+            }
+        }
     }
 
     #sec2 {
         margin: 3vh 0;
+
+        .profile-pic {
+            width: 8rem;
+            height: 15rem;
+            border-radius: 20px;
+        }
+
+        .bio {
+            width: 50%;
+        }
     }
 
     #sec3 {
@@ -149,10 +198,6 @@
 }
 
 @include media('tablet', 'desktop') {
-    :root {
-        padding: 30px;
-    }
-
     #sec2 {
         margin: 5vh 0;
     }
@@ -185,62 +230,6 @@
                     margin: 1vh 0;
                 }
             }
-        }
-    }
-}
-
-@include media('small-mobile', 'mobile') {
-    h2 {
-        font-size: 1.3rem;
-        margin-bottom: 1vh;
-        font-weight: normal;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    #hero {
-        h1,
-        h1 > strong {
-            font-size: 2rem;
-        }
-
-        h1 {
-            margin: 10px;
-        }
-
-        .buttons {
-            margin: 15px;
-            gap: 15px;
-        }
-
-        .hero-button {
-            padding: 10px 10px;
-            border: 1px solid $secondary-color;
-            border-radius: 10px;
-        }
-
-        .stats {
-            p {
-                font-size: 1rem;
-
-                span {
-                    font-size: 1.4rem;
-                }
-            }
-        }
-    }
-
-    #sec2 {
-        .profile-pic {
-            width: 8rem;
-            height: 15rem;
-            border-radius: 20px;
-        }
-
-        .bio {
-            width: 50%;
         }
     }
 }
