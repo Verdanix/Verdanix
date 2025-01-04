@@ -10,17 +10,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: SFTP upload
-        uses: Dylan700/sftp-upload-action@latest
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
+          port: 22
           server: ${{secrets.SERVER_IP}}
           username: ${{secrets.SERVER_USERNAME}}
           password: ${{secrets.SERVER_PASSWORD}}
-          delete: true
-          uploads: |
-            ${{secrets.SERVER_UPLOADS}}
-          ignore: |
-            *.git
-            */**/*git*
+          local-dir: ./backend
+          server-dir: ${{secrets.SERVER_DIR}}
+          dangerous-clean-slate: true
+          protocol: ftps
+          exclude: |
+            **/.git*
+            **/.git*/**
       - name: Build
         uses: appleboy/ssh-action@v1.2.0
         with:
