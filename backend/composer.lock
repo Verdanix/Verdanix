@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a67d531d083425babd1cd73f1167c77d",
+    "content-hash": "b6e8d81d6bffbb9229519f97cea48f2d",
     "packages": [
         {
             "name": "brick/math",
@@ -6007,6 +6007,66 @@
                 }
             ],
             "time": "2024-11-21T01:49:47+00:00"
+        },
+        {
+            "name": "watson/sitemap",
+            "version": "5.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dwightwatson/sitemap.git",
+                "reference": "5c9cd3791a33835ac63b095602e01492557073de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dwightwatson/sitemap/zipball/5c9cd3791a33835ac63b095602e01492557073de",
+                "reference": "5c9cd3791a33835ac63b095602e01492557073de",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^8.0|^9.0|^10.0|^11.0",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.1",
+                "phpunit/phpunit": "^9.0|^10.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Sitemap": "Watson\\Sitemap\\Facades\\Sitemap"
+                    },
+                    "providers": [
+                        "Watson\\Sitemap\\SitemapServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Watson\\": "src/Watson"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dwight Watson",
+                    "email": "dwightwatson@studious.com.au"
+                }
+            ],
+            "description": "Generate Google Sitemaps in Laravel",
+            "keywords": [
+                "laravel",
+                "sitemaps"
+            ],
+            "support": {
+                "issues": "https://github.com/dwightwatson/sitemap/issues",
+                "source": "https://github.com/dwightwatson/sitemap/tree/5.2.0"
+            },
+            "time": "2024-02-27T23:09:26+00:00"
         },
         {
             "name": "webmozart/assert",
