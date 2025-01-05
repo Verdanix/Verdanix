@@ -1,17 +1,22 @@
 import '@/../css/Pages/Auth/Login.scss';
 
 import GuestLayout from '@/Layouts/GuestLayout';
-import { router, usePage } from '@inertiajs/react';
+import { router } from '@inertiajs/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export default function Login() {
+export default function Login({
+    meta_title,
+    meta_description,
+    meta_keywords,
+    unverified,
+    errors,
+}) {
     const { t } = useTranslation('login');
-    const { errors } = usePage().props;
 
     const [values, setValues] = useState({
-        email: null,
-        password: null,
+        email: '',
+        password: '',
         remember: false,
     });
 
@@ -27,12 +32,14 @@ export default function Login() {
         router.post('/login', values);
     };
 
+    const verifiedMessage = unverified ? t('verify.email') : null;
+
     return (
         <GuestLayout>
             <div id="form">
                 <form onSubmit={submit}>
                     <h1>{t('title')}</h1>
-                    <p>{Object.values(errors)[0]}</p>
+                    <p>{Object.values(errors)[0] || verifiedMessage}</p>
                     <input
                         id="email"
                         type="text"

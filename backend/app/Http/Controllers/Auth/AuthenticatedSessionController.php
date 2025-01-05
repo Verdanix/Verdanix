@@ -7,7 +7,6 @@ use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -16,12 +15,13 @@ class AuthenticatedSessionController extends Controller
     /**
      * Display the login view.
      */
-    public function create(): Response
+    public function create(Request $request): Response
     {
         return Inertia::render('Auth/Login', [
             'meta_title' => trans('seo.login.title'),
             'meta_description' => trans('seo.login.meta.description'),
-            'meta_keywords' => trans('seo.login.meta.keywords')
+            'meta_keywords' => trans('seo.login.meta.keywords'),
+            'unverified' => $request->query('unverified'),
         ]);
     }
 
@@ -34,7 +34,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('/dashboard'));
     }
 
     /**
