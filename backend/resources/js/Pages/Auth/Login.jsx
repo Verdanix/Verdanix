@@ -58,6 +58,7 @@ export default function Login() {
                             <label htmlFor="remember">{t('rememberme')}</label>
                         </div>
                         <a href="/password-reset">{t('resetpass')}</a>
+                        <a href="/register">{t('register')}</a>
                     </div>
                 </form>
             </div>
