@@ -1,4 +1,5 @@
 import '@/../css/Pages/Home.scss';
+import HeroSection from '@/Components/HeroSection.jsx';
 import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import { useTranslation } from 'react-i18next';
 
@@ -13,55 +14,7 @@ export default function Home({
 
     return (
         <GuestLayout view="home">
-            <main id="hero">
-                <h1>
-                    {t('hero.line1')}
-                    <br />
-                    {t('hero.line2')}
-                    <br />
-                    {t('hero.line3')}
-                    <strong>{t('hero.line3.strong')}</strong>
-                </h1>
-                <div className="buttons">
-                    <a className="contact-button" href="/register">
-                        {t('navbar.register')}
-                    </a>
-                    <a className="pricing-button" href="/pricing">
-                        {t('navbar.pricing')}
-                    </a>
-                </div>
-
-                <div className="stats">
-                    <p>
-                        <span>{stats.totalPendingProjects}</span>
-                        <br />
-                        {t('stats.pending')}
-                        <br />
-                        {t('projects')}
-                    </p>
-                    <p>
-                        <span> {stats.totalProjects} </span>
-                        <br />
-                        {t('stats.total')}
-                        <br />
-                        {t('projects')}
-                    </p>
-                    <p>
-                        <span> {stats.totalClientProjects} </span>
-                        <br />
-                        {t('stats.client')}
-                        <br />
-                        {t('projects')}
-                    </p>
-                    <p>
-                        <span> {stats.totalHoursWorked} </span>
-                        <br />
-                        {t('stats.hours')}
-                        <br />
-                        {t('stats.worked')}
-                    </p>
-                </div>
-            </main>
+            <HeroSection view="home" stats={stats} />
             <section id="sec2">
                 <div className="bio">
                     <h2>{t('sec2.title')}</h2>

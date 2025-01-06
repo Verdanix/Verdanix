@@ -1,0 +1,142 @@
+@use '../variables.scss' as * ;
+
+// Common
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+
+    .contact-button {
+        @include secondaryButton;
+    }
+
+    .pricing-button {
+        @include button;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-evenly;
+        width: 50%;
+    }
+
+    .stats {
+        display: inline-flex;
+        justify-content: space-evenly;
+
+        p {
+            text-align: center;
+
+            span {
+                font-weight: bold;
+                color: $secondary-color;
+            }
+        }
+
+        width: 100%;
+    }
+
+    h1 {
+        color: white;
+        font-weight: bold;
+        text-align: center;
+
+        strong {
+            color: $secondary-color2;
+            font-weight: bolder;
+        }
+    }
+}
+
+// Responsive styles
+@include media('small-mobile', 'mobile') {
+    #hero {
+        h1,
+        h1 > strong {
+            font-size: 2rem;
+        }
+
+        h1 {
+            margin: 10px;
+        }
+
+        .buttons {
+            margin: 15px;
+            gap: 15px;
+        }
+
+        .pricing-button {
+            @include button(5px, 10px, 10px);
+        }
+
+        .contact-button {
+            @include secondaryButton(5px, 10px, 10px);
+        }
+
+        .stats {
+            p {
+                font-size: 1rem;
+
+                span {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+@include media('tablet') {
+    #hero {
+        h1,
+        h1 > strong {
+            font-size: 2rem;
+        }
+
+        h1 {
+            margin: 10px;
+        }
+
+        .buttons {
+            margin: 20px;
+        }
+
+        .stats {
+            p {
+                font-size: 1.2rem;
+
+                span {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+@include media('desktop') {
+    #hero {
+        h1,
+        h1 > strong {
+            font-size: 2.5rem;
+        }
+
+        h1 {
+            margin: 20px;
+        }
+
+        .buttons {
+            margin: 30px;
+        }
+
+        .stats {
+            p {
+                font-size: 1.4rem;
+
+                span {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+}
