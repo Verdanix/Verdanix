@@ -1,6 +1,6 @@
 import '@/../css/Components/HeroSection.scss';
 
-export default function HeroSection({ view, stats, translator: t }) {
+export default function HeroSection({ stats, translator: t }) {
     return (
         <main id="hero">
             <h1>

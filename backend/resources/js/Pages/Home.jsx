@@ -14,7 +14,7 @@ export default function Home({
 
     return (
         <GuestLayout view="home">
-            <HeroSection view="home" translator={t} stats={stats} />
+            <HeroSection translator={t} stats={stats} />
             <section id="sec2">
                 <div className="bio">
                     <h2>{t('sec2.title')}</h2>
