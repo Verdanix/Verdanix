@@ -33,9 +33,9 @@
     @inertiaHead
 </head>
 <body>
-@inertia
 <noscript>
-    <h1>Please enable javascript to view this web page.</h1>
+    <h1 style="text-align: center">Please enable javascript to view this web page.</h1>
 </noscript>
+@inertia
 </body>
 </html>
