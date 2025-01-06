@@ -23,10 +23,10 @@ export default function Home({
                     <strong>{t('hero.line3.strong')}</strong>
                 </h1>
                 <div className="buttons">
-                    <a className="hero-button contact-button" href="#quota">
-                        {t('navbar.contact')}
+                    <a className="contact-button" href="/register">
+                        {t('navbar.register')}
                     </a>
-                    <a className="hero-button pricing-button" href="/pricing">
+                    <a className="pricing-button" href="/pricing">
                         {t('navbar.pricing')}
                     </a>
                 </div>

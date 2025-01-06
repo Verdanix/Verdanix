@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 export default function Navbar({ view }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const { t } = useTranslation('common');
+    const { t } = useTranslation();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -75,9 +75,9 @@ export default function Navbar({ view }) {
                             </a>
                         </li>
                         <li>
-                            <a className="cta" href="/login">
+                            <a className="cta" href="/register">
                                 {' '}
-                                {t('navbar.contact')}
+                                {t('navbar.register')}
                             </a>
                         </li>
                     </ul>

@@ -1,6 +1,7 @@
 @use '../variables.scss' as *;
 
 footer {
+    @include linkHover;
     display: flex;
     flex-direction: column;
     align-items: center;
