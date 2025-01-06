@@ -8,6 +8,14 @@ return [
     'rememberme' => 'Remember me',
     'resetpass' => 'Reset Password',
     // Components
+    // HeroSection
+    'stats.pending' => 'Pending',
+    'stats.total' => 'Completed',
+    'stats.happy' => 'Happy',
+    'stats.client' => 'Client',
+    'stats.hours' => 'Hours',
+    'stats.worked' => 'Worked',
+
     // Navbar
     'navbar.home' => 'Home',
     'navbar.aboutme' => 'About',
