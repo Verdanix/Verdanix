@@ -28,10 +28,48 @@ $breakpoints: (
     'desktop': '(min-width: 1024px)',
 );
 
+// Mixins
 @mixin media($points...) {
     @each $breakpoint in $points {
         @media screen and #{map.get($breakpoints, $breakpoint)} {
             @content;
         }
+    }
+}
+
+@mixin linkHover() {
+    a {
+        color: white;
+        transition: all 0.5s;
+
+        &:hover {
+            color: $secondary-color;
+        }
+    }
+}
+
+@mixin button($pw: 10px, $ph: 20px, $radius: 15px) {
+    border: 3px solid $secondary-color;
+    transition: all 0.5s;
+    padding: $pw $ph;
+    background-color: transparent;
+    border-radius: $radius;
+
+    &:hover {
+        background-color: $secondary-color;
+        color: white;
+    }
+}
+
+@mixin secondaryButton($pw: 10px, $ph: 20px, $radius: 15px) {
+    border: 3px solid $secondary-color;
+    transition: all 0.5s;
+    padding: $pw $ph;
+    background-color: $secondary-color;
+    border-radius: $radius;
+
+    &:hover {
+        background-color: transparent;
+        color: white;
     }
 }
