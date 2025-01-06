@@ -31,7 +31,7 @@ export default function Login() {
         <GuestLayout>
             <div id="form">
                 <form onSubmit={submit}>
-                    <h1>{t('register.title')}</h1>
+                    <h1>{t('title')}</h1>
                     <p>{Object.values(errors)[0]}</p>
                     <input
                         id="name"
