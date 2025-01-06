@@ -1,9 +1,6 @@
 import '@/../css/Components/HeroSection.scss';
-import { useTranslation } from 'react-i18next';
 
-export default function HeroSection({ view, stats}) {
-    const { t } = useTranslation(view);
-
+export default function HeroSection({ view, stats, translator: t }) {
     return (
         <main id="hero">
             <h1>
