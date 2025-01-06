@@ -9,27 +9,11 @@
     margin-top: 5vh;
 
     .contact-button {
-        background-color: $secondary-color;
-
-        &:hover {
-            background-color: transparent;
-        }
+       @include secondaryButton;
     }
 
     .pricing-button {
-        background-color: transparent;
-
-        &:hover {
-            background-color: $secondary-color;
-        }
-    }
-
-    .hero-button {
-        transition: all 0.5s;
-
-        &:hover {
-            color: white;
-        }
+      @include button;
     }
 
     .buttons {
@@ -121,10 +105,12 @@
             gap: 15px;
         }
 
-        .hero-button {
-            padding: 10px 10px;
-            border: 1px solid $secondary-color;
-            border-radius: 10px;
+        .pricing-button {
+            @include button(5px, 10px, 10px);
+        }
+
+        .contact-button {
+            @include secondaryButton(5px, 10px, 10px);
         }
 
         .stats {
@@ -259,12 +245,6 @@
             margin: 20px;
         }
 
-        .hero-button {
-            padding: 10px 15px;
-            border: 2px solid $secondary-color;
-            border-radius: 15px;
-        }
-
         .stats {
             p {
                 font-size: 1.2rem;
@@ -321,12 +301,6 @@
 
         .buttons {
             margin: 30px;
-        }
-
-        .hero-button {
-            padding: 10px 20px;
-            border: 3px solid $secondary-color;
-            border-radius: 20px;
         }
 
         .stats {
