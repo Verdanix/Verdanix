@@ -13,7 +13,7 @@ return [
     'navbar.aboutme' => 'About',
     'projects' => 'Projects',
     'navbar.pricing' => 'Pricing',
-    'navbar.contact' => 'Contact',
+    'navbar.register' => 'Register',
     'navbar.login' => 'Login',
     // Footer
     'footer.about.title' => 'About',
