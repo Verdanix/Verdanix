@@ -1,12 +1,17 @@
 import '@/../css/Pages/Auth/Register.scss';
 import GuestLayout from '@/Layouts/GuestLayout';
-import { router, usePage } from '@inertiajs/react';
+import { router } from '@inertiajs/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export default function Login() {
+export default function Login({
+    meta_title,
+    meta_description,
+    meta_keywords,
+    unverified,
+    errors,
+}) {
     const { t } = useTranslation(['register']);
-    const { errors } = usePage().props;
 
     const [values, setValues] = useState({
         name: '',
@@ -31,7 +36,7 @@ export default function Login() {
         <GuestLayout>
             <div id="form">
                 <form onSubmit={submit}>
-                    <h1>{t('register.title')}</h1>
+                    <h1>{t('title')}</h1>
                     <p>{Object.values(errors)[0]}</p>
                     <input
                         id="name"
