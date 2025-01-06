@@ -32,7 +32,10 @@
     @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
     @inertiaHead
 </head>
-<body class="antialiased">
+<body>
 @inertia
+<noscript>
+    <h1>Please enable javascript to view this web page.</h1>
+</noscript>
 </body>
 </html>
