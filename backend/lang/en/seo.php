@@ -13,4 +13,7 @@ return [
     'register.title' => 'Register',
     'register.meta.keywords' => 'mason, root, masonroot, eagle, scout, eagle scout, frontend, backend, developer, software, engineer, tech, java, javascript, react, html, css, python, register',
     'register.meta.description' => 'Register for an account to access your dashboard, contact Mason, and manage your projects, profile, and settings.',
+    'projects.title' => 'Mason Root\'s Projects',
+    'projects.meta.keywords' => 'mason, root, masonroot, eagle, scout, eagle scout, frontend, backend, developer, software, engineer, tech, java, javascript, react, html, css, python, projects',
+    'projects.meta.description' => 'Explore Mason Root\'s projects, including fullstack, client, and featured projects. Learn about the story, problems, solutions, and conclusion of each project.',
 ];
