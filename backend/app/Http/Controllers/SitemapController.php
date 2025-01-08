@@ -13,6 +13,7 @@ class SitemapController extends Controller
         Sitemap::addTag(route('about'));
         Sitemap::addTag(route('login'));
         Sitemap::addTag(route('register'));
+        Sitemap::addTag(route('projects'));
         return Sitemap::render();
     }
 }
