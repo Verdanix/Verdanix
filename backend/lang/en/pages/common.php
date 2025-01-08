@@ -38,5 +38,7 @@ return [
     'footer.socials.instagram' => 'Instagram',
     'footer.extra.sitemap' => 'Sitemap',
     'footer.extra.backUpTop' => 'Back to top',
-    'footer.extra.copyright' => "Copyright © {$currentDate} Mason Root. All Rights Reserved."
+    'footer.extra.copyright' => "Copyright © {$currentDate} Mason Root. All Rights Reserved.",
+    'projects.visit' => 'Visit',
+    'projects.more' => 'More',
 ];

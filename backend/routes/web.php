@@ -37,6 +37,10 @@ Route::get('/projects', function () {
             'totalPendingProjects' => ProjectResource::allPendingProjects(),
             'totalClientProjects' => ProjectResource::allClientProjects(),
             'totalHoursWorked' => ProjectResource::allHoursWorked(),
+        ],
+        'projects' => [
+            'featured' => ProjectResource::getFeaturedProjects(),
+            'client' => ProjectResource::getClientProjects(),
         ]
     ]);
 })->name('projects');
