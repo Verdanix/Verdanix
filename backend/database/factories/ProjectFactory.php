@@ -29,7 +29,7 @@ class ProjectFactory extends Factory
             'keywords' => $this->faker->words(3, true),
             'image' => null,
             'visit_url' => "https://google.com",
-            'more_url' => "https://127.0.0.1:8000/projects/{$titleUrl}/more",
+            'more_url' => "/projects/{$titleUrl}/more",
             'hours_worked' => $this->faker->numberBetween(1, 100),
             'is_customer_project' => $this->faker->boolean(),
             'is_pending' => $this->faker->boolean(),
