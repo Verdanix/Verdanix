@@ -11,7 +11,7 @@ class ProjectResource extends JsonResource
 {
 
     public static function getProject(string $title): Project {
-        return Project::whereId($title) -> first();
+        return Project::where('project_id', $title) -> first();
     }
     public static function allClientProjects(): int
     {
