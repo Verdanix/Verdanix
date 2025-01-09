@@ -8,6 +8,7 @@ return [
     'rememberme' => 'Remember me',
     'resetpass' => 'Reset Password',
     'forgotpass' => 'Forgot Password?',
+    'password_confirmation' => 'Confirm Password',
     // Components
     // HeroSection
     'stats.pending' => 'Pending',
