@@ -31,12 +31,6 @@
 }
 
 // Common styles
-* {
-    text-decoration: none;
-    text-decoration-skip-ink: none;
-    color: white;
-    list-style-type: none;
-}
 
 nav,
 #nav {
@@ -45,6 +39,13 @@ nav,
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    * {
+        text-decoration: none;
+        text-decoration-skip-ink: none;
+        color: white;
+        list-style-type: none;
+    }
 }
 
 .logo {
@@ -128,6 +129,9 @@ nav,
 
     #nav {
         gap: 10%;
+        * {
+            font-size: 1.1rem;
+        }
     }
 
     .current-view {
@@ -135,9 +139,6 @@ nav,
         text-decoration-skip-ink: none;
     }
 
-    * {
-        font-size: 1.1rem;
-    }
     .cta {
         @include secondaryButton(5px, 10px, 10px);
     }
@@ -151,6 +152,9 @@ nav,
 
     #nav {
         gap: 5%;
+        * {
+            font-size: 1.4rem;
+        }
     }
 
     .current-view {
@@ -158,9 +162,6 @@ nav,
         text-decoration-skip-ink: none;
     }
 
-    * {
-        font-size: 1.4rem;
-    }
 
 }
 
@@ -172,14 +173,14 @@ nav,
 
     #nav {
         gap: 5%;
+
+        * {
+            font-size: 1.4rem;
+        }
     }
 
     .current-view {
         text-decoration: 5px $secondary-color solid underline;
         text-decoration-skip-ink: none;
-    }
-
-    * {
-        font-size: 1.4rem;
     }
 }
