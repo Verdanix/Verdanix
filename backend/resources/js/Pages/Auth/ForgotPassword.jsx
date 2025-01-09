@@ -4,7 +4,12 @@ import { router } from '@inertiajs/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export default function ForgotPassword({ meta_title, errors }) {
+export default function ForgotPassword({
+    meta_title,
+    meta_description,
+    meta_keywords,
+    errors,
+}) {
     const { t } = useTranslation('forgot_password');
 
     const [values, setValues] = useState({

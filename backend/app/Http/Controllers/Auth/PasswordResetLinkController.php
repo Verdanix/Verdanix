@@ -18,7 +18,9 @@ class PasswordResetLinkController extends Controller
     public function create(): Response
     {
         return Inertia::render('Auth/ForgotPassword', [
-            'meta_title' => trans('pages/common.forgotpass'),
+            'meta_title' => trans('seo.forgot_password.title'),
+            'meta_description' => trans('seo.forgot_password.meta.description'),
+            'meta_keywords' => trans('seo.forgot_password.meta.keywords'),
             'status' => session('status'),
         ]);
     }

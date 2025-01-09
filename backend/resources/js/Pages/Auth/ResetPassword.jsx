@@ -1,9 +1,17 @@
+import '@/../css/Pages/Auth/ResetPassword.scss';
 import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import { router } from '@inertiajs/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import '@/../css/Pages/Auth/ResetPassword.scss';
-export default function ResetPassword({ meta_title, errors, email, token }) {
+
+export default function ResetPassword({
+    meta_title,
+    meta_description,
+    meta_keywords,
+    errors,
+    email,
+    token,
+}) {
     const { t } = useTranslation('reset_password');
 
     const [values, setValues] = useState({
