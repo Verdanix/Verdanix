@@ -29,7 +29,7 @@ export default function Login({
 
     const submit = (e) => {
         e.preventDefault();
-        router.post('/login', values);
+        router.post(route('login'), values);
     };
 
     const verifiedMessage = unverified ? t('verify.email') : null;
@@ -64,7 +64,7 @@ export default function Login({
                             />
                             <label htmlFor="remember">{t('rememberme')}</label>
                         </div>
-                        <a href="/password-reset">{t('resetpass')}</a>
+                        <a href="/forgot-password">{t('forgotpass')}</a>
                         <a href="/register">{t('register')}</a>
                     </div>
                 </form>
