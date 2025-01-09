@@ -10,9 +10,11 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class ProjectResource extends JsonResource
 {
 
-    public static function getProject(string $title): Project | null {
-        return Project::where('project_id', $title) -> first();
+    public static function getProject(string $title): Project|null
+    {
+        return Project::where('project_id', $title)->first();
     }
+
     public static function allClientProjects(): int
     {
         return Project::where('is_customer_project', true)->where('is_pending', false)->count();
