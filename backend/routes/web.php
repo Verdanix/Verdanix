@@ -69,6 +69,14 @@ Route::get('/projects/{project_title}/more', function ($project_title) {
     ]);
 })->name('projects.more');
 
+Route::get('/pricing', function () {
+    return Inertia::render('Pricing', [
+        'meta_title' => trans('seo.pricing.title'),
+        'meta_description' => trans('seo.pricing.meta.description'),
+        'meta_keywords' => trans('seo.pricing.meta.keywords'),
+    ]);
+});
+
 Route::prefix('socials')->group(function () {
     Route::get('linkedin', function () {
         return redirect(config('socials.linkedin'));
@@ -82,7 +90,6 @@ Route::prefix('socials')->group(function () {
 });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
-
 
 Route::get('/translations/{locale}/{page}', function (string $locale, string $page) {
     $commonPath = base_path("lang/{$locale}/pages/common.php");
