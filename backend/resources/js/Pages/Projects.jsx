@@ -13,7 +13,6 @@ export default function Projects({
     stats,
 }) {
     const { t } = useTranslation('projects');
-    console.log(projects.featured);
 
     const getProjectCards = (projects) => {
         return projects.map((project, index) => (
