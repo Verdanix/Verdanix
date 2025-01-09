@@ -34,7 +34,7 @@
 
     # CSP
     <IfModule mod_headers.c>
-        Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self';"
+        Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'nonce-random123'; style-src 'self' 'nonce-random123'; img-src 'self'; font-src 'self';"
     </IfModule>
 
     #Block bad bots
