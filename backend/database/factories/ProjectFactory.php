@@ -17,6 +17,7 @@ class ProjectFactory extends Factory
         $titleUrl = strtolower(str_replace(' ', '-', $projectTitle));
         return [
             'title' => $projectTitle,
+            'project_id' => $titleUrl,
             'github_link' => $this->faker->url(),
             'docs_link' => $this->faker->url(),
             'demo_link' => $this->faker->url(),
