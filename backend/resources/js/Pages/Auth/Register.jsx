@@ -4,13 +4,7 @@ import { router } from '@inertiajs/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export default function Login({
-    meta_title,
-    meta_description,
-    meta_keywords,
-    unverified,
-    errors,
-}) {
+export default function Login({ errors }) {
     const { t } = useTranslation(['register']);
 
     const [values, setValues] = useState({

@@ -2,11 +2,7 @@ import '@/../css/Pages/Dashboard.scss';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
 import { useTranslation } from 'react-i18next';
 
-export default function Dashboard({
-    meta_title,
-    meta_description,
-    meta_keywords,
-}) {
+export default function Dashboard() {
     const { t } = useTranslation('dashboard');
     return (
         <AuthenticatedLayout view={'manage'}>

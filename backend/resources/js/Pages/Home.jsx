@@ -3,13 +3,7 @@ import HeroSection from '@/Components/HeroSection.jsx';
 import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import { useTranslation } from 'react-i18next';
 
-export default function Home({
-    meta_title,
-    meta_description,
-    meta_keywords,
-    meta_twitter_card,
-    stats,
-}) {
+export default function Home({ stats }) {
     const { t } = useTranslation('home');
 
     return (
