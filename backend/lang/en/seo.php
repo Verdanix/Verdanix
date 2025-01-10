@@ -26,4 +26,7 @@ return [
     'pricing.title' => 'My Pricing',
     'pricing.meta.keywords' => 'mason, root, masonroot, eagle, scout, eagle scout, frontend, backend, developer, software, engineer, tech, java, javascript, react, html, css, python, pricing',
     'pricing.meta.description' => 'View my pricing for software engineering services, including frontend, backend, fullstack, and scalable development. Contact me to get a quote for your project.',
+    'dashboard.title' => 'Dashboard',
+    'dashboard.meta.keywords' => 'mason, root, masonroot, eagle, scout, eagle scout, frontend, backend, developer, software, engineer, tech, java, javascript, react, html, css, python, dashboard',
+    'dashboard.meta.description' => 'Access your dashboard to order a project, view your projects, and manage your profile and settings.',
 ];
