@@ -1,112 +1,116 @@
 @use '../../variables.scss' as *;
 
-a, label, p {
-    font-size: 1rem !important;
-}
+// Common styles
 
-#form, form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
-form {
-    background-color: $primary-color2;
-}
-
-input {
-    border: none;
-    background-color: $primary-color3;
-
-    &::placeholder {
-        color: white;
-    }
-}
-
-.loginOptions, .rememberMe {
+#form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    a {
-        transition: all 0.5s ease-in-out;
-    }
-    a:hover {
-        color: $secondary-color2;
+    form {
+        display: flex;
+        flex-direction: column;
+        background-color: $primary-color2;
+        text-align: center;
+
+        input {
+            border: none;
+            background-color: $primary-color3;
+            color: white;
+
+            &::placeholder {
+                color: white;
+            }
+        }
+
+        .loginOptions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        a {
+            text-align: center;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                color: $secondary-color2;
+            }
+        }
     }
 }
 
-.rememberMe {
-    flex-direction: row;
-}
+// Responsive styles
+@include media('desktop', 'tablet') {
+    #form {
+        margin-top: 10vh;
+    }
+    form {
+        padding: 30px;
+        border-radius: 20px;
+        gap: 1vh;
 
-button {
-    background-color: $secondary-color2;
-    border: 3px solid transparent;
-    transition: all 0.5s ease-in-out;
-    &:hover {
-        background-color: transparent;
-        border: 3px solid $secondary-color2;
-        cursor: pointer;
+        a, button, input, label, p {
+            font-size: 1.5rem;
+        }
+
+        input, button {
+            padding: 15px 30px;
+            border-radius: 20px;
+        }
+
+        button {
+            @include secondaryButton;
+        }
     }
 }
 
 @include media('small-mobile', 'mobile') {
     #form {
-        height: 70vh;
+        margin-top: 5vh;
     }
     form {
-        padding: 30px;
-        border-radius: 20px;
-        gap: 10px;
-    }
+        a, button, input, label, p {
+            font-size: 1rem;
+        }
 
-    input {
-        padding: 10px 20px;
-        border-radius: 15px;
-    }
-
-    .loginOptions, .rememberMe {
-        gap: 5px;
-    }
-
-    button {
-        width: 100%;
-        padding: 10px 20px;
-        border-radius: 15px;
+        h1 {
+            font-size: 1.8rem;
+        }
     }
 }
 
-@include media('tablet', 'desktop') {
-    #form {
-        height: 90vh;
-    }
+@include media('small-mobile') {
     form {
-        padding: 30px;
+        padding: 20px;
         border-radius: 20px;
-        gap: 20px;
-    }
+        gap: 2vh;
 
-    input {
-        padding: 15px 30px;
+        input, button {
+            padding: 10px 25px;
+            border-radius: 12px;
+        }
+
+        button {
+            @include secondaryButton;
+        }
+    }
+}
+
+@include media('mobile') {
+    form {
+        padding: 20px;
         border-radius: 20px;
-    }
+        gap: 1vh;
 
-    .loginOptions, .rememberMe {
-        gap: 10px;
-    }
+        input, button {
+            padding: 15px 30px;
+            border-radius: 20px;
+        }
 
-
-    #remember {
-        transform: scale(2);;
-    }
-
-    button {
-        width: 100%;
-        padding: 15px 30px;
-        border-radius: 20px;
+        button {
+            @include secondaryButton;
+        }
     }
 }
