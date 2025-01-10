@@ -1,13 +1,12 @@
 import '@/../css/Pages/Auth/ResetPassword.scss';
 import GuestLayout from '@/Layouts/GuestLayout.jsx';
-import { router } from '@inertiajs/react';
-import { useState } from 'react';
+import { useForm } from '@inertiajs/react';
 import { useTranslation } from 'react-i18next';
 
-export default function ResetPassword({ errors, email, token }) {
+export default function ResetPassword({ email, token }) {
     const { t } = useTranslation('reset_password');
 
-    const [values, setValues] = useState({
+    const { data, setData, post, errors } = useForm({
         token: token,
         email: email,
         password: '',
@@ -15,15 +14,12 @@ export default function ResetPassword({ errors, email, token }) {
     });
 
     const handleChange = (e) => {
-        setValues((values) => ({
-            ...values,
-            [e.target.id]: e.target.value,
-        }));
+        setData(e.target.id, e.target.value);
     };
 
     const submit = (e) => {
         e.preventDefault();
-        router.post(route('password.store'), values);
+        post(route('password.store'), data);
     };
 
     return (
@@ -36,14 +32,14 @@ export default function ResetPassword({ errors, email, token }) {
                         id="email"
                         type="text"
                         placeholder={t('email')}
-                        value={values.email}
+                        value={data.email}
                         onChange={handleChange}
                     />
                     <input
                         id="password"
                         type="password"
                         placeholder={t('password')}
-                        value={values.password}
+                        value={data.password}
                         onChange={handleChange}
                     />
 
@@ -51,7 +47,7 @@ export default function ResetPassword({ errors, email, token }) {
                         id="password_confirmation"
                         type="password"
                         placeholder={t('password_confirmation')}
-                        value={values.password_confirmation}
+                        value={data.password_confirmation}
                         onChange={handleChange}
                     />
                     <button type="submit">{t('submit')}</button>

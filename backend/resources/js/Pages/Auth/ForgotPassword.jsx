@@ -1,28 +1,22 @@
 import '@/../css/Pages/Auth/ForgotPassword.scss';
 import GuestLayout from '@/Layouts/GuestLayout.jsx';
-import { router } from '@inertiajs/react';
-import { useState } from 'react';
+import { useForm } from '@inertiajs/react';
 import { useTranslation } from 'react-i18next';
 
-export default function ForgotPassword({ errors }) {
+export default function ForgotPassword() {
     const { t } = useTranslation('forgot_password');
 
-    const [values, setValues] = useState({
+    const { data, setData, post, errors } = useForm({
         email: '',
-        password: '',
-        remember: false,
     });
 
     const handleChange = (e) => {
-        setValues((values) => ({
-            ...values,
-            [e.target.id]: e.target.value,
-        }));
+        setData(e.target.id, e.target.value);
     };
 
     const submit = (e) => {
         e.preventDefault();
-        router.post(route('password.email'), values);
+        post(route('password.email'), data);
     };
 
     return (
@@ -35,7 +29,7 @@ export default function ForgotPassword({ errors }) {
                         id="email"
                         type="text"
                         placeholder={t('email')}
-                        value={values.email}
+                        value={data.email}
                         onChange={handleChange}
                     />
                     <button type="submit">{t('submit')}</button>
