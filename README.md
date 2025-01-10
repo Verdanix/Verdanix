@@ -22,14 +22,14 @@ to the world.
 <div align="center">
   <picture>
     <source
-      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true&theme=material-palenight&custom_title=My%20Statistics"
+      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=false&show=prs_merged&show_icons=true&theme=material-palenight&custom_title=My%20Statistics"
       media="(prefers-color-scheme: dark)"
     />
     <source
-      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true&custom_title=My%20Statistics"
+      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=false&show=prs_merged&show_icons=true&custom_title=My%20Statistics"
       media="(prefers-color-scheme: light)"
     />
-    <img src="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=true&show=prs_merged&show_icons=true&custom_title=My%20Statistics" height="150" alt="Github statistics graph"/>
+    <img src="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=false&show=prs_merged&show_icons=true&custom_title=My%20Statistics" height="150" alt="Github statistics graph"/>
 </picture>
 
   <picture>
