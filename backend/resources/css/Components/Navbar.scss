@@ -69,6 +69,10 @@ nav,
         width: 100%;
     }
 
+    .cta.current-view {
+        text-decoration: none !important;
+    }
+
     .cta {
         @include secondaryButton();
         color: white !important;
@@ -80,7 +84,6 @@ nav,
         min-width: 2rem;
         min-height: 2rem;
     }
-
 
     #nav {
         .current-view {
@@ -141,7 +144,6 @@ nav,
             text-decoration: 3px $secondary-color solid underline;
             text-decoration-skip-ink: none;
         }
-
     }
 
     .cta {
