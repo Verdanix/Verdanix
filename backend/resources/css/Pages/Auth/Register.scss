@@ -1,7 +1,6 @@
 @use '../../variables.scss' as *;
 
 // Common styles
-
 #form {
     display: flex;
     flex-direction: column;
@@ -9,6 +8,8 @@
     justify-content: center;
 
     form {
+        @include linkHover;
+
         display: flex;
         flex-direction: column;
         background-color: $primary-color2;
@@ -33,10 +34,6 @@
         a {
             text-align: center;
             transition: all 0.5s ease-in-out;
-
-            &:hover {
-                color: $secondary-color2;
-            }
         }
     }
 }
