@@ -1,111 +1,27 @@
 @use '../../variables.scss' as *;
-
-a, label, p {
-    font-size: 1rem !important;
-}
-
-a {
-    transition: all 0.5s ease-in-out;
-    &:hover {
-        color: $secondary-color2;
-    }
-}
-#form, form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-}
-
-form {
-    background-color: $primary-color2;
-}
-
-input {
-    border: none;
-    background-color: $primary-color3;
-
-    &::placeholder {
-        color: white;
-    }
-}
-
-.loginOptions, .rememberMe {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+@use 'Register.scss';
 
 .rememberMe {
+    display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-button {
-    background-color: $secondary-color2;
-    border: 3px solid transparent;
-    transition: all 0.5s ease-in-out;
-    &:hover {
-        background-color: transparent;
-        border: 3px solid $secondary-color2;
-        cursor: pointer;
+@include media('small-mobile') {
+    .rememberMe {
+        gap: 2vh;
     }
 }
 
-@include media('small-mobile', 'mobile') {
-    #form {
-        height: 70vh;
-    }
-    form {
-        padding: 30px;
-        border-radius: 20px;
-        gap: 10px;
-    }
-
-    input {
-        padding: 10px 20px;
-        border-radius: 15px;
-    }
-
-    .loginOptions, .rememberMe {
-        gap: 5px;
-    }
-
-    button {
-        width: 100%;
-        padding: 10px 20px;
-        border-radius: 15px;
-    }
-}
-
-@include media('tablet', 'desktop') {
-    #form {
-        height: 90vh;
-    }
-    form {
-        padding: 30px;
-        border-radius: 20px;
-        gap: 20px;
-    }
-
-    input {
-        padding: 15px 30px;
-        border-radius: 20px;
-    }
-
-    .loginOptions, .rememberMe {
-        gap: 10px;
-    }
-
-
+@include media('desktop', 'tablet') {
     #remember {
         transform: scale(2);;
     }
+}
 
-    button {
-        width: 100%;
-        padding: 15px 30px;
-        border-radius: 20px;
+@include media('mobile', 'tablet', 'desktop') {
+    .rememberMe {
+        gap: 1.5vh;
     }
 }
