@@ -54,7 +54,7 @@ $breakpoints: (
     padding: $pw $ph;
     background-color: transparent;
     border-radius: $radius;
-
+    color: white;
     &:hover {
         background-color: $secondary-color;
         color: white;
@@ -67,6 +67,7 @@ $breakpoints: (
     padding: $pw $ph;
     background-color: $secondary-color;
     border-radius: $radius;
+    color: white;
 
     &:hover {
         background-color: transparent;
