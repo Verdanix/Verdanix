@@ -1,0 +1,373 @@
+@use '../variables.scss' as *;
+
+// Common
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+
+    .contact-button {
+        background-color: $secondary-color;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .pricing-button {
+        background-color: transparent;
+
+        &:hover {
+            background-color: $secondary-color;
+        }
+    }
+
+    .hero-button {
+        transition: all 0.5s;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-evenly;
+        width: 50%;
+    }
+
+    .stats {
+        display: inline-flex;
+        justify-content: space-evenly;
+
+        p {
+            text-align: center;
+
+            span {
+                font-weight: bold;
+                color: $secondary-color;
+            }
+        }
+
+        width: 100%;
+    }
+
+    h1 {
+        color: white;
+        font-weight: bold;
+        text-align: center;
+
+
+        strong {
+            color: $secondary-color;
+            font-weight: bolder;
+        }
+    }
+}
+
+#sec2 {
+    display: flex;
+    justify-content: space-evenly;
+
+    .profile-pic {
+        background-color: white;
+    }
+
+    .bio {
+        text-align: left;
+    }
+}
+
+#sec3 {
+    h2 {
+        text-align: center;
+    }
+
+    .performance > p {
+        text-align: center;
+    }
+
+    .scalability > p {
+        text-align: right;
+    }
+}
+
+
+// Responsive styles
+@include media('small-mobile', 'mobile') {
+    :root {
+        padding: 25px;
+    }
+
+    #sec2 {
+        margin: 3vh 0;
+    }
+
+    #sec3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        h2 {
+            text-decoration: 4px solid underline $secondary-color;
+            text-decoration-skip-ink: none;
+            margin-bottom: 5vw;
+        }
+
+        .reasons {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+
+            div {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                margin: 2vh 0;
+
+                img {
+                    max-width: 45%;
+                    height: auto;
+                }
+
+                p {
+                    max-width: 45%;
+                    text-align: right;
+                }
+            }
+
+            .performance {
+                flex-direction: row-reverse;
+
+                p {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+@include media('tablet', 'desktop') {
+    :root {
+        padding: 30px;
+    }
+
+    #sec2 {
+        margin: 5vh 0;
+    }
+
+    #sec3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        h2 {
+            text-decoration: 4px solid underline $secondary-color;
+            text-decoration-skip-ink: none;
+            margin-bottom: 3vw;
+        }
+
+        .reasons {
+            display: flex;
+            justify-content: space-evenly;
+            align-content: center;
+
+            div {
+                flex-direction: column;
+                align-items: center;
+                justify-items: center;
+                max-width: 20vw;
+
+                img, p {
+                    max-width: 100%;
+                    margin: 1vh 0;
+                }
+            }
+        }
+    }
+}
+
+@include media('small-mobile', 'mobile') {
+    h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1vh;
+        font-weight: normal;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    #hero {
+        h1, h1 > strong {
+            font-size: 2rem;
+        }
+
+        h1 {
+            margin: 10px;
+        }
+
+        .buttons {
+            margin: 15px;
+            gap: 15px;
+        }
+
+        .hero-button {
+            padding: 10px 10px;
+            border: 1px solid $secondary-color;
+            border-radius: 10px;
+        }
+
+        .stats {
+            p {
+                font-size: 1rem;
+
+                span {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+
+    #sec2 {
+        .profile-pic {
+            width: 8rem;
+            height: 15rem;
+            border-radius: 20px;
+        }
+
+        .bio {
+            width: 50%;
+        }
+    }
+}
+
+@include media('tablet') {
+    h2 {
+        font-size: 1.4rem;
+        font-weight: normal;
+        margin-bottom: 1vh;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    #hero {
+        h1, h1 > strong {
+            font-size: 2rem;
+        }
+
+        h1 {
+            margin: 10px;
+        }
+
+        .buttons {
+            margin: 20px;
+        }
+
+        .hero-button {
+            padding: 10px 15px;
+            border: 2px solid $secondary-color;
+            border-radius: 15px;
+        }
+
+        .stats {
+            p {
+                font-size: 1.2rem;
+
+                span {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+
+    #sec2 {
+        .profile-pic {
+            width: 10rem;
+            height: 20rem;
+            border-radius: 30px;
+        }
+
+        .bio {
+            width: 50%;
+        }
+    }
+
+    .reasons {
+        div {
+            img, p {
+                border-radius: 25px;
+            }
+        }
+    }
+}
+
+
+@include media('desktop') {
+    h2 {
+        font-size: 1.8rem;
+        font-weight: normal;
+        margin-bottom: 1vh;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    #hero {
+        h1, h1 > strong {
+            font-size: 2.5rem;
+        }
+
+        h1 {
+            margin: 20px;
+        }
+
+        .buttons {
+            margin: 30px;
+        }
+
+        .hero-button {
+            padding: 10px 20px;
+            border: 3px solid $secondary-color;
+            border-radius: 20px;
+        }
+
+        .stats {
+            p {
+                font-size: 1.4rem;
+
+                span {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+
+    #sec2 {
+        .profile-pic {
+            width: 15rem;
+            height: 25rem;
+            border-radius: 40px;
+        }
+
+
+        .bio {
+            width: 30%;
+        }
+    }
+
+    .reasons {
+        div {
+            img, p {
+                border-radius: 40px;
+            }
+        }
+    }
+
+}

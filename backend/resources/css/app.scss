@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+// Common
+:root {
+    font-family: $font-family;
+    background-color: $primary-color;
+    color: white;
+}
+
+html {
+    min-width: $min-website-width;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}

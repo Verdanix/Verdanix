@@ -1,0 +1,47 @@
+@use '../variables.scss' as *;
+
+// Common
+#origin-story, #certsAndAwards, #education, #experiences {
+    ul > li {
+        list-style-type: disc;
+        margin: 20px 2.5vw 20px;
+    }
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#experiences {
+    li {
+        color: whitesmoke;
+    }
+}
+
+// Responsive styles
+@include media('small-mobile', 'mobile') {
+    :root {
+        padding: 25px;
+    }
+
+    h1, h2 {
+        margin: 15px 0;
+        text-decoration: underline 3px solid $secondary-color;
+        font-size: 1.5rem;
+    }
+}
+
+@include media('desktop', 'tablet') {
+    :root {
+        padding: 30px;
+    }
+
+    h1, h2 {
+        margin: 30px 0;
+        text-decoration: underline 5px solid $secondary-color;
+        font-size: 1.8rem;
+    }
+    p, strong {
+        font-size: 1.2rem;
+    }
+}
