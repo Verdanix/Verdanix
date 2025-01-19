@@ -59,7 +59,6 @@
         font-weight: bold;
         text-align: center;
 
-
         strong {
             color: $secondary-color;
             font-weight: bolder;
@@ -93,7 +92,6 @@
         text-align: right;
     }
 }
-
 
 // Responsive styles
 @include media('small-mobile', 'mobile') {
@@ -181,7 +179,8 @@
                 justify-items: center;
                 max-width: 20vw;
 
-                img, p {
+                img,
+                p {
                     max-width: 100%;
                     margin: 1vh 0;
                 }
@@ -202,7 +201,8 @@
     }
 
     #hero {
-        h1, h1 > strong {
+        h1,
+        h1 > strong {
             font-size: 2rem;
         }
 
@@ -257,7 +257,8 @@
     }
 
     #hero {
-        h1, h1 > strong {
+        h1,
+        h1 > strong {
             font-size: 2rem;
         }
 
@@ -300,13 +301,13 @@
 
     .reasons {
         div {
-            img, p {
+            img,
+            p {
                 border-radius: 25px;
             }
         }
     }
 }
-
 
 @include media('desktop') {
     h2 {
@@ -320,7 +321,8 @@
     }
 
     #hero {
-        h1, h1 > strong {
+        h1,
+        h1 > strong {
             font-size: 2.5rem;
         }
 
@@ -356,7 +358,6 @@
             border-radius: 40px;
         }
 
-
         .bio {
             width: 30%;
         }
@@ -364,10 +365,10 @@
 
     .reasons {
         div {
-            img, p {
+            img,
+            p {
                 border-radius: 40px;
             }
         }
     }
-
 }

@@ -38,7 +38,8 @@
     list-style-type: none;
 }
 
-nav, .nav {
+nav,
+#nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -49,14 +50,15 @@ nav, .nav {
     background-color: white;
 }
 
-.menu-closed, .menu-open, .hamburger-menu {
+.menu-closed,
+.menu-open,
+.hamburger-menu {
     display: flex;
 }
 
 .hamburger-menu {
     z-index: 1;
 }
-
 
 a {
     transition: color 0.5s ease-in-out;
@@ -65,7 +67,6 @@ a {
         color: $secondary-color;
     }
 }
-
 
 // Responsive styles
 @include media('mobile', 'tablet', 'desktop') {
@@ -96,7 +97,8 @@ a {
         text-decoration-skip-ink: none;
     }
 
-    .menu-open, .menu-closed {
+    .menu-open,
+    .menu-closed {
         padding: 60px 60px 30px 30px;
         border-radius: 20px 0 0 20px;
         position: fixed;
@@ -109,7 +111,6 @@ a {
     }
     .menu-open {
         @include animation('slide-in', 0.5s);
-
     }
 
     .menu-closed {
@@ -136,7 +137,7 @@ a {
         min-height: 2rem;
     }
 
-    .nav {
+    #nav {
         gap: 10%;
     }
 
@@ -162,7 +163,7 @@ a {
         min-height: 2.5rem;
     }
 
-    .nav {
+    #nav {
         gap: 5%;
     }
 
@@ -178,7 +179,7 @@ a {
     .cta {
         padding: 10px 15px;
         background-color: $secondary-color;
-        border-radius: 15px
+        border-radius: 15px;
     }
 }
 
@@ -188,7 +189,7 @@ a {
         min-height: 3rem;
     }
 
-    .nav {
+    #nav {
         gap: 5%;
     }
 
@@ -204,7 +205,6 @@ a {
     .cta {
         padding: 10px 15px;
         background-color: $secondary-color;
-        border-radius: 15px
+        border-radius: 15px;
     }
 }
-

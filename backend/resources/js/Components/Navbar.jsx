@@ -30,7 +30,7 @@ export default function Navbar({ view }) {
     return (
         <>
             <nav onClick={(e) => e.stopPropagation()}>
-                <div className="nav">
+                <div id="nav">
                     {/* TODO: ADD LOGO */}
                     <div className="logo"></div>
                     <ul className={isMenuOpen ? 'menu-open' : 'menu-closed'}>

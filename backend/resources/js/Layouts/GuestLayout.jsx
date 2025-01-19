@@ -1,3 +1,4 @@
+import Footer from '@/Components/Footer.jsx';
 import Navbar from '@/Components/Navbar.jsx';
 
 export default function GuestLayout({ children, view }) {
@@ -5,7 +6,7 @@ export default function GuestLayout({ children, view }) {
         <>
             <Navbar view={view} />
             {children}
-            {/* TODO: ADD OTHER SECTIONS */}
+            <Footer></Footer>
         </>
     );
 }
