@@ -5,6 +5,8 @@ return [
     // Words
     'email' => 'Email',
     'password' => 'Password',
+    'rememberme' => 'Remember me',
+    'resetpass' => 'Reset Password',
     // Components
     // Navbar
     'navbar.home' => 'Home',
