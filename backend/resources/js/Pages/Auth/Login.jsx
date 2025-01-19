@@ -1,3 +1,5 @@
+import '@/../css/Pages/Auth/Login.scss';
+
 import GuestLayout from '@/Layouts/GuestLayout';
 import { router, usePage } from '@inertiajs/react';
 import { useState } from 'react';
@@ -28,9 +30,9 @@ export default function Login() {
     return (
         <GuestLayout>
             <div id="form">
-                <h1>{t('h1')}</h1>
-                <p>{Object.values(errors)[0]}</p>
                 <form onSubmit={submit}>
+                    <h1>{t('title')}</h1>
+                    <p>{Object.values(errors)[0]}</p>
                     <input
                         id="email"
                         type="text"
@@ -45,18 +47,18 @@ export default function Login() {
                         value={values.password}
                         onChange={handleChange}
                     />
+                    <button type="submit">{t('submit')}</button>
                     <div className="loginOptions">
-                        <div id="rememberMe">
+                        <div className="rememberMe">
                             <input
                                 type="checkbox"
                                 id="remember"
                                 onChange={handleChange}
                             />
-                            <label htmlFor="remember">{t('remember_me')}</label>
+                            <label htmlFor="remember">{t('rememberme')}</label>
                         </div>
-                        <a href="/password-reset">{t('reset_password')}</a>
+                        <a href="/password-reset">{t('resetpass')}</a>
                     </div>
-                    <button type="submit">{t('submit')}</button>
                 </form>
             </div>
         </GuestLayout>
