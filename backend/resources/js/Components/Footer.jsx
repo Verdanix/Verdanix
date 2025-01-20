@@ -48,13 +48,13 @@ export default function Footer() {
                 <ul>
                     <strong>{t('footer.socials.title')}</strong>
                     <li>
-                        <a href="/github">{t('footer.socials.github')}</a>
+                        <a href="/socials/github">{t('footer.socials.github')}</a>
                     </li>
                     <li>
-                        <a href="/linkedin">{t('footer.socials.linkedin')}</a>
+                        <a href="/socials/linkedin">{t('footer.socials.linkedin')}</a>
                     </li>
                     <li>
-                        <a href="/instagram">{t('footer.socials.instagram')}</a>
+                        <a href="/socials/instagram">{t('footer.socials.instagram')}</a>
                     </li>
                 </ul>
             </div>

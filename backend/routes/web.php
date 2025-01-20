@@ -6,8 +6,19 @@ use App\Http\Resources\ProjectResource;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::prefix('socials')->group(function () {
+    Route::get('linkedin', function () {
+        return redirect(config('socials.linkedin'));
+    })->name('linkedin');
+    Route::get('github', function () {
+        return redirect(config('socials.github'));
+    })->name('socials.github');
+    Route::get('instagram', function () {
+        return redirect(config('socials.instagram'));
+    })->name('socials.instagram');
+});
 
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 Route::get('/', function () {
     return Inertia::render('Home', [
         'meta_title' => trans('seo.home.title'),
@@ -20,16 +31,14 @@ Route::get('/', function () {
             'totalHoursWorked' => ProjectResource::allHoursWorked(),
         ],
     ]);
-}) -> name('home');
-
+})->name('home');
 Route::get('/about', function () {
     return Inertia::render('About', [
         'meta_title' => 'About Mason Root',
         'meta_description' => trans('seo.about.meta.description'),
         'meta_keywords' => trans('seo.about.meta.description')
     ]);
-}) -> name('about');
-
+})->name('about');
 Route::get('/translations/{locale}/{page}', function (string $locale, string $page) {
     $commonPath = base_path("lang/{$locale}/pages/common.php");
     $path = base_path("lang/{$locale}/pages/{$page}.php");
