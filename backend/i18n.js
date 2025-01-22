@@ -22,7 +22,7 @@ i18n.use(HttpApi)
             },
         },
         react: {
-            useSuspense: false,
+            useSuspense: true,
         },
     });
 
