@@ -1,3 +1,4 @@
+import '@fontsource/inter';
 import '../../i18n.js';
 import '../css/app.scss';
 import './bootstrap';
