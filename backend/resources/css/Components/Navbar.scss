@@ -71,6 +71,7 @@ nav,
 
     .cta {
         @include secondaryButton();
+        color: white !important;
     }
 }
 
