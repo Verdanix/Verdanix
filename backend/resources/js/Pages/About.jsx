@@ -53,10 +53,10 @@ export default function About({
                     <strong>{t('awards.certs.start')}</strong>
                     <br />
                     <br />
-                    <ul>{generateListItems(t, 'awards.certs')}</ul>
-                    <br />
-                    <strong>{t('awards.certs.end')}</strong>
                 </p>
+                <ul>{generateListItems(t, 'awards.certs')}</ul>
+                <br />
+                <strong>{t('awards.certs.end')}</strong>
             </div>
             <div id="education">
                 <h2>{t('education.title')}</h2>
@@ -64,8 +64,8 @@ export default function About({
                     <strong>{t('education.start')}</strong>
                     <br />
                     <br />
-                    <ul>{generateListItems(t, 'education')}</ul>
                 </p>
+                <ul>{generateListItems(t, 'education')}</ul>
             </div>
             <div id="experiences">
                 <h2>{t('experience.title')}</h2>
@@ -73,8 +73,8 @@ export default function About({
                     <strong>{t('experience.start')}</strong>
                     <br />
                     <br />
-                    <ul>{generateExperiences(t, 'experience')}</ul>
                 </p>
+                <ul>{generateExperiences(t, 'experience')}</ul>
             </div>
         </GuestLayout>
     );

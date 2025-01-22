@@ -21,42 +21,58 @@ export default function Footer() {
             <hr />
             <div className="logo"></div>
             <div className="footerLinks">
-                <ul>
+                <div>
                     <strong>{t('footer.about.title')}</strong>
-                    <li>
-                        <a href="/about">{t('footer.about.aboutme')}</a>
-                    </li>
-                    <li>
-                        <a href="/mission">{t('footer.about.mission')}</a>
-                    </li>
-                    <li>
-                        <a href="/legal">{t('footer.about.legal')}</a>
-                    </li>
-                </ul>
-                <ul>
+                    <ul>
+                        <li>
+                            <a href="/about">{t('footer.about.aboutme')}</a>
+                        </li>
+                        <li>
+                            <a href="/mission">{t('footer.about.mission')}</a>
+                        </li>
+                        <li>
+                            <a href="/legal">{t('footer.about.legal')}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
                     <strong>{t('footer.explore.title')}</strong>
-                    <li>
-                        <a href="/dashboard">{t('footer.explore.dashboard')}</a>
-                    </li>
-                    <li>
-                        <a href="/projects">{t('footer.explore.projects')}</a>
-                    </li>
-                    <li>
-                        <a href="/docs">{t('footer.explore.docs')}</a>
-                    </li>
-                </ul>
-                <ul>
+                    <ul>
+                        <li>
+                            <a href="/dashboard">
+                                {t('footer.explore.dashboard')}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/projects">
+                                {t('footer.explore.projects')}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/docs">{t('footer.explore.docs')}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
                     <strong>{t('footer.socials.title')}</strong>
-                    <li>
-                        <a href="/socials/github">{t('footer.socials.github')}</a>
-                    </li>
-                    <li>
-                        <a href="/socials/linkedin">{t('footer.socials.linkedin')}</a>
-                    </li>
-                    <li>
-                        <a href="/socials/instagram">{t('footer.socials.instagram')}</a>
-                    </li>
-                </ul>
+                    <ul>
+                        <li>
+                            <a href="/socials/github">
+                                {t('footer.socials.github')}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/socials/linkedin">
+                                {t('footer.socials.linkedin')}
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/socials/instagram">
+                                {t('footer.socials.instagram')}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div className="extra">
                 <div>
