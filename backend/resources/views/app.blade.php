@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- SEO -->
+    <meta name="google-site-verification" content="{{ config("app.google_verification") }}">
     <!-- Base -->
     <title>{{ $page['props']['meta_title'] ?? 'Default Title' }}</title>
     <meta name="description" content="{{ $page['props']['meta_description'] ?? 'Default Description' }}">
