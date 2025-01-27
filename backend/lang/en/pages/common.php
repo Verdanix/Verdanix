@@ -8,6 +8,14 @@ return [
     'rememberme' => 'Remember me',
     'resetpass' => 'Reset Password',
     // Components
+    // HeroSection
+    'stats.pending' => 'Pending',
+    'stats.total' => 'Completed',
+    'stats.happy' => 'Happy',
+    'stats.client' => 'Client',
+    'stats.hours' => 'Hours',
+    'stats.worked' => 'Worked',
+
     // Navbar
     'navbar.home' => 'Home',
     'navbar.aboutme' => 'About',
@@ -30,5 +38,7 @@ return [
     'footer.socials.instagram' => 'Instagram',
     'footer.extra.sitemap' => 'Sitemap',
     'footer.extra.backUpTop' => 'Back to top',
-    'footer.extra.copyright' => "Copyright © {$currentDate} Mason Root. All Rights Reserved."
+    'footer.extra.copyright' => "Copyright © {$currentDate} Mason Root. All Rights Reserved.",
+    'projects.visit' => 'Visit',
+    'projects.more' => 'More',
 ];

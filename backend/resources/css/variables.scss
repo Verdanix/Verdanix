@@ -48,8 +48,8 @@ $breakpoints: (
     }
 }
 
-@mixin button($pw: 10px, $ph: 20px, $radius: 15px) {
-    border: 3px solid $secondary-color;
+@mixin button($pw: 10px, $ph: 20px, $radius: 15px, $size: 3px) {
+    border: $size solid $secondary-color;
     transition: all 0.5s;
     padding: $pw $ph;
     background-color: transparent;
@@ -61,8 +61,8 @@ $breakpoints: (
     }
 }
 
-@mixin secondaryButton($pw: 10px, $ph: 20px, $radius: 15px) {
-    border: 3px solid $secondary-color;
+@mixin secondaryButton($pw: 10px, $ph: 20px, $radius: 15px, $size: 3px) {
+    border: $size solid $secondary-color;
     transition: all 0.5s;
     padding: $pw $ph;
     background-color: $secondary-color;
