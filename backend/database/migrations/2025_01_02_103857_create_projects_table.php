@@ -10,7 +10,7 @@ return new class extends Migration {
         Schema::create('projects', function (Blueprint $table) {
             $table->id()->unique();
             $table->uuid('project_id')->unique()->default(DB::raw('uuid()'));
-            $table->string('name');
+            $table->string('title');
             $table->string('github_link');
             $table->string('docs_link')->nullable();
             $table->string('demo_link')->nullable();

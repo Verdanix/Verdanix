@@ -12,10 +12,15 @@ class Project extends Model
     protected $table = 'projects';
 
     protected $fillable = [
-        'name',
+        'title',
         'github_link',
         'docs_link',
         'demo_link',
+        'description',
+        'keywords',
+        'image',
+        'visit_url',
+        'more_url',
         'story_description',
         'problems_description',
         'solutions_description',
