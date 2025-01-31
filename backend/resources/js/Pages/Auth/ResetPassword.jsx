@@ -1,23 +1,16 @@
-import '@/../css/Pages/Auth/Login.scss';
-
-import GuestLayout from '@/Layouts/GuestLayout';
+import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import { router } from '@inertiajs/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-
-export default function Login({
-    meta_title,
-    meta_description,
-    meta_keywords,
-    unverified,
-    errors,
-}) {
-    const { t } = useTranslation('login');
+import '@/../css/Pages/Auth/ResetPassword.scss';
+export default function ResetPassword({ meta_title, errors, email, token }) {
+    const { t } = useTranslation('reset_password');
 
     const [values, setValues] = useState({
-        email: '',
+        token: token,
+        email: email,
         password: '',
-        remember: false,
+        password_confirmation: '',
     });
 
     const handleChange = (e) => {
@@ -29,17 +22,15 @@ export default function Login({
 
     const submit = (e) => {
         e.preventDefault();
-        router.post(route('login'), values);
+        router.post(route('password.store'), values);
     };
-
-    const verifiedMessage = unverified ? t('verify.email') : null;
 
     return (
         <GuestLayout>
             <div id="form">
                 <form onSubmit={submit}>
                     <h1>{t('title')}</h1>
-                    <p>{Object.values(errors)[0] || verifiedMessage}</p>
+                    <p>{Object.values(errors)[0]}</p>
                     <input
                         id="email"
                         type="text"
@@ -54,19 +45,15 @@ export default function Login({
                         value={values.password}
                         onChange={handleChange}
                     />
+
+                    <input
+                        id="password_confirmation"
+                        type="password"
+                        placeholder={t('password_confirmation')}
+                        value={values.password_confirmation}
+                        onChange={handleChange}
+                    />
                     <button type="submit">{t('submit')}</button>
-                    <div className="loginOptions">
-                        <div className="rememberMe">
-                            <input
-                                type="checkbox"
-                                id="remember"
-                                onChange={handleChange}
-                            />
-                            <label htmlFor="remember">{t('rememberme')}</label>
-                        </div>
-                        <a href="/forgot-password">{t('forgotpass')}</a>
-                        <a href="/register">{t('register')}</a>
-                    </div>
                 </form>
             </div>
         </GuestLayout>
