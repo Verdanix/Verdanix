@@ -45,6 +45,29 @@ Route::get('/projects', function () {
     ]);
 })->name('projects');
 
+Route::get('/projects/{project_title}/more', function ($project_title) {
+    $project = ProjectResource::getProject($project_title);
+
+    if (!$project) {
+        abort(404);
+    }
+
+    return Inertia::render('ProjectInfo', [
+        'meta_title' => $project->title,
+        'meta_description' => $project->description,
+        'meta_keywords' => $project->keywords,
+        'project_info' => [
+            'github_link' => $project->github_link,
+            'docs_link' => $project->docs_link,
+            'demo_link' => $project->demo_link,
+            'image' => $project->image,
+            'story_description' => $project->story_description,
+            'problems_description' => $project->problems_description,
+            'solutions_description' => $project->solutions_description,
+            'conclusion_description' => $project->conclusion_description,
+        ]
+    ]);
+})->name('projects.more');
 Route::prefix('socials')->group(function () {
     Route::get('linkedin', function () {
         return redirect(config('socials.linkedin'));
