@@ -68,6 +68,7 @@ Route::get('/projects/{project_title}/more', function ($project_title) {
         ]
     ]);
 })->name('projects.more');
+
 Route::prefix('socials')->group(function () {
     Route::get('linkedin', function () {
         return redirect(config('socials.linkedin'));

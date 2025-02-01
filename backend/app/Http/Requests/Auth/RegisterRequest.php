@@ -10,8 +10,8 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:30',
-            'email' => 'required|email|max:255|unique:users',
+            'name' => ['required', 'string', 'min:2', 'max:30'],
+            'email' => ['required', 'email', 'max:255', 'unique:users'],
             'password' => ['required', Password::defaults()],
         ];
     }
@@ -25,11 +25,12 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name.required' => 'Please provide your name',
+            'name.min' => 'Please provide a name with at least 2 characters.',
             'name.max' => 'Please provide a name under 30 characters.',
             'email.required' => 'Please provide your email address',
             'email.email' => 'Please provide a valid email address.',
             'email.unique' => 'Please provide a valid email address.',
-            'password.required' => 'Please provide a password',
+            'password.required' => 'Please provide a password.',
         ];
     }
 }
