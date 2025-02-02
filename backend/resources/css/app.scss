@@ -11,6 +11,11 @@ html {
     min-width: $min-website-width;
 }
 
+a {
+    text-decoration:none;
+    color: white;
+}
+
 * {
     margin: 0;
     padding: 0;
