@@ -23,6 +23,8 @@ class NewPasswordController extends Controller
     {
         return Inertia::render('Auth/ResetPassword', [
             'meta_title' => trans('pages/reset_password.title'),
+            'meta_description' => trans('pages/reset_password.meta.description'),
+            'meta_keywords' => trans('pages/reset_password.meta.keywords'),
             'email' => $request->email,
             'token' => $request->route('token'),
         ]);

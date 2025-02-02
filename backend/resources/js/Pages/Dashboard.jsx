@@ -1,19 +1,20 @@
-import { Head } from '@inertiajs/react';
+import '@/../css/Pages/Dashboard.scss';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.jsx';
+import { useTranslation } from 'react-i18next';
 
-export default function Dashboard() {
+export default function Dashboard({
+    meta_title,
+    meta_description,
+    meta_keywords,
+}) {
+    const { t } = useTranslation('dashboard');
     return (
-        <>
-            <Head title="Dashboard" />
-
-            <div className="py-12">
-                <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">
-                            You're logged in!
-                        </div>
-                    </div>
-                </div>
+        <AuthenticatedLayout view={'manage'}>
+            <div className="content">
+                <a href="/order" className="order">
+                    {t('order')}
+                </a>
             </div>
-        </>
+        </AuthenticatedLayout>
     );
 }

@@ -25,6 +25,12 @@ return [
     'navbar.pricing' => 'Pricing',
     'navbar.register' => 'Register',
     'navbar.login' => 'Login',
+
+    // Authenticated Navbar
+    'auth.navbar.manage' => 'Manage',
+    'auth.navbar.projects' => 'Projects',
+    'auth.navbar.settings' => 'Settings',
+
     // Footer
     'footer.about.title' => 'About',
     'footer.about.aboutme' => 'About Me',

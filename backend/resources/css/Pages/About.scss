@@ -34,6 +34,10 @@ h2 {
         text-decoration: underline 3px solid $secondary-color;
         font-size: 1.5rem;
     }
+
+    strong, li {
+        font-size: 1rem;
+    }
 }
 
 @include media('desktop', 'tablet') {
@@ -47,8 +51,8 @@ h2 {
         text-decoration: underline 5px solid $secondary-color;
         font-size: 1.8rem;
     }
-    p,
-    strong {
+
+    strong, li {
         font-size: 1.2rem;
     }
 }
