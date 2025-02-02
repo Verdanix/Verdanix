@@ -1,0 +1,43 @@
+@use '../variables.scss' as *;
+
+// Mixins
+@mixin orderButton($width) {
+    @include button;
+    display: flex;
+    justify-content: center;
+    width: $width;
+    height: $width + 5px;
+    align-items: center;
+}
+
+// Common styles
+.content {
+    display: inline-flex;
+    margin-top: 3vh;
+
+}
+
+// Responsive styles
+@include media('small-mobile') {
+    .content {
+        .order {
+            @include orderButton(45px);
+        }
+    }
+}
+
+@include media('mobile', 'tablet') {
+    .content {
+        .order {
+            @include orderButton(60px);
+        }
+    }
+}
+
+@include media('desktop') {
+    .content {
+        .order {
+            @include orderButton(130px);
+        }
+    }
+}
