@@ -68,7 +68,7 @@ export default function Navbar({ view }) {
                             <a
                                 href="/pricing"
                                 className={
-                                    view === 'resume' ? 'current-view' : ''
+                                    view === 'pricing' ? 'current-view' : ''
                                 }
                             >
                                 {t('navbar.pricing')}
