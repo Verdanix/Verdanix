@@ -31,12 +31,6 @@
 }
 
 // Common styles
-* {
-    text-decoration: none;
-    text-decoration-skip-ink: none;
-    color: white;
-    list-style-type: none;
-}
 
 nav,
 #nav {
@@ -45,6 +39,13 @@ nav,
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    a, li {
+        text-decoration: none;
+        text-decoration-skip-ink: none;
+        color: white;
+        list-style-type: none;
+    }
 }
 
 .logo {
@@ -81,11 +82,14 @@ nav,
         min-height: 2rem;
     }
 
-    .current-view {
-        text-decoration: 2px $secondary-color solid underline;
-        text-decoration-skip-ink: none;
-    }
 
+    #nav {
+        .current-view {
+
+            text-decoration: 2px $secondary-color solid underline;
+            text-decoration-skip-ink: none;
+        }
+    }
     .menu-open,
     .menu-closed {
         padding: 60px 60px 30px 30px;
@@ -98,6 +102,7 @@ nav,
         flex-direction: column;
         gap: 10px;
     }
+
     .menu-open {
         @include animation('slide-in', 0.5s);
     }
@@ -128,16 +133,18 @@ nav,
 
     #nav {
         gap: 10%;
+
+        * {
+            font-size: 1.1rem;
+        }
+
+        .current-view {
+            text-decoration: 3px $secondary-color solid underline;
+            text-decoration-skip-ink: none;
+        }
+
     }
 
-    .current-view {
-        text-decoration: 3px $secondary-color solid underline;
-        text-decoration-skip-ink: none;
-    }
-
-    * {
-        font-size: 1.1rem;
-    }
     .cta {
         @include secondaryButton(5px, 10px, 10px);
     }
@@ -151,17 +158,16 @@ nav,
 
     #nav {
         gap: 5%;
-    }
 
-    .current-view {
-        text-decoration: 4px $secondary-color solid underline;
-        text-decoration-skip-ink: none;
-    }
+        * {
+            font-size: 1.4rem;
+        }
 
-    * {
-        font-size: 1.4rem;
+        .current-view {
+            text-decoration: 4px $secondary-color solid underline;
+            text-decoration-skip-ink: none;
+        }
     }
-
 }
 
 @include media('desktop') {
@@ -172,14 +178,15 @@ nav,
 
     #nav {
         gap: 5%;
+
+        * {
+            font-size: 1.4rem;
+        }
+
+        .current-view {
+            text-decoration: 4px $secondary-color solid underline;
+            text-decoration-skip-ink: none;
+        }
     }
 
-    .current-view {
-        text-decoration: 5px $secondary-color solid underline;
-        text-decoration-skip-ink: none;
-    }
-
-    * {
-        font-size: 1.4rem;
-    }
 }
