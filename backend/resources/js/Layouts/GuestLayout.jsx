@@ -12,7 +12,7 @@ export default function GuestLayout({
             {animation}
             <Navbar view={view} />
             {children}
-            <Footer/>
+            <Footer />
         </>
     );
 }
