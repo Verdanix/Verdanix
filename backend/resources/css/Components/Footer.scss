@@ -5,51 +5,55 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
 
+    ul {
+        list-style-type: none;
+    }
 
-ul {
-    list-style-type: none;
-}
+    hr {
+        border: 2px solid $primary-color2;
+        border-radius: 20px;
+        width: 100%;
+    }
 
-hr {
-    border: 2px solid $primary-color2;
-    border-radius: 20px;
-    width: 100%;
-}
-
-.footerLinks {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.extra {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    width: 100%;
-
-    div {
+    .footerLinks {
         display: flex;
         justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .extra {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+
+        div {
+            display: flex;
+            justify-content: space-evenly;
+        }
     }
 }
 
-@include media('small-mobile', 'mobile') {
-    strong,
-    a,
-    small {
-        font-size: 0.7rem;
-    }
 
+@include media('small-mobile', 'mobile') {
     footer {
         margin-top: 3vh;
 
         .logo {
             width: 100px;
         }
+
+        strong {
+            font-size: 1rem;
+        }
+
+        a,
+        small {
+            font-size: 0.9rem;
+        }
     }
+
     footer,
     .extra {
         gap: 3vh;
@@ -57,19 +61,23 @@ hr {
 }
 
 @include media('tablet') {
-    strong,
-    a,
-    small {
-        font-size: 0.8rem;
-    }
-
     footer {
         margin-top: 5vh;
 
         .logo {
             width: 200px;
         }
+
+        strong {
+            font-size: 1.3rem;
+        }
+
+        a,
+        small {
+            font-size: 1.1rem;
+        }
     }
+
     footer,
     .extra {
         gap: 5vh;
@@ -77,19 +85,23 @@ hr {
 }
 
 @include media('desktop') {
-    strong,
-    a,
-    small {
-        font-size: 1rem;
-    }
-
     footer {
         margin-top: 7vh;
 
         .logo {
             width: 275px;
         }
+
+        strong {
+            font-size: 1.5rem;
+        }
+
+        a,
+        small {
+            font-size: 1.3rem;
+        }
     }
+
     footer,
     .extra {
         gap: 7vh;
