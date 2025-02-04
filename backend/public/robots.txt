@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /
-Allow: /sitemap.xml
+Allow: /
 Sitemap: https://masonroot.dev/sitemap.xml
