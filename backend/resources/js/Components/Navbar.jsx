@@ -75,7 +75,10 @@ export default function Navbar({ view }) {
                             </a>
                         </li>
                         <li>
-                            <a className="cta" href="/register">
+                            <a
+                                className={`cta ${view === 'register' ? 'current-view' : ''}`}
+                                href="/register"
+                            >
                                 {' '}
                                 {t('navbar.register')}
                             </a>
