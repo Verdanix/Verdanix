@@ -32,11 +32,6 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
-    # CSP
-    <IfModule mod_headers.c>
-        Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self';"
-    </IfModule>
-
     #Block bad bots
     RewriteEngine On
     RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR]
