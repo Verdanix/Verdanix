@@ -1,6 +1,7 @@
 @use '../../variables.scss' as *;
 @use 'Register.scss';
 
+// Common styles
 .rememberMe {
     display: flex;
     flex-direction: row;
@@ -8,13 +9,14 @@
     justify-content: center;
 }
 
+// Responsive styles
 @include media('small-mobile', 'mobile') {
     .rememberMe {
         gap: 1.5vw;
     }
 
     #remember {
-        transform: scale(1.5);
+        transform: scale(1.3);
     }
 }
 
