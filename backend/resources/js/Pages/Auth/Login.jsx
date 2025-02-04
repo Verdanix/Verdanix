@@ -35,7 +35,7 @@ export default function Login({
     const verifiedMessage = unverified ? t('verify.email') : null;
 
     return (
-        <GuestLayout>
+        <GuestLayout view="login">
             <div id="form">
                 <form onSubmit={submit}>
                     <h1>{t('title')}</h1>

@@ -33,7 +33,7 @@ export default function Login({
     };
 
     return (
-        <GuestLayout>
+        <GuestLayout view="register">
             <div id="form">
                 <form onSubmit={submit}>
                     <h1>{t('title')}</h1>
