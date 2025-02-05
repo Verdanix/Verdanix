@@ -11,7 +11,11 @@ class RegisterRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'min:2', 'max:30'],
-            'email' => ['required', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'email', 'max:255', 'unique:users', function ($attribute, $value, $fail) {
+                if (!checkdnsrr(explode('@', $value)[1])) {
+                    $fail(trans('auth.failed.verification.email'));
+                }
+            }],
             'password' => ['required', Password::defaults()],
         ];
     }

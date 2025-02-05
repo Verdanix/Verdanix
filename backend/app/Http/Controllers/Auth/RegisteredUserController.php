@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\User;
+use Exception;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Hash;
@@ -27,8 +28,12 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
-
+        try {
+            event(new Registered($user));
+        } catch (Exception $e) {
+            $user->delete();
+            return back()->withErrors(['email' => trans('auth.failed.verification.email')]);
+        }
         return redirect("/login?unverified=1");
     }
 
