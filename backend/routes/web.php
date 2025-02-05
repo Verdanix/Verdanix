@@ -102,9 +102,9 @@ Route::get('/translations/{locale}/{page}', function (string $locale, string $pa
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard', [
-        'meta_title' => trans('pages/dashboard.title'),
-        'meta_description' => trans('pages/dashboard.meta.description'),
-        'meta_keywords' => trans('pages/dashboard.meta.keywords'),
+        'meta_title' => trans('seo.dashboard.title'),
+        'meta_description' => trans('seo.dashboard.meta.description'),
+        'meta_keywords' => trans('seo.dashboard.meta.keywords'),
     ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
