@@ -4,11 +4,7 @@ import PricingCard from '@/Components/PricingCard.jsx';
 import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import { useTranslation } from 'react-i18next';
 
-export default function Pricing({
-    meta_title,
-    meta_description,
-    meta_keywords,
-}) {
+export default function Pricing() {
     const { t } = useTranslation('pricing');
 
     return (

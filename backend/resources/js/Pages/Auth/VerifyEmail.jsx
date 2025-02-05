@@ -3,7 +3,7 @@ import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import { useForm } from '@inertiajs/react';
 import { useTranslation } from 'react-i18next';
 
-export default function VerifyEmail({ meta_title, status }) {
+export default function VerifyEmail({ status }) {
     const { post } = useForm({});
 
     const { t } = useTranslation('verify_email');
