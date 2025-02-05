@@ -4,14 +4,7 @@ import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import { useTranslation } from 'react-i18next';
 import '../../css/Pages/Projects.scss';
 
-export default function Projects({
-    meta_title,
-    meta_description,
-    meta_keywords,
-    meta_twitter_card,
-    projects,
-    stats,
-}) {
+export default function Projects({ projects, stats }) {
     const { t } = useTranslation('projects');
 
     const getProjectCards = (projects) => {

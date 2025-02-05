@@ -2,12 +2,7 @@ import '@/../css/Pages/ProjectInfo.scss';
 import GuestLayout from '@/Layouts/GuestLayout.jsx';
 import { useTranslation } from 'react-i18next';
 
-export default function ProjectInfo({
-    meta_title,
-    meta_description,
-    meta_keywords,
-    project_info,
-}) {
+export default function ProjectInfo({ meta_title, project_info }) {
     const {
         github_link,
         docs_link,

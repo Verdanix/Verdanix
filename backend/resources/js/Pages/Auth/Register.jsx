@@ -1,19 +1,12 @@
 import '@/../css/Pages/Auth/Register.scss';
 import GuestLayout from '@/Layouts/GuestLayout';
-import { router } from '@inertiajs/react';
-import { useState } from 'react';
+import { useForm } from '@inertiajs/react';
 import { useTranslation } from 'react-i18next';
 
-export default function Login({
-    meta_title,
-    meta_description,
-    meta_keywords,
-    unverified,
-    errors,
-}) {
+export default function Login() {
     const { t } = useTranslation(['register']);
 
-    const [values, setValues] = useState({
+    const { data, setData, post, errors } = useForm({
         name: '',
         email: '',
         password: '',
@@ -21,15 +14,12 @@ export default function Login({
     });
 
     const handleChange = (e) => {
-        setValues((values) => ({
-            ...values,
-            [e.target.id]: e.target.value,
-        }));
+        setData(e.target.id, e.target.value);
     };
 
     const submit = (e) => {
         e.preventDefault();
-        router.post('/register', values);
+        post(route('register'), data);
     };
 
     return (
@@ -42,21 +32,21 @@ export default function Login({
                         id="name"
                         type="text"
                         placeholder={t('name')}
-                        value={values.name}
+                        value={data.name}
                         onChange={handleChange}
                     />
                     <input
                         id="email"
                         type="text"
                         placeholder={t('email')}
-                        value={values.email}
+                        value={data.email}
                         onChange={handleChange}
                     />
                     <input
                         id="password"
                         type="password"
                         placeholder={t('password')}
-                        value={values.password}
+                        value={data.password}
                         onChange={handleChange}
                     />
                     <button type="submit">{t('submit')}</button>
