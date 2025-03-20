@@ -2,6 +2,17 @@
 
 $currentDate = date('Y');
 return [
+    'header' => [
+        "mr" => "MR",
+        "title" => "Mason Root",
+        "nav" => [
+            "about" => "About",
+            "projects" => "Projects",
+            "services" => "Services",
+            "contact" => "Contact",
+            "login" => "Register",
+        ],
+    ],
     // Words
     'email' => 'Email',
     'password' => 'Password',
