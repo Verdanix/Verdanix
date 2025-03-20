@@ -10,7 +10,7 @@ return [
             "projects" => "Projects",
             "services" => "Services",
             "contact" => "Contact",
-            "login" => "Register",
+            "register" => "Register",
         ],
     ],
     // Words

@@ -3,6 +3,7 @@
 
 // Colors
 $primary-color: #00BCD4;
+$primary-color-shade1: #00ACC1;
 $primary-color2: #8E24AA;
 
 $body-color: #101826;
@@ -28,5 +29,13 @@ $breakpoints: (
         @media screen and #{map.get($breakpoints, $breakpoint)} {
             @content;
         }
+    }
+}
+
+@mixin hover {
+    transition: color 0.4s;
+
+    &:hover {
+        color: $primary-color-shade1;
     }
 }

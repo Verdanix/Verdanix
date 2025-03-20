@@ -12,7 +12,7 @@ html {
 }
 
 a {
-    text-decoration:none;
+    text-decoration: none;
     color: white;
 }
 
@@ -22,6 +22,24 @@ a {
 }
 
 // Responsive styles
+@include media("sm", "md") {
+    :root {
+        padding: 5% 10%;
+    }
+}
+
+@include media("lg", "xl") {
+    :root {
+        padding: 3% 8%;
+    }
+}
+
+@include media("xxl") {
+    :root {
+        padding: 2% 5%;
+    }
+}
+
 /*
 @include media('small-mobile', 'mobile') {
     :root {
