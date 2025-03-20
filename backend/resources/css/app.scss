@@ -3,7 +3,7 @@
 // Common
 :root {
     font-family: $font-family;
-    background-color: $primary-color;
+    background-color: $body-color;
     color: white;
 }
 
@@ -22,7 +22,7 @@ a {
 }
 
 // Responsive styles
-
+/*
 @include media('small-mobile', 'mobile') {
     :root {
         padding: 25px;
@@ -34,3 +34,4 @@ a {
         padding: 30px;
     }
 }
+*/

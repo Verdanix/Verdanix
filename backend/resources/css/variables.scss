@@ -2,30 +2,25 @@
 @use 'sass:meta';
 
 // Colors
-$primary-color: #0c0c13;
-$primary-color2: #2d2d38;
-$primary-color3: #3F3F4A;
+$primary-color: #00BCD4;
+$primary-color2: #8E24AA;
 
-$secondary-color: #b80909;
-$secondary-color2: #ea2b2b;
+$body-color: #101826;
+$text-color: #fefeff;
 
-// Common Padding
-$desktop-padding: 25px;
-$tablet-padding: 20px;
-$mobile-padding: 20px;
-$mobile-small-padding: 10px;
 
 // Fonts
 $font-family: 'Inter', sans-serif;
 
 // Breakpoints
-$min-website-width: 320px;
+$min-website-width: 0px;
 
 $breakpoints: (
-    'small-mobile': '(min-width: #{$min-website-width}) and (max-width: 479px)',
-    'mobile': '(min-width: 480px) and (max-width: 767px)',
-    'tablet': '(min-width: 768px) and (max-width: 1023px)',
-    'desktop': '(min-width: 1024px)',
+    "sm": "(min-width: #{$min-website-width}) and (max-width: 575px)",
+    "md": "(min-width: 576px) and (max-width: 767px)",
+    "lg": "(min-width: 768px) and (max-width: 991px)",
+    "xl": "(min-width: 992px) and (max-width: 1199px)",
+    "xxl": "(min-width: 1200px)"
 );
 
 // Mixins
@@ -34,43 +29,5 @@ $breakpoints: (
         @media screen and #{map.get($breakpoints, $breakpoint)} {
             @content;
         }
-    }
-}
-
-@mixin linkHover() {
-    a {
-        color: white;
-        transition: all 0.5s;
-
-        &:hover {
-            color: $secondary-color;
-        }
-    }
-}
-
-@mixin button($pw: 10px, $ph: 20px, $radius: 15px, $size: 3px) {
-    border: $size solid $secondary-color;
-    transition: all 0.5s;
-    padding: $pw $ph;
-    background-color: transparent;
-    border-radius: $radius;
-    color: white;
-    &:hover {
-        background-color: $secondary-color;
-        color: white;
-    }
-}
-
-@mixin secondaryButton($pw: 10px, $ph: 20px, $radius: 15px, $size: 3px) {
-    border: $size solid $secondary-color;
-    transition: all 0.5s;
-    padding: $pw $ph;
-    background-color: $secondary-color;
-    border-radius: $radius;
-    color: white;
-
-    &:hover {
-        background-color: transparent;
-        color: white;
     }
 }
