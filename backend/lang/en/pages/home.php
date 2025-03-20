@@ -1,5 +1,16 @@
 <?php
 return [
+    'header' => [
+        "mr" => "MR",
+        "title" => "Mason Root",
+        "nav" => [
+            "about" => "About",
+            "projects" => "Projects",
+            "services" => "Services",
+            "contact" => "Contact",
+            "login" => "Register",
+        ],
+    ],
     'hero.line1' => 'Future-focused.',
     'hero.line2' => 'Innovation fueled.',
     'hero.line3' => 'Built to ',
