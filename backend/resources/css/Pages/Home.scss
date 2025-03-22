@@ -53,240 +53,257 @@ nav {
     border-bottom: 3px solid $body-color-shade2;
 }
 
-.text {
-    h1 > span {
-        background-image: linear-gradient(to right, $primary-color, $primary-color2);
-        color: transparent;
-        background-clip: text;
-    }
-
-    h1 {
-        text-wrap: nowrap;
-    }
-
-    h2 {
-        color: $text-color2;
-    }
-}
-
-.cta-buttons {
-    display: inline-flex;
-
-    .primary {
-        @include button($background-color: $primary-color-shade1);
-    }
-
-    .secondary {
-        @include button($background: false);
-    }
-}
-
-.stats {
-    justify-content: space-between;
-    display: flex;
-    text-align: center;
-
-    .stat {
-        strong {
-            color: $primary-color;
+#hero {
+    .text {
+        h1 > span {
+            background-image: linear-gradient(to right, $primary-color, $primary-color2);
+            color: transparent;
+            background-clip: text;
         }
 
-        p {
+        h1 {
+            text-wrap: nowrap;
+        }
+
+        h2 {
             color: $text-color2;
+        }
+    }
+
+    .cta-buttons {
+        display: inline-flex;
+
+        .primary {
+            @include button($background-color: $primary-color-shade1);
+        }
+
+        .secondary {
+            @include button($background: false);
+        }
+    }
+
+    .stats {
+        justify-content: space-between;
+        display: flex;
+        text-align: center;
+
+        .stat {
+            strong {
+                color: $primary-color;
+            }
+
+            p {
+                color: $text-color2;
+            }
         }
     }
 }
 
 // Responsive Styles
 @include media("sm", "md", "lg", "xl", "xxl") {
-    .text {
-        padding-top: $xxl-padding-top !important;
-    }
+    #hero {
+        .text {
+            padding-top: $xxl-padding-top !important;
+        }
 
-    .cta-buttons {
-        gap: $cta-buttons-gap;
+        .cta-buttons {
+            gap: $cta-buttons-gap;
+        }
     }
 }
 
 @include media("lg", "xl") {
-    .text {
-        @include default-padding("lg", false, true);
+    #hero {
+        .text {
+            @include default-padding("lg", false, true);
 
-        h1 {
-            font-size: $xl-h1-font-size;
+            h1 {
+                font-size: $xl-h1-font-size;
+            }
+
+            h2 {
+                font-size: $xl-h2-font-size;
+                margin: $xl-margin;
+            }
         }
 
-        h2 {
-            font-size: $xl-h2-font-size;
+        .cta-buttons {
+            @include default-padding("lg", false, true);
             margin: $xl-margin;
-        }
-    }
-
-    .cta-buttons {
-        @include default-padding("lg", false, true);
-        margin: $xl-margin;
-        font-size: $xl-h2-font-size;
-    }
-
-
-    .stats {
-        p {
             font-size: $xl-h2-font-size;
+        }
+
+
+        .stats {
+            p {
+                font-size: $xl-h2-font-size;
+            }
         }
     }
 }
 
 @include media("sm", "md") {
-    .text {
-        @include default-padding("sm", false, true);
+    #hero {
+        .text {
+            @include default-padding("sm", false, true);
 
-        h2 {
+            h2 {
+                margin: $sm-md-margin;
+            }
+
+            h1, h2 {
+                max-width: $sm-md-max-width;
+            }
+        }
+
+        .cta-buttons {
+            @include default-padding("sm", false, true);
             margin: $sm-md-margin;
         }
 
-        h1, h2 {
+        .stats {
+            @include default-padding("sm", false, false);
             max-width: $sm-md-max-width;
+            margin-left: $md-stats-margin;
         }
-    }
-
-    .cta-buttons {
-        @include default-padding("sm", false, true);
-        margin: $sm-md-margin;
-    }
-
-    .stats {
-        @include default-padding("sm", false, false);
-        max-width: $sm-md-max-width;
-        margin-left: $md-stats-margin;
     }
 }
 
 @include media("xxl") {
-    .text {
-        @include default-padding("xxl", false, true);
+    #hero {
+        .text {
+            @include default-padding("xxl", false, true);
 
-        h1 {
-            font-size: $xxl-h1-font-size;
+            h1 {
+                font-size: $xxl-h1-font-size;
+            }
+
+            h2 {
+                font-size: $xxl-h2-font-size;
+                margin: $xxl-margin;
+            }
+
+            h1, h2 {
+                max-width: $xxl-max-width;
+            }
         }
 
-        h2 {
-            font-size: $xxl-h2-font-size;
+        .cta-buttons {
+            @include default-padding("xxl", false, true);
             margin: $xxl-margin;
-        }
-
-        h1, h2 {
-            max-width: $xxl-max-width;
-        }
-    }
-
-    .cta-buttons {
-        @include default-padding("xxl", false, true);
-        margin: $xxl-margin;
-        font-size: $xxl-h2-font-size;
-    }
-
-    .stats {
-        @include default-padding("xxl", false, false);
-        max-width: $xxl-max-width;
-        margin-left: $xxl-stats-margin;
-
-        strong {
-            font-size: $xxl-stats-strong-font-size;
-        }
-
-        p {
             font-size: $xxl-h2-font-size;
+        }
+
+        .stats {
+            @include default-padding("xxl", false, false);
+            max-width: $xxl-max-width;
+            margin-left: $xxl-stats-margin;
+
+            strong {
+                font-size: $xxl-stats-strong-font-size;
+            }
+
+            p {
+                font-size: $xxl-h2-font-size;
+            }
         }
     }
 }
 
 @include media('xl') {
-    .text {
-        h1, h2 {
-            max-width: $xl-max-width;
+    #hero {
+        .text {
+            h1, h2 {
+                max-width: $xl-max-width;
+            }
         }
-    }
 
-    .stats {
-        @include default-padding("lg", false, false);
-        max-width: $xl-max-width;
-        margin-left: $xl-stats-margin;
+        .stats {
+            @include default-padding("lg", false, false);
+            max-width: $xl-max-width;
+            margin-left: $xl-stats-margin;
 
-        strong {
-            font-size: $xl-stats-strong-font-size;
+            strong {
+                font-size: $xl-stats-strong-font-size;
+            }
         }
     }
 }
 
 @include media("lg") {
-    .text {
-        h1, h2 {
-            max-width: $lg-max-width;
+    #hero {
+        .text {
+            h1, h2 {
+                max-width: $lg-max-width;
+            }
         }
-    }
 
-    .stats {
-        @include default-padding("lg", false, false);
-        max-width: $lg-max-width;
-        margin-left: $lg-stats-margin;
+        .stats {
+            @include default-padding("lg", false, false);
+            max-width: $lg-max-width;
+            margin-left: $lg-stats-margin;
 
-        strong {
-            font-size: $lg-stats-strong-font-size;
+            strong {
+                font-size: $lg-stats-strong-font-size;
+            }
         }
     }
 }
 
 @include media("md") {
-    .text {
-        h1 {
-            font-size: $md-h1-font-size;
+    #hero {
+        .text {
+            h1 {
+                font-size: $md-h1-font-size;
+            }
+
+            h2 {
+                font-size: $md-h2-font-size;
+            }
         }
 
-        h2 {
+        .cta-buttons {
             font-size: $md-h2-font-size;
         }
-    }
 
-    .cta-buttons {
-        font-size: $md-h2-font-size;
-    }
+        .stats {
 
-    .stats {
+            strong {
+                font-size: $md-stats-strong-font-size;
+            }
 
-        strong {
-            font-size: $md-stats-strong-font-size;
-        }
-
-        p {
-            font-size: $sm-md-stats-font-size;
+            p {
+                font-size: $sm-md-stats-font-size;
+            }
         }
     }
 }
 
 @include media("sm") {
-    .text {
-        h1 {
-            font-size: $sm-h1-font-size;
+    #hero {
+        .text {
+            h1 {
+                font-size: $sm-h1-font-size;
+            }
+
+            h2 {
+                font-size: $sm-h2-font-size;
+            }
         }
 
-        h2 {
+        .cta-buttons {
             font-size: $sm-h2-font-size;
         }
-    }
-
-    .cta-buttons {
-        font-size: $sm-h2-font-size;
-    }
 
 
-    .stats {
+        .stats {
+            strong {
+                font-size: $sm-stats-strong-font-size;
+            }
 
-        strong {
-            font-size: $sm-stats-strong-font-size;
-        }
-
-        p {
-            font-size: $sm-h2-font-size;
+            p {
+                font-size: $sm-h2-font-size;
+            }
         }
     }
 }
