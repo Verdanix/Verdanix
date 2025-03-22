@@ -12,13 +12,8 @@ export default function Navbar({ view }) {
     };
 
     useEffect(() => {
-        const closeMenu = () => {
-            if (isMenuOpen) {
-                setIsMenuOpen(false);
-            }
-        };
         const handleClickOutside = () => {
-            closeMenu();
+            setIsMenuOpen(false);
         };
 
         document.addEventListener('click', handleClickOutside);
