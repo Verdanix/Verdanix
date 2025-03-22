@@ -11,6 +11,8 @@ $xxl-max-width: 50%;
 $xxl-padding-top: 5%;
 $xxl-margin: 1% 0;
 
+$cta-buttons-gap: 30px;
+
 // XL
 $xl-h1-font-size: 3rem;
 $xl-h2-font-size: 1.25rem;
@@ -54,10 +56,26 @@ nav {
     }
 }
 
+.cta-buttons {
+    display: inline-flex;
+
+    .primary {
+        @include button($background-color: $primary-color-shade1);
+    }
+
+    .secondary {
+        @include button($background: false);
+    }
+}
+
 // Responsive Styles
 @include media("sm", "md", "lg", "xl", "xxl") {
     .text {
         padding-top: $xxl-padding-top !important;
+    }
+
+    .cta-buttons {
+        gap: $cta-buttons-gap;
     }
 }
 
@@ -74,6 +92,12 @@ nav {
             margin: $xl-margin;
         }
     }
+
+    .cta-buttons {
+        @include default-padding("lg", false, true);
+        margin: $xl-margin;
+        font-size: $xl-h2-font-size;
+    }
 }
 
 @include media("sm", "md") {
@@ -87,6 +111,11 @@ nav {
         h1, h2 {
             max-width: $sm-md-max-width;
         }
+    }
+
+    .cta-buttons {
+        @include default-padding("sm", false, true);
+        margin: $sm-md-margin;
     }
 }
 
@@ -106,6 +135,12 @@ nav {
         h1, h2 {
             max-width: $xxl-max-width;
         }
+    }
+
+    .cta-buttons {
+        @include default-padding("xxl", false, true);
+        margin: $xxl-margin;
+        font-size: $xxl-h2-font-size;
     }
 }
 
@@ -135,6 +170,10 @@ nav {
             font-size: $md-h2-font-size;
         }
     }
+
+    .cta-buttons {
+        font-size: $md-h2-font-size;
+    }
 }
 
 @include media("sm") {
@@ -146,6 +185,10 @@ nav {
         h2 {
             font-size: $sm-h2-font-size;
         }
+    }
+
+    .cta-buttons {
+        font-size: $sm-h2-font-size;
     }
 }
 
