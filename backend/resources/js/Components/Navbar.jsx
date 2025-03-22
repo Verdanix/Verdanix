@@ -32,6 +32,7 @@ export default function Navbar({ view }) {
             <nav onClick={(e) => e.stopPropagation()}>
                 <div id="nav">
                     <img
+                        loading="lazy"
                         id="header-logo"
                         src="/web-app-manifest-512x512.png"
                         alt="logo"
