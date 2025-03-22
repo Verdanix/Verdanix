@@ -21,22 +21,3 @@ a {
     padding: 0;
     color: $text-color;
 }
-
-// Responsive styles
-@include media("sm", "md") {
-    :root {
-        padding: 5% 10%;
-    }
-}
-
-@include media("lg", "xl") {
-    :root {
-        padding: 3% 8%;
-    }
-}
-
-@include media("xxl") {
-    :root {
-        padding: 2% 5%;
-    }
-}

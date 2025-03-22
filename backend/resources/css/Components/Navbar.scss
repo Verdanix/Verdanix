@@ -1,6 +1,23 @@
 @use '../variables.scss' as *;
+@use 'sass:map' as map;
+
+// Variables
+$desktop-gap-size: 30px;
+$mobile-gap-size: 15px;
+
+$mobile-nav-menu-gap: 6px;
+
+$default-padding-dimensions: (
+    "sm": 5% 10%,
+    "lg": 3% 8%,
+    "xxl": 1% 5%
+);
 
 // Mixins
+@mixin default-padding($size) {
+    padding: map.get($default-padding-dimensions, $size);
+}
+
 @mixin nav-font-size($size: "xlg", $nav-links-inactive: false) {
     @if $nav-links-inactive {
         @if ($size == "xlg") {
@@ -45,16 +62,9 @@
     }
 }
 
-// Variables
-$desktop-gap-size: 30px;
-$mobile-gap-size: 15px;
-
-$mobile-nav-menu-gap: 6px;
-
 // Common Styles
 nav {
     display: flex;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
 
@@ -148,6 +158,18 @@ nav {
     }
 }
 
+@include media("lg", "xl") {
+    nav {
+        @include default-padding("lg");
+    }
+}
+
+@include media("xxl") {
+    nav {
+        @include default-padding("xxl");
+    }
+}
+
 @include media("sm", "md") {
     .hamburger-menu {
         display: flex;
@@ -174,6 +196,10 @@ nav {
 
     .nav-links-active {
         @include nav-link-slide-in-out(true);
+    }
+
+    nav {
+        @include default-padding("sm");
     }
 
     #nav {
