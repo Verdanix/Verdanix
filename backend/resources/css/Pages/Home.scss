@@ -3,6 +3,7 @@
 // Mixins
 
 // Variables
+// XXL
 $xxl-h1-font-size: 4rem;
 $xxl-h2-font-size: 1.5rem;
 
@@ -10,12 +11,27 @@ $xxl-max-width: 50%;
 $xxl-padding-top: 5%;
 $xxl-margin: 1% 0;
 
+// XL
 $xl-h1-font-size: 3rem;
 $xl-h2-font-size: 1.25rem;
 
 $xl-max-width: 60%;
 $xl-margin: 2% 0;
 
+// LG
+$lg-max-width: 70%;
+
+// SM-MD
+$sm-md-max-width: 90%;
+$sm-md-margin: 4% 0;
+
+// MD
+$md-h1-font-size: 3rem;
+$md-h2-font-size: 1.4rem;
+
+// SM
+$sm-h1-font-size: 2.2rem;
+$sm-h2-font-size: 1rem;
 
 // Common Styles
 nav {
@@ -29,15 +45,48 @@ nav {
         background-clip: text;
     }
 
+    h1 {
+        text-wrap: nowrap;
+    }
+
     h2 {
         color: $text-color2;
     }
 }
 
 // Responsive Styles
-@include media("xl", "xxl") {
+@include media("sm", "md", "lg", "xl", "xxl") {
     .text {
         padding-top: $xxl-padding-top !important;
+    }
+}
+
+@include media("lg", "xl") {
+    .text {
+        @include default-padding("lg", false, true);
+
+        h1 {
+            font-size: $xl-h1-font-size;
+        }
+
+        h2 {
+            font-size: $xl-h2-font-size;
+            margin: $xl-margin;
+        }
+    }
+}
+
+@include media("sm", "md") {
+    .text {
+        @include default-padding("sm", false, true);
+
+        h2 {
+            margin: $sm-md-margin;
+        }
+
+        h1, h2 {
+            max-width: $sm-md-max-width;
+        }
     }
 }
 
@@ -47,7 +96,6 @@ nav {
 
         h1 {
             font-size: $xxl-h1-font-size;
-            text-wrap: nowrap;
         }
 
         h2 {
@@ -63,20 +111,41 @@ nav {
 
 @include media('xl') {
     .text {
-        @include default-padding("lg", false, true);
-
-        h1 {
-            font-size: $xl-h1-font-size;
-            text-wrap: nowrap;
-        }
-
-        h2 {
-            font-size: $xl-h2-font-size;
-            margin: $xl-margin;
-        }
-
         h1, h2 {
             max-width: $xl-max-width;
         }
     }
 }
+
+@include media("lg") {
+    .text {
+        h1, h2 {
+            max-width: $lg-max-width;
+        }
+    }
+}
+
+@include media("md") {
+    .text {
+        h1 {
+            font-size: $md-h1-font-size;
+        }
+
+        h2 {
+            font-size: $md-h2-font-size;
+        }
+    }
+}
+
+@include media("sm") {
+    .text {
+        h1 {
+            font-size: $sm-h1-font-size;
+        }
+
+        h2 {
+            font-size: $sm-h2-font-size;
+        }
+    }
+}
+
