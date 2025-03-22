@@ -9,6 +9,12 @@ $xxl-h2-font-size: 1.5rem;
 $xxl-max-width: 50%;
 $xxl-padding-top: 5%;
 
+$xl-h1-font-size: 3rem;
+$xl-h2-font-size: 1.25rem;
+
+$xl-max-width: 60%;
+
+
 // Common Styles
 nav {
     border-bottom: 3px solid $body-color-shade2;
@@ -30,7 +36,7 @@ nav {
 @include media("xxl") {
     .text {
         @include default-padding("xxl", false, true);
-        padding-top: $xxl-h2-font-size;
+        padding-top: $xxl-padding-top;
 
         h1 {
             font-size: $xxl-h1-font-size;
@@ -44,6 +50,27 @@ nav {
 
         h1, h2 {
             max-width: $xxl-max-width;
+        }
+    }
+}
+
+@include media('xl') {
+    .text {
+        @include default-padding("lg", false, true);
+        padding-top: $xxl-padding-top;
+
+        h1 {
+            font-size: $xl-h1-font-size;
+            text-wrap: nowrap;
+        }
+
+        h2 {
+            font-size: $xl-h2-font-size;
+            margin: 1% 0;
+        }
+
+        h1, h2 {
+            max-width: $xl-max-width;
         }
     }
 }
