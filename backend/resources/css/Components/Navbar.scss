@@ -1,0 +1,186 @@
+@use '../variables.scss' as *;
+
+// Mixins
+@mixin nav-font-size($size: "xlg", $nav-links: false) {
+    @if $nav-links {
+        @if ($size == "xlg") {
+            font-size: 20px;
+        } @else if ($size == "lg") {
+            font-size: 15px;
+        }
+    } @else {
+        @if ($size == "xlg") {
+            font-size: 25px;
+        } @else if ($size == "lg") {
+            font-size: 20px;
+        }
+    }
+}
+
+// Variables
+$desktop-gap-size: 30px;
+$mobile-gap-size: 15px;
+
+$mobile-nav-menu-gap: 6px;
+
+// Common Styles
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links, .nav-links-active {
+        list-style-type: none;
+    }
+
+    .hamburger-menu {
+        height: 100%;
+        gap: $mobile-nav-menu-gap;
+        flex-direction: column;
+
+        span {
+            background-color: $primary-color-shade1;
+        }
+    }
+
+    a {
+        @include hover;
+    }
+
+    .active a {
+        color: $primary-color-shade1;
+    }
+}
+
+// Responsive Styles
+@include media("lg", "xl", "xxl") {
+    .hamburger-menu {
+        display: none;
+    }
+
+    #nav {
+        gap: $desktop-gap-size;
+    }
+
+    .nav-links, .nav-links-active {
+        display: flex;
+        gap: $desktop-gap-size;
+    }
+
+}
+
+@include media("xl", "xxl") {
+    .nav-links, .nav-links-active {
+        @include nav-font-size("xlg", true);
+    }
+
+    #nav {
+        gap: $desktop-gap-size;
+        @include nav-font-size("xlg");
+
+        img {
+            width: 60px;
+        }
+    }
+
+    .nav-links {
+        a span {
+            @include button()
+        }
+    }
+}
+
+@include media("lg") {
+    .nav-links, .nav-links-active {
+        @include nav-font-size("lg", true);
+    }
+
+    #nav {
+        @include nav-font-size("lg");
+        gap: $desktop-gap-size;
+
+        img {
+            width: 50px;
+        }
+    }
+
+    .nav-links {
+        a span {
+            @include button(10px, 5px)
+        }
+    }
+}
+
+@include media("sm", "md") {
+    .nav-links {
+        display: none !important;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-links-active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        gap: $mobile-gap-size;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-color: $body-color-shade2;
+        padding: 30px;
+    }
+
+    #nav {
+        gap: $mobile-gap-size;
+    }
+}
+
+@include media('md') {
+    .nav-links, .nav-links-active {
+        @include nav-font-size("xlg", true);
+    }
+
+    .hamburger-menu {
+        span {
+            width: 35px;
+            height: 5px;
+        }
+    }
+
+    #nav {
+        @include nav-font-size("xlg");
+
+        img {
+            width: 45px;
+        }
+    }
+}
+
+@include media('sm') {
+    .nav-links, .nav-links-active {
+        @include nav-font-size("lg", true);
+    }
+
+    .hamburger-menu {
+        span {
+            width: 30px;
+            height: 4px;
+        }
+    }
+
+    #nav {
+        @include nav-font-size("lg");
+
+        img {
+            width: 40px;
+        }
+    }
+}
