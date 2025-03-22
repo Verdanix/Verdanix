@@ -6,6 +6,7 @@ $primary-color: #00BCD4;
 $primary-color-shade1: #00ACC1;
 $primary-color2: #8E24AA;
 
+$body-color-shade2: #1e2936;
 $body-color: #101826;
 $text-color: #fefeff;
 
@@ -39,3 +40,18 @@ $breakpoints: (
         color: $primary-color-shade1;
     }
 }
+
+@mixin button($width: 15px, $height:8px, $border-radius: 10px, $background-color: $primary-color2, $color: white) {
+    border: 4px solid $background-color;
+    border-radius: $border-radius;
+    padding: $height $width;
+    background-color: $background-color;
+    color: $color;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+

@@ -19,6 +19,7 @@ a {
 * {
     margin: 0;
     padding: 0;
+    color: $text-color;
 }
 
 // Responsive styles
@@ -39,17 +40,3 @@ a {
         padding: 2% 5%;
     }
 }
-
-/*
-@include media('small-mobile', 'mobile') {
-    :root {
-        padding: 25px;
-    }
-}
-
-@include media('tablet', 'desktop') {
-    :root {
-        padding: 30px;
-    }
-}
-*/
