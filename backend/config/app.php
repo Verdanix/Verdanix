@@ -125,4 +125,5 @@ return [
 
     'google_verification' => env('GOOGLE_VERIFICATION'),
 
+    "career_start_year" => env("CAREER_START_YEAR")
 ];
