@@ -1,203 +1,49 @@
 @use '../variables.scss' as *;
 
-// Common
-#sec2 {
-    display: flex;
-    justify-content: space-evenly;
+// Mixins
 
-    .profile-pic {
-        background-color: white;
+// Variables
+$xxl-h1-font-size: 4rem;
+$xxl-h2-font-size: 1.5rem;
+
+$xxl-max-width: 50%;
+$xxl-padding-top: 5%;
+
+// Common Styles
+nav {
+    border-bottom: 3px solid $body-color-shade2;
+}
+
+.text {
+    h1 > span {
+        background-image: linear-gradient(to right, $primary-color, $primary-color2);
+        color: transparent;
+        background-clip: text;
     }
 
-    .bio {
-        text-align: left;
+    h2 {
+        color: $text-color2;
     }
 }
 
-#sec3 {
-    h2 {
-        text-align: center;
-    }
+// Responsive Styles
+@include media("xxl") {
+    .text {
+        @include default-padding("xxl", false, true);
+        padding-top: $xxl-h2-font-size;
 
-    .performance > p {
-        text-align: center;
-    }
-
-    .scalability > p {
-        text-align: right;
-    }
-}
-
-// Responsive styles
-@include media('small-mobile', 'mobile') {
-    h2 {
-        font-size: 1.3rem;
-        margin-bottom: 1vh;
-        font-weight: normal;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    #sec2 {
-        margin: 3vh 0;
-
-        .profile-pic {
-            width: 8rem;
-            height: 15rem;
-            border-radius: 20px;
+        h1 {
+            font-size: $xxl-h1-font-size;
+            text-wrap: nowrap;
         }
-
-        .bio {
-            width: 50%;
-        }
-    }
-
-    #sec3 {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
 
         h2 {
-            text-decoration: 4px solid underline $secondary-color;
-            text-decoration-skip-ink: none;
-            margin-bottom: 5vw;
+            font-size: $xxl-h2-font-size;
+            margin: 1% 0;
         }
 
-        .reasons {
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-
-            div {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-evenly;
-                margin: 2vh 0;
-
-                img {
-                    max-width: 45%;
-                    height: auto;
-                }
-
-                p {
-                    max-width: 45%;
-                    text-align: right;
-                }
-            }
-
-            .performance {
-                flex-direction: row-reverse;
-
-                p {
-                    text-align: left;
-                }
-            }
-        }
-    }
-}
-
-@include media('tablet', 'desktop') {
-    #sec2 {
-        margin: 5vh 0;
-    }
-
-    #sec3 {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-
-        h2 {
-            text-decoration: 4px solid underline $secondary-color;
-            text-decoration-skip-ink: none;
-            margin-bottom: 3vw;
-        }
-
-        .reasons {
-            display: flex;
-            justify-content: space-evenly;
-            align-content: center;
-
-            div {
-                flex-direction: column;
-                align-items: center;
-                justify-items: center;
-                max-width: 20vw;
-
-                img,
-                p {
-                    max-width: 100%;
-                    margin: 1vh 0;
-                }
-            }
-        }
-    }
-}
-
-@include media('tablet') {
-    h2 {
-        font-size: 1.4rem;
-        font-weight: normal;
-        margin-bottom: 1vh;
-    }
-
-    p {
-        font-size: 1.2rem;
-    }
-
-    #sec2 {
-        .profile-pic {
-            width: 10rem;
-            height: 20rem;
-            border-radius: 30px;
-        }
-
-        .bio {
-            width: 50%;
-        }
-    }
-
-    .reasons {
-        div {
-            img,
-            p {
-                border-radius: 25px;
-            }
-        }
-    }
-}
-
-@include media('desktop') {
-    h2 {
-        font-size: 1.8rem;
-        font-weight: normal;
-        margin-bottom: 1vh;
-    }
-
-    p {
-        font-size: 1.4rem;
-    }
-
-    #sec2 {
-        .profile-pic {
-            width: 15rem;
-            height: 25rem;
-            border-radius: 40px;
-        }
-
-        .bio {
-            width: 30%;
-        }
-    }
-
-    .reasons {
-        div {
-            img,
-            p {
-                border-radius: 40px;
-            }
+        h1, h2 {
+            max-width: $xxl-max-width;
         }
     }
 }
