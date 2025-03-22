@@ -63,17 +63,27 @@ $default-padding-dimensions: (
     }
 }
 
-@mixin button($width: 15px, $height:8px, $border-radius: 10px, $background-color: $primary-color2, $color: white) {
-    border: 4px solid $background-color;
-    border-radius: $border-radius;
+@mixin button($width: 15px, $height:8px, $border-radius: 10px, $background-color: $primary-color2, $color: color, $border: true, $background: true) {
+    @if $border {
+        border: 3px solid $background-color;
+        border-radius: $border-radius;
+    }
+
+    @if $background {
+        background-color: $background-color;
+
+        &:hover {
+            background-color: transparent;
+        }
+    } @else {
+        &:hover {
+            background-color: $background-color;
+        }
+    }
+
     padding: $height $width;
-    background-color: $background-color;
     color: $color;
     cursor: pointer;
     transition: all 0.4s;
-
-    &:hover {
-        background-color: transparent;
-    }
 }
 
