@@ -13,11 +13,13 @@ $xxl-padding-top: 5%;
 $xxl-margin: 1% 0;
 $xxl-stats-margin: 5%;
 
-$cta-buttons-gap: 30px;
+$cta-buttons-gap: 40px;
+
+$xxl-hero-margin-bottom: 10%;
 
 // XL
 $xl-h1-font-size: 3rem;
-$xl-h2-font-size: 1.25rem;
+$xl-h2-font-size: 1.4rem;
 $xl-stats-strong-font-size: 2rem;
 
 $xl-max-width: 60%;
@@ -54,6 +56,9 @@ nav {
 }
 
 #hero {
+    background: linear-gradient(160deg, rgba($body-color, 0) 50%, rgba($primary-color2, 0.45) 180%);
+    padding-bottom: $xxl-hero-margin-bottom;
+
     .text {
         h1 > span {
             background-image: linear-gradient(to right, $primary-color, $primary-color2);
@@ -263,11 +268,10 @@ nav {
         }
 
         .cta-buttons {
-            font-size: $md-h2-font-size;
+            font-size: $sm-md-stats-font-size;
         }
 
         .stats {
-
             strong {
                 font-size: $md-stats-strong-font-size;
             }
