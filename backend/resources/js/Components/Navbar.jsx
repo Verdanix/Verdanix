@@ -3,11 +3,15 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 export default function Navbar({ view }) {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(null);
 
     const { t } = useTranslation();
 
     const toggleMenu = () => {
+        if (isMenuOpen === null) {
+            setIsMenuOpen(true);
+            return;
+        }
         setIsMenuOpen(!isMenuOpen);
     };
 
@@ -17,10 +21,18 @@ export default function Navbar({ view }) {
         };
 
         document.addEventListener('click', handleClickOutside);
+        window.addEventListener('resize', handleClickOutside);
         return () => {
             document.removeEventListener('click', handleClickOutside);
+            window.removeEventListener('resize', handleClickOutside);
         };
     }, [isMenuOpen]);
+
+    const getClassName = () => {
+        if (isMenuOpen === null) return 'nav-links';
+        if (isMenuOpen) return 'nav-links-active';
+        return 'nav-links-inactive';
+    };
 
     return (
         <>
@@ -36,11 +48,7 @@ export default function Navbar({ view }) {
                 </div>
 
                 <div>
-                    <ul
-                        className={
-                            isMenuOpen ? 'nav-links-active' : 'nav-links'
-                        }
-                    >
+                    <ul className={getClassName()}>
                         <li className={view === 'about' ? 'active' : ''}>
                             <a href="/about">{t('header.nav.about')}</a>
                         </li>
