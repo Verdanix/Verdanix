@@ -18,6 +18,25 @@ export default function Home({ stats }) {
                         </h1>
                         <h2>"{t('hero.h2')}"</h2>
                     </div>
+
+                    <div className="stats">
+                        <div className="stat">
+                            <strong>{stats.yearsExperience}</strong>
+                            <br />
+                            <p>{t('hero.stats.experience')}</p>
+                        </div>
+                        <div className="stat">
+                            <strong>{stats.projects}</strong>
+                            <br />
+                            <p>{t('hero.stats.projects')}</p>
+                        </div>
+                        <div className="stat">
+                            <strong>{stats.clients}</strong>
+                            <br />
+                            <p>{t('hero.stats.clients')}</p>
+                        </div>
+                    </div>
+
                     <div className="cta-buttons">
                         <a className="primary" href="/services">
                             {t('hero.cta.hire')}

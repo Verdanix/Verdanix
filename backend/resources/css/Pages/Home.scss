@@ -6,34 +6,47 @@
 // XXL
 $xxl-h1-font-size: 4rem;
 $xxl-h2-font-size: 1.5rem;
+$xxl-stats-strong-font-size: 2.3rem;
 
 $xxl-max-width: 50%;
 $xxl-padding-top: 5%;
 $xxl-margin: 1% 0;
+$xxl-stats-margin: 5%;
 
 $cta-buttons-gap: 30px;
 
 // XL
 $xl-h1-font-size: 3rem;
 $xl-h2-font-size: 1.25rem;
+$xl-stats-strong-font-size: 2rem;
 
 $xl-max-width: 60%;
 $xl-margin: 2% 0;
+$xl-stats-margin: 6%;
 
 // LG
+$lg-stats-strong-font-size: 1.8rem;
+
 $lg-max-width: 70%;
+$lg-stats-margin: 7%;
 
 // SM-MD
 $sm-md-max-width: 90%;
 $sm-md-margin: 4% 0;
+$sm-md-stats-font-size: 1.2rem;
 
 // MD
 $md-h1-font-size: 3rem;
 $md-h2-font-size: 1.4rem;
 
+$md-stats-strong-font-size: 1.7rem;
+
+$md-stats-margin: 8%;
+
 // SM
 $sm-h1-font-size: 2.2rem;
 $sm-h2-font-size: 1rem;
+$sm-stats-strong-font-size: 1.5rem;
 
 // Common Styles
 nav {
@@ -68,6 +81,22 @@ nav {
     }
 }
 
+.stats {
+    justify-content: space-between;
+    display: flex;
+    text-align: center;
+
+    .stat {
+        strong {
+            color: $primary-color;
+        }
+
+        p {
+            color: $text-color2;
+        }
+    }
+}
+
 // Responsive Styles
 @include media("sm", "md", "lg", "xl", "xxl") {
     .text {
@@ -98,6 +127,13 @@ nav {
         margin: $xl-margin;
         font-size: $xl-h2-font-size;
     }
+
+
+    .stats {
+        p {
+            font-size: $xl-h2-font-size;
+        }
+    }
 }
 
 @include media("sm", "md") {
@@ -116,6 +152,12 @@ nav {
     .cta-buttons {
         @include default-padding("sm", false, true);
         margin: $sm-md-margin;
+    }
+
+    .stats {
+        @include default-padding("sm", false, false);
+        max-width: $sm-md-max-width;
+        margin-left: $md-stats-margin;
     }
 }
 
@@ -142,6 +184,20 @@ nav {
         margin: $xxl-margin;
         font-size: $xxl-h2-font-size;
     }
+
+    .stats {
+        @include default-padding("xxl", false, false);
+        max-width: $xxl-max-width;
+        margin-left: $xxl-stats-margin;
+
+        strong {
+            font-size: $xxl-stats-strong-font-size;
+        }
+
+        p {
+            font-size: $xxl-h2-font-size;
+        }
+    }
 }
 
 @include media('xl') {
@@ -150,12 +206,32 @@ nav {
             max-width: $xl-max-width;
         }
     }
+
+    .stats {
+        @include default-padding("lg", false, false);
+        max-width: $xl-max-width;
+        margin-left: $xl-stats-margin;
+
+        strong {
+            font-size: $xl-stats-strong-font-size;
+        }
+    }
 }
 
 @include media("lg") {
     .text {
         h1, h2 {
             max-width: $lg-max-width;
+        }
+    }
+
+    .stats {
+        @include default-padding("lg", false, false);
+        max-width: $lg-max-width;
+        margin-left: $lg-stats-margin;
+
+        strong {
+            font-size: $lg-stats-strong-font-size;
         }
     }
 }
@@ -174,6 +250,17 @@ nav {
     .cta-buttons {
         font-size: $md-h2-font-size;
     }
+
+    .stats {
+
+        strong {
+            font-size: $md-stats-strong-font-size;
+        }
+
+        p {
+            font-size: $sm-md-stats-font-size;
+        }
+    }
 }
 
 @include media("sm") {
@@ -189,6 +276,18 @@ nav {
 
     .cta-buttons {
         font-size: $sm-h2-font-size;
+    }
+
+
+    .stats {
+
+        strong {
+            font-size: $sm-stats-strong-font-size;
+        }
+
+        p {
+            font-size: $sm-h2-font-size;
+        }
     }
 }
 
