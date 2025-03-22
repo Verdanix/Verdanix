@@ -63,9 +63,12 @@ nav {
         align-items: center;
     }
 
+    li {
+        list-style-type: none;
+    }
+
     .nav-links-inactive, .nav-links-active {
         display: flex;
-        list-style-type: none;
     }
 
     .hamburger-menu {
@@ -97,13 +100,14 @@ nav {
         gap: $desktop-gap-size;
     }
 
-    .nav-links-inactive, .nav-links-active {
+    .nav-links-inactive, .nav-links, .nav-links-active {
         gap: $desktop-gap-size;
+        display: flex;
     }
 }
 
 @include media("xl", "xxl") {
-    .nav-links-inactive, .nav-links-active {
+    .nav-links-inactive, .nav-links, .nav-links-active {
         @include nav-font-size("xlg", true);
     }
 
@@ -116,7 +120,7 @@ nav {
         }
     }
 
-    .nav-links-inactive {
+    .nav-links-inactive, .nav-links {
         a span {
             @include button()
         }
@@ -124,7 +128,7 @@ nav {
 }
 
 @include media("lg") {
-    .nav-links-inactive, .nav-links-active {
+    .nav-links-inactive, .nav-links, .nav-links-active {
         @include nav-font-size("lg", true);
     }
 
@@ -137,7 +141,7 @@ nav {
         }
     }
 
-    .nav-links-inactive {
+    .nav-links-inactive, .nav-links {
         a span {
             @include button(10px, 5px)
         }
