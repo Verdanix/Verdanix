@@ -1,5 +1,4 @@
 @use '../variables.scss' as *;
-@use 'sass:map' as map;
 
 // Variables
 $desktop-gap-size: 30px;
@@ -7,17 +6,7 @@ $mobile-gap-size: 15px;
 
 $mobile-nav-menu-gap: 6px;
 
-$default-padding-dimensions: (
-    "sm": 2% 9%,
-    "lg": 1% 6%,
-    "xxl": 0.5% 5%
-);
-
 // Mixins
-@mixin default-padding($size) {
-    padding: map.get($default-padding-dimensions, $size);
-}
-
 @mixin nav-font-size($size: "xlg", $nav-links-inactive: false) {
     @if $nav-links-inactive {
         @if ($size == "xlg") {

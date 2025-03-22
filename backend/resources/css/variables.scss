@@ -24,12 +24,32 @@ $breakpoints: (
     "xxl": "(min-width: 1200px)"
 );
 
+$default-padding-dimensions: (
+    "sm": 2% 9%,
+    "lg": 1% 6%,
+    "xxl": 0.5% 5%
+);
+
 // Mixins
 @mixin media($points...) {
     @each $breakpoint in $points {
         @media screen and #{map.get($breakpoints, $breakpoint)} {
             @content;
         }
+    }
+}
+
+@mixin default-padding($size, $disable-top-bottom: false, $disable-right-left: false) {
+    padding: map.get($default-padding-dimensions, $size);
+
+    @if $disable-right-left {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    @if $disable-top-bottom {
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 
