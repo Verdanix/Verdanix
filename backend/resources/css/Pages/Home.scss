@@ -20,6 +20,7 @@ $xxl-h2-font-size: 1.5rem;
 $xxl-stats-strong-font-size: 2.3rem;
 $xxl-section2-h2-font-size: 2.5rem;
 $xxl-project-paragraph-font-size: 1.2rem;
+$xxl-contact-font-size: 1rem;
 
 $xxl-max-width: 30%;
 $xxl-padding-top: 5%;
@@ -28,12 +29,19 @@ $xxl-stats-margin: 5%;
 
 $xxl-hero-margin-bottom: 10%;
 $xxl-section2-h2-margin: 3%;
+$xxl-contact-h2-margin: $xxl-section2-h2-margin * 4 0 2%;
 
 $xxl-project-max-width: 30%;
 $xxl-project-border-radius: 3%;
 $xxl-project-img-border-radius: 6% 6% 0 0;
 $xxl-project-info-gap: 15px;
 $xxl-services-img-width: 45px;
+
+$xxl-contact-padding: 0 30%;
+$xxl-contact-input-padding: 10px 20px;
+$xxl-contact-button-padding: 10px, 20px, 7px;
+$xxl-contact-form-gap: 15px;
+$xxl-contact-radius: 10px;
 
 // XL
 $xl-h1-font-size: 3rem;
@@ -51,6 +59,7 @@ $xl-services-img-width: $xxl-services-img-width - 5px;
 
 // LG
 $lg-stats-strong-font-size: 1.8rem;
+
 $lg-max-width: 70%;
 $lg-stats-margin: 7%;
 
@@ -59,6 +68,9 @@ $lg-project-border-radius: 3%;
 $lg-project-img-border-radius: 6% 6% 0 0;
 
 $lg-services-img-width: $xl-services-img-width - 5px;
+$lg-contact-padding: 0 20%;
+
+$lg-contact-radius: 12px;
 
 // SM-MD
 $sm-md-project-h3-font-size: 1.1rem;
@@ -78,6 +90,12 @@ $sm-md-project-img-border-radius: 6% 6% 0 0;
 
 $sm-md-projects-gap: 30px;
 
+$sm-md-contact-padding: 0 15%;
+$sm-md-contact-input-padding: 10px 15px;
+$sm-md-contact-font-size: 0.9rem;
+$sm-md-contact-form-gap: 10px;
+$sm-md-contact-radius: 8px;
+
 // MD
 $md-h1-font-size: 3rem;
 $md-h2-font-size: 1.4rem;
@@ -85,6 +103,7 @@ $md-stats-strong-font-size: 1.7rem;
 $md-stats-margin: 8%;
 
 $md-services-img-width: $lg-services-img-width - 5px;
+$md-contact-h2-margin: $xxl-section2-h2-margin * 6 0 1%;
 
 // SM
 $sm-h1-font-size: 2.2rem;
@@ -96,6 +115,7 @@ $sm-section2-h2-font-size: 2rem;
 $sm-section3-gap: 5%;
 $sm-services-img-width: 25px;
 $sm-services-img-width: $sm-services-img-width - 5px;
+$sm-contact-h2-margin: $sm-section2-h2-font-size * 4.5 0 1.5%;
 
 // Common Styles
 nav {
@@ -192,13 +212,63 @@ nav {
     .services {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        width: 100%;
     }
 
     .service {
         display: flex;
         flex-direction: column;
         background-color: $body-color-shade2;
+    }
+}
+
+#contact {
+    h2 {
+        text-align: center;
+    }
+
+    .show {
+        background-color: $body-color-shade2;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        p {
+            text-align: center;
+            color: $text-color3;
+        }
+
+        div {
+            display: flex;
+            justify-content: space-between;
+
+            input {
+                width: 100%;
+            }
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        input, textarea {
+            transition: all 0.2s;
+            outline: none;
+            background-color: $body-color-shade2;
+            color: $text-color3;
+            border: 2px solid $body-color-shade2;
+
+            &:focus {
+                border: 2px solid $primary-color-shade3;
+            }
+        }
+
+        button {
+            width: 100%;
+            outline: none;
+        }
     }
 }
 
@@ -251,6 +321,36 @@ nav {
 
         img {
             border-radius: $xxl-project-img-border-radius;
+        }
+    }
+
+    #contact {
+        padding: $xxl-contact-padding;
+
+        h2 {
+            font-size: $xxl-section2-h2-font-size;
+            margin: $xxl-contact-h2-margin;
+        }
+
+        form {
+            gap: $xxl-contact-form-gap;
+
+            div {
+                gap: $xxl-contact-form-gap;
+            }
+
+            input, textarea, p, button {
+                font-size: $xxl-contact-font-size;
+            }
+
+            input, textarea, p {
+                padding: $xxl-contact-input-padding;
+                border-radius: $xxl-contact-radius;
+            }
+
+            button {
+                @include button($height: 10px, $border-radius: $xxl-contact-radius, $background-color: $primary-color-shade3);
+            }
         }
     }
 }
@@ -364,6 +464,31 @@ nav {
             gap: $sm-md-project-info-gap;
         }
     }
+
+    #contact {
+        padding: $sm-md-contact-padding;
+
+        form {
+            gap: $sm-md-contact-form-gap;
+
+            div {
+                gap: $sm-md-contact-form-gap;
+            }
+
+            input, textarea, p, button {
+                font-size: $sm-md-contact-font-size;
+            }
+
+            input, textarea, p {
+                padding: $sm-md-contact-input-padding;
+                border-radius: $sm-md-contact-radius;
+            }
+
+            button {
+                @include button($height: 6px, $border-radius: $sm-md-contact-radius, $background-color: $primary-color-shade3);
+            }
+        }
+    }
 }
 
 @include media("xxl") {
@@ -411,7 +536,6 @@ nav {
 
         h2 {
             font-size: $xxl-section2-h2-font-size;
-            margin: $xxl-section2-h2-margin 0;
         }
     }
 
@@ -515,6 +639,37 @@ nav {
     #section3 img {
         width: $lg-services-img-width
     }
+
+
+    #contact {
+        padding: $lg-contact-padding;
+
+        h2 {
+            font-size: $sm-md-section2-h2-font-size;
+            margin: $xxl-contact-h2-margin;
+        }
+
+        form {
+            gap: $xxl-contact-form-gap;
+
+            div {
+                gap: $xxl-contact-form-gap;
+            }
+
+            input, textarea, p, button {
+                font-size: $xxl-contact-font-size;
+            }
+
+            input, textarea, p {
+                padding: $xxl-contact-input-padding;
+                border-radius: $lg-contact-radius;
+            }
+
+            button {
+                @include button($height: 6px, $border-radius: $lg-contact-radius, $background-color: $primary-color-shade3);
+            }
+        }
+    }
 }
 
 @include media("md") {
@@ -552,6 +707,12 @@ nav {
 
     #section3 img {
         width: $md-services-img-width
+    }
+
+
+    #contact h2 {
+        font-size: $sm-md-section2-h2-font-size;
+        margin: $md-contact-h2-margin;
     }
 }
 
@@ -598,6 +759,11 @@ nav {
         img {
             width: $sm-services-img-width;
         }
+    }
+
+    #contact h2 {
+        font-size: $sm-section2-h2-font-size;
+        margin: $sm-contact-h2-margin;
     }
 }
 
