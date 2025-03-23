@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Resources\ProjectResource;
 use Illuminate\Support\Facades\Route;
@@ -15,10 +16,43 @@ Route::get('/', function () {
             "projectCount" => ProjectResource::allProjectsCount() . "+",
             "clients" => 0 . "+", // TODO: Add client count
             "projects" => [
+                [
+                    "title" => "AI-Powered Analytics Platform",
+                    "image" => "https://learn.microsoft.com/en-us/power-bi/create-reports/media/service-dashboards/power-bi-dashboard2.png",
+                    "link" => "https://google.com",
+                    "description" => "Enterprise-level analytics solution with machine learning capabilities.",
+                    "tags" => [
+                        "React",
+                        "Python",
+                        "Tensorflow"
+                    ]
+                ], [
+                    "title" => "AI-Powered Analytics Platform",
+                    "image" => "https://learn.microsoft.com/en-us/power-bi/create-reports/media/service-dashboards/power-bi-dashboard2.png",
+                    "link" => "https://google.com",
+                    "description" => "Enterprise-level analytics solution with machine learning capabilities.",
+                    "tags" => [
+                        "React",
+                        "Python",
+                        "Tensorflow"
+                    ]
+                ], [
+                    "title" => "AI-Powered Analytics Platform",
+                    "image" => "https://learn.microsoft.com/en-us/power-bi/create-reports/media/service-dashboards/power-bi-dashboard2.png",
+                    "link" => "https://google.com",
+                    "description" => "Enterprise-level analytics solution with machine learning capabilities.",
+                    "tags" => [
+                        "React",
+                        "Python",
+                        "Tensorflow"
+                    ]
+                ],
             ]
         ],
     ]);
 })->name('home');
+
+Route::middleware("throttle:contact")->post('/contact', [ContactController::class, 'store'])->name('contact');
 
 Route::get('/about', function () {
     return Inertia::render('About', [

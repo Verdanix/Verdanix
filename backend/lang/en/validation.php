@@ -161,6 +161,12 @@ return [
     'ulid' => 'The :attribute field must be a valid ULID.',
     'uuid' => 'The :attribute field must be a valid UUID.',
 
+    "contact" => [
+        "status" => [
+            "success" => "I look forward to working with you! Please allow up to 3 days for a response!",
+            "error" => "Something went extremely wrong. Please contact me directly at contact@masonroot.dev for inquiries."
+        ]
+    ],
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -190,5 +196,4 @@ return [
     */
 
     'attributes' => [],
-
 ];
