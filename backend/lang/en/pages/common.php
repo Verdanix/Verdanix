@@ -1,10 +1,14 @@
 <?php
 
-$currentDate = date('Y');
+$currentDate = date("Y");
 return [
-    'header' => [
+    "me" => [
+        "name" => "Mason Root",
+        "line" => "I shed light on new ideas and opportunities, illuminating the path forward.",
+        "line2" => "Turning ideas into digital reality through code and creativity."
+    ],
+    "header" => [
         "mr" => "MR",
-        "title" => "Mason Root",
         "nav" => [
             "about" => "About",
             "projects" => "Projects",
@@ -13,51 +17,45 @@ return [
             "register" => "Register",
         ],
     ],
+
+    "footer" => [
+        "titles" => [
+            "quick" => "Quick Links",
+            "contact" => "Contact",
+            "connect" => "Let's Connect!"
+        ],
+        "links" => [
+            "about" => "About",
+            "projects" => "Projects",
+            "services" => "Services",
+            "contact" => "Contact",
+            "email" => "contact@masonroot.dev",
+            "location" => "San Francisco, CA"
+        ],
+        "connect" => [
+            "github" => "https://github.com/Verdanix",
+            "linkedin" => "https://linkedin.com/in/mason-root",
+            "instagram" => "https://instagram.com/masonroot.dev"
+        ],
+        "images" => [
+            "mail" => "an envelope icon",
+            "location" => "a location indicator",
+            "github" => "the github logo",
+            "linkedin" => "the linkedin logo",
+            "instagram" => "the instagram logo"
+        ],
+        "rights" => $currentDate . " Mason Root. All rights reserved."
+    ],
+
     // Words
-    'email' => 'Email',
-    'password' => 'Password',
-    'rememberme' => 'Remember me',
-    'resetpass' => 'Reset Password',
-    'forgotpass' => 'Forgot Password?',
-    'password_confirmation' => 'Confirm Password',
-    // Components
-    // HeroSection
-    'stats.pending' => 'Pending',
-    'stats.total' => 'Completed',
-    'stats.happy' => 'Happy',
-    'stats.client' => 'Client',
-    'stats.hours' => 'Hours',
-    'stats.worked' => 'Worked',
-
-    // Navbar
-    'navbar.home' => 'Home',
-    'navbar.aboutme' => 'About',
-    'projects' => 'Projects',
-    'navbar.pricing' => 'Pricing',
-    'navbar.register' => 'Register',
-    'navbar.login' => 'Login',
-
-    // Authenticated Navbar
-    'auth.navbar.manage' => 'Manage',
-    'auth.navbar.projects' => 'Projects',
-    'auth.navbar.settings' => 'Settings',
-
-    // Footer
-    'footer.about.title' => 'About',
-    'footer.about.aboutme' => 'About Me',
-    'footer.about.mission' => 'Mission',
-    'footer.about.legal' => 'Legal',
-    'footer.explore.title' => 'Explore',
-    'footer.explore.dashboard' => 'Dashboard',
-    'footer.explore.projects' => 'Projects',
-    'footer.explore.docs' => 'Docs',
-    'footer.socials.title' => 'Socials',
-    'footer.socials.github' => 'Github',
-    'footer.socials.linkedin' => 'LinkedIn',
-    'footer.socials.instagram' => 'Instagram',
-    'footer.extra.sitemap' => 'Sitemap',
-    'footer.extra.backUpTop' => 'Back to top',
-    'footer.extra.copyright' => "Copyright © {$currentDate} Mason Root. All Rights Reserved.",
-    'projects.visit' => 'Visit',
-    'projects.more' => 'More',
+    "name" => "Name",
+    "email" => "Email",
+    "password" => "Password",
+    "rememberme" => "Remember me",
+    "resetpass" => "Reset Password",
+    "forgotpass" => "Forgot Password?",
+    "password_confirmation" => "Confirm Password",
+    "subject" => "Subject",
+    "message" => "Message",
+    "send_message" => "Send Message",
 ];

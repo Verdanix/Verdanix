@@ -1,4 +1,5 @@
 import '@/../css/Pages/Home.scss';
+import Footer from '@/Components/Footer.jsx';
 import Navbar from '@/Components/Navbar.jsx';
 import { useForm } from '@inertiajs/react';
 import { useTranslation } from 'react-i18next';
@@ -51,7 +52,8 @@ function ContactForm({ t }) {
     };
 
     if (Object.values(errors).length > 0) {
-        document.getElementById('subject')
+        document
+            .getElementById('subject')
             .scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -111,7 +113,7 @@ export default function Home({ stats }) {
                             <br />
                             <span>{t('hero.h1.highlighted')}</span>
                         </h1>
-                        <h2>"{t('hero.h2')}"</h2>
+                        <h2>"{t('me.line')}"</h2>
                     </div>
 
                     <div className="stats">
@@ -192,6 +194,9 @@ export default function Home({ stats }) {
             <div id="contact">
                 <h2>{t('section4.h2')}</h2>
                 <ContactForm t={t} />
+            </div>
+            <div className="section1">
+                <Footer />
             </div>
         </div>
     );

@@ -358,7 +358,7 @@ nav {
 @include media("lg", "xl") {
     #hero {
         .text {
-            @include default-padding("lg", false, true);
+            @include default-padding("lg", true);
 
             h1 {
                 font-size: $xl-h1-font-size;
@@ -371,7 +371,7 @@ nav {
         }
 
         .cta-buttons {
-            @include default-padding("lg", false, true);
+            @include default-padding("lg", true);
             margin: $xl-margin;
             font-size: $xl-h2-font-size;
         }
@@ -389,11 +389,11 @@ nav {
 
     #section2 .project {
         p, .tags {
-            @include default-padding("lg", false, true);
+            @include default-padding("lg", true);
         }
 
         h3 {
-            @include default-padding("lg", false, true);
+            @include default-padding("lg", true);
         }
 
         .tags {
@@ -405,7 +405,7 @@ nav {
 @include media("sm", "md") {
     #hero {
         .text {
-            @include default-padding("sm", false, true);
+            @include default-padding("sm", true);
 
             h2 {
                 margin: $sm-md-margin;
@@ -417,12 +417,12 @@ nav {
         }
 
         .cta-buttons {
-            @include default-padding("sm", false, true);
+            @include default-padding("sm", true);
             margin: $sm-md-margin;
         }
 
         .stats {
-            @include default-padding("sm", false, false);
+            @include default-padding("sm");
             max-width: $sm-md-max-width;
             margin-left: $md-stats-margin;
         }
@@ -452,7 +452,7 @@ nav {
         gap: $sm-md-project-info-gap;
 
         p, h3, .tags {
-            @include default-padding("sm", false, true);
+            @include default-padding("sm", true);
         }
 
         img {
@@ -494,7 +494,7 @@ nav {
 @include media("xxl") {
     #hero {
         .text {
-            @include default-padding("xxl", false, true);
+            @include default-padding("xxl", true);
 
             h1 {
                 font-size: $xxl-h1-font-size;
@@ -511,13 +511,13 @@ nav {
         }
 
         .cta-buttons {
-            @include default-padding("xxl", false, true);
+            @include default-padding("xxl", true);
             margin: $xxl-margin;
             font-size: $xxl-h2-font-size;
         }
 
         .stats {
-            @include default-padding("xxl", false, false);
+            @include default-padding("xxl");
             max-width: $xxl-max-width;
             margin-left: $xxl-stats-margin;
 
@@ -541,7 +541,7 @@ nav {
 
     #section2 .project {
         p, h3, .tags {
-            @include default-padding("xxl", false, true);
+            @include default-padding("xxl", true);
         }
 
         .tags {
@@ -565,7 +565,7 @@ nav {
         }
 
         .stats {
-            @include default-padding("lg", false, false);
+            @include default-padding("lg");
             max-width: $xl-max-width;
             margin-left: $xl-stats-margin;
 
@@ -596,7 +596,7 @@ nav {
         }
 
         .stats {
-            @include default-padding("lg", false, false);
+            @include default-padding("lg");
             max-width: $lg-max-width;
             margin-left: $lg-stats-margin;
 

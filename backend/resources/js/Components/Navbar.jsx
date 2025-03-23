@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 export default function Navbar({ view }) {
     const [isMenuOpen, setIsMenuOpen] = useState(null);
 
-    const { t } = useTranslation();
+    const { t } = useTranslation('common');
 
     const toggleMenu = () => {
         if (isMenuOpen === null) {
@@ -47,7 +47,7 @@ export default function Navbar({ view }) {
                         />
                     </a>
                     <a href="/">
-                        <span>{t('header.title')}</span>
+                        <span>{t('me.name')}</span>
                     </a>
                 </div>
 
