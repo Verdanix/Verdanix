@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 function ProjectCard({ title, description, image, link, tags }) {
     return (
         <a className="project" href={link}>
-            <img src={image} alt={'An image representing ' + title} />
+            <img src={image} alt={'An image displaying ' + title} />
             <h3>{title}</h3>
             <p>{description}</p>
             <div className="tags">
@@ -19,6 +19,16 @@ function ProjectCard({ title, description, image, link, tags }) {
                 ))}
             </div>
         </a>
+    );
+}
+
+function ServiceCard({ icon, title, alt, description }) {
+    return (
+        <div className="service">
+            <img src={icon} alt={alt} />
+            <h3>{title}</h3>
+            <p>{description}</p>
+        </div>
     );
 }
 
@@ -80,6 +90,37 @@ export default function Home({ stats }) {
                             tags={project.tags}
                         />
                     ))}
+                </div>
+            </div>
+
+            <div id="section3">
+                <h2>{t('section3.h2')}</h2>
+
+                <div className="services">
+                    <ServiceCard
+                        icon="/images/home/service_frontend.svg"
+                        title={t('section3.service1.title')}
+                        alt={t('section3.service1.alt')}
+                        description={t('section3.service1.description')}
+                    />
+                    <ServiceCard
+                        icon="/images/home/service_backend.svg"
+                        title={t('section3.service2.title')}
+                        alt={t('section3.service2.alt')}
+                        description={t('section3.service2.description')}
+                    />
+                    <ServiceCard
+                        icon="/images/home/service_fullstack.svg"
+                        title={t('section3.service3.title')}
+                        alt={t('section3.service3.alt')}
+                        description={t('section3.service3.description')}
+                    />
+                    <ServiceCard
+                        icon="/images/home/service_uiux.svg"
+                        title={t('section3.service4.title')}
+                        alt={t('section3.service4.alt')}
+                        description={t('section3.service4.description')}
+                    />
                 </div>
             </div>
         </div>

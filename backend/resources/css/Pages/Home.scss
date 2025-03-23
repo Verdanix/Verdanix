@@ -33,6 +33,7 @@ $xxl-project-max-width: 30%;
 $xxl-project-border-radius: 3%;
 $xxl-project-img-border-radius: 6% 6% 0 0;
 $xxl-project-info-gap: 15px;
+$xxl-services-img-width: 45px;
 
 // XL
 $xl-h1-font-size: 3rem;
@@ -44,6 +45,10 @@ $xl-max-width: 60%;
 $xl-margin: 2% 0;
 $xl-stats-margin: 6%;
 
+$xl-project-tags-gap: 10px;
+
+$xl-services-img-width: $xxl-services-img-width - 5px;
+
 // LG
 $lg-stats-strong-font-size: 1.8rem;
 $lg-max-width: 70%;
@@ -53,9 +58,11 @@ $lg-project-max-width: 30%;
 $lg-project-border-radius: 3%;
 $lg-project-img-border-radius: 6% 6% 0 0;
 
+$lg-services-img-width: $xl-services-img-width - 5px;
+
 // SM-MD
-$sm-md-project-h3-font-size: 1rem;
-$sm-md-project-paragraph-font-size: 1.1rem;
+$sm-md-project-h3-font-size: 1.1rem;
+$sm-md-project-paragraph-font-size: 0.9rem;
 
 $sm-md-project-info-gap: 15px;
 $sm-md-section2-h2-font-size: 2.3rem;
@@ -69,16 +76,26 @@ $sm-md-project-max-width: 45%;
 $sm-md-project-border-radius: 3%;
 $sm-md-project-img-border-radius: 6% 6% 0 0;
 
+$sm-md-projects-gap: 30px;
+
 // MD
 $md-h1-font-size: 3rem;
 $md-h2-font-size: 1.4rem;
 $md-stats-strong-font-size: 1.7rem;
 $md-stats-margin: 8%;
 
+$md-services-img-width: $lg-services-img-width - 5px;
+
 // SM
 $sm-h1-font-size: 2.2rem;
 $sm-h2-font-size: 1rem;
 $sm-stats-strong-font-size: 1.5rem;
+
+$sm-section2-h2-font-size: 2rem;
+
+$sm-section3-gap: 5%;
+$sm-services-img-width: 25px;
+$sm-services-img-width: $sm-services-img-width - 5px;
 
 // Common Styles
 nav {
@@ -134,6 +151,13 @@ nav {
     }
 }
 
+#section2, #section3 {
+    p {
+        color: $text-color2;
+        width: fit-content;
+    }
+}
+
 #section2 {
     .project, .projects, .tags {
         display: flex;
@@ -158,18 +182,23 @@ nav {
             max-width: 100%;
         }
 
-        p {
-            color: $text-color2;
-            width: fit-content;
-        }
-
         .tags {
             flex-wrap: wrap;
-
-            .odd, .even {
-                flex-shrink: 1;
-            }
         }
+    }
+}
+
+#section3 {
+    .services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    .service {
+        display: flex;
+        flex-direction: column;
+        background-color: $body-color-shade2;
     }
 }
 
@@ -184,32 +213,44 @@ nav {
             gap: $cta-buttons-gap;
         }
     }
+
+    #section3 {
+        .services {
+            gap: 10%;
+        }
+
+        .service {
+            padding: 30px;
+            border-radius: 20px;
+            gap: $xxl-project-info-gap;
+        }
+    }
 }
 
 @include media("xl", "xxl") {
-    #section2 {
+    #section2, #section3 {
         h2 {
             font-size: $xxl-section2-h2-font-size;
             margin: $xxl-section2-h2-margin 0;
         }
 
-        .project {
-            gap: $xxl-project-info-gap;
-            padding-bottom: $xxl-project-info-gap;
-            border-radius: $xxl-project-border-radius;
-            max-width: $xxl-project-max-width;
+        p {
+            font-size: $xxl-project-paragraph-font-size;
+        }
 
-            p {
-                font-size: $xxl-project-paragraph-font-size;
-            }
+        h3 {
+            font-size: $xxl-h2-font-size;
+        }
+    }
 
-            h3 {
-                font-size: $xxl-h2-font-size;
-            }
+    #section2 .project {
+        gap: $xxl-project-info-gap;
+        padding-bottom: $xxl-project-info-gap;
+        border-radius: $xxl-project-border-radius;
+        max-width: $xxl-project-max-width;
 
-            img {
-                border-radius: $xxl-project-img-border-radius;
-            }
+        img {
+            border-radius: $xxl-project-img-border-radius;
         }
     }
 }
@@ -236,20 +277,27 @@ nav {
         }
 
 
-        .stats {
-            p {
-                font-size: $xl-h2-font-size;
-            }
+        .stats p {
+            font-size: $xl-h2-font-size;
         }
     }
 
-    #section2 {
+    #section2, #section3 {
         @include default-padding("lg");
 
-        .project {
-            p, h3, .tags {
-                @include default-padding("lg", false, true);
-            }
+    }
+
+    #section2 .project {
+        p, .tags {
+            @include default-padding("lg", false, true);
+        }
+
+        h3 {
+            @include default-padding("lg", false, true);
+        }
+
+        .tags {
+            gap: $xl-project-tags-gap;
         }
     }
 }
@@ -280,41 +328,40 @@ nav {
         }
     }
 
-    #section2 {
+    #section2, #section3 {
         @include default-padding("sm");
 
-        h2 {
-            font-size: $sm-md-section2-h2-font-size;
-            margin: $sm-md-section2-h2-margin 0;
+        p {
+            font-size: $sm-md-project-paragraph-font-size;
         }
 
-        .project {
-            padding-bottom: $sm-md-project-info-gap;
-            border-radius: $sm-md-project-border-radius;
-            max-width: $sm-md-project-max-width;
-            min-width: 30%;
+        h2 {
+            margin: $sm-md-section2-h2-margin 0;
+        }
+    }
+
+    #section2 .projects {
+        gap: $sm-md-projects-gap;
+    }
+
+    #section2 .project {
+        padding-bottom: $sm-md-project-info-gap;
+        border-radius: $sm-md-project-border-radius;
+        max-width: $sm-md-project-max-width;
+        min-width: 30%;
+        gap: $sm-md-project-info-gap;
+
+        p, h3, .tags {
+            @include default-padding("sm", false, true);
+        }
+
+        img {
+            border-radius: $sm-md-project-img-border-radius;
+        }
+
+        .tags {
+            @include tag(10px, 7px, 13px);
             gap: $sm-md-project-info-gap;
-
-            p, h3, .tags {
-                @include default-padding("sm", false, true);
-            }
-
-            p {
-                font-size: $sm-md-project-paragraph-font-size;
-            }
-
-            h3 {
-                font-size: $sm-md-project-h3-font-size;
-            }
-
-            img {
-                border-radius: $sm-md-project-img-border-radius;
-            }
-
-            .tags {
-                @include tag(10px, 7px, 13px);
-                gap: $sm-md-project-info-gap;
-            }
         }
     }
 }
@@ -359,20 +406,30 @@ nav {
         }
     }
 
-    #section2 {
+    #section2, #section3 {
         @include default-padding("xxl");
 
-        .project {
-            p, h3, .tags {
-                @include default-padding("xxl", false, true);
-            }
-
-            .tags {
-                @include tag(10px, 7px, 13px);
-                gap: $xxl-project-info-gap;
-            }
+        h2 {
+            font-size: $xxl-section2-h2-font-size;
+            margin: $xxl-section2-h2-margin 0;
         }
     }
+
+    #section2 .project {
+        p, h3, .tags {
+            @include default-padding("xxl", false, true);
+        }
+
+        .tags {
+            @include tag(10px, 7px, 13px);
+            gap: $xxl-project-info-gap;
+        }
+    }
+
+    #section3 .service img {
+        width: $xxl-services-img-width;
+    }
+
 }
 
 @include media('xl') {
@@ -394,13 +451,15 @@ nav {
         }
     }
 
-    #section2 {
-        .project {
-            .tags {
-                @include tag(8px, 2px, 10px);
-                gap: 10px;
-            }
+    #section2 .project {
+        .tags {
+            @include tag(8px, 2px, 10px);
+            gap: $xl-project-tags-gap;
         }
+    }
+
+    #section3 .service img {
+        width: $xl-services-img-width
     }
 }
 
@@ -423,35 +482,38 @@ nav {
         }
     }
 
-    #section2 {
+    #section2, #section3 {
         h2 {
             font-size: $sm-md-section2-h2-font-size;
             margin: $sm-md-section2-h2-margin 0;
         }
 
-        .project {
-            padding-bottom: $xxl-project-info-gap;
-            border-radius: $lg-project-border-radius;
-            max-width: $lg-project-max-width;
-            gap: $xxl-project-info-gap;
-
-            p {
-                font-size: $sm-md-project-paragraph-font-size;
-            }
-
-            h3 {
-                font-size: $xl-project-h3-font-size;
-            }
-
-            img {
-                border-radius: $lg-project-img-border-radius;
-            }
-
-            .tags {
-                @include tag(8px, 2px, 10px);
-                gap: 10px;
-            }
+        p {
+            font-size: $sm-md-project-paragraph-font-size;
         }
+
+        h3 {
+            font-size: $xl-project-h3-font-size;
+        }
+    }
+
+    #section2 .project {
+        padding-bottom: $xxl-project-info-gap;
+        border-radius: $lg-project-border-radius;
+        max-width: $lg-project-max-width;
+        gap: $xxl-project-info-gap;
+
+        img {
+            border-radius: $lg-project-img-border-radius;
+        }
+
+        .tags {
+            @include tag(8px, 2px, 10px);
+        }
+    }
+
+    #section3 img {
+        width: $lg-services-img-width
     }
 }
 
@@ -480,6 +542,16 @@ nav {
                 font-size: $sm-md-stats-font-size;
             }
         }
+    }
+
+    #section2, #section3 {
+        h2 {
+            font-size: $sm-md-section2-h2-font-size;
+        }
+    }
+
+    #section3 img {
+        width: $md-services-img-width
     }
 }
 
@@ -511,9 +583,20 @@ nav {
         }
     }
 
-    #section2 {
-        .projects {
-            gap: 30px;
+    #section2, #section3 {
+        h2 {
+            font-size: $sm-section2-h2-font-size;
+        }
+    }
+
+    #section3 {
+        .services {
+            gap: $sm-section3-gap;
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        img {
+            width: $sm-services-img-width;
         }
     }
 }
