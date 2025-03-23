@@ -8,7 +8,7 @@ return [
         "h2" => "I shed light on new ideas and opportunities, illuminating the path forward.",
         "stats" => [
             "experience" => "Years Experience",
-            "projects" => "Projects Completed",
+            "projectCount" => "Projects Completed",
             "clients" => "Happy Clients",
         ],
         "cta" => [
@@ -16,4 +16,26 @@ return [
             "projects" => "View Projects"
         ],
     ],
+    "section2" => [
+        "h2" => "Featured Projects"
+    ],
+    "section3" => [
+        "h2" => "Services",
+        "service1" => [
+            "title" => "Frontend Development",
+            "description" => "Modern, fast, adaptable, and accessible web applications from with your designs.",
+        ],
+        "service2" => [
+            "title" => "Backend Development",
+            "description" => "Robust, secure, and scalable server-side applications with modern technologies."
+        ],
+        "service3" => [
+            "title" => "Full-Stack Development",
+            "description" => "End-to-end web and mobile application development with modern technologies."
+        ],
+        "service4" => [
+            "title" => "UI/UX Design",
+            "description" => "User-centric design that is both visually appealing and functional."
+        ],
+    ]
 ];

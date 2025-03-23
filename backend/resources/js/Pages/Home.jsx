@@ -2,6 +2,26 @@ import '@/../css/Pages/Home.scss';
 import Navbar from '@/Components/Navbar.jsx';
 import { useTranslation } from 'react-i18next';
 
+function ProjectCard({ title, description, image, link, tags }) {
+    return (
+        <a className="project" href={link}>
+            <img src={image} alt={'An image representing ' + title} />
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <div className="tags">
+                {tags.map((tag, index) => (
+                    <span
+                        className={index % 2 === 0 ? 'even' : 'odd'}
+                        key={index}
+                    >
+                        {tag}
+                    </span>
+                ))}
+            </div>
+        </a>
+    );
+}
+
 export default function Home({ stats }) {
     const { t } = useTranslation('home');
 
@@ -26,9 +46,9 @@ export default function Home({ stats }) {
                             <p>{t('hero.stats.experience')}</p>
                         </div>
                         <div className="stat">
-                            <strong>{stats.projects}</strong>
+                            <strong>{stats.projectCount}</strong>
                             <br />
-                            <p>{t('hero.stats.projects')}</p>
+                            <p>{t('hero.stats.projectCount')}</p>
                         </div>
                         <div className="stat">
                             <strong>{stats.clients}</strong>
@@ -45,6 +65,21 @@ export default function Home({ stats }) {
                             {t('hero.cta.projects')}
                         </a>
                     </div>
+                </div>
+            </div>
+
+            <div id="section2">
+                <h2>{t('section2.h2')}</h2>
+                <div className="projects">
+                    {stats.projects.map((project, index) => (
+                        <ProjectCard
+                            key={index}
+                            title={project.title}
+                            description={project.description}
+                            image={project.image}
+                            tags={project.tags}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

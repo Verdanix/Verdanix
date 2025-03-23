@@ -5,6 +5,7 @@
     font-family: $font-family;
     background-color: $body-color;
     color: white;
+    min-width: $min-website-width;
 }
 
 html {

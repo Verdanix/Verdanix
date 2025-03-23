@@ -4,7 +4,14 @@
 // Colors
 $primary-color: #00BCD4;
 $primary-color-shade1: #00ACC1;
-$primary-color2: #8E24AA;
+$primary-color-shade2: #194657;
+$primary-color-shade3: #0e768b;
+$primary-color-shade4: #0fc8e0;
+
+$secondary-color: #8E24AA;
+$secondary-color-shade2: #34294e;
+$secondary-color-shade3: #43285b;
+$secondary-color-shade4: #a351bd;
 
 $body-color-shade2: #1e2936;
 
@@ -63,27 +70,33 @@ $default-padding-dimensions: (
     }
 }
 
-@mixin button($width: 15px, $height:8px, $border-radius: 10px, $background-color: $primary-color2, $color: color, $border: true, $background: true) {
+@mixin button($width: 15px, $height:8px, $border-radius: 10px, $background-color: $secondary-color, $color: color, $border: true, $background: true, $hover: true, $cursor: true) {
     @if $border {
         border: 3px solid $background-color;
-        border-radius: $border-radius;
     }
+
+    border-radius: $border-radius;
 
     @if $background {
         background-color: $background-color;
 
-        &:hover {
-            background-color: transparent;
+        @if $hover {
+            &:hover {
+                background-color: transparent;
+            }
         }
-    } @else {
+    } @else if $hover {
         &:hover {
             background-color: $background-color;
         }
     }
 
+    @if $cursor {
+        cursor: pointer;
+    }
+
     padding: $height $width;
     color: $color;
-    cursor: pointer;
     transition: all 0.4s;
 }
 

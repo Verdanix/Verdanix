@@ -1,25 +1,43 @@
 @use '../variables.scss' as *;
 
 // Mixins
+@mixin tag($width, $height, $radius) {
+    .even {
+        @include button($width, $height, $radius, $background-color: rgba($primary-color-shade3, 40%), $color: $primary-color-shade4, $border: false, $hover: false, $cursor: false)
+    }
+
+    .odd {
+        @include button($width, $height, $radius, $background-color: rgba($secondary-color-shade3, 100%), $color: $secondary-color-shade4, $border: false, $hover: false, $cursor: false)
+    }
+}
 
 // Variables
+$cta-buttons-gap: 40px;
+
 // XXL
 $xxl-h1-font-size: 4rem;
 $xxl-h2-font-size: 1.5rem;
 $xxl-stats-strong-font-size: 2.3rem;
+$xxl-section2-h2-font-size: 2.5rem;
+$xxl-project-paragraph-font-size: 1.2rem;
 
-$xxl-max-width: 50%;
+$xxl-max-width: 30%;
 $xxl-padding-top: 5%;
 $xxl-margin: 1% 0;
 $xxl-stats-margin: 5%;
 
-$cta-buttons-gap: 40px;
-
 $xxl-hero-margin-bottom: 10%;
+$xxl-section2-h2-margin: 3%;
+
+$xxl-project-max-width: 30%;
+$xxl-project-border-radius: 3%;
+$xxl-project-img-border-radius: 6% 6% 0 0;
+$xxl-project-info-gap: 15px;
 
 // XL
 $xl-h1-font-size: 3rem;
 $xl-h2-font-size: 1.4rem;
+$xl-project-h3-font-size: 1.2rem;
 $xl-stats-strong-font-size: 2rem;
 
 $xl-max-width: 60%;
@@ -28,21 +46,33 @@ $xl-stats-margin: 6%;
 
 // LG
 $lg-stats-strong-font-size: 1.8rem;
-
 $lg-max-width: 70%;
 $lg-stats-margin: 7%;
 
+$lg-project-max-width: 30%;
+$lg-project-border-radius: 3%;
+$lg-project-img-border-radius: 6% 6% 0 0;
+
 // SM-MD
-$sm-md-max-width: 90%;
+$sm-md-project-h3-font-size: 1rem;
+$sm-md-project-paragraph-font-size: 1.1rem;
+
+$sm-md-project-info-gap: 15px;
+$sm-md-section2-h2-font-size: 2.3rem;
+$sm-md-section2-h2-margin: 6%;
+
+$sm-md-max-width: 100%;
 $sm-md-margin: 4% 0;
 $sm-md-stats-font-size: 1.2rem;
+
+$sm-md-project-max-width: 45%;
+$sm-md-project-border-radius: 3%;
+$sm-md-project-img-border-radius: 6% 6% 0 0;
 
 // MD
 $md-h1-font-size: 3rem;
 $md-h2-font-size: 1.4rem;
-
 $md-stats-strong-font-size: 1.7rem;
-
 $md-stats-margin: 8%;
 
 // SM
@@ -56,12 +86,12 @@ nav {
 }
 
 #hero {
-    background: linear-gradient(160deg, rgba($body-color, 0) 50%, rgba($primary-color2, 0.45) 180%);
+    background: linear-gradient(160deg, rgba($body-color, 0) 50%, rgba($secondary-color, 0.45) 180%);
     padding-bottom: $xxl-hero-margin-bottom;
 
     .text {
         h1 > span {
-            background-image: linear-gradient(to right, $primary-color, $primary-color2);
+            background-image: linear-gradient(to right, $primary-color, $secondary-color);
             color: transparent;
             background-clip: text;
         }
@@ -104,6 +134,45 @@ nav {
     }
 }
 
+#section2 {
+    .project, .projects, .tags {
+        display: flex;
+    }
+
+    .projects {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .project {
+        width: max-content;
+        flex-direction: column;
+        background-color: $body-color-shade2;
+
+
+        p, h3, .tags {
+            padding-right: 0;
+        }
+
+        p, img {
+            max-width: 100%;
+        }
+
+        p {
+            color: $text-color2;
+            width: fit-content;
+        }
+
+        .tags {
+            flex-wrap: wrap;
+
+            .odd, .even {
+                flex-shrink: 1;
+            }
+        }
+    }
+}
+
 // Responsive Styles
 @include media("sm", "md", "lg", "xl", "xxl") {
     #hero {
@@ -113,6 +182,34 @@ nav {
 
         .cta-buttons {
             gap: $cta-buttons-gap;
+        }
+    }
+}
+
+@include media("xl", "xxl") {
+    #section2 {
+        h2 {
+            font-size: $xxl-section2-h2-font-size;
+            margin: $xxl-section2-h2-margin 0;
+        }
+
+        .project {
+            gap: $xxl-project-info-gap;
+            padding-bottom: $xxl-project-info-gap;
+            border-radius: $xxl-project-border-radius;
+            max-width: $xxl-project-max-width;
+
+            p {
+                font-size: $xxl-project-paragraph-font-size;
+            }
+
+            h3 {
+                font-size: $xxl-h2-font-size;
+            }
+
+            img {
+                border-radius: $xxl-project-img-border-radius;
+            }
         }
     }
 }
@@ -145,6 +242,16 @@ nav {
             }
         }
     }
+
+    #section2 {
+        @include default-padding("lg");
+
+        .project {
+            p, h3, .tags {
+                @include default-padding("lg", false, true);
+            }
+        }
+    }
 }
 
 @include media("sm", "md") {
@@ -170,6 +277,44 @@ nav {
             @include default-padding("sm", false, false);
             max-width: $sm-md-max-width;
             margin-left: $md-stats-margin;
+        }
+    }
+
+    #section2 {
+        @include default-padding("sm");
+
+        h2 {
+            font-size: $sm-md-section2-h2-font-size;
+            margin: $sm-md-section2-h2-margin 0;
+        }
+
+        .project {
+            padding-bottom: $sm-md-project-info-gap;
+            border-radius: $sm-md-project-border-radius;
+            max-width: $sm-md-project-max-width;
+            min-width: 30%;
+            gap: $sm-md-project-info-gap;
+
+            p, h3, .tags {
+                @include default-padding("sm", false, true);
+            }
+
+            p {
+                font-size: $sm-md-project-paragraph-font-size;
+            }
+
+            h3 {
+                font-size: $sm-md-project-h3-font-size;
+            }
+
+            img {
+                border-radius: $sm-md-project-img-border-radius;
+            }
+
+            .tags {
+                @include tag(10px, 7px, 13px);
+                gap: $sm-md-project-info-gap;
+            }
         }
     }
 }
@@ -213,6 +358,21 @@ nav {
             }
         }
     }
+
+    #section2 {
+        @include default-padding("xxl");
+
+        .project {
+            p, h3, .tags {
+                @include default-padding("xxl", false, true);
+            }
+
+            .tags {
+                @include tag(10px, 7px, 13px);
+                gap: $xxl-project-info-gap;
+            }
+        }
+    }
 }
 
 @include media('xl') {
@@ -233,6 +393,15 @@ nav {
             }
         }
     }
+
+    #section2 {
+        .project {
+            .tags {
+                @include tag(8px, 2px, 10px);
+                gap: 10px;
+            }
+        }
+    }
 }
 
 @include media("lg") {
@@ -250,6 +419,37 @@ nav {
 
             strong {
                 font-size: $lg-stats-strong-font-size;
+            }
+        }
+    }
+
+    #section2 {
+        h2 {
+            font-size: $sm-md-section2-h2-font-size;
+            margin: $sm-md-section2-h2-margin 0;
+        }
+
+        .project {
+            padding-bottom: $xxl-project-info-gap;
+            border-radius: $lg-project-border-radius;
+            max-width: $lg-project-max-width;
+            gap: $xxl-project-info-gap;
+
+            p {
+                font-size: $sm-md-project-paragraph-font-size;
+            }
+
+            h3 {
+                font-size: $xl-project-h3-font-size;
+            }
+
+            img {
+                border-radius: $lg-project-img-border-radius;
+            }
+
+            .tags {
+                @include tag(8px, 2px, 10px);
+                gap: 10px;
             }
         }
     }
@@ -308,6 +508,12 @@ nav {
             p {
                 font-size: $sm-h2-font-size;
             }
+        }
+    }
+
+    #section2 {
+        .projects {
+            gap: 30px;
         }
     }
 }

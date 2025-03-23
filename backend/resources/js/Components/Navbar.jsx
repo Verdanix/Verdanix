@@ -17,7 +17,7 @@ export default function Navbar({ view }) {
 
     useEffect(() => {
         const handleClickOutside = () => {
-            setIsMenuOpen(false);
+            if (isMenuOpen !== null) setIsMenuOpen(false);
         };
 
         document.addEventListener('click', handleClickOutside);

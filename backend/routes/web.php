@@ -12,8 +12,10 @@ Route::get('/', function () {
         'meta_keywords' => trans('seo.home.meta.keywords'),
         'stats' => [
             "yearsExperience" => (date('Y') - config("app.career_start_year")) . "+",
-            "projects" => ProjectResource::allProjectsCount() . "+",
-            "clients" => 0 . "+" // TODO: Add client count
+            "projectCount" => ProjectResource::allProjectsCount() . "+",
+            "clients" => 0 . "+", // TODO: Add client count
+            "projects" => [
+            ]
         ],
     ]);
 })->name('home');
