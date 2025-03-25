@@ -1,3 +1,4 @@
+import Footer from '@/Components/Footer.jsx';
 import Navbar from '@/Components/Navbar.jsx';
 import Text from '@/Components/Sections/Text.jsx';
 import { useTranslation } from 'react-i18next';
@@ -41,6 +42,8 @@ export default function About() {
                 <Text type={'h2'}>{t('section2.h2')}</Text>
                 {generateJourneyParagraphs(t)}
             </section>
+
+            <Footer />
         </div>
     );
 }
