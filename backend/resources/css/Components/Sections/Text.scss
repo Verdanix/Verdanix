@@ -1,13 +1,16 @@
 @use "../../variables.scss" as *;
 
 // Variables
+// XXL
 $xxl-h2-font-size: 2.5rem;
 $xxl-h3-font-size: 1.5rem;
 $xxl-p-font-size: 1.2rem;
 $xxl-h2-margin: 3% 0;
 
+// XL
 $xl-h3-font-size: 1.2rem;
 
+// SM-MD
 $sm-md-h2-font-size: 2.3rem;
 $sm-md-h2-margin: 6% 0;
 $sm-md-p-font-size: 0.9rem;
@@ -26,7 +29,7 @@ $sm-h2-font-size: 1.8rem;
             margin: $xxl-h2-margin !important;
         }
 
-        p {
+        p, a {
             font-size: $xxl-p-font-size;
         }
 
@@ -39,7 +42,7 @@ $sm-h2-font-size: 1.8rem;
 
 @include media("sm", "md") {
     section {
-        p {
+        p, a {
             font-size: $sm-md-p-font-size;
         }
 
@@ -57,7 +60,7 @@ $sm-h2-font-size: 1.8rem;
             margin: $sm-md-h2-margin;
         }
 
-        p {
+        p, a {
             font-size: $sm-md-p-font-size;
         }
 
