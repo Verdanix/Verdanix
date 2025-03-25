@@ -1,3 +1,4 @@
+import ContactForm from '@/Components/ContactForm.jsx';
 import Footer from '@/Components/Footer.jsx';
 import Navbar from '@/Components/Navbar.jsx';
 import Text from '@/Components/Sections/Text.jsx';
@@ -43,6 +44,7 @@ export default function About() {
                 {generateJourneyParagraphs(t)}
             </section>
 
+            <ContactForm t={t} />
             <Footer />
         </div>
     );
