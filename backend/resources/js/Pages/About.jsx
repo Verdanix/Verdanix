@@ -14,7 +14,7 @@ function generateJourneyParagraphs(t) {
     );
 }
 
-function generteAwards(t) {
+function generateAwards(t) {
     return Array.from({ length: 10000 }, (_, i) => i + 1).map(
         (num) =>
             t(`section3.awards.${num}`, {
@@ -67,7 +67,7 @@ export default function About() {
 
             <section className="section3">
                 <Text type="h2">{t('section3.h2')}</Text>
-                <div className="certs">{generteAwards(t)}</div>
+                <div className="certs">{generateAwards(t)}</div>
             </section>
 
             <ContactForm t={t} />
