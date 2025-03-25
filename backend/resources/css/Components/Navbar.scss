@@ -84,6 +84,12 @@ nav {
     .active a {
         color: $primary-color-shade1;
     }
+
+    #nav {
+         a span {
+             @include hover;
+         }
+     }
 }
 
 // Responsive Styles
