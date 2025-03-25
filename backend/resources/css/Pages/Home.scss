@@ -18,8 +18,6 @@ $cta-buttons-gap: 40px;
 $xxl-h1-font-size: 4rem;
 $xxl-h2-font-size: 1.5rem;
 $xxl-stats-strong-font-size: 2.3rem;
-$xxl-section2-h2-font-size: 2.5rem;
-$xxl-project-paragraph-font-size: 1.2rem;
 
 $xxl-max-width: 30%;
 $xxl-padding-top: 5%;
@@ -27,7 +25,6 @@ $xxl-margin: 1% 0;
 $xxl-stats-margin: 5%;
 
 $xxl-hero-margin-bottom: 10%;
-$xxl-section2-h2-margin: 3%;
 
 $xxl-project-max-width: 30%;
 $xxl-project-border-radius: 3%;
@@ -40,7 +37,6 @@ $xxl-services-gap: 3rem;
 // XL
 $xl-h1-font-size: 3rem;
 $xl-h2-font-size: 1.4rem;
-$xl-project-h3-font-size: 1.2rem;
 $xl-stats-strong-font-size: 2rem;
 
 $xl-max-width: 60%;
@@ -66,12 +62,7 @@ $lg-services-img-width: $xl-services-img-width - 5px;
 $lg-services-gap: 2rem;
 
 // SM-MD
-$sm-md-project-h3-font-size: 1.1rem;
-$sm-md-project-paragraph-font-size: 0.9rem;
-
 $sm-md-project-info-gap: 15px;
-$sm-md-section2-h2-font-size: 2.3rem;
-$sm-md-section2-h2-margin: 6%;
 
 $sm-md-max-width: 100%;
 $sm-md-margin: 4% 0;
@@ -223,21 +214,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
 }
 
 @include media("xl", "xxl") {
-    #section2, #section3 {
-        h2 {
-            font-size: $xxl-section2-h2-font-size;
-            margin: $xxl-section2-h2-margin 0;
-        }
-
-        p {
-            font-size: $xxl-project-paragraph-font-size;
-        }
-
-        h3 {
-            font-size: $xxl-h2-font-size;
-        }
-    }
-
     #section2 .project {
         gap: $xxl-project-info-gap;
         padding-bottom: $xxl-project-info-gap;
@@ -329,14 +305,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
 
     #section2, #section3 {
         @include default-padding("sm");
-
-        p {
-            font-size: $sm-md-project-paragraph-font-size;
-        }
-
-        h2 {
-            margin: $sm-md-section2-h2-margin 0;
-        }
     }
 
     #section2 .projects {
@@ -412,10 +380,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
 
     #section2, #section3 {
         @include default-padding("xxl");
-
-        h2 {
-            font-size: $xxl-section2-h2-font-size;
-        }
     }
 
     #section2 .project {
@@ -484,21 +448,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
         }
     }
 
-    #section2, #section3 {
-        h2 {
-            font-size: $sm-md-section2-h2-font-size;
-            margin: $sm-md-section2-h2-margin 0;
-        }
-
-        p {
-            font-size: $sm-md-project-paragraph-font-size;
-        }
-
-        h3 {
-            font-size: $xl-project-h3-font-size;
-        }
-    }
-
     #section2 .project {
         padding-bottom: $xxl-project-info-gap;
         border-radius: $lg-project-border-radius;
@@ -552,12 +501,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
         }
     }
 
-    #section2, #section3 {
-        h2 {
-            font-size: $sm-md-section2-h2-font-size;
-        }
-    }
-
     #section3 img {
         width: $md-services-img-width
     }
@@ -588,12 +531,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
             p {
                 font-size: $sm-h2-font-size;
             }
-        }
-    }
-
-    #section2, #section3 {
-        h2 {
-            font-size: $sm-section2-h2-font-size;
         }
     }
 

@@ -1,4 +1,5 @@
 import '@/../css/Components/ContactForm.scss';
+import Text from '@/Components/Sections/Text.jsx';
 import { useForm } from '@inertiajs/react';
 
 export default function ContactForm({ t }) {
@@ -31,12 +32,15 @@ export default function ContactForm({ t }) {
     }
 
     return (
-        <div id="contact">
-            <h2>{t('contactform.h2')}</h2>
+        <section id="contact">
+            <Text type="h2">{t('contactform.h2')}</Text>
             <form onSubmit={submit}>
-                <p className={Object.values(errors).length > 0 ? 'show' : ''}>
+                <Text
+                    type="p"
+                    className={Object.values(errors).length > 0 ? 'show' : ''}
+                >
                     {Object.values(errors)[0]}
-                </p>
+                </Text>
                 <div>
                     <input
                         type="text"
@@ -70,6 +74,6 @@ export default function ContactForm({ t }) {
 
                 <button type="submit">{t('send_message')}</button>
             </form>
-        </div>
+        </section>
     );
 }

@@ -2,14 +2,15 @@ import '@/../css/Pages/Home.scss';
 import ContactForm from '@/Components/ContactForm.jsx';
 import Footer from '@/Components/Footer.jsx';
 import Navbar from '@/Components/Navbar.jsx';
+import Text from '@/Components/Sections/Text.jsx';
 import { useTranslation } from 'react-i18next';
 
 function ProjectCard({ title, description, image, link, tags }) {
     return (
         <a className="project" href={link}>
             <img src={image} alt={'An image displaying ' + title} />
-            <h3>{title}</h3>
-            <p>{description}</p>
+            <Text type="h3">{title}</Text>
+            <Text type="p">{description}</Text>
             <div className="tags">
                 {tags.map((tag, index) => (
                     <span
@@ -28,8 +29,8 @@ function ServiceCard({ icon, title, alt, description }) {
     return (
         <div className="service">
             <img src={icon} alt={alt} />
-            <h3>{title}</h3>
-            <p>{description}</p>
+            <Text type="h3">{title}</Text>
+            <Text type="p">{description}</Text>
         </div>
     );
 }
@@ -38,7 +39,7 @@ export default function Home({ stats }) {
     const { t } = useTranslation('home');
     return (
         <div id="home">
-            <div className="section1">
+            <section className="section1">
                 <Navbar />
                 <div id="hero">
                     <div className="text">
@@ -77,10 +78,10 @@ export default function Home({ stats }) {
                         </a>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="section2">
-                <h2>{t('section2.h2')}</h2>
+            <section id="section2">
+                <Text type="h2">{t('section2.h2')}</Text>
                 <div className="projects">
                     {stats.projects.map((project, index) => (
                         <ProjectCard
@@ -92,10 +93,10 @@ export default function Home({ stats }) {
                         />
                     ))}
                 </div>
-            </div>
+            </section>
 
-            <div id="section3">
-                <h2>{t('section3.h2')}</h2>
+            <section id="section3">
+                <Text type="h2">{t('section3.h2')}</Text>
 
                 <div className="services">
                     <ServiceCard
@@ -123,7 +124,7 @@ export default function Home({ stats }) {
                         description={t('section3.service4.description')}
                     />
                 </div>
-            </div>
+            </section>
 
             <ContactForm t={t} />
             <Footer />
