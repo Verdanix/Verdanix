@@ -62,7 +62,7 @@ export default function Navbar({ view }) {
                         <li className={view === 'services' ? 'active' : ''}>
                             <a href="/services">{t('header.nav.services')}</a>
                         </li>
-                        <li className={view === 'services' ? 'active' : ''}>
+                        <li className={view === 'register' ? 'active' : ''}>
                             <a href="/register">
                                 <span>{t('header.nav.register')}</span>
                             </a>
