@@ -20,19 +20,22 @@ return [
         "h2" => "Awards & Certifications",
         "awards" => [
             "1" => [
-                "title" => "LIP Essentials Certified",
+                "title" => "LPI Essentials Certified",
+                "type" => "Developer Certification",
                 "year" => "2023",
-                "icon" => "/images/footer/github.svg",
+                "icon" => "/images/about/section4/lpi.svg",
                 "alt" => "the linux professional institute logo",
             ],
             "2" => [
                 "title" => "Eagle Scout",
+                "type" => "Professional Award",
                 "year" => "2025",
                 "icon" => "/images/about/eagle_scout.svg",
                 "alt" => "the eagle scout rank logo",
             ],
             "3" => [
                 "title" => "Github Foundations Certified",
+                "type" => "Developer Certification",
                 "year" => "2025",
                 "icon" => "/images/footer/github.svg",
                 "alt" => "the linux github logo",
