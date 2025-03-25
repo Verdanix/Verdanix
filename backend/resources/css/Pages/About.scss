@@ -22,6 +22,9 @@ $xxl-cards-gap: 2%;
 $xxl-experiences-content-gap: 15px;
 $xxl-experiences-circle-height: 20px;
 $xxl-experiences-line-width: 4px;
+
+$xxl-skills-width: 20%;
+$xxl-skills-gap: 5px;
 // LG
 $lg-padding-top: 3%;
 $lg-img-dim: 300px;
@@ -32,6 +35,10 @@ $lg-content-gap: 20px;
 $lg-journey-margin: 3% 7%;
 
 $lg-certs-img-height: 30px;
+
+// SM-MD
+$sm-md-skills-width: 40%;
+$sm-md-skills-gap: 10px;
 
 // MD
 $md-h1-font-size: 2rem;
@@ -161,6 +168,25 @@ $sm-img-dim: 250px;
     }
 }
 
+.skills {
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            color: $text-color3;
+            text-align: center;
+        }
+    }
+}
+
 // Responsive Styles
 @include media("xl", "xxl") {
     .section1, .section2, .section3 {
@@ -224,6 +250,10 @@ $sm-img-dim: 250px;
             }
         }
     }
+
+    .skills {
+        @include default-padding("xxl");
+    }
 }
 
 @include media("xxl") {
@@ -265,8 +295,7 @@ $sm-img-dim: 250px;
         }
     }
 
-    .section4
-    .experiences {
+    .section4 .experiences {
         gap: $xxl-experiences-gap;
 
         .card {
@@ -288,6 +317,17 @@ $sm-img-dim: 250px;
             }
         }
     }
+
+    .skills {
+        .content {
+            gap: 30px;
+            row-gap: 30px;
+
+            img {
+                width: 40px;
+            }
+        }
+    }
 }
 
 @include media("lg", "xl", "xxl") {
@@ -299,6 +339,11 @@ $sm-img-dim: 250px;
 
     .section4 {
         @include default-padding("xxl");
+    }
+
+    .skills .content .skill {
+        width: $xxl-skills-width;
+        gap: $xxl-skills-gap;
     }
 }
 
@@ -316,7 +361,6 @@ $sm-img-dim: 250px;
     .section1 img {
         border-radius: $lg-image-radius;
     }
-
 }
 
 @include media("lg") {
@@ -353,6 +397,10 @@ $sm-img-dim: 250px;
 
     .section3 img {
         width: $lg-certs-img-height;
+    }
+
+    .skills {
+        @include default-padding("lg");
     }
 }
 
@@ -409,8 +457,12 @@ $sm-img-dim: 250px;
         width: $lg-certs-img-height;
     }
 
-
-    .section4 {
+    .section4, .skills {
         @include default-padding("sm");
+    }
+
+    .skills .content .skill {
+        width: $sm-md-skills-width;
+        gap: $sm-md-skills-gap;
     }
 }

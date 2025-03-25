@@ -209,61 +209,71 @@ return [
         "h2" => "Personal Skills",
         "skills" => [
             "1" => [
-                "title" => "Communication",
-                "icon" => "/images/about/section5/communication.svg",
-                "alt" => "a speech bubble icon",
-            ],
-            "2" => [
                 "title" => "Leadership",
                 "icon" => "/images/about/section5/leadership.svg",
                 "alt" => "a compass icon",
             ],
-            "3" => [
-                "title" => "Project Management",
-                "icon" => "/images/about/section5/project_management.svg",
-                "alt" => "a briefcase icon",
+            "2" => [
+                "title" => "Communication",
+                "icon" => "/images/about/section5/communication.svg",
+                "alt" => "a speech bubble icon",
             ],
-            "4" => [
+            "3" => [
                 "title" => "Patience",
                 "icon" => "/images/about/section5/patience.svg",
                 "alt" => "a watch icon",
             ],
+            "4" => [
+                "title" => "Project Management",
+                "icon" => "/images/about/section5/project_management.svg",
+                "alt" => "a briefcase icon",
+            ],
             "5" => [
-                "title" => "MS 350 Suite",
+                "title" => "Transparency",
                 "icon" => "/images/about/section5/microsoft.svg",
-                "alt" => "the microsoft logo",
+                "alt" => "the a window icon",
             ],
             "6" => [
-                "title" => "Perseverance",
-                "icon" => "/images/about/section5/perseverance.svg",
-                "alt" => "a loading indicator",
+                "title" => "Emotional Intelligence",
+                "icon" => "/images/about/section5/emotional_intelligence.svg",
+                "alt" => "a central processing unit icon",
             ],
             "7" => [
-                "title" => "Problem Solving",
-                "icon" => "/images/about/section5/problem_solving.svg",
-                "alt" => "an achievement icon",
+                "title" => "Listening",
+                "icon" => "/images/about/section5/active_listener.svg",
+                "alt" => "a microphone icon",
             ],
             "8" => [
-                "title" => "Time Management",
-                "icon" => "/images/about/section5/time_management.svg",
-                "alt" => "a clock icon",
-            ],
-            "9" => [
-                "title" => "Attention to Detail",
-                "icon" => "/images/about/section5/attention_to_detail.svg",
-                "alt" => "a book icon",
-            ],
-            "10" => [
-                "title" => "Creativity",
-                "icon" => "/images/about/section5/creativity.svg",
-                "alt" => "a smiley face icon",
-            ],
-            "11" => [
                 "title" => "Empathy",
                 "icon" => "/images/about/section5/empathy.svg",
                 "alt" => "a heart icon",
             ],
+            "9" => [
+                "title" => "Problem Solving",
+                "icon" => "/images/about/section5/problem_solving.svg",
+                "alt" => "an achievement icon",
+            ],
+            "10" => [
+                "title" => "Perseverance",
+                "icon" => "/images/about/section5/perseverance.svg",
+                "alt" => "a loading indicator",
+            ],
+            "11" => [
+                "title" => "Time Management",
+                "icon" => "/images/about/section5/time_management.svg",
+                "alt" => "a clock icon",
+            ],
             "12" => [
+                "title" => "Attention to Detail",
+                "icon" => "/images/about/section5/attention_to_detail.svg",
+                "alt" => "a book icon",
+            ],
+            "14" => [
+                "title" => "Creativity",
+                "icon" => "/images/about/section5/creativity.svg",
+                "alt" => "a smiley face icon",
+            ],
+            "15" => [
                 "title" => "Adaptability",
                 "icon" => "/images/about/section5/adaptability.svg",
                 "alt" => "an edit icon",
@@ -273,21 +283,11 @@ return [
                 "icon" => "/images/about/section5/teamwork.svg",
                 "alt" => "two users icon",
             ],
-            "14" => [
-                "title" => "Emotional Intelligence",
-                "icon" => "/images/about/section5/emotional_intelligence.svg",
-                "alt" => "a central processing unit icon",
-            ],
-            "15" => [
+            "16" => [
                 "title" => "Resourcefulness",
                 "icon" => "/images/about/section5/resourcefulness.svg",
                 "alt" => "a globe icon",
             ],
-            "16" => [
-                "title" => "Active Listener",
-                "icon" => "/images/about/section5/active_listener.svg",
-                "alt" => "a microphone icon",
-            ]
         ]
     ]
 ];

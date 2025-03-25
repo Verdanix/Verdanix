@@ -23,7 +23,7 @@ function generateAwards(t) {
                 <div className="card">
                     <img
                         src={t(`section3.awards.${num}.icon`)}
-                        alt={`section3.awards.${num}.alt`}
+                        alt={t(`section3.awards.${num}.alt`)}
                     />
                     <Text type="h3">{t(`section3.awards.${num}.title`)}</Text>
                     <Text type="strong">
@@ -60,6 +60,23 @@ function generateExperience(t) {
                             {t(`section4.experiences.${num}.description`)}
                         </Text>
                     </div>
+                </div>
+            ),
+    );
+}
+
+function generateSkills(t, prefix) {
+    return Array.from({ length: 10000 }, (_, i) => i + 1).map(
+        (num) =>
+            t(`${prefix}.skills.${num}`, {
+                defaultValue: '',
+            }) && (
+                <div className="skill">
+                    <img
+                        src={t(`${prefix}.skills.${num}.icon`)}
+                        alt={t(`${prefix}.skills.${num}.alt`)}
+                    />
+                    <Text type="h3">{t(`${prefix}.skills.${num}.title`)}</Text>
                 </div>
             ),
     );
@@ -103,6 +120,17 @@ export default function About() {
             <section className="section4">
                 <Text type="h2">{t('section4.h2')}</Text>
                 <div className="experiences">{generateExperience(t)}</div>
+            </section>
+
+            <section className="skills">
+                <Text type="h2">{t('section5.h2')}</Text>
+
+                <div className="content">{generateSkills(t, 'section5')}</div>
+            </section>
+
+            <section className="skills">
+                <Text type="h2">{t('section6.h2')}</Text>
+                <div className="content">{generateSkills(t, 'section6')}</div>
             </section>
 
             <ContactForm t={t} />
