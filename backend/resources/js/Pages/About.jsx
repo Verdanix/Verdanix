@@ -1,19 +1,14 @@
-import { generateListItems } from '@/common.jsx';
-import GuestLayout from '@/Layouts/GuestLayout.jsx';
+import Navbar from '@/Components/Navbar.jsx';
+import Text from '@/Components/Sections/Text.jsx';
 import { useTranslation } from 'react-i18next';
 import '../../css/Pages/About.scss';
 
-function generateExperiences(t) {
+function generateJourneyParagraphs(t) {
     return Array.from({ length: 10000 }, (_, i) => i + 1).map(
         (num) =>
-            t(`experience.${num}`, {
+            t(`section2.paragraphs.${num}`, {
                 defaultValue: '',
-            }) && (
-                <li key={num}>
-                    <strong>{t(`experience.${num}.prefix`)}</strong>{' '}
-                    {t(`experience.${num}`)}
-                </li>
-            ),
+            }) && <Text type="p">{t(`section2.paragraphs.${num}`)}</Text>,
     );
 }
 
@@ -21,48 +16,31 @@ export default function About() {
     const { t } = useTranslation('about');
 
     return (
-        <GuestLayout view="about">
-            <div id="origin-story">
-                <h1>{t('origin.story.title')}</h1>
-                <p>
-                    {t('origin.story.1')}
-                    <br />
-                    <br />
-                    {t('origin.story.2')}
-                    <br />
-                    <br />
-                    {t('origin.story.3')}
-                </p>
-            </div>
-            <div id="certsAndAwards">
-                <h2>{t('awards.certs.title')}</h2>
-                <p>
-                    <strong>{t('awards.certs.start')}</strong>
-                    <br />
-                    <br />
-                </p>
-                <ul>{generateListItems(t, 'awards.certs')}</ul>
-                <br />
-                <strong>{t('awards.certs.end')}</strong>
-            </div>
-            <div id="education">
-                <h2>{t('education.title')}</h2>
-                <p>
-                    <strong>{t('education.start')}</strong>
-                    <br />
-                    <br />
-                </p>
-                <ul>{generateListItems(t, 'education')}</ul>
-            </div>
-            <div id="experiences">
-                <h2>{t('experience.title')}</h2>
-                <p>
-                    <strong>{t('experience.start')}</strong>
-                    <br />
-                    <br />
-                </p>
-                <ul>{generateExperiences(t, 'experience')}</ul>
-            </div>
-        </GuestLayout>
+        <div id="about">
+            <Navbar view="about" />
+            <section className="section1">
+                <img
+                    src="https://images.deepai.org/art-image/7f5487afe24544ecb641b1db77c823d4/create-an-image-of-a-guy-with-glasses-in-a-suit-stand.jpg"
+                    alt={t('section1.alt')}
+                />
+                <div className="content">
+                    <h1>{t('section1.about')}</h1>
+                    <Text type="strong">{t('section1.description')}</Text>
+                    <div className="buttons">
+                        <a className="contact" href="#contact">
+                            {t('section1.connect')}
+                        </a>
+                        <a className="download" href="/cv.pdf">
+                            {t('section1.download')}
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section className="section2">
+                <Text type={'h2'}>{t('section2.h2')}</Text>
+                {generateJourneyParagraphs(t)}
+            </section>
+        </div>
     );
 }

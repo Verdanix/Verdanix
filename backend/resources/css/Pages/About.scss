@@ -1,58 +1,214 @@
 @use '../variables.scss' as *;
 
-// Common
-#origin-story,
-#certsAndAwards,
-#education,
-#experiences {
-    ul > li {
-        list-style-type: disc;
-        margin: 20px 2.5vw 20px;
+// Variables
+// XXL
+$xxl-padding-top: 3%;
+$xxl-img-dim: 400px;
+$xxl-image-radius: 10%;
+$xxl-h1-font-size: 4rem;
+$xxl-content-gap: 25px;
+
+$xxl-journey-margin: 5% 10%;
+$xxl-journey-gap: 20px;
+
+// LG
+$lg-padding-top: 3%;
+$lg-img-dim: 300px;
+$lg-image-radius: 10%;
+$lg-h1-font-size: 3rem;
+$lg-content-gap: 20px;
+
+$lg-journey-margin: 3% 7%;
+
+// MD
+$md-h1-font-size: 2rem;
+$md-content-gap: 10px;
+
+// SM
+$sm-img-dim: 250px;
+
+// Mixins
+
+// Common Styles
+.section1, .section2 {
+    strong, p {
+        color: $text-color2;
     }
 }
 
-h1,
-h2 {
-    text-align: center;
-}
+.section1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-#experiences {
-    li {
-        color: whitesmoke;
+    .content, .buttons {
+        display: flex;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    img {
+        mask-image: linear-gradient(to bottom, rgba(black, 1), rgba($body-color, 0.1));
+        background-color: white;
     }
 }
 
-// Responsive styles
-@include media('small-mobile', 'mobile') {
-    :root {
-        padding: 25px;
-    }
+.section2 {
+    display: flex;
+    flex-direction: column;
 
-    h1,
     h2 {
-        margin: 15px 0;
-        text-decoration: underline 3px solid $secondary-color;
-        font-size: 1.5rem;
-    }
-
-    p, strong, li {
-        font-size: 1rem;
+        margin-bottom: 0 !important;
     }
 }
 
-@include media('desktop', 'tablet') {
-    :root {
-        padding: 30px;
+// Responsive Styles
+@include media("xl", "xxl") {
+    .section1, .section2 {
+        @include default-padding("xxl");
     }
 
-    h1,
-    h2 {
-        margin: 30px 0;
-        text-decoration: underline 5px solid $secondary-color;
-        font-size: 1.8rem;
+    .section1 {
+        padding-top: $xxl-padding-top;
+
+        img {
+            height: $xxl-img-dim;
+            width: $xxl-img-dim;
+            border-radius: $xxl-image-radius;
+        }
+
+        .content, .buttons {
+            gap: $xxl-content-gap;
+        }
+
+        .content {
+            @include default-padding("xxl");
+
+            h1 {
+                font-size: $xxl-h1-font-size;
+            }
+
+            .buttons {
+                .contact {
+                    @include button($background-color: $primary-color-shade1);
+                }
+
+                .download {
+                    @include button($background: false);
+                }
+
+            }
+        }
+    }
+}
+
+@include media("lg", "xl", "xxl") {
+    .section2 {
+        @include default-padding("xxl");
+        margin: $xxl-journey-margin;
+        gap: $xxl-journey-gap;
+    }
+}
+
+@include media("md", "lg") {
+    .section1 {
+        img {
+            height: $lg-img-dim;
+            width: $lg-img-dim;
+            border-radius: $lg-image-radius;
+        }
+    }
+}
+
+@include media("sm", "md", "lg") {
+    .section1 {
+        img {
+            border-radius: $lg-image-radius;
+        }
+    }
+}
+
+@include media("lg") {
+    .section1, .section2 {
+        @include default-padding("lg");
     }
 
-    p, strong, li {
-        font-size: 1.2rem;
+    .section1 {
+        padding-top: $lg-padding-top;
+
+        .content, .buttons {
+            gap: $lg-content-gap;
+        }
+
+        .content {
+            @include default-padding("lg");
+
+            h1 {
+                font-size: $lg-h1-font-size;
+            }
+
+            .buttons {
+                .contact {
+                    @include button($background-color: $primary-color-shade1);
+                }
+
+                .download {
+                    @include button($background: false);
+                }
+
+            }
+        }
+    }
+}
+
+@include media("sm") {
+    .section1 {
+        img {
+            height: $sm-img-dim;
+            width: $sm-img-dim;
+        }
+    }
+}
+
+@include media("sm", "md") {
+    .section1, .section2 {
+        @include default-padding("sm");
+    }
+    .section1 {
+        flex-direction: column;
+
+        img {
+            border-radius: $lg-image-radius;
+        }
+
+        .content, .buttons {
+            gap: $md-content-gap;
+        }
+
+        .content {
+            @include default-padding("sm");
+
+            h1 {
+                font-size: $md-h1-font-size;
+            }
+
+            .buttons {
+                .contact {
+                    @include button($background-color: $primary-color-shade1);
+                }
+
+                .download {
+                    @include button($background: false);
+                }
+
+            }
+        }
+    }
+
+    .section2 {
+        margin: $lg-journey-margin;
+        gap: $xxl-journey-gap;
     }
 }
