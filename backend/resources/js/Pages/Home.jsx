@@ -126,9 +126,7 @@ export default function Home({ stats }) {
             </div>
 
             <ContactForm t={t} />
-            <div className="section1">
-                <Footer />
-            </div>
+            <Footer />
         </div>
     );
 }

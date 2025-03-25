@@ -35,6 +35,8 @@ $xxl-project-img-border-radius: 6% 6% 0 0;
 $xxl-project-info-gap: 15px;
 $xxl-services-img-width: 45px;
 
+$xxl-services-gap: 3rem;
+
 // XL
 $xl-h1-font-size: 3rem;
 $xl-h2-font-size: 1.4rem;
@@ -61,6 +63,8 @@ $lg-project-img-border-radius: 6% 6% 0 0;
 
 $lg-services-img-width: $xl-services-img-width - 5px;
 
+$lg-services-gap: 2rem;
+
 // SM-MD
 $sm-md-project-h3-font-size: 1.1rem;
 $sm-md-project-paragraph-font-size: 0.9rem;
@@ -78,7 +82,7 @@ $sm-md-project-border-radius: 3%;
 $sm-md-project-img-border-radius: 6% 6% 0 0;
 
 $sm-md-projects-gap: 30px;
-
+$sm-md-services-gap: 2rem;
 // MD
 $md-h1-font-size: 3rem;
 $md-h2-font-size: 1.4rem;
@@ -99,7 +103,6 @@ $sm-services-img-width: 25px;
 $sm-services-img-width: $sm-services-img-width - 5px;
 
 // Common Styles
-
 #hero {
     background: linear-gradient(160deg, rgba($body-color, 0) 50%, rgba($secondary-color, 0.45) 180%);
     padding-bottom: $xxl-hero-margin-bottom;
@@ -171,7 +174,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
         flex-direction: column;
         background-color: $body-color-shade2;
 
-
         p, h3, .tags {
             padding-right: 0;
         }
@@ -212,10 +214,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
     }
 
     #section3 {
-        .services {
-            gap: 10%;
-        }
-
         .service {
             padding: 30px;
             border-radius: 20px;
@@ -249,6 +247,10 @@ $sm-services-img-width: $sm-services-img-width - 5px;
         img {
             border-radius: $xxl-project-img-border-radius;
         }
+    }
+
+    #section3 .services {
+        grid-gap: $xxl-services-gap;
     }
 }
 
@@ -360,6 +362,11 @@ $sm-services-img-width: $sm-services-img-width - 5px;
             @include tag(10px, 7px, 13px);
             gap: $sm-md-project-info-gap;
         }
+    }
+
+    #section3 .services {
+        gap: $sm-md-services-gap;
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -507,8 +514,14 @@ $sm-services-img-width: $sm-services-img-width - 5px;
         }
     }
 
-    #section3 img {
-        width: $lg-services-img-width
+    #section3 {
+        .services {
+            grid-gap: $lg-services-gap;
+        }
+
+        img {
+            width: $lg-services-img-width
+        }
     }
 }
 
@@ -584,15 +597,8 @@ $sm-services-img-width: $sm-services-img-width - 5px;
         }
     }
 
-    #section3 {
-        .services {
-            gap: $sm-section3-gap;
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        img {
-            width: $sm-services-img-width;
-        }
+    #section3 img {
+        width: $sm-services-img-width;
     }
 }
 
