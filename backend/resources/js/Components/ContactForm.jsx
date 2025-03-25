@@ -16,6 +16,12 @@ export default function ContactForm({ t }) {
     const submit = (e) => {
         e.preventDefault();
         post(route('contact'), data);
+        setData({
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+        });
     };
 
     if (Object.values(errors).length > 0) {
@@ -26,7 +32,7 @@ export default function ContactForm({ t }) {
 
     return (
         <div id="contact">
-            <h2>{t('section4.h2')}</h2>
+            <h2>{t('contactform.h2')}</h2>
             <form onSubmit={submit}>
                 <p className={Object.values(errors).length > 0 ? 'show' : ''}>
                     {Object.values(errors)[0]}

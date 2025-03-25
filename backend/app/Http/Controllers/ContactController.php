@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\InquiryRequest;
+use App\Mail\InquiryMade;
 use App\Models\User;
 use Exception;
+use Illuminate\Support\Facades\Mail;
 use Log;
 
 class ContactController extends Controller

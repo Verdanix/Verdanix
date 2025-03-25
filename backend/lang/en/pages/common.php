@@ -18,6 +18,13 @@ return [
         ],
     ],
 
+    "contactform" => [
+        "h2" => "Let's Work Together",
+        "status" => [
+            "success" => "I look forward to working with you! Please allow up to 3 days for a response!",
+            "error" => "Something went extremely wrong. Please contact me directly at contact@masonroot.dev for inquiries."
+        ]
+    ],
     "footer" => [
         "titles" => [
             "quick" => "Quick Links",
