@@ -17,6 +17,11 @@ $xxl-certs-card-radius: 20px;
 $xxl-certs-gap: 30px;
 $xxl-certs-card-gap: 10px;
 
+$xxl-experiences-gap: 30px;
+$xxl-cards-gap: 2%;
+$xxl-experiences-content-gap: 15px;
+$xxl-experiences-circle-height: 20px;
+$xxl-experiences-line-width: 4px;
 // LG
 $lg-padding-top: 3%;
 $lg-img-dim: 300px;
@@ -27,6 +32,7 @@ $lg-content-gap: 20px;
 $lg-journey-margin: 3% 7%;
 
 $lg-certs-img-height: 30px;
+
 // MD
 $md-h1-font-size: 2rem;
 $md-content-gap: 10px;
@@ -94,6 +100,64 @@ $sm-img-dim: 250px;
             }
         }
 
+    }
+}
+
+.section4 {
+    .experiences {
+        display: flex;
+        flex-direction: column;
+
+        .circle {
+            border-radius: 50%;
+        }
+
+        .odd {
+            .content strong {
+                color: $primary-color-shade4;
+            }
+
+            .indicator {
+                .circle, .line {
+                    background-color: $primary-color-shade4;
+                }
+            }
+        }
+
+        .even {
+            .content strong {
+                color: $secondary-color-shade4;
+            }
+
+            .indicator {
+                .circle, .line {
+                    background-color: $secondary-color-shade4;
+                }
+            }
+        }
+
+        .card {
+            display: flex;
+
+            .indicator {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .line {
+                    height: 100%;
+                }
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    color: $text-color3;
+                }
+            }
+        }
     }
 }
 
@@ -200,6 +264,30 @@ $sm-img-dim: 250px;
             }
         }
     }
+
+    .section4
+    .experiences {
+        gap: $xxl-experiences-gap;
+
+        .card {
+            gap: $xxl-cards-gap;
+
+            .content {
+                gap: $xxl-experiences-content-gap;
+            }
+
+            .indicator {
+                .circle {
+                    width: $xxl-experiences-circle-height;
+                    height: $xxl-experiences-circle-height;
+                }
+
+                .line {
+                    width: $xxl-experiences-line-width;
+                }
+            }
+        }
+    }
 }
 
 @include media("lg", "xl", "xxl") {
@@ -207,6 +295,10 @@ $sm-img-dim: 250px;
         @include default-padding("xxl");
         margin: $xxl-journey-margin;
         gap: $xxl-journey-gap;
+    }
+
+    .section4 {
+        @include default-padding("xxl");
     }
 }
 
@@ -315,5 +407,10 @@ $sm-img-dim: 250px;
 
     .section3 img {
         width: $lg-certs-img-height;
+    }
+
+
+    .section4 {
+        @include default-padding("sm");
     }
 }

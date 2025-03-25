@@ -35,6 +35,36 @@ function generateAwards(t) {
     );
 }
 
+function generateExperience(t) {
+    const color = (num) => (num % 2 === 0 ? ' even' : ' odd');
+    return Array.from({ length: 10000 }, (_, i) => i + 1).map(
+        (num) =>
+            t(`section4.experiences.${num}`, {
+                defaultValue: '',
+            }) && (
+                <div className={'card' + color(num)}>
+                    <div className="indicator">
+                        <div className={'circle' + color(num)}></div>
+                        <div className={'line' + color(num)}></div>
+                    </div>
+                    <div className="content">
+                        <Text type="h3">
+                            {t(`section4.experiences.${num}.title`)}
+                        </Text>
+                        <Text type="strong">
+                            {t(`section4.experiences.${num}.org`)} -{' '}
+                            {t(`section4.experiences.${num}.dates.start`)} -{' '}
+                            {t(`section4.experiences.${num}.dates.end`)}
+                        </Text>
+                        <Text type="p">
+                            {t(`section4.experiences.${num}.description`)}
+                        </Text>
+                    </div>
+                </div>
+            ),
+    );
+}
+
 export default function About() {
     const { t } = useTranslation('about');
 
@@ -68,6 +98,11 @@ export default function About() {
             <section className="section3">
                 <Text type="h2">{t('section3.h2')}</Text>
                 <div className="certs">{generateAwards(t)}</div>
+            </section>
+
+            <section className="section4">
+                <Text type="h2">{t('section4.h2')}</Text>
+                <div className="experiences">{generateExperience(t)}</div>
             </section>
 
             <ContactForm t={t} />
