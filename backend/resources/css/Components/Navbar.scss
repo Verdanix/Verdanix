@@ -57,12 +57,9 @@ nav {
     justify-content: space-between;
     align-items: center;
 
-    div {
+    div, li {
         display: flex;
         align-items: center;
-    }
-
-    li {
         list-style-type: none;
     }
 
@@ -91,58 +88,60 @@ nav {
 
 // Responsive Styles
 @include media("lg", "xl", "xxl") {
-    .hamburger-menu {
-        display: none;
-    }
+    nav {
+        .hamburger-menu {
+            display: none;
+        }
 
-    #nav {
-        gap: $desktop-gap-size;
-    }
-
-    .nav-links-inactive, .nav-links, .nav-links-active {
-        gap: $desktop-gap-size;
-        display: flex;
+        #nav, .nav-links-inactive, .nav-links, .nav-links-active {
+            gap: $desktop-gap-size;
+            display: flex;
+        }
     }
 }
 
 @include media("xl", "xxl") {
-    .nav-links-inactive, .nav-links, .nav-links-active {
-        @include nav-font-size("xlg", true);
-    }
-
-    #nav {
-        gap: $desktop-gap-size;
-        @include nav-font-size("xlg");
-
-        img {
-            width: 60px;
+    nav {
+        .nav-links-inactive, .nav-links, .nav-links-active {
+            @include nav-font-size("xlg", true);
         }
-    }
 
-    .nav-links-inactive, .nav-links {
-        a span {
-            @include button()
+        #nav {
+            gap: $desktop-gap-size;
+            @include nav-font-size("xlg");
+
+            img {
+                width: 60px;
+            }
+        }
+
+        .nav-links-inactive, .nav-links {
+            a span {
+                @include button();
+            }
         }
     }
 }
 
 @include media("lg") {
-    .nav-links-inactive, .nav-links, .nav-links-active {
-        @include nav-font-size("lg", true);
-    }
-
-    #nav {
-        @include nav-font-size("lg");
-        gap: $desktop-gap-size;
-
-        img {
-            width: 50px;
+    nav {
+        .nav-links-inactive, .nav-links, .nav-links-active {
+            @include nav-font-size("lg", true);
         }
-    }
 
-    .nav-links-inactive, .nav-links {
-        a span {
-            @include button(10px, 5px)
+        #nav {
+            @include nav-font-size("lg");
+            gap: $desktop-gap-size;
+
+            img {
+                width: 50px;
+            }
+        }
+
+        .nav-links-inactive, .nav-links {
+            a span {
+                @include button(10px, 5px);
+            }
         }
     }
 }
@@ -160,25 +159,6 @@ nav {
 }
 
 @include media("sm", "md") {
-    .hamburger-menu {
-        display: flex;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .nav-links-inactive, .nav-links-active {
-        flex-direction: column;
-        position: absolute;
-        gap: $mobile-gap-size;
-        height: 100%;
-        top: 0;
-        right: 0;
-        background-color: $body-color-shade2;
-        padding: 30px;
-    }
-
     .nav-links-inactive {
         @include nav-link-slide-in-out(false);
     }
@@ -189,51 +169,70 @@ nav {
 
     nav {
         @include default-padding("sm");
-    }
 
-    #nav {
-        gap: $mobile-gap-size;
+        .hamburger-menu {
+            display: flex;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .nav-links-inactive, .nav-links-active {
+            flex-direction: column;
+            position: absolute;
+            gap: $mobile-gap-size;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: $body-color-shade2;
+            padding: 30px;
+        }
+
+        #nav {
+            gap: $mobile-gap-size;
+        }
     }
 }
 
 @include media('md') {
-    .nav-links-inactive, .nav-links-active {
-        @include nav-font-size("xlg", true);
-    }
+    nav {
+        .nav-links-inactive, .nav-links-active {
+            @include nav-font-size("xlg", true);
+        }
 
-    .hamburger-menu {
-        span {
+        .hamburger-menu span {
             width: 35px;
             height: 5px;
         }
-    }
 
-    #nav {
-        @include nav-font-size("xlg");
+        #nav {
+            @include nav-font-size("xlg");
 
-        img {
-            width: 45px;
+            img {
+                width: 45px;
+            }
         }
     }
 }
 
 @include media('sm') {
-    .nav-links-inactive, .nav-links-active {
-        @include nav-font-size("lg", true);
-    }
+    nav {
+        .nav-links-inactive, .nav-links-active {
+            @include nav-font-size("lg", true);
+        }
 
-    .hamburger-menu {
-        span {
+        .hamburger-menu span {
             width: 30px;
             height: 4px;
         }
-    }
 
-    #nav {
-        @include nav-font-size("lg");
+        #nav {
+            @include nav-font-size("lg");
 
-        img {
-            width: 40px;
+            img {
+                width: 40px;
+            }
         }
     }
 }
