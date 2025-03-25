@@ -10,6 +10,6 @@ export default function Text({ children, type }) {
     } else if (type === 'p') {
         return <p>{children}</p>;
     } else if (type === 'strong') {
-        return <p>{children}</p>;
+        return <strong>{children}</strong>;
     }
 }

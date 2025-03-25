@@ -11,6 +11,12 @@ $xxl-content-gap: 25px;
 $xxl-journey-margin: 5% 10%;
 $xxl-journey-gap: 20px;
 
+$xxl-certs-img-height: 40px;
+$xxl-certs-card-padding: 4%;
+$xxl-certs-card-radius: 20px;
+$xxl-certs-gap: 30px;
+$xxl-certs-card-gap: 10px;
+
 // LG
 $lg-padding-top: 3%;
 $lg-img-dim: 300px;
@@ -20,6 +26,7 @@ $lg-content-gap: 20px;
 
 $lg-journey-margin: 3% 7%;
 
+$lg-certs-img-height: 30px;
 // MD
 $md-h1-font-size: 2rem;
 $md-content-gap: 10px;
@@ -64,9 +71,35 @@ $sm-img-dim: 250px;
     }
 }
 
+.section3 {
+    display: flex;
+    flex-direction: column;
+
+    .certs {
+        display: grid;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: $body-color-shade2;
+            min-width: 80%;
+
+            strong {
+                color: $text-color3;
+            }
+
+            p {
+                color: $text-color2;
+            }
+        }
+
+    }
+}
+
 // Responsive Styles
 @include media("xl", "xxl") {
-    .section1, .section2 {
+    .section1, .section2, .section3 {
         @include default-padding("xxl");
     }
 
@@ -102,6 +135,71 @@ $sm-img-dim: 250px;
             }
         }
     }
+
+    .section3 {
+        .certs {
+            grid-gap: $xxl-certs-gap;
+
+            .card {
+                padding: $xxl-certs-card-padding;
+                border-radius: $xxl-certs-card-radius;
+                gap: $xxl-certs-card-gap;
+
+                strong {
+                    color: $text-color3;
+                }
+
+                p {
+                    font-size: 1rem;
+                    color: $text-color2;
+                }
+
+                img {
+                    width: $xxl-certs-img-height;
+                }
+            }
+        }
+    }
+}
+
+@include media("xxl") {
+    .section3 {
+        .certs {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+
+        img {
+            width: $xxl-certs-img-height;
+        }
+    }
+}
+
+@include media("sm", "md", "lg", "xl") {
+    .section3 .certs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include media("sm", "md", "lg", "xl", "xxl") {
+    .section3 .certs {
+        grid-gap: $xxl-certs-gap;
+
+        .card {
+            padding: $xxl-certs-card-padding;
+            border-radius: $xxl-certs-card-radius;
+            gap: $xxl-certs-card-gap;
+
+            strong {
+                color: $text-color3;
+            }
+
+            p {
+                font-size: 1rem;
+                color: $text-color2;
+            }
+        }
+    }
 }
 
 @include media("lg", "xl", "xxl") {
@@ -123,15 +221,14 @@ $sm-img-dim: 250px;
 }
 
 @include media("sm", "md", "lg") {
-    .section1 {
-        img {
-            border-radius: $lg-image-radius;
-        }
+    .section1 img {
+        border-radius: $lg-image-radius;
     }
+
 }
 
 @include media("lg") {
-    .section1, .section2 {
+    .section1, .section2, .section3 {
         @include default-padding("lg");
     }
 
@@ -161,6 +258,10 @@ $sm-img-dim: 250px;
             }
         }
     }
+
+    .section3 img {
+        width: $lg-certs-img-height;
+    }
 }
 
 @include media("sm") {
@@ -173,7 +274,7 @@ $sm-img-dim: 250px;
 }
 
 @include media("sm", "md") {
-    .section1, .section2 {
+    .section1, .section2, .section3 {
         @include default-padding("sm");
     }
     .section1 {
@@ -210,5 +311,9 @@ $sm-img-dim: 250px;
     .section2 {
         margin: $lg-journey-margin;
         gap: $xxl-journey-gap;
+    }
+
+    .section3 img {
+        width: $lg-certs-img-height;
     }
 }

@@ -14,6 +14,27 @@ function generateJourneyParagraphs(t) {
     );
 }
 
+function generteAwards(t) {
+    return Array.from({ length: 10000 }, (_, i) => i + 1).map(
+        (num) =>
+            t(`section3.awards.${num}`, {
+                defaultValue: '',
+            }) && (
+                <div className="card">
+                    <img
+                        src={t(`section3.awards.${num}.icon`)}
+                        alt={`section3.awards.${num}.alt`}
+                    />
+                    <Text type="h3">{t(`section3.awards.${num}.title`)}</Text>
+                    <Text type="strong">
+                        {t(`section3.awards.${num}.type`)}
+                    </Text>
+                    <Text type="p">{t(`section3.awards.${num}.year`)}</Text>
+                </div>
+            ),
+    );
+}
+
 export default function About() {
     const { t } = useTranslation('about');
 
@@ -42,6 +63,11 @@ export default function About() {
             <section className="section2">
                 <Text type={'h2'}>{t('section2.h2')}</Text>
                 {generateJourneyParagraphs(t)}
+            </section>
+
+            <section className="section3">
+                <Text type="h2">{t('section3.h2')}</Text>
+                <div className="certs">{generteAwards(t)}</div>
             </section>
 
             <ContactForm t={t} />
