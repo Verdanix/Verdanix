@@ -43,11 +43,11 @@ export default function Home({ stats }) {
                 <Navbar />
                 <div id="hero">
                     <div className="text">
-                        <h1>
+                        <Text type="h1">
                             {t('hero.h1.sentence')}
                             <br />
                             <span>{t('hero.h1.highlighted')}</span>
-                        </h1>
+                        </Text>
                         <h2>"{t('me.line')}"</h2>
                     </div>
 

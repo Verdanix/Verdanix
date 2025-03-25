@@ -15,7 +15,6 @@
 $cta-buttons-gap: 40px;
 
 // XXL
-$xxl-h1-font-size: 4rem;
 $xxl-h2-font-size: 1.5rem;
 $xxl-stats-strong-font-size: 2.3rem;
 
@@ -35,7 +34,6 @@ $xxl-services-img-width: 45px;
 $xxl-services-gap: 3rem;
 
 // XL
-$xl-h1-font-size: 3rem;
 $xl-h2-font-size: 1.4rem;
 $xl-stats-strong-font-size: 2rem;
 
@@ -74,8 +72,8 @@ $sm-md-project-img-border-radius: 6% 6% 0 0;
 
 $sm-md-projects-gap: 30px;
 $sm-md-services-gap: 2rem;
+
 // MD
-$md-h1-font-size: 3rem;
 $md-h2-font-size: 1.4rem;
 $md-stats-strong-font-size: 1.7rem;
 $md-stats-margin: 8%;
@@ -235,10 +233,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
         .text {
             @include default-padding("lg", true);
 
-            h1 {
-                font-size: $xl-h1-font-size;
-            }
-
             h2 {
                 font-size: $xl-h2-font-size;
                 margin: $xl-margin;
@@ -342,10 +336,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
     #hero {
         .text {
             @include default-padding("xxl", true);
-
-            h1 {
-                font-size: $xxl-h1-font-size;
-            }
 
             h2 {
                 font-size: $xxl-h2-font-size;
@@ -477,10 +467,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
 @include media("md") {
     #hero {
         .text {
-            h1 {
-                font-size: $md-h1-font-size;
-            }
-
             h2 {
                 font-size: $md-h2-font-size;
             }
@@ -509,10 +495,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
 @include media("sm") {
     #hero {
         .text {
-            h1 {
-                font-size: $sm-h1-font-size;
-            }
-
             h2 {
                 font-size: $sm-h2-font-size;
             }

@@ -2,12 +2,14 @@
 
 // Variables
 // XXL
+$xxl-h1-font-size: 4rem;
 $xxl-h2-font-size: 2.5rem;
 $xxl-h3-font-size: 1.5rem;
 $xxl-p-font-size: 1.2rem;
 $xxl-h2-margin: 3% 0;
 
 // XL
+$xl-h1-font-size: 3rem;
 $xl-h3-font-size: 1.2rem;
 
 // SM-MD
@@ -17,6 +19,11 @@ $sm-md-p-font-size: 0.9rem;
 
 $sm-h2-font-size: 1.8rem;
 
+// MD
+$md-h1-font-size: 3rem;
+
+// SM
+$sm-h1-font-size: 2.2rem;
 // Mixinx
 
 // Common Styles
@@ -24,6 +31,9 @@ $sm-h2-font-size: 1.8rem;
 // Responsive Styles
 @include media("xl", "xxl") {
     section {
+        h1 {
+
+        }
         h2 {
             font-size: $xxl-h2-font-size;
             margin: $xxl-h2-margin !important;
@@ -39,6 +49,16 @@ $sm-h2-font-size: 1.8rem;
     }
 }
 
+@include media("lg", "xl") {
+    h1 {
+        font-size: $xl-h1-font-size;
+    }
+}
+@include media("xxl") {
+    h1 {
+        font-size: $xxl-h1-font-size;
+    }
+}
 
 @include media("sm", "md") {
     section {
@@ -72,15 +92,21 @@ $sm-h2-font-size: 1.8rem;
 
 @include media("md") {
     section {
+        h1 {
+            font-size: $md-h1-font-size;
+        }
         h2 {
             font-size: $sm-md-h2-font-size;
         }
     }
 }
 
-
 @include media("sm") {
     section {
+        h1 {
+            font-size: $sm-h1-font-size;
+        }
+
         h2 {
             font-size: $sm-h2-font-size;
         }

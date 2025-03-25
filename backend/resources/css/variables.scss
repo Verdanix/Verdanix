@@ -73,6 +73,7 @@ $default-padding-dimensions: (
 }
 
 @mixin button($width: 15px, $height:8px, $border-radius: 10px, $background-color: $secondary-color, $color: color, $border: true, $background: true, $hover: true, $cursor: true) {
+    text-wrap: nowrap;
     @if $border {
         border: 3px solid $background-color;
     }
