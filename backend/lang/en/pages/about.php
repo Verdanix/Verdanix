@@ -30,7 +30,7 @@ return [
                 "title" => "Eagle Scout",
                 "type" => "Professional Award",
                 "year" => "2025",
-                "icon" => "/images/about/eagle_scout.svg",
+                "icon" => "/images/about/section4/eagle_scout.svg",
                 "alt" => "the eagle scout rank logo",
             ],
             "3" => [
