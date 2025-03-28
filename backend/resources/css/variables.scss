@@ -14,13 +14,14 @@ $secondary-color-shade2: #34294e;
 $secondary-color-shade3: #43285b;
 $secondary-color-shade4: #a351bd;
 
-$body-color-shade2: #1e2936;
-
 $body-color: #101826;
+$body-color-shade2: #1e2936;
+$body-color-shade3: #374151;
+
 $text-color: #fefeff;
 $text-color2: #8a939f;
 $text-color3: #c2c7cd;
-
+$text-color4: #545964;
 // Fonts
 $font-family: 'Inter', sans-serif;
 
@@ -72,7 +73,7 @@ $default-padding-dimensions: (
     }
 }
 
-@mixin button($width: 15px, $height:8px, $border-radius: 10px, $background-color: $secondary-color, $color: color, $border: true, $background: true, $hover: true, $cursor: true) {
+@mixin button($width: 15px, $height:8px, $border-radius: 10px, $background-color: $secondary-color, $color: white, $border: true, $background: true, $hover: true, $cursor: true) {
     text-wrap: nowrap;
     @if $border {
         border: 3px solid $background-color;
@@ -99,7 +100,7 @@ $default-padding-dimensions: (
     }
 
     padding: $height $width;
-    color: $color;
+    color: $color !important;
     transition: all 0.4s;
 }
 

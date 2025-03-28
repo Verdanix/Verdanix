@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -17,12 +18,21 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(Request $request): Response
     {
-        return Inertia::render('Auth/Login', [
+        return Inertia::render('Auth/Register', [
             'meta_title' => trans('seo.login.title'),
             'meta_description' => trans('seo.login.meta.description'),
-            'meta_keywords' => trans('seo.login.meta.keywords'),
-            'unverified' => $request->query('unverified'),
+            'meta_keywords' => trans('seo.login.meta.keywords')
         ]);
+    }
+
+
+    public function redirect(string $provider)
+    {
+        if (!in_array($provider, ['google', 'linkedin', 'github'])) {
+            echo "INVALID";
+            return redirect('/register')->withErrors([trans("auth.invalid-provider")]);
+        }
+        return Socialite::driver($provider)->redirect();
     }
 
     /**
