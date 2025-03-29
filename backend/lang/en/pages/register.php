@@ -35,7 +35,7 @@ return [
                 "icon" => "/images/register/google.svg",
                 "alt" => "the google logo"
             ],
-            "linkedin" => [
+            "linkedin-openid" => [
                 "label" => "Continue with LinkedIn",
                 "icon" => "/images/register/linkedin.svg",
                 "alt" => "the linkedin logo"

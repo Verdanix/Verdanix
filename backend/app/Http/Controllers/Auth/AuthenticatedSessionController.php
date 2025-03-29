@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +14,48 @@ use Laravel\Socialite\Facades\Socialite;
 
 class AuthenticatedSessionController extends Controller
 {
+    public function redirect(string $provider)
+    {
+        if (!$this->isValidProvider($provider)) {
+            return redirect(route("auth.register"))->withErrors([trans("auth.invalid-provider")]);
+        }
+
+        return Socialite::driver($provider)->redirect();
+    }
+
+    private function isValidProvider(string $provider)
+    {
+        $validProviders = ['google', 'github'];
+        return in_array($provider, $validProviders);
+    }
+
+    public function callback(string $provider)
+    {
+        if (!$this->isValidProvider($provider)) {
+            return redirect(route("auth.register"))->withErrors([trans("auth.invalid-provider")]);
+        }
+        $socialiteUser = Socialite::driver($provider)->user();
+        $splitName = explode(" ", $socialiteUser->getName());
+        $firstName = $splitName[0];
+        $lastName = count($splitName) > 1 ? implode(" ", array_slice($splitName, 1)) : "";
+
+        $user = User::updateOrCreate([
+            'email' => $socialiteUser->getEmail(),
+        ], [
+            'first_name' => $firstName,
+            'last_name' => $lastName,
+            'email' => $socialiteUser->getEmail(),
+            "email_verified_at" => now(),
+            "password" => bcrypt(str()->random(63)),
+            'provider' => $provider,
+            'provider_token' => $socialiteUser->token,
+            'refresh_token' => $socialiteUser->refreshToken
+        ]);
+
+        Auth::login($user, true);
+        return redirect('/dashboard');
+    }
+
     /**
      * Display the login view.
      */
@@ -23,16 +66,6 @@ class AuthenticatedSessionController extends Controller
             'meta_description' => trans('seo.login.meta.description'),
             'meta_keywords' => trans('seo.login.meta.keywords')
         ]);
-    }
-
-
-    public function redirect(string $provider)
-    {
-        if (!in_array($provider, ['google', 'linkedin', 'github'])) {
-            echo "INVALID";
-            return redirect('/register')->withErrors([trans("auth.invalid-provider")]);
-        }
-        return Socialite::driver($provider)->redirect();
     }
 
     /**

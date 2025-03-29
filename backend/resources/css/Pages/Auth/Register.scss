@@ -1,7 +1,7 @@
 @use '../../variables.scss' as *;
 
 // Variables
-$linkedin-color: #0b67c2;
+$linkedin-openid-color: #0b67c2;
 $github-color: #21292c;
 
 // XXL
@@ -160,8 +160,8 @@ $sm-md-options-font-size: 0.9rem;
                 @include button($width: $xxl-input-width, $height: $xxl-input-height, $border-radius: $xxl-input-border-radius, $background-color: $body-color-shade3);
             }
 
-            .linkedin {
-                @include button($width: $xxl-input-width, $height: $xxl-input-height, $border-radius: $xxl-input-border-radius, $background-color: $linkedin-color);
+            .linkedin-openid {
+                @include button($width: $xxl-input-width, $height: $xxl-input-height, $border-radius: $xxl-input-border-radius, $background-color: $linkedin-openid-color);
             }
 
             .content {
@@ -240,8 +240,8 @@ $sm-md-options-font-size: 0.9rem;
                 @include button($width: $lg-input-width, $height: $lg-input-height, $border-radius: $lg-input-border-radius, $background-color: $body-color-shade3);
             }
 
-            .linkedin {
-                @include button($width: $lg-input-width, $height: $lg-input-height, $border-radius: $lg-input-border-radius, $background-color: $linkedin-color);
+            .linkedin-openid {
+                @include button($width: $lg-input-width, $height: $lg-input-height, $border-radius: $lg-input-border-radius, $background-color: $linkedin-openid-color);
             }
 
             .content {
@@ -309,7 +309,7 @@ $sm-md-options-font-size: 0.9rem;
                 @include button($width: $sm-md-input-width, $height: $sm-md-input-height, $border-radius: $sm-md-input-border-radius, $background-color: $body-color-shade3);
             }
 
-            .linkedin {
+            .linkedin-openid {
                 @include button($width: $sm-md-input-width, $height: $sm-md-input-height, $border-radius: $sm-md-input-border-radius, $background-color: #0b67c2);
             }
 

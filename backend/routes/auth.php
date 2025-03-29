@@ -12,7 +12,11 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('throttle:login')->group(function () {
-    Route::get("/auth/redirect/{provider}", [AuthenticatedSessionController::class, 'redirect'])->name('auth.socialite.redirect');
+    Route::middleware('guest')->group(function () {
+        Route::get("/auth/redirect/{provider}", [AuthenticatedSessionController::class, 'redirect'])->name('auth.socialite.redirect');
+        Route::get("/auth/callback/{provider}", [AuthenticatedSessionController::class, 'callback'])->name('auth.socialite.callback');
+    });
+
     Route::get("register", [RegisteredUserController::class, 'create'])->name('auth.register');
 
     Route::post('register', [RegisteredUserController::class, 'store']) -> name("auth.post.register");

@@ -145,7 +145,6 @@ function LoginForm({ t, unverified }) {
                 {Object.values(errors)[0]}
             </Text>
             {getSocialButton('google')}
-            {getSocialButton('linkedin')}
             {getSocialButton('github')}
 
             <div className="content">
