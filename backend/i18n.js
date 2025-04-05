@@ -18,7 +18,7 @@ i18n.use(HttpApi)
             loadPath: (languages, namespaces) => {
                 const activeLanguage = i18n.language; // Use the current active language
                 const page = namespaces[0];
-                return `/translations/${activeLanguage}/${page}`;
+                return `api/translations/${activeLanguage}/${page}`;
             },
         },
         react: {

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\User;
+use Exception;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -15,37 +17,40 @@ use Inertia\Response;
 
 class RegisteredUserController extends Controller
 {
-    /**
-     * Display the registration view.
-     */
-    public function create(): Response
-    {
-        return Inertia::render('Auth/Register');
-    }
 
     /**
      * Handle an incoming registration request.
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(RegisterRequest $request): RedirectResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|lowercase|email|max:255|unique:'.User::class,
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
-
         $user = User::create([
-            'name' => $request->name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
+        try {
+            event(new Registered($user));
+        } catch (Exception $e) {
+            $user->delete();
+            return back()->withErrors(['email' => trans('auth.failed.verification.email')]);
+        }
+        return redirect("/register?unverified=1");
+    }
 
-        Auth::login($user);
-
-        return redirect(route('dashboard', absolute: false));
+    /**
+     * Display the registration view.
+     */
+    public function create(Request $request): Response
+    {
+        return Inertia::render('Auth/Register', [
+            'meta_title' => trans('seo.register.title'),
+            'meta_description' => trans('seo.register.meta.description'),
+            'meta_keywords' => trans('seo.register.meta.keywords'),
+            'unverified' => (bool)$request->query('unverified'),
+        ]);
     }
 }
