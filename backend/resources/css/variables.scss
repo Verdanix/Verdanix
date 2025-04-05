@@ -1,0 +1,106 @@
+@use 'sass:map';
+@use 'sass:meta';
+
+// Colors
+$primary-color: #00BCD4;
+$primary-color-shade1: #00ACC1;
+$primary-color-shade2: #194657;
+$primary-color-shade3: #0e768b;
+$primary-color-shade4: #0fc8e0;
+$primary-color-shade5: #4470bf;
+
+$secondary-color: #8E24AA;
+$secondary-color-shade2: #34294e;
+$secondary-color-shade3: #43285b;
+$secondary-color-shade4: #a351bd;
+
+$body-color: #101826;
+$body-color-shade2: #1e2936;
+$body-color-shade3: #374151;
+
+$text-color: #fefeff;
+$text-color2: #8a939f;
+$text-color3: #c2c7cd;
+$text-color4: #545964;
+// Fonts
+$font-family: 'Inter', sans-serif;
+
+// Breakpoints
+$min-website-width: 0px;
+
+$breakpoints: (
+    "sm": "(min-width: #{$min-website-width}) and (max-width: 575px)",
+    "md": "(min-width: 576px) and (max-width: 767px)",
+    "lg": "(min-width: 768px) and (max-width: 991px)",
+    "xl": "(min-width: 992px) and (max-width: 1199px)",
+    "xxl": "(min-width: 1200px)"
+);
+
+$default-padding-dimensions: (
+    "sm": 2% 9%,
+    "lg": 1% 6%,
+    "xxl": 0.5% 5%
+);
+
+// Mixins
+@mixin media($points...) {
+    @each $breakpoint in $points {
+        @media screen and #{map.get($breakpoints, $breakpoint)} {
+            @content;
+        }
+    }
+}
+
+@mixin default-padding($size, $disable-right-left: false, $disable-top-bottom: false) {
+    padding: map.get($default-padding-dimensions, $size);
+
+    @if $disable-right-left {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    @if $disable-top-bottom {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@mixin hover {
+    transition: color 0.4s;
+
+    &:hover {
+        color: $primary-color-shade1;
+    }
+}
+
+@mixin button($width: 15px, $height:8px, $border-radius: 10px, $background-color: $secondary-color, $color: white, $border: true, $background: true, $hover: true, $cursor: true) {
+    text-wrap: nowrap;
+    @if $border {
+        border: 3px solid $background-color;
+    }
+
+    border-radius: $border-radius;
+
+    @if $background {
+        background-color: $background-color;
+
+        @if $hover {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    } @else if $hover {
+        &:hover {
+            background-color: $background-color;
+        }
+    }
+
+    @if $cursor {
+        cursor: pointer;
+    }
+
+    padding: $height $width;
+    color: $color !important;
+    transition: all 0.4s;
+}
+

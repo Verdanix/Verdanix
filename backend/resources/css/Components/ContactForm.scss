@@ -1,0 +1,198 @@
+@use "../variables" as *;
+
+// Variables
+// XXL
+$xxl-h2-font-size: 2.5rem;
+$xxl-padding: 0 30%;
+$xxl-h2-margin: 3%;
+$xxl-contact-h2-margin: 6.5% 0;
+$xxl-padding: 1% 30%;
+$xxl-input-padding: 15px 25px;
+$xxl-form-gap: 15px;
+$xxl-radius: 10px;
+$xxl-font-size: 1.2rem;
+
+// LG
+$lg-contact-h2-margin: 9% 0;
+$lg-padding: 1% 20%;
+$lg-radius: 12px;
+
+// SM-MD
+$sm-md-padding: 1% 15%;
+$sm-md-input-padding: 10px 15px;
+$sm-md-font-size: 0.9rem;
+$sm-md-form-gap: 20px;
+$sm-md-radius: 8px;
+$sm-md-h2-font-size: 2.3rem;
+
+// MD
+$md-h2-margin: 7% 0;
+
+// SM
+$sm-h2-font-size: 2rem;
+$sm-h2-margin: 9% 0;
+
+//Mixins
+
+// Common Styles
+#contact {
+    h2 {
+        text-align: center;
+    }
+
+    .show {
+        display: block;
+        background-color: $body-color-shade2;
+    }
+
+    p {
+        display: none;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        p {
+            text-align: center;
+            color: $text-color3;
+        }
+
+        div {
+            display: flex;
+            justify-content: space-between;
+
+            input {
+                width: 100%;
+            }
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        input, textarea {
+            transition: all 0.2s;
+            outline: none;
+            background-color: $body-color-shade2;
+            color: $text-color3;
+            border: 2px solid $body-color-shade2;
+
+            &:focus {
+                border: 2px solid $primary-color-shade3;
+            }
+        }
+
+        button {
+            width: 100%;
+            outline: none;
+        }
+    }
+}
+
+// Responsive Styles
+@include media("xl", "xxl") {
+    #contact {
+        padding: $xxl-padding;
+
+        h2 {
+            font-size: $xxl-h2-font-size;
+            margin: $xxl-contact-h2-margin;
+        }
+
+        form {
+            gap: $xxl-form-gap;
+
+            div {
+                gap: $xxl-form-gap;
+            }
+
+            input, textarea, p, button {
+                font-size: $xxl-font-size;
+            }
+
+            input, textarea, p {
+                padding: $xxl-input-padding;
+                border-radius: $xxl-radius;
+            }
+
+            button {
+                @include button($height: 10px, $border-radius: $xxl-radius, $background-color: $primary-color-shade3);
+            }
+        }
+    }
+}
+
+@include media("sm", "md") {
+    #contact {
+        padding: $sm-md-padding;
+
+        h2 {
+            font-size: $sm-md-h2-font-size;
+            margin: $lg-contact-h2-margin;
+        }
+
+        form {
+            gap: $sm-md-form-gap;
+
+            div {
+                gap: $sm-md-form-gap;
+            }
+
+            input, textarea, p, button {
+                font-size: $sm-md-font-size;
+            }
+
+            input, textarea, p {
+                padding: $sm-md-input-padding;
+                border-radius: $sm-md-radius;
+            }
+
+            button {
+                @include button($height: 6px, $border-radius: $sm-md-radius, $background-color: $primary-color-shade3);
+            }
+        }
+    }
+}
+
+@include media("lg") {
+    #contact {
+        padding: $lg-padding;
+
+        form {
+            gap: $xxl-form-gap;
+
+            div {
+                gap: $xxl-form-gap;
+            }
+
+            input, textarea, p, button {
+                font-size: $sm-md-font-size;
+            }
+
+            input, textarea, p {
+                padding: $xxl-input-padding;
+                border-radius: $lg-radius;
+            }
+
+            button {
+                @include button($height: 10px, $border-radius: $xxl-radius, $background-color: $primary-color-shade3);
+            }
+        }
+    }
+}
+
+@include media("md") {
+    #contact h2 {
+        font-size: $sm-md-h2-font-size;
+        margin: $md-h2-margin;
+    }
+}
+
+@include media("sm") {
+    #contact h2 {
+        font-size: $sm-h2-font-size;
+        margin: $sm-h2-margin;
+    }
+}

@@ -9,8 +9,8 @@
     "devDependencies": {
         "@fontsource/inter": "^5.2.5",
         "@headlessui/react": "^2.0.0",
-        "@inertiajs/react": "^2.0.0",
-        "@vitejs/plugin-react": "^4.2.0",
+        "@inertiajs/react": "^2.0.6",
+        "@vitejs/plugin-react": "^4.3.4",
         "autoprefixer": "^10.4.12",
         "axios": "^1.8.2",
         "concurrently": "^9.0.1",
@@ -31,5 +31,8 @@
         "react-i18next": "^15.4.1",
         "sass": "^1.86.3",
         "vite": "^6.2.4"
+    },
+    "dependencies": {
+        "ziggy-js": "^2.5.2"
     }
 }

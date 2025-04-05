@@ -1,0 +1,244 @@
+@use '../variables.scss' as *;
+
+// Variables
+$desktop-gap-size: 30px;
+$mobile-gap-size: 15px;
+$mobile-nav-menu-gap: 6px;
+
+// Mixins
+@mixin nav-font-size($size: "xlg", $nav-links-inactive: false) {
+    @if $nav-links-inactive {
+        @if ($size == "xlg") {
+            font-size: 20px;
+        } @else if ($size == "lg") {
+            font-size: 15px;
+        }
+    } @else {
+        @if ($size == "xlg") {
+            font-size: 25px;
+        } @else if ($size == "lg") {
+            font-size: 20px;
+        }
+    }
+}
+
+@mixin nav-link-slide-in-out($nav-links-active) {
+    display: none;
+    @if $nav-links-active {
+        display: flex;
+        animation: slide-in 0.5s forwards;
+    } @else {
+        animation: slide-out 0.5s forwards;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+// Common Styles
+nav {
+    border-bottom: 3px solid $body-color-shade2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div, li {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+    }
+
+    .nav-links-inactive, .nav-links-active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        height: 100%;
+        gap: $mobile-nav-menu-gap;
+        flex-direction: column;
+
+        span {
+            background-color: $primary-color-shade1;
+        }
+    }
+
+    a {
+        @include hover;
+    }
+
+    .active a {
+        color: $primary-color-shade1;
+    }
+
+    #nav {
+         a span {
+             @include hover;
+         }
+     }
+}
+
+// Responsive Styles
+@include media("lg", "xl", "xxl") {
+    nav {
+        .hamburger-menu {
+            display: none;
+        }
+
+        #nav, .nav-links-inactive, .nav-links, .nav-links-active {
+            gap: $desktop-gap-size;
+            display: flex;
+        }
+    }
+}
+
+@include media("xl", "xxl") {
+    nav {
+        .nav-links-inactive, .nav-links, .nav-links-active {
+            @include nav-font-size("xlg", true);
+        }
+
+        #nav {
+            gap: $desktop-gap-size;
+            @include nav-font-size("xlg");
+
+            img {
+                width: 60px;
+            }
+        }
+
+        .nav-links-inactive, .nav-links {
+            a span {
+                @include button();
+            }
+        }
+    }
+}
+
+@include media("lg") {
+    nav {
+        .nav-links-inactive, .nav-links, .nav-links-active {
+            @include nav-font-size("lg", true);
+        }
+
+        #nav {
+            @include nav-font-size("lg");
+            gap: $desktop-gap-size;
+
+            img {
+                width: 50px;
+            }
+        }
+
+        .nav-links-inactive, .nav-links {
+            a span {
+                @include button(10px, 5px);
+            }
+        }
+    }
+}
+
+@include media("lg", "xl") {
+    nav {
+        @include default-padding("lg");
+    }
+}
+
+@include media("xxl") {
+    nav {
+        @include default-padding("xxl");
+    }
+}
+
+@include media("sm", "md") {
+    .nav-links-inactive {
+        @include nav-link-slide-in-out(false);
+    }
+
+    .nav-links-active {
+        @include nav-link-slide-in-out(true);
+    }
+
+    nav {
+        @include default-padding("sm");
+
+        .hamburger-menu {
+            display: flex;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .nav-links-inactive, .nav-links-active {
+            flex-direction: column;
+            position: absolute;
+            gap: $mobile-gap-size;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: $body-color-shade2;
+            padding: 30px;
+        }
+
+        #nav {
+            gap: $mobile-gap-size;
+        }
+    }
+}
+
+@include media('md') {
+    nav {
+        .nav-links-inactive, .nav-links-active {
+            @include nav-font-size("xlg", true);
+        }
+
+        .hamburger-menu span {
+            width: 35px;
+            height: 5px;
+        }
+
+        #nav {
+            @include nav-font-size("xlg");
+
+            img {
+                width: 45px;
+            }
+        }
+    }
+}
+
+@include media('sm') {
+    nav {
+        .nav-links-inactive, .nav-links-active {
+            @include nav-font-size("lg", true);
+        }
+
+        .hamburger-menu span {
+            width: 30px;
+            height: 4px;
+        }
+
+        #nav {
+            @include nav-font-size("lg");
+
+            img {
+                width: 40px;
+            }
+        }
+    }
+}
