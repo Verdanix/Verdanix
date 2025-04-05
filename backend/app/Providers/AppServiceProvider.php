@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
         Vite::prefetch(concurrency: 3);
 
         RateLimiter::for("contact", function ($request) {
-            return Limit::perMinute(10000)->by(optional($request->user())->id ?: $request->ip());
+            return Limit::perMinute(3)->by(optional($request->user())->id ?: $request->ip());
         });
 
         RateLimiter::for("login", function ($request) {
