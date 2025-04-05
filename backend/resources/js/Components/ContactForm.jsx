@@ -1,6 +1,7 @@
 import '@/../css/Components/ContactForm.scss';
 import Text from '@/Components/Sections/Text.jsx';
 import { useForm } from '@inertiajs/react';
+import { useEffect, useRef } from 'react';
 
 export default function ContactForm({ t }) {
     const { data, setData, post, errors } = useForm({
@@ -24,15 +25,15 @@ export default function ContactForm({ t }) {
             message: '',
         });
     };
-
-    if (Object.values(errors).length > 0) {
-        document
-            .getElementById('subject')
-            .scrollIntoView({ behavior: 'smooth' });
-    }
+    const subjectRef = useRef(null);
+    useEffect(() => {
+        if (Object.values(errors).length > 0 && subjectRef.current) {
+            subjectRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [errors]);
 
     return (
-        <section id="contact">
+        <section id="contact" ref={subjectRef}>
             <Text type="h2">{t('contactform.h2')}</Text>
             <form onSubmit={submit}>
                 <Text

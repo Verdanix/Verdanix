@@ -11,6 +11,11 @@
 
 html {
     min-width: $min-website-width;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-anchor: none;
 }
 
 a {
