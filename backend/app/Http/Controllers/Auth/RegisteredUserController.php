@@ -11,7 +11,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -38,7 +37,9 @@ class RegisteredUserController extends Controller
             $user->delete();
             return back()->withErrors(['email' => trans('auth.failed.verification.email')]);
         }
-        return redirect("/register?unverified=1");
+
+        Auth::login($user);
+        return redirect(route("dashboard"));
     }
 
     /**
@@ -49,8 +50,7 @@ class RegisteredUserController extends Controller
         return Inertia::render('Auth/Register', [
             'meta_title' => trans('seo.register.title'),
             'meta_description' => trans('seo.register.meta.description'),
-            'meta_keywords' => trans('seo.register.meta.keywords'),
-            'unverified' => (bool)$request->query('unverified'),
+            'meta_keywords' => trans('seo.register.meta.keywords')
         ]);
     }
 }

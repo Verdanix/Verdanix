@@ -41,7 +41,7 @@ function RegisterForm({ t }) {
                         <input
                             id="first_name"
                             type="text"
-                            value={data.first}
+                            value={data.first_name}
                             onChange={handleChange}
                             placeholder={t('register.fields.first.placeholder')}
                         />
@@ -54,7 +54,7 @@ function RegisterForm({ t }) {
                         <input
                             id="last_name"
                             type="text"
-                            value={data.last}
+                            value={data.last_name}
                             onChange={handleChange}
                             placeholder={t('register.fields.last.placeholder')}
                         />
@@ -100,7 +100,7 @@ function RegisterForm({ t }) {
     );
 }
 
-function LoginForm({ t, unverified }) {
+function LoginForm({ t }) {
     const { data, setData, post, errors } = useForm({
         email: '',
         password: '',
@@ -132,9 +132,6 @@ function LoginForm({ t, unverified }) {
         );
     };
 
-    if (unverified) {
-        errors.email = t('unverified');
-    }
     return (
         <form id="login" onSubmit={submit}>
             <Text type="h2">{t('login.h2')}</Text>
@@ -185,14 +182,14 @@ function LoginForm({ t, unverified }) {
     );
 }
 
-export default function Register({ unverified }) {
+export default function Register() {
     const { t } = useTranslation(['register']);
 
     return (
         <div id="register">
             <Navbar view="register" />
             <div className="forms">
-                <LoginForm t={t} unverified={unverified} />
+                <LoginForm t={t} />
                 <RegisterForm t={t} />
             </div>
             <Footer />

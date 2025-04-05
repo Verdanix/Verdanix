@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         RateLimiter::for("login", function ($request) {
-            return Limit::perMinute(4)->by(optional($request->user())->id ?: $request->ip());
+            return Limit::perMinute(5)->by(optional($request->user())->id ?: $request->ip());
         });
 
         Password::defaults(function () {

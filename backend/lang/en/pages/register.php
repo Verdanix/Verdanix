@@ -61,6 +61,5 @@ return [
             ]
         ],
         "submit" => "Login"
-    ],
-    "unverified" => "Please verify your email before you login!"
+    ]
 ];

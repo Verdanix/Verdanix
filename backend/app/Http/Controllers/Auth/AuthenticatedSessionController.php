@@ -24,8 +24,7 @@ class AuthenticatedSessionController extends Controller
         return Inertia::render('Auth/Register', [
             'meta_title' => trans('seo.register.title'),
             'meta_description' => trans('seo.register.meta.description'),
-            'meta_keywords' => trans('seo.register.meta.keywords'),
-            'unverified' => (bool)$request->query('unverified'),
+            'meta_keywords' => trans('seo.register.meta.keywords')
         ]);
     }
 
@@ -89,6 +88,7 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
+
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();

@@ -60,7 +60,7 @@ Route::get('/about', function () {
 
 Route::middleware("throttle:contact")->post('/contact', [ContactController::class, 'store'])->name('contact');
 
-Route::middleware("auth")->group(function () {
+Route::middleware(["auth", "verified"])->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('Home', [
             'meta_title' => trans('seo.home.title'),
