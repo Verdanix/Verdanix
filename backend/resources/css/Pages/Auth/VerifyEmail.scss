@@ -14,6 +14,9 @@ $lg-model-radius: 20px;
 $sm-model-padding: 4%;
 $sm-model-radius: 15px;
 
+// Mixins
+
+// Common Styles
 .content {
     display: flex;
     justify-content: center;
@@ -36,7 +39,7 @@ $sm-model-radius: 15px;
     }
 }
 
-
+// Responsive Styles
 @include media("xl", "xxl") {
     .content {
         padding: $xxl-forms-padding;
