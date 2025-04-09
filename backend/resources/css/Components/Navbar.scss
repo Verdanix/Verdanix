@@ -114,7 +114,9 @@ nav {
 
         #nav {
             gap: $desktop-gap-size;
-            @include nav-font-size("xlg");
+            a span {
+                @include nav-font-size("xlg");
+            }
 
             img {
                 width: 60px;
@@ -136,8 +138,11 @@ nav {
         }
 
         #nav {
-            @include nav-font-size("lg");
             gap: $desktop-gap-size;
+
+            a span {
+                @include nav-font-size("lg");
+            }
 
             img {
                 width: 50px;
@@ -213,7 +218,9 @@ nav {
         }
 
         #nav {
-            @include nav-font-size("xlg");
+            a span {
+                @include nav-font-size("xlg");
+            }
 
             img {
                 width: 45px;
@@ -234,7 +241,9 @@ nav {
         }
 
         #nav {
-            @include nav-font-size("lg");
+            a span {
+                @include nav-font-size("lg");
+            }
 
             img {
                 width: 40px;
