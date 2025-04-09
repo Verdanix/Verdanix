@@ -200,6 +200,8 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
+
+    'password_reset.sent' => "We have emailed your password reset link.",
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes

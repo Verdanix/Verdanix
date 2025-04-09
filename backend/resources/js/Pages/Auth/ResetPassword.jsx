@@ -11,7 +11,7 @@ export default function ResetPassword({ token, email }) {
         password_confirmation: '',
     });
 
-    const { t } = useTranslation('test');
+    const { t } = useTranslation('reset_password');
     const onChange = (e) => {
         setData(e.target.id, e.target.value);
     };
