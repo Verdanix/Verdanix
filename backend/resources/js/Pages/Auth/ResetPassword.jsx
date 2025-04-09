@@ -1,3 +1,4 @@
+import '@/../css/Pages/Auth/ResetPassword.scss';
 import Navbar from '@/Components/Navbar.jsx';
 import Text from '@/Components/Sections/Text.jsx';
 import { useForm } from '@inertiajs/react';
@@ -24,12 +25,22 @@ export default function ResetPassword({ token, email }) {
         });
     };
 
+    const getH3Message = () => {
+        const errors2 = Object.values(errors);
+        if (errors2.length >= 1) {
+            return errors2[0];
+        }
+
+        return t('p');
+    };
+
     return (
         <div id="reset-password">
             <Navbar view="reset" />
             <div className="content">
                 <form onSubmit={submit} className="model">
                     <Text type="h2">{t('h2')}</Text>
+                    <Text type="h3">{getH3Message()}</Text>
                     <input
                         type="password"
                         id="password"
