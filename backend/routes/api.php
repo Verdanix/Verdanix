@@ -7,4 +7,4 @@ Route::get('/translations/{locale}/{page}', function (string $locale, string $pa
         return response()->json(array_merge([], include($path), include($commonPath)));
     }
     return response()->json([], 404);
-});
+})->name("translations");

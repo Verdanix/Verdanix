@@ -7,6 +7,7 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
@@ -22,6 +23,9 @@ class NewPasswordController extends Controller
     public function create(Request $request): Response
     {
         return Inertia::render('Auth/ResetPassword', [
+            "meta_title" => trans("seo.reset_password.title"),
+            "meta_description" => trans("seo.reset_password.meta.description"),
+            "meta_keywords" => trans("seo.reset_password.meta.keywords"),
             'email' => $request->email,
             'token' => $request->route('token'),
         ]);
