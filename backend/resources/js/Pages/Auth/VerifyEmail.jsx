@@ -1,28 +1,27 @@
 import '@/../css/Pages/Auth/VerifyEmail.scss';
-import GuestLayout from '@/Layouts/GuestLayout.jsx';
+import Navbar from '@/Components/Navbar.jsx';
+import Text from '@/Components/Sections/Text.jsx';
 import { useForm } from '@inertiajs/react';
 import { useTranslation } from 'react-i18next';
 
 export default function VerifyEmail({ status }) {
-    const { post } = useForm({});
-
+    const { post } = useForm();
     const { t } = useTranslation('verify_email');
-    const submit = (e) => {
-        e.preventDefault();
 
+    const resend = () => {
         post(route('verification.send'));
     };
 
     return (
-        <GuestLayout>
-            <div id="form">
-                <form onSubmit={submit}>
-                    <h1>{t('title')}</h1>
-                    <p>{status && t('sent')} </p>
-                    <button type="submit">{t('submit')}</button>
-                    <a href={route('logout')}>{t('logout')}</a>
-                </form>
+        <div id="verify-email">
+            <Navbar view="verify" />
+            <div className="content">
+                <div className="model">
+                    <Text type="h2">{t('h2')}</Text>
+                    <Text type="h3">{status === null ? t('p') : status}</Text>
+                    <button onClick={resend}>{t('resend')}</button>
+                </div>
             </div>
-        </GuestLayout>
+        </div>
     );
 }

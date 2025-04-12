@@ -161,6 +161,29 @@ return [
     'ulid' => 'The :attribute field must be a valid ULID.',
     'uuid' => 'The :attribute field must be a valid UUID.',
 
+    "contact" => [
+        "status" => [
+            "success" => "I look forward to working with you! Please allow up to 3 days for a response!",
+            "error" => "Something went extremely wrong. Please contact me directly at contact@masonroot.dev for inquiries."
+        ]
+    ],
+
+    "last_name.required" => "Please provide your last name.",
+    "last_name.min" => "Please provide a last name with at least 2 characters.",
+    "last_nane.max" => "Please provide a last name under 30 characters.",
+    "first_name.required" => "Please provide your first name.",
+    "first_name.min" => "Please provide your first name with at least 2 characters.",
+    "first_name.max" => "Please provide your first name under 30 characters.",
+    "email.required" => "Please provide your email address.",
+    "email.email" => "Please provide a valid email address.",
+    "email.max" => "Please provide a shorter email.",
+    "email.unique" => "Please use a different email.",
+    "password.required" => "Please provide a password.",
+    "confirm.required" => "Please confirm your password.",
+    "confirm.same" => "The password confirmation does not match.",
+
+    "invalid-provider" => "Invalid provider. Please contact me on what went wrong!",
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -178,6 +201,7 @@ return [
         ],
     ],
 
+    'password_reset.sent' => "We have emailed your password reset link.",
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Attributes
@@ -190,5 +214,4 @@ return [
     */
 
     'attributes' => [],
-
 ];

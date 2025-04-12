@@ -8,13 +8,15 @@ use App\Models\User;
 use Exception;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
 
 class RegisteredUserController extends Controller
 {
+
     /**
      * Handle an incoming registration request.
      *
@@ -23,7 +25,8 @@ class RegisteredUserController extends Controller
     public function store(RegisterRequest $request): RedirectResponse
     {
         $user = User::create([
-            'name' => $request->name,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -34,13 +37,15 @@ class RegisteredUserController extends Controller
             $user->delete();
             return back()->withErrors(['email' => trans('auth.failed.verification.email')]);
         }
-        return redirect("/login?unverified=1");
+
+        Auth::login($user);
+        return redirect(route("dashboard"));
     }
 
     /**
      * Display the registration view.
      */
-    public function create(): Response
+    public function create(Request $request): Response
     {
         return Inertia::render('Auth/Register', [
             'meta_title' => trans('seo.register.title'),

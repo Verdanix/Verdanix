@@ -18,9 +18,9 @@ class PasswordResetLinkController extends Controller
     public function create(): Response
     {
         return Inertia::render('Auth/ForgotPassword', [
-            'meta_title' => trans('seo.forgot_password.title'),
-            'meta_description' => trans('seo.forgot_password.meta.description'),
-            'meta_keywords' => trans('seo.forgot_password.meta.keywords'),
+            "meta_title" => trans("seo.forgot_password.title"),
+            "meta_description" => trans("seo.forgot_password.meta.description"),
+            "meta_keywords" => trans("seo.forgot_password.meta.keywords"),
             'status' => session('status'),
         ]);
     }
@@ -44,9 +44,11 @@ class PasswordResetLinkController extends Controller
         );
 
         if ($status == Password::RESET_LINK_SENT) {
-            return back()->with('status', __($status));
+            return back()->with('status', trans("validation.password_reset.sent"));
         }
 
-        return back() -> withErrors(['email' => trans('pages/forgot_password.sent')]);
+        throw ValidationException::withMessages([
+            'email' => [trans("validation.password_reset.sent")],
+        ]);
     }
 }

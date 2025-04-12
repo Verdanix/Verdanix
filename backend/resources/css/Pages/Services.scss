@@ -1,0 +1,406 @@
+@use '../variables.scss' as *;
+
+// Variables
+// XXL
+$xxl-tag-font-size: 0.8rem;
+$xxl-item-font-size: $xxl-tag-font-size+0.2rem;
+$xxl-title-font-size: $xxl-tag-font-size+0.7rem;
+$xxl-description-gap-size: 5px;
+$xxl-img-size: 35px;
+$xxl-gap-size: 15px;
+$xxl-cards-gap-size: 5%;
+
+// LG
+$lg-tag-font-size: 0.7rem;
+$lg-item-font-size: $lg-tag-font-size+0.2rem;
+$lg-title-font-size: $lg-tag-font-size+0.7rem;
+$lg-description-gap-size: 5px;
+$lg-img-size: 25px;
+$lg-gap-size: 10px;
+$lg-cards-gap-size: 3%;
+
+// MD
+$md-tag-font-size: 0.4rem;
+$md-item-font-size: $md-tag-font-size+0.2rem;
+$md-title-font-size: $md-tag-font-size+0.7rem;
+$md-description-gap-size: 5px;
+$md-img-size: 25px;
+$md-gap-size: 10px;
+$md-cards-gap-size: 20px 20px;
+
+// SM
+$sm-tag-font-size: 0.4rem;
+$sm-item-font-size: $sm-tag-font-size+0.2rem;
+$sm-title-font-size: $sm-tag-font-size+0.5rem;
+$sm-description-gap-size: 5px;
+$sm-img-size: 25px;
+$sm-gap-size: 10px;
+$sm-cards-gap-size: 20px 20px;
+
+// Mixins
+@mixin tag($width, $height, $radius) {
+    .even {
+        @include button($width, $height, $radius, $background-color: rgba($primary-color-shade3, 40%), $color: $primary-color-shade4, $border: false, $hover: false, $cursor: false)
+    }
+
+    .odd {
+        @include button($width, $height, $radius, $background-color: rgba($secondary-color-shade3, 100%), $color: $secondary-color-shade4, $border: false, $hover: false, $cursor: false)
+    }
+}
+
+// Common Styles
+.content {
+    > h2 {
+        margin-bottom: 0 !important;
+    }
+
+    > h2, > h3 {
+        text-align: center;
+    }
+
+    > h3 {
+        color: $text-color2;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .service {
+            display: flex;
+            flex-direction: column;
+            background-color: $body-color-shade2;
+
+            .price, .top > div {
+                display: flex;
+            }
+
+            .price {
+                align-items: end;
+
+                h3 {
+                    font-weight: normal;
+                    color: $text-color2;
+                }
+            }
+
+            .top > div {
+                justify-content: space-between;
+                align-items: start;
+            }
+
+            hr {
+                background-color: $text-color4;
+                height: 2px;
+                border: none;
+            }
+
+            .item {
+                display: flex;
+                align-items: center;
+                text-align: left;
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+// Responsive Styles
+@include media("lg", "xl") {
+    .content .cards .service {
+        width: 20%;
+    }
+}
+
+@include media("xxl") {
+    .content .cards .service {
+        width: 15%;
+    }
+}
+
+@include media("xl", "xxl") {
+    .content .cards {
+        gap: $xxl-cards-gap-size;
+        padding: 2% 5%;
+
+        .service.fullstack {
+            gap: $xxl-gap-size + 4px;
+
+            .top {
+                div {
+                    img {
+                        width: $xxl-img-size + 5px;
+                        height: $xxl-img-size + 5px;
+                    }
+
+                    p {
+                        font-size: $xxl-tag-font-size + 0.2rem;
+                    }
+                }
+
+                h2 {
+                    font-size: $xxl-title-font-size + 0.4rem;
+                }
+            }
+
+            .price {
+
+            }
+        }
+
+        .service {
+            padding: 1.5%;
+            border-radius: 6%;
+            gap: $xxl-gap-size;
+
+            .top {
+                div {
+                    @include tag(8px, 5px, 10px);
+
+                    p {
+                        font-size: $xxl-tag-font-size;
+                    }
+
+                    img {
+                        width: $xxl-img-size;
+                        height: $xxl-img-size;
+                    }
+                }
+
+                h2 {
+                    font-size: $xxl-title-font-size;
+                }
+            }
+
+            .item {
+                gap: $xxl-description-gap-size;
+                font-size: $xxl-item-font-size;
+            }
+
+            a.even {
+                @include button($width: 15px, $height: 10px, $border-radius: 10px, $background-color: $primary-color-shade3, $align-center: true);
+            }
+
+            a.odd {
+                @include button($width: 15px, $height: 10px, $border-radius: 10px, $background-color: $secondary-color, $align-center: true);
+            }
+        }
+    }
+}
+
+@include media("lg") {
+    .content .cards {
+        gap: $lg-cards-gap-size;
+        padding: 2% 5%;
+
+        .service.fullstack {
+            gap: $lg-gap-size + 4px;
+
+            .top > div p, a {
+                font-size: $lg-tag-font-size + 0.2rem;
+            }
+
+            .top {
+                div {
+                    img {
+                        width: $lg-img-size + 5px;
+                        height: $lg-img-size + 5px;
+                    }
+                }
+
+                h2 {
+                    font-size: $lg-title-font-size + 0.4rem;
+                }
+            }
+        }
+
+        .service {
+            padding: 2%;
+            border-radius: 15px;
+            gap: $lg-gap-size;
+
+
+            .top > div p, a {
+                font-size: $lg-tag-font-size;
+            }
+
+            .top {
+                div {
+                    @include tag(8px, 5px, 10px);
+
+                    img {
+                        width: $lg-img-size;
+                        height: $lg-img-size;
+                    }
+                }
+
+                h2 {
+                    font-size: $lg-title-font-size;
+                }
+            }
+
+            .item {
+                gap: $lg-description-gap-size;
+                font-size: $lg-item-font-size;
+            }
+
+            a.even {
+                @include button($width: 10px, $height: 5px, $border-radius: 10px, $background-color: $primary-color-shade3, $align-center: true);
+            }
+
+            a.odd {
+                @include button($width: 10px, $height: 5px, $border-radius: 10px, $background-color: $secondary-color, $align-center: true);
+            }
+        }
+    }
+}
+
+@include media("md") {
+    .content .cards {
+        flex-wrap: wrap;
+        gap: $md-cards-gap-size;
+        padding: 2% 5%;
+
+        .service.fullstack {
+            gap: $md-description-gap-size + 4px;
+
+            .top > div p, a {
+                font-size: $md-tag-font-size + 0.2rem;
+            }
+
+            .top {
+                div {
+                    img {
+                        width: $md-img-size + 5px;
+                        height: $md-img-size + 5px;
+                    }
+                }
+
+                h2 {
+                    font-size: $md-title-font-size + 0.4rem;
+                }
+            }
+        }
+
+        .service {
+            width: 25%;
+            padding: 2%;
+            border-radius: 15px;
+            gap: $md-gap-size;
+
+
+            .top > div p, a {
+                font-size: $md-tag-font-size;
+            }
+
+            .top {
+                div {
+                    @include tag(8px, 5px, 10px);
+
+                    img {
+                        width: $md-img-size;
+                        height: $md-img-size;
+                    }
+                }
+
+                h2 {
+                    font-size: $md-title-font-size;
+                }
+            }
+
+            .item {
+                gap: $md-description-gap-size;
+                font-size: $md-item-font-size;
+            }
+
+            a.even {
+                @include button($width: 10px, $height: 5px, $border-radius: 8px, $background-color: $primary-color-shade3, $align-center: true);
+            }
+
+            a.odd {
+                @include button($width: 10px, $height: 5px, $border-radius: 8px, $background-color: $secondary-color, $align-center: true);
+            }
+        }
+    }
+}
+
+@include media("sm") {
+    .content .cards {
+        flex-wrap: wrap;
+
+        gap: $sm-cards-gap-size;
+        padding: 2% 5%;
+
+        .service.fullstack {
+            gap: $sm-description-gap-size + 4px;
+
+            .top > div p, a {
+                font-size: $sm-tag-font-size + 0.2rem;
+            }
+
+            .top {
+                div {
+                    img {
+                        width: $sm-img-size + 5px;
+                        height: $sm-img-size + 5px;
+                    }
+                }
+
+                h2 {
+                    font-size: $sm-title-font-size + 0.2rem;
+                }
+            }
+        }
+
+        .service {
+            width: 30%;
+            padding: 2%;
+            border-radius: 15px;
+            gap: $sm-gap-size;
+
+
+            .top > div p, a {
+                font-size: $sm-tag-font-size;
+            }
+
+            .price {
+                h2 {
+                    font-size: $sm-title-font-size + 0.3rem;
+                }
+
+                h3 {
+                    font-size: $sm-title-font-size;
+                }
+            }
+
+            .top {
+                div {
+                    @include tag(8px, 5px, 10px);
+
+                    img {
+                        width: $sm-img-size;
+                        height: $sm-img-size;
+                    }
+                }
+
+                h2 {
+                    font-size: $sm-title-font-size;
+                }
+            }
+
+            .item {
+                gap: $sm-description-gap-size;
+                font-size: $sm-item-font-size;
+            }
+
+            a.even {
+                @include button($width: 10px, $height: 5px, $border-radius: 8px, $background-color: $primary-color-shade3, $align-center: true);
+            }
+
+            a.odd {
+                @include button($width: 10px, $height: 5px, $border-radius: 8px, $background-color: $secondary-color, $align-center: true);
+            }
+        }
+    }
+}
