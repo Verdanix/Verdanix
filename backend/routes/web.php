@@ -58,6 +58,14 @@ Route::get('/about', function () {
     ]);
 })->name('about');
 
+Route::get("/services", function () {
+    return Inertia::render('Services', [
+        "meta_title" => trans('seo.pricing.title'),
+        "meta_description" => trans('seo.pricing.meta.description'),
+        "meta_keywords" => trans('seo.pricing.meta.description')
+    ]);
+})->name('services');
+
 Route::middleware("throttle:contact")->post('/contact', [ContactController::class, 'store'])->name('contact');
 
 Route::middleware(["auth", "verified"])->group(function () {

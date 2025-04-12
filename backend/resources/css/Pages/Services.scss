@@ -1,0 +1,148 @@
+@use '../variables.scss' as *;
+
+// Variables
+// XXL
+$xxl-tag-font-size: 0.8rem;
+$xxl-item-font-size: $xxl-tag-font-size+0.2rem;
+$xxl-title-font-size: $xxl-tag-font-size+0.7rem;
+$xxl-description-gap-size: 5px;
+$xxl-img-size: 35px;
+$xxl-gap-size: 15px;
+$xxl-cards-gap-size: 5%;
+
+// Mixins
+@mixin tag($width, $height, $radius) {
+    .even {
+        @include button($width, $height, $radius, $background-color: rgba($primary-color-shade3, 40%), $color: $primary-color-shade4, $border: false, $hover: false, $cursor: false)
+    }
+
+    .odd {
+        @include button($width, $height, $radius, $background-color: rgba($secondary-color-shade3, 100%), $color: $secondary-color-shade4, $border: false, $hover: false, $cursor: false)
+    }
+}
+
+// Common Styles
+.content {
+    > h1, > h2 {
+        text-align: center;
+    }
+
+    > h2 {
+        color: $text-color2;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .service {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            background-color: $body-color-shade2;
+
+            .price, .top > div {
+                display: flex;
+            }
+
+            .price {
+                align-items: end;
+
+                h3 {
+                    font-weight: normal;
+                    color: $text-color2;
+                }
+            }
+
+            .top > div {
+                justify-content: space-between;
+                align-items: start;
+            }
+
+            hr {
+                background-color: $text-color4;
+                height: 2px;
+                border: none;
+            }
+
+            .item {
+                display: flex;
+                align-items: center;
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+// Responsive Styles
+@include media("xl", "xxl") {
+    .content .cards {
+        gap: $xxl-cards-gap-size;
+        padding: 2% 5%;
+
+        .service.fullstack {
+            gap: $xxl-gap-size + 4px;
+
+            .top {
+                div {
+                    img {
+                        width: $xxl-img-size + 5px;
+                        height: $xxl-img-size + 5px;
+                    }
+
+                    p {
+                        font-size: $xxl-tag-font-size + 0.2rem;
+                    }
+                }
+
+                h2 {
+                    font-size: $xxl-title-font-size + 0.4rem;
+                }
+            }
+
+            .price {
+
+            }
+        }
+
+        .service {
+            padding: 1.5%;
+            border-radius: 6%;
+            gap: $xxl-gap-size;
+
+            .top {
+                div {
+                    @include tag(8px, 5px, 10px);
+
+                    p {
+                        font-size: $xxl-tag-font-size;
+                    }
+
+                    img {
+                        width: $xxl-img-size;
+                        height: $xxl-img-size;
+                    }
+                }
+
+                h2 {
+                    font-size: $xxl-title-font-size;
+                }
+            }
+
+            .item {
+                gap: $xxl-gap-size;
+                font-size: $xxl-item-font-size;
+            }
+
+            a.even {
+                @include button($width: 15px, $height: 10px, $border-radius: 10px, $background-color: $primary-color-shade3);
+            }
+
+            a.odd {
+                @include button($width: 15px, $height: 10px, $border-radius: 10px, $background-color: $secondary-color);
+            }
+        }
+    }
+
+}
