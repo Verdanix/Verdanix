@@ -2,30 +2,44 @@
 @use 'sass:meta';
 
 // Colors
-$primary-color: #0c0c13;
-$primary-color2: #2d2d38;
-$primary-color3: #3F3F4A;
+$primary-color: #00BCD4;
+$primary-color-shade1: #00ACC1;
+$primary-color-shade2: #194657;
+$primary-color-shade3: #0e768b;
+$primary-color-shade4: #0fc8e0;
+$primary-color-shade5: #4470bf;
 
-$secondary-color: #b80909;
-$secondary-color2: #ea2b2b;
+$secondary-color: #8E24AA;
+$secondary-color-shade2: #34294e;
+$secondary-color-shade3: #43285b;
+$secondary-color-shade4: #a351bd;
 
-// Common Padding
-$desktop-padding: 25px;
-$tablet-padding: 20px;
-$mobile-padding: 20px;
-$mobile-small-padding: 10px;
+$body-color: #101826;
+$body-color-shade2: #1e2936;
+$body-color-shade3: #374151;
 
+$text-color: #fefeff;
+$text-color2: #8a939f;
+$text-color3: #c2c7cd;
+$text-color4: #545964;
 // Fonts
 $font-family: 'Inter', sans-serif;
 
 // Breakpoints
-$min-website-width: 320px;
+$min-website-width: 0px;
 
 $breakpoints: (
-    'small-mobile': '(min-width: #{$min-website-width}) and (max-width: 479px)',
-    'mobile': '(min-width: 480px) and (max-width: 767px)',
-    'tablet': '(min-width: 768px) and (max-width: 1023px)',
-    'desktop': '(min-width: 1024px)',
+    "sm": "(min-width: #{$min-website-width}) and (max-width: 575px)",
+    "md": "(min-width: 576px) and (max-width: 767px)",
+    "lg": "(min-width: 768px) and (max-width: 991px)",
+    "xl": "(min-width: 992px) and (max-width: 1199px)",
+    "xxl": "(min-width: 1200px)"
+);
+
+$default-padding-dimensions: (
+    "sm": 2% 9%,
+    "lg": 1% 6%,
+    "xxl": 0.5% 5%
 );
 
 // Mixins
@@ -37,40 +51,60 @@ $breakpoints: (
     }
 }
 
-@mixin linkHover() {
-    a {
-        color: white;
-        transition: all 0.5s;
+@mixin default-padding($size, $disable-right-left: false, $disable-top-bottom: false) {
+    padding: map.get($default-padding-dimensions, $size);
 
+    @if $disable-right-left {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    @if $disable-top-bottom {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@mixin hover {
+    transition: color 0.4s;
+
+    &:hover {
+        color: $primary-color-shade1;
+    }
+}
+
+@mixin button($width: 15px, $height:8px, $border-radius: 10px, $background-color: $secondary-color, $color: white, $border: true, $background: true, $hover: true, $cursor: true, $align-center: false) {
+    text-wrap: nowrap;
+    @if $align-center {
+        align-content: center;
+        text-align: center;
+    }
+    @if $border {
+        border: 3px solid $background-color;
+    }
+
+    border-radius: $border-radius;
+
+    @if $background {
+        background-color: $background-color;
+
+        @if $hover {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    } @else if $hover {
         &:hover {
-            color: $secondary-color;
+            background-color: $background-color;
         }
     }
-}
 
-@mixin button($pw: 10px, $ph: 20px, $radius: 15px, $size: 3px) {
-    border: $size solid $secondary-color;
-    transition: all 0.5s;
-    padding: $pw $ph;
-    background-color: transparent;
-    border-radius: $radius;
-    color: white;
-    &:hover {
-        background-color: $secondary-color;
-        color: white;
+    @if $cursor {
+        cursor: pointer;
     }
+
+    padding: $height $width;
+    color: $color !important;
+    transition: all 0.4s;
 }
 
-@mixin secondaryButton($pw: 10px, $ph: 20px, $radius: 15px, $size: 3px) {
-    border: $size solid $secondary-color;
-    transition: all 0.5s;
-    padding: $pw $ph;
-    background-color: $secondary-color;
-    border-radius: $radius;
-    color: white;
-
-    &:hover {
-        background-color: transparent;
-        color: white;
-    }
-}

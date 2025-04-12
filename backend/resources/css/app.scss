@@ -3,34 +3,28 @@
 // Common
 :root {
     font-family: $font-family;
-    background-color: $primary-color;
+    background-color: $body-color;
     color: white;
+    min-width: $min-website-width;
+    scroll-behavior: smooth;
 }
 
 html {
     min-width: $min-website-width;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-anchor: none;
 }
 
 a {
-    text-decoration:none;
+    text-decoration: none;
     color: white;
 }
 
 * {
     margin: 0;
     padding: 0;
-}
-
-// Responsive styles
-
-@include media('small-mobile', 'mobile') {
-    :root {
-        padding: 25px;
-    }
-}
-
-@include media('tablet', 'desktop') {
-    :root {
-        padding: 30px;
-    }
+    color: $text-color;
 }

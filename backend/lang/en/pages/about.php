@@ -1,36 +1,293 @@
 <?php
 
 return [
-    'origin.story.title' => 'Origin Story',
-    'origin.story.1' => 'Growing up, I faced unique challenges as a child with Tourette\'s and ADHD. Despite these obstacles, I\'ve always been driven by an insatiable curiosity and passion for learning. As a young tinkerer, I spent countless hours taking things apart and rebuilding them, or reverse-engineering gadgets like our family\'s Wii to understand how they worked. This maker mentality only intensified as I grew older.',
-    'origin.story.2' => 'When I was around 5-6 years old, I showed an early knack for understanding technology by hacking together a way to connect our family\'s Wii to the internet - a feat that my family members didn\'t quite grasp at the time! As I entered elementary school and later junior high, I faced bullying and constant questioning due to my Tourette\'s. However, this adversity only strengthened my resolve to learn and grow.',
-    'origin.story.3' => 'I began programming in earnest when I was around 8-10 years old, starting with Java. As I grew older, I became increasingly fascinated by the world of coding and expanded my skills to include Python, JavaScript, TypeScript, HTML, CSS, and more. By age 14, I had already gained a solid foundation in programming, which has since taken me to new heights as a software engineer.',
-    'origin.story.4' => 'Today, I\'m proud to say that my maker mentality, combined with a lifelong passion for learning, has enabled me to become one of the top young software engineers out there - a testament to the power of dedication and perseverance.',
-    'awards.certs.title' => 'Awards & Certifications',
-    'awards.certs.start' => 'Throughout my educational journey, I\'ve earned several notable certifications:',
-    'awards.certs.end' => 'These credentials not only demonstrate my technical expertise but also highlight my commitment to lifelong learning and personal growth.',
-    'awards.certs.2' => 'Eagle Scout (2025)',
-    'awards.certs.1' => 'LPI Linux Essentials Certified (2023)',
-    'education.title' => 'Education',
-    'education.start' => 'As a software engineer in the making, I\'ve pursued a wide range of courses to hone my skills. My academic background includes:',
-    'education.1' => 'JavaScript, TypeScript, Java, Python, HTML, CSS, React, SCSS, Laravel',
-    'education.2' => 'Git/Github + Actions, Linux, basic electrical engineering',
-    'education.3' => 'MS Word, MS Powerpoint, Figma',
-    'experience.title' => 'Experience',
-    'experience.start' => 'As a highly motivated and detail-oriented individual, I\'ve had the opportunity to develop a diverse range of skills through various roles. Here are some highlights from my professional journey:',
-    'experience.1.prefix' => '2025: Executive Leader,',
-    'experience.1' => 'Student-Run Store (my school) - Demonstrated exceptional leadership skills as a manager, overseeing daily operations and ensuring seamless customer experiences.',
-    'experience.2.prefix' => '2024-2025: Robotics Visionary, President,',
-    'experience.2' => 'Robotics Club Member - Spearheaded the club\'s growth, fostering innovation and collaboration among members to develop projects.',
-    'experience.3.prefix' => '2024-2025: Office Support Specialist,',
-    'experience.3' => 'TA for Counseling Office (my high school) - Utilized my expertise to provide support to the counseling office, helping them deliver passes or execute certain tasks.',
-    'experience.4.prefix' => '2018-2025: Eagle Scout in Progress,',
-    'experience.4' => 'Boy Scouts - Developed leadership skills, problem-solving abilities, and a strong work ethic through this prestigious award program.',
-    'experience.5.prefix' => '2023-2024: Computer Science Enthusiast,',
-    'experience.5' => 'AP CS Principles (taking to understand more about computer science) - Explored advanced concepts in computer science, refining my understanding of programming principles and algorithms.',
-    'experience.6.prefix' => '2022-2023: Digital Literacy Expert,',
-    'experience.6' => 'Intro to Computer Science (covering topics I missed earlier) - Built upon existing knowledge, mastering essential skills in programming, data structures, and software engineering.',
-    'experience.7.prefix' => '2021-2025: Customer Service Champion,',
-    'experience.7' => 'Cimeyclust - Provided top-notch support to customers, troubleshooting issues and delivering exceptional experiences that exceeded expectations.',
-    'experience.8.prefix' => '2020-Present: EdTech Pioneer,',
-    'experience.8' => 'Working on an e-learning startup as a side project with Laravel, React, SCSS, and JavaScript - Designed and developed innovative educational platforms, applying my skills in web development and software engineering to create engaging learning experiences.',];
+    "section1" => [
+        "about" => "About Me",
+        "description" => "I'm a passionate fullstack software engineer, Eagle Scout, philanthropist, and aspiring entrepreneur. I'm dedicated to creating innovative solutions that make a positive impact on the world. My journey has been shaped by a lifelong love of learning, technology, maker mentality, and a commitment to exceeding expectations.",
+        "alt" => "an image of Mason Root",
+        "connect" => "Get in Touch",
+        "download" => "Download CV"
+    ],
+    "section2" => [
+        "h2" => "My Journey",
+        "paragraphs" => [
+            "1" => "My fascination with technology began at age four when I took apart household items and built Lego robots. By eight, I was coding Minecraft add-ons in Scratch, later experimenting with Python and officially learning Java at thirteen.",
+            "2" => "In my teens, I mastered frontend and backend development, started developing Acadrix, and became an Eagle Scout while exploring electrical engineering and robotics. My passion for building only grew as I tackled real-world projects.",
+            "3" => "Today, I’ve developed over 40 projects for friends, family, and clients, refining my skills as a Fullstack Software Engineer and striving to create technology that makes an impact."
+        ]
+    ],
+    "section3" => [
+        "h2" => "Awards & Certifications",
+        "awards" => [
+            "1" => [
+                "title" => "LPI Essentials Certified",
+                "type" => "Developer Certification",
+                "year" => "2023",
+                "icon" => "/images/about/section4/lpi.svg",
+                "alt" => "the linux professional institute logo",
+            ],
+            "2" => [
+                "title" => "Eagle Scout",
+                "type" => "Professional Award",
+                "year" => "2025",
+                "icon" => "/images/about/section4/eagle_scout.svg",
+                "alt" => "the eagle scout rank logo",
+            ],
+            "3" => [
+                "title" => "Github Foundations Certified",
+                "type" => "Developer Certification",
+                "year" => "2025",
+                "icon" => "/images/footer/github.svg",
+                "alt" => "the linux github logo",
+            ],
+        ]
+    ],
+    "section4" => [
+        "h2" => "Professional Experience",
+        "experiences" => [
+            "1" => [
+                "title" => "Tech Support Specialist Intern",
+                "org" => "CimeyClust",
+                "website" => "https://cimeyclust.com",
+                "description" => "I provide tech support to customers, help troubleshoot tech issues, and develop my professional expertise and skill sets.",
+                "dates" => [
+                    "start" => "2022",
+                    "end" => "Present"
+                ],
+            ],
+            "2" => [
+                "title" => "CEO/Founder",
+                "org" => "Acadrix",
+                "website" => "https://acadrix.org",
+                "description" => "I founded and am currently developing Acadrix to provide accessible, affordable, and in-depth project-based courses while giving back to the community.",
+                "dates" => [
+                    "start" => "2023",
+                    "end" => "Present"
+                ]
+            ],
+            "3" => [
+                "title" => "Eagle Scout Project Manager",
+                "org" => "Boy Scouts of America",
+                "website" => "https://www.scouting.org/about/research/eagle-scouts/",
+                "description" => "I planned, organized, and led a team of volunteers to dig up ~100ft of blackberry bushes and over 2000 bricks working over 300 hours.",
+                "dates" => [
+                    "start" => "2024",
+                    "end" => "2025"
+                ]
+            ],
+            "4" => [
+                "title" => "Sales Associate",
+                "org" => "Boy Scouts of America",
+                "website" => "https://www.scouting.org/",
+                "description" => "Sold and delivered over 500 Christmas trees and accessories for my Troop's annual fundraiser.",
+                "dates" => [
+                    "start" => "2018",
+                    "end" => "2025"
+                ]
+            ],
+            "5" => [
+                "title" => "Assistant Store Manager",
+                "org" => "High School's Student-Run Store",
+                "description" => "I managed the tech infrastructure, gave tech support, and brainstormed new ideas for the Entrepreneurship class.",
+                "dates" => [
+                    "start" => "2024",
+                    "end" => "2025"
+                ]
+            ],
+            "6" => [
+                "title" => "Robotics Club President",
+                "org" => "My High School",
+                "description" => "I led and managed the club in developing battle bots and other projects, and improved the circuits by designing PCBs.",
+                "dates" => [
+                    "start" => "2024",
+                    "end" => "2025"
+                ]
+            ],
+            "7" => [
+                "title" => "Robotics Class TA",
+                "org" => "My High School",
+                "website" => "",
+                "description" => "I taught, troubleshooted, and guided students with the design, development, testing, and debugging their projects.",
+                "dates" => [
+                    "start" => "2024",
+                    "end" => "2025"
+                ]
+            ],
+            "8" => [
+                "title" => "Office TA",
+                "org" => "My High School",
+                "website" => "",
+                "description" => "I delivered passes, handled confidential paperwork, and improved office morale through my work ethic.",
+                "dates" => [
+                    "start" => "2024",
+                    "end" => "2025"
+                ]
+            ]
+        ],
+    ],
+    "section6" => [
+        "h2" => "Technical Skills",
+        "skills" => [
+            "1" => [
+                "title" => "Java",
+                "icon" => "/images/about/section6/java.svg",
+                "alt" => "the java logo",
+            ],
+            "2" => [
+                "title" => "HTML",
+                "icon" => "/images/about/section6/html.svg",
+                "alt" => "the html logo",
+            ],
+            "3" => [
+                "title" => "CSS",
+                "icon" => "/images/about/section6/css.svg",
+                "alt" => "the css logo",
+            ],
+            "4" => [
+                "title" => "Javascript",
+                "icon" => "/images/about/section6/javascript.svg",
+                "alt" => "the javascript logo",
+            ],
+            "5" => [
+                "title" => "Python",
+                "icon" => "/images/about/section6/python.svg",
+                "alt" => "the python logo",
+            ],
+            "6" => [
+                "title" => "React",
+                "icon" => "/images/about/section6/react.svg",
+                "alt" => "the react logo",
+            ],
+            "7" => [
+                "title" => "SASS",
+                "icon" => "/images/about/section6/sass.svg",
+                "alt" => "the sass logo",
+            ],
+            "8" => [
+                "title" => "Laravel",
+                "icon" => "/images/about/section6/laravel.svg",
+                "alt" => "the laravel logo",
+            ],
+            "9" => [
+                "title" => "Spring",
+                "icon" => "/images/about/section6/spring.svg",
+                "alt" => "the spring logo",
+            ],
+            "10" => [
+                "title" => "Linux",
+                "icon" => "/images/about/section6/linux.svg",
+                "alt" => "the linux logo",
+            ],
+            "11" => [
+                "title" => "SQL/MySQL",
+                "icon" => "/images/about/section6/mysql.svg",
+                "alt" => "the mysql logo",
+            ],
+            "12" => [
+                "title" => "Robotics",
+                "icon" => "/images/about/section6/robotics.svg",
+                "alt" => "a wrench icon",
+            ],
+            "13" => [
+                "title" => "Figma",
+                "icon" => "/images/about/section6/figma.svg",
+                "alt" => "the figma logo",
+            ],
+            "14" => [
+                "title" => "Git/Github + Actions",
+                "icon" => "/images/about/section6/github.svg",
+                "alt" => "the github logo",
+            ],
+            "15" => [
+                "title" => "Basic Electrical Engineering",
+                "icon" => "/images/about/section6/electrical_engineering.svg",
+                "alt" => "a central processing unit icon",
+            ],
+        ]
+    ],
+    "section5" => [
+        "h2" => "Personal Skills",
+        "skills" => [
+            "1" => [
+                "title" => "Leadership",
+                "icon" => "/images/about/section5/leadership.svg",
+                "alt" => "a compass icon",
+            ],
+            "2" => [
+                "title" => "Communication",
+                "icon" => "/images/about/section5/communication.svg",
+                "alt" => "a speech bubble icon",
+            ],
+            "3" => [
+                "title" => "Patience",
+                "icon" => "/images/about/section5/patience.svg",
+                "alt" => "a watch icon",
+            ],
+            "4" => [
+                "title" => "Project Management",
+                "icon" => "/images/about/section5/project_management.svg",
+                "alt" => "a briefcase icon",
+            ],
+            "5" => [
+                "title" => "Transparency",
+                "icon" => "/images/about/section5/microsoft.svg",
+                "alt" => "the a window icon",
+            ],
+            "6" => [
+                "title" => "Emotional Intelligence",
+                "icon" => "/images/about/section5/emotional_intelligence.svg",
+                "alt" => "a central processing unit icon",
+            ],
+            "7" => [
+                "title" => "Listening",
+                "icon" => "/images/about/section5/active_listener.svg",
+                "alt" => "a microphone icon",
+            ],
+            "8" => [
+                "title" => "Empathy",
+                "icon" => "/images/about/section5/empathy.svg",
+                "alt" => "a heart icon",
+            ],
+            "9" => [
+                "title" => "Problem Solving",
+                "icon" => "/images/about/section5/problem_solving.svg",
+                "alt" => "an achievement icon",
+            ],
+            "10" => [
+                "title" => "Perseverance",
+                "icon" => "/images/about/section5/perseverance.svg",
+                "alt" => "a loading indicator",
+            ],
+            "11" => [
+                "title" => "Time Management",
+                "icon" => "/images/about/section5/time_management.svg",
+                "alt" => "a clock icon",
+            ],
+            "12" => [
+                "title" => "Attention to Detail",
+                "icon" => "/images/about/section5/attention_to_detail.svg",
+                "alt" => "a book icon",
+            ],
+            "14" => [
+                "title" => "Creativity",
+                "icon" => "/images/about/section5/creativity.svg",
+                "alt" => "a smiley face icon",
+            ],
+            "15" => [
+                "title" => "Adaptability",
+                "icon" => "/images/about/section5/adaptability.svg",
+                "alt" => "an edit icon",
+            ],
+            "13" => [
+                "title" => "Teamwork",
+                "icon" => "/images/about/section5/teamwork.svg",
+                "alt" => "two users icon",
+            ],
+            "16" => [
+                "title" => "Resourcefulness",
+                "icon" => "/images/about/section5/resourcefulness.svg",
+                "alt" => "a globe icon",
+            ],
+        ]
+    ]
+];

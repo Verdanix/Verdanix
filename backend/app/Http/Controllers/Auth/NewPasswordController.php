@@ -7,6 +7,7 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
@@ -22,9 +23,9 @@ class NewPasswordController extends Controller
     public function create(Request $request): Response
     {
         return Inertia::render('Auth/ResetPassword', [
-            'meta_title' => trans('pages/reset_password.title'),
-            'meta_description' => trans('pages/reset_password.meta.description'),
-            'meta_keywords' => trans('pages/reset_password.meta.keywords'),
+            "meta_title" => trans("seo.reset_password.title"),
+            "meta_description" => trans("seo.reset_password.meta.description"),
+            "meta_keywords" => trans("seo.reset_password.meta.keywords"),
             'email' => $request->email,
             'token' => $request->route('token'),
         ]);
@@ -62,7 +63,7 @@ class NewPasswordController extends Controller
         // the application's home authenticated view. If there is an error we can
         // redirect them back to where they came from with their error message.
         if ($status == Password::PASSWORD_RESET) {
-            return redirect()->route('login')->with('status', __($status));
+            return redirect()->route('register');
         }
 
         throw ValidationException::withMessages([

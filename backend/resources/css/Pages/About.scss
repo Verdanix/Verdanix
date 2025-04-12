@@ -1,58 +1,468 @@
 @use '../variables.scss' as *;
 
-// Common
-#origin-story,
-#certsAndAwards,
-#education,
-#experiences {
-    ul > li {
-        list-style-type: disc;
-        margin: 20px 2.5vw 20px;
+// Variables
+// XXL
+$xxl-padding-top: 3%;
+$xxl-img-dim: 400px;
+$xxl-image-radius: 10%;
+$xxl-h1-font-size: 4rem;
+$xxl-content-gap: 25px;
+
+$xxl-journey-margin: 5% 10%;
+$xxl-journey-gap: 20px;
+
+$xxl-certs-img-height: 40px;
+$xxl-certs-card-padding: 4%;
+$xxl-certs-card-radius: 20px;
+$xxl-certs-gap: 30px;
+$xxl-certs-card-gap: 10px;
+
+$xxl-experiences-gap: 30px;
+$xxl-cards-gap: 2%;
+$xxl-experiences-content-gap: 15px;
+$xxl-experiences-circle-height: 20px;
+$xxl-experiences-line-width: 4px;
+
+$xxl-skills-width: 20%;
+$xxl-skills-gap: 5px;
+// LG
+$lg-padding-top: 3%;
+$lg-img-dim: 300px;
+$lg-image-radius: 10%;
+$lg-h1-font-size: 3rem;
+$lg-content-gap: 20px;
+
+$lg-journey-margin: 3% 7%;
+
+$lg-certs-img-height: 30px;
+
+// SM-MD
+$sm-md-skills-width: 40%;
+$sm-md-skills-gap: 10px;
+
+// MD
+$md-h1-font-size: 2rem;
+$md-content-gap: 10px;
+
+// SM
+$sm-img-dim: 250px;
+
+// Mixins
+
+// Common Styles
+.section1, .section2 {
+    strong, p {
+        color: $text-color2;
     }
 }
 
-h1,
-h2 {
-    text-align: center;
-}
+.section1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-#experiences {
-    li {
-        color: whitesmoke;
+    .content, .buttons {
+        display: flex;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    img {
+        mask-image: linear-gradient(to bottom, rgba(black, 1), rgba($body-color, 0.1));
+        background-color: white;
     }
 }
 
-// Responsive styles
-@include media('small-mobile', 'mobile') {
-    :root {
-        padding: 25px;
-    }
+.section2 {
+    display: flex;
+    flex-direction: column;
 
-    h1,
     h2 {
-        margin: 15px 0;
-        text-decoration: underline 3px solid $secondary-color;
-        font-size: 1.5rem;
-    }
-
-    p, strong, li {
-        font-size: 1rem;
+        margin-bottom: 0 !important;
     }
 }
 
-@include media('desktop', 'tablet') {
-    :root {
-        padding: 30px;
+.section3 {
+    display: flex;
+    flex-direction: column;
+
+    .certs {
+        display: grid;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: $body-color-shade2;
+            min-width: 80%;
+
+            strong {
+                color: $text-color3;
+            }
+
+            p {
+                color: $text-color2;
+            }
+        }
+
+    }
+}
+
+.section4 {
+    .experiences {
+        display: flex;
+        flex-direction: column;
+
+        .circle {
+            border-radius: 50%;
+        }
+
+        .odd {
+            .content strong {
+                color: $primary-color-shade4;
+            }
+
+            .indicator {
+                .circle, .line {
+                    background-color: $primary-color-shade4;
+                }
+            }
+        }
+
+        .even {
+            .content strong {
+                color: $secondary-color-shade4;
+            }
+
+            .indicator {
+                .circle, .line {
+                    background-color: $secondary-color-shade4;
+                }
+            }
+        }
+
+        .card {
+            display: flex;
+
+            .indicator {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .line {
+                    height: 100%;
+                }
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    color: $text-color3;
+                }
+            }
+        }
+    }
+}
+
+.skills {
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 
-    h1,
-    h2 {
-        margin: 30px 0;
-        text-decoration: underline 5px solid $secondary-color;
-        font-size: 1.8rem;
+    .skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            color: $text-color3;
+            text-align: center;
+        }
+    }
+}
+
+// Responsive Styles
+@include media("xl", "xxl") {
+    .section1, .section2, .section3 {
+        @include default-padding("xxl");
     }
 
-    p, strong, li {
-        font-size: 1.2rem;
+    .section1 {
+        padding-top: $xxl-padding-top;
+
+        img {
+            height: $xxl-img-dim;
+            width: $xxl-img-dim;
+            border-radius: $xxl-image-radius;
+        }
+
+        .content, .buttons {
+            gap: $xxl-content-gap;
+        }
+
+        .content {
+            @include default-padding("xxl");
+
+            h1 {
+                font-size: $xxl-h1-font-size;
+            }
+
+            .buttons {
+                .contact {
+                    @include button($background-color: $primary-color-shade1);
+                }
+
+                .download {
+                    @include button($background: false);
+                }
+
+            }
+        }
+    }
+
+    .section3 {
+        .certs {
+            grid-gap: $xxl-certs-gap;
+
+            .card {
+                padding: $xxl-certs-card-padding;
+                border-radius: $xxl-certs-card-radius;
+                gap: $xxl-certs-card-gap;
+
+                strong {
+                    color: $text-color3;
+                }
+
+                p {
+                    font-size: 1rem;
+                    color: $text-color2;
+                }
+
+                img {
+                    width: $xxl-certs-img-height;
+                }
+            }
+        }
+    }
+
+    .skills {
+        @include default-padding("xxl");
+    }
+}
+
+@include media("xxl") {
+    .section3 {
+        .certs {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+
+        img {
+            width: $xxl-certs-img-height;
+        }
+    }
+}
+
+@include media("sm", "md", "lg", "xl") {
+    .section3 .certs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include media("sm", "md", "lg", "xl", "xxl") {
+    .section3 .certs {
+        grid-gap: $xxl-certs-gap;
+
+        .card {
+            padding: $xxl-certs-card-padding;
+            border-radius: $xxl-certs-card-radius;
+            gap: $xxl-certs-card-gap;
+
+            strong {
+                color: $text-color3;
+            }
+
+            p {
+                font-size: 1rem;
+                color: $text-color2;
+            }
+        }
+    }
+
+    .section4 .experiences {
+        gap: $xxl-experiences-gap;
+
+        .card {
+            gap: $xxl-cards-gap;
+
+            .content {
+                gap: $xxl-experiences-content-gap;
+            }
+
+            .indicator {
+                .circle {
+                    width: $xxl-experiences-circle-height;
+                    height: $xxl-experiences-circle-height;
+                }
+
+                .line {
+                    width: $xxl-experiences-line-width;
+                }
+            }
+        }
+    }
+
+    .skills {
+        .content {
+            gap: 30px;
+            row-gap: 30px;
+
+            img {
+                width: 40px;
+            }
+        }
+    }
+}
+
+@include media("lg", "xl", "xxl") {
+    .section2 {
+        @include default-padding("xxl");
+        margin: $xxl-journey-margin;
+        gap: $xxl-journey-gap;
+    }
+
+    .section4 {
+        @include default-padding("xxl");
+    }
+
+    .skills .content .skill {
+        width: $xxl-skills-width;
+        gap: $xxl-skills-gap;
+    }
+}
+
+@include media("md", "lg") {
+    .section1 {
+        img {
+            height: $lg-img-dim;
+            width: $lg-img-dim;
+            border-radius: $lg-image-radius;
+        }
+    }
+}
+
+@include media("sm", "md", "lg") {
+    .section1 img {
+        border-radius: $lg-image-radius;
+    }
+}
+
+@include media("lg") {
+    .section1, .section2, .section3 {
+        @include default-padding("lg");
+    }
+
+    .section1 {
+        padding-top: $lg-padding-top;
+
+        .content, .buttons {
+            gap: $lg-content-gap;
+        }
+
+        .content {
+            @include default-padding("lg");
+
+            h1 {
+                font-size: $lg-h1-font-size;
+            }
+
+            .buttons {
+                .contact {
+                    @include button($background-color: $primary-color-shade1);
+                }
+
+                .download {
+                    @include button($background: false);
+                }
+
+            }
+        }
+    }
+
+    .section3 img {
+        width: $lg-certs-img-height;
+    }
+
+    .skills {
+        @include default-padding("lg");
+    }
+}
+
+@include media("sm") {
+    .section1 {
+        img {
+            height: $sm-img-dim;
+            width: $sm-img-dim;
+        }
+    }
+}
+
+@include media("sm", "md") {
+    .section1, .section2, .section3 {
+        @include default-padding("sm");
+    }
+    .section1 {
+        flex-direction: column;
+
+        img {
+            border-radius: $lg-image-radius;
+        }
+
+        .content, .buttons {
+            gap: $md-content-gap;
+        }
+
+        .content {
+            @include default-padding("sm");
+
+            h1 {
+                font-size: $md-h1-font-size;
+            }
+
+            .buttons {
+                .contact {
+                    @include button($background-color: $primary-color-shade1);
+                }
+
+                .download {
+                    @include button($background: false);
+                }
+
+            }
+        }
+    }
+
+    .section2 {
+        margin: $lg-journey-margin;
+        gap: $xxl-journey-gap;
+    }
+
+    .section3 img {
+        width: $lg-certs-img-height;
+    }
+
+    .section4, .skills {
+        @include default-padding("sm");
+    }
+
+    .skills .content .skill {
+        width: $sm-md-skills-width;
+        gap: $sm-md-skills-gap;
     }
 }

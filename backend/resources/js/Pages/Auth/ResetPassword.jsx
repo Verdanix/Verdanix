@@ -1,58 +1,63 @@
 import '@/../css/Pages/Auth/ResetPassword.scss';
-import GuestLayout from '@/Layouts/GuestLayout.jsx';
+import Navbar from '@/Components/Navbar.jsx';
+import Text from '@/Components/Sections/Text.jsx';
 import { useForm } from '@inertiajs/react';
 import { useTranslation } from 'react-i18next';
 
-export default function ResetPassword({ email, token }) {
-    const { t } = useTranslation('reset_password');
-
-    const { data, setData, post, errors } = useForm({
+export default function ResetPassword({ token, email }) {
+    const { data, setData, post, processing, errors, reset } = useForm({
         token: token,
         email: email,
         password: '',
         password_confirmation: '',
     });
 
-    const handleChange = (e) => {
+    const { t } = useTranslation('reset_password');
+    const onChange = (e) => {
         setData(e.target.id, e.target.value);
     };
 
     const submit = (e) => {
         e.preventDefault();
-        post(route('password.store'), data);
+
+        post(route('password.store'), {
+            onFinish: () => reset('password', 'password_confirmation'),
+        });
+    };
+
+    const getH3Message = () => {
+        const errors2 = Object.values(errors);
+        if (errors2.length >= 1) {
+            return errors2[0];
+        }
+
+        return t('p');
     };
 
     return (
-        <GuestLayout>
-            <div id="form">
-                <form onSubmit={submit}>
-                    <h1>{t('title')}</h1>
-                    <p>{Object.values(errors)[0]}</p>
+        <div id="reset-password">
+            <Navbar view="reset" />
+            <div className="content">
+                <form onSubmit={submit} className="model">
+                    <Text type="h2">{t('h2')}</Text>
+                    <Text type="h3">{getH3Message()}</Text>
                     <input
-                        id="email"
-                        type="text"
-                        placeholder={t('email')}
-                        value={data.email}
-                        onChange={handleChange}
-                    />
-                    <input
-                        id="password"
                         type="password"
+                        id="password"
                         placeholder={t('password')}
                         value={data.password}
-                        onChange={handleChange}
+                        onChange={onChange}
                     />
-
                     <input
-                        id="password_confirmation"
                         type="password"
+                        id="password_confirmation"
                         placeholder={t('password_confirmation')}
                         value={data.password_confirmation}
-                        onChange={handleChange}
+                        onChange={onChange}
                     />
                     <button type="submit">{t('submit')}</button>
                 </form>
             </div>
-        </GuestLayout>
+        </div>
     );
 }

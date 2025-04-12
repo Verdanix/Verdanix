@@ -1,14 +1,15 @@
 import '@/../css/Pages/Auth/ForgotPassword.scss';
-import GuestLayout from '@/Layouts/GuestLayout.jsx';
+import Navbar from '@/Components/Navbar.jsx';
+import Text from '@/Components/Sections/Text.jsx';
 import { useForm } from '@inertiajs/react';
 import { useTranslation } from 'react-i18next';
 
-export default function ForgotPassword() {
-    const { t } = useTranslation('forgot_password');
-
+export default function ForgotPassword({ status }) {
     const { data, setData, post, errors } = useForm({
         email: '',
     });
+
+    const { t } = useTranslation('forgot_password');
 
     const handleChange = (e) => {
         setData(e.target.id, e.target.value);
@@ -16,29 +17,37 @@ export default function ForgotPassword() {
 
     const submit = (e) => {
         e.preventDefault();
-        post(route('password.email'), data);
+        post(route('password.email'));
     };
 
+    const getH3Message = () => {
+        if (status) {
+            return status;
+        }
+
+        if (errors.email) {
+            return errors.email;
+        }
+
+        return t('p');
+    };
     return (
-        <GuestLayout>
-            <div id="form">
-                <form onSubmit={submit}>
-                    <h1>{t('title')}</h1>
-                    <p>{Object.values(errors)[0]}</p>
+        <div id="forgot-password">
+            <Navbar view="forgot" />
+            <div className="content">
+                <form onSubmit={submit} className="model">
+                    <Text type="h2">{t('h2')}</Text>
+                    <Text type="h3">{getH3Message()}</Text>
                     <input
-                        id="email"
                         type="text"
+                        id="email"
                         placeholder={t('email')}
-                        value={data.email}
+                        defaultValue={data.email}
                         onChange={handleChange}
                     />
                     <button type="submit">{t('submit')}</button>
-                    <div className="loginOptions">
-                        <a href="/login">{t('login')}</a>
-                        <a href="/register">{t('register')}</a>
-                    </div>
                 </form>
             </div>
-        </GuestLayout>
+        </div>
     );
 }

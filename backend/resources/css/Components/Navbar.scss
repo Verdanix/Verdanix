@@ -1,193 +1,253 @@
 @use '../variables.scss' as *;
 
+// Variables
+$desktop-gap-size: 30px;
+$mobile-gap-size: 15px;
+$mobile-nav-menu-gap: 6px;
+
 // Mixins
-@mixin animation($type, $duration) {
-    @if ($type == 'slide-in') {
-        animation: slide-in $duration forwards;
-        @keyframes slide-in {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+@mixin nav-font-size($size: "xlg", $nav-links-inactive: false) {
+    @if $nav-links-inactive {
+        @if ($size == "xlg") {
+            font-size: 20px;
+        } @else if ($size == "lg") {
+            font-size: 15px;
         }
-    } @else if ($type == 'slide-out') {
-        animation: slide-out $duration forwards;
-        @keyframes slide-out {
-            from {
-                transform: translateX(0);
-                opacity: 1;
-            }
-            to {
-                transform: translateX(100%);
-                opacity: 0;
-                display: none;
-            }
+    } @else {
+        @if ($size == "xlg") {
+            font-size: 25px;
+        } @else if ($size == "lg") {
+            font-size: 20px;
         }
     }
 }
 
-// Common styles
-nav,
-#nav {
-    @include linkHover;
-    width: 100%;
+@mixin nav-link-slide-in-out($nav-links-active) {
+    display: none;
+    @if $nav-links-active {
+        display: flex;
+        animation: slide-in 0.5s forwards;
+    } @else {
+        animation: slide-out 0.5s forwards;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+// Common Styles
+nav {
+    border-bottom: 3px solid $body-color-shade2;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    a, li {
-        text-decoration: none;
-        text-decoration-skip-ink: none;
-        color: white;
+    div, li {
+        display: flex;
+        align-items: center;
         list-style-type: none;
     }
-}
 
-.logo {
-    background-color: white;
-}
-
-.menu-closed,
-.menu-open,
-.hamburger-menu {
-    display: flex;
-}
-
-.hamburger-menu {
-    z-index: 1;
-}
-
-
-// Responsive styles
-@include media('mobile', 'tablet', 'desktop') {
-    .menu-closed {
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    .cta.current-view {
-        text-decoration: none !important;
-    }
-
-    .cta {
-        @include secondaryButton();
-        color: white !important;
-    }
-}
-
-@include media('small-mobile') {
-    .logo {
-        min-width: 2rem;
-        min-height: 2rem;
-    }
-
-    #nav {
-        .current-view {
-
-            text-decoration: 2px $secondary-color solid underline;
-            text-decoration-skip-ink: none;
-        }
-    }
-    .menu-open,
-    .menu-closed {
-        padding: 60px 60px 30px 30px;
-        border-radius: 20px 0 0 20px;
-        position: fixed;
-        top: 0;
-        right: 0;
-        background-color: $primary-color2;
-        z-index: 0;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .menu-open {
-        @include animation('slide-in', 0.5s);
-    }
-
-    .menu-closed {
-        @include animation('slide-out', 0.5s);
+    .nav-links-inactive, .nav-links-active {
+        display: flex;
     }
 
     .hamburger-menu {
+        height: 100%;
+        gap: $mobile-nav-menu-gap;
         flex-direction: column;
-        justify-content: space-evenly;
-
-        width: 1.5rem;
-        height: 1.5rem;
 
         span {
-            background-color: $secondary-color2;
+            background-color: $primary-color-shade1;
+        }
+    }
+
+    a {
+        @include hover;
+    }
+
+    .active a {
+        color: $primary-color-shade1;
+    }
+
+    #nav {
+         a span {
+             @include hover;
+         }
+     }
+}
+
+// Responsive Styles
+@include media("lg", "xl", "xxl") {
+    nav {
+        .hamburger-menu {
+            display: none;
+        }
+
+        #nav, .nav-links-inactive, .nav-links, .nav-links-active {
+            gap: $desktop-gap-size;
+            display: flex;
+        }
+    }
+}
+
+@include media("xl", "xxl") {
+    nav {
+        .nav-links-inactive, .nav-links, .nav-links-active {
+            @include nav-font-size("xlg", true);
+        }
+
+        #nav {
+            gap: $desktop-gap-size;
+            a span {
+                @include nav-font-size("xlg");
+            }
+
+            img {
+                width: 60px;
+            }
+        }
+
+        .nav-links-inactive, .nav-links {
+            a span {
+                @include button();
+            }
+        }
+    }
+}
+
+@include media("lg") {
+    nav {
+        .nav-links-inactive, .nav-links, .nav-links-active {
+            @include nav-font-size("lg", true);
+        }
+
+        #nav {
+            gap: $desktop-gap-size;
+
+            a span {
+                @include nav-font-size("lg");
+            }
+
+            img {
+                width: 50px;
+            }
+        }
+
+        .nav-links-inactive, .nav-links {
+            a span {
+                @include button(10px, 5px);
+            }
+        }
+    }
+}
+
+@include media("lg", "xl") {
+    nav {
+        @include default-padding("lg");
+    }
+}
+
+@include media("xxl") {
+    nav {
+        @include default-padding("xxl");
+    }
+}
+
+@include media("sm", "md") {
+    .nav-links-inactive {
+        @include nav-link-slide-in-out(false);
+    }
+
+    .nav-links-active {
+        @include nav-link-slide-in-out(true);
+    }
+
+    nav {
+        @include default-padding("sm");
+
+        .hamburger-menu {
+            display: flex;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .nav-links-inactive, .nav-links-active {
+            flex-direction: column;
+            position: absolute;
+            gap: $mobile-gap-size;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: $body-color-shade2;
+            padding: 30px;
+        }
+
+        #nav {
+            gap: $mobile-gap-size;
+        }
+    }
+}
+
+@include media('md') {
+    nav {
+        .nav-links-inactive, .nav-links-active {
+            @include nav-font-size("xlg", true);
+        }
+
+        .hamburger-menu span {
+            width: 35px;
+            height: 5px;
+        }
+
+        #nav {
+            a span {
+                @include nav-font-size("xlg");
+            }
+
+            img {
+                width: 45px;
+            }
+        }
+    }
+}
+
+@include media('sm') {
+    nav {
+        .nav-links-inactive, .nav-links-active {
+            @include nav-font-size("lg", true);
+        }
+
+        .hamburger-menu span {
+            width: 30px;
             height: 4px;
         }
-    }
-}
 
-@include media('mobile') {
-    .logo {
-        min-width: 2rem;
-        min-height: 2rem;
-    }
+        #nav {
+            a span {
+                @include nav-font-size("lg");
+            }
 
-    #nav {
-        gap: 10%;
-
-        * {
-            font-size: 1.1rem;
-        }
-
-        .current-view {
-            text-decoration: 3px $secondary-color solid underline;
-            text-decoration-skip-ink: none;
+            img {
+                width: 40px;
+            }
         }
     }
-
-    .cta {
-        @include secondaryButton(5px, 10px, 10px);
-    }
-}
-
-@include media('tablet') {
-    .logo {
-        min-width: 2.5rem;
-        min-height: 2.5rem;
-    }
-
-    #nav {
-        gap: 5%;
-
-        * {
-            font-size: 1.4rem;
-        }
-
-        .current-view {
-            text-decoration: 4px $secondary-color solid underline;
-            text-decoration-skip-ink: none;
-        }
-    }
-}
-
-@include media('desktop') {
-    .logo {
-        min-width: 3rem;
-        min-height: 3rem;
-    }
-
-    #nav {
-        gap: 5%;
-
-        * {
-            font-size: 1.4rem;
-        }
-
-        .current-view {
-            text-decoration: 4px $secondary-color solid underline;
-            text-decoration-skip-ink: none;
-        }
-    }
-
 }

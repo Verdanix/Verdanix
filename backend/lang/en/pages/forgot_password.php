@@ -1,9 +1,7 @@
 <?php
 
 return [
-    'title' => 'Forgot Password',
-    'submit' => 'Send Reset Link',
-    'login' => 'Remembered your password?',
-    'register' => 'Don\'t have an account?',
-    'sent' => 'We have e-mailed your password reset link!',
+    "h2" => "Forgot Password?",
+    "p" => "Enter your email address and we will send you a link to reset your password.",
+    "submit" => "Resend",
 ];
