@@ -197,6 +197,11 @@ footer {
     .content {
         flex-wrap: wrap;
     }
+
+    .quick, .contact {
+        width: 100%;
+    }
+
     .item {
         max-width: 100%;
         align-items: center;
