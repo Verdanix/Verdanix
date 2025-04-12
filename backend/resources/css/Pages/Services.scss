@@ -29,7 +29,7 @@ $md-gap-size: 10px;
 $md-cards-gap-size: 20px 20px;
 
 // SM
-$sm-tag-font-size: 0.4rem;
+$sm-tag-font-size: 0.5rem;
 $sm-item-font-size: $sm-tag-font-size+0.2rem;
 $sm-title-font-size: $sm-tag-font-size+0.5rem;
 $sm-description-gap-size: 5px;
@@ -266,7 +266,7 @@ $sm-cards-gap-size: 20px 20px;
             gap: $md-description-gap-size + 4px;
 
             .top > div p, a {
-                font-size: $md-tag-font-size + 0.2rem;
+                font-size: $md-tag-font-size + 0.4rem;
             }
 
             .top {
@@ -291,7 +291,7 @@ $sm-cards-gap-size: 20px 20px;
 
 
             .top > div p, a {
-                font-size: $md-tag-font-size;
+                font-size: $md-tag-font-size + 0.3rem;
             }
 
             .top {
@@ -336,7 +336,7 @@ $sm-cards-gap-size: 20px 20px;
             gap: $sm-description-gap-size + 4px;
 
             .top > div p, a {
-                font-size: $sm-tag-font-size + 0.2rem;
+                font-size: $sm-tag-font-size + 0.3rem;
             }
 
             .top {
@@ -354,14 +354,14 @@ $sm-cards-gap-size: 20px 20px;
         }
 
         .service {
-            width: 30%;
+            width: 40%;
             padding: 2%;
             border-radius: 15px;
             gap: $sm-gap-size;
 
 
             .top > div p, a {
-                font-size: $sm-tag-font-size;
+                font-size: $sm-tag-font-size + 0.2rem;
             }
 
             .price {
