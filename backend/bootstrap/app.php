@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Middleware\HandleInertiaRequests;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -19,16 +21,21 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             HandleInertiaRequests::class,
             AddLinkHeadersForPreloadedAssets::class,
-        ]);
-
-        $middleware->redirectGuestsTo(fn(Request $request) => route("register"));
-
-        //
+        ])->redirectGuestsTo(fn(Request $request) => route("register"))
+            ->redirectUsersTo(fn(Request $request) => route('dashboard'));
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->renderable(function (Throwable $e, $request) {
             if ($e instanceof ValidationException) {
                 return redirect()->back()->withErrors($e->errors());
+            }
+
+            if ($e instanceof NotFoundHttpException) {
+                return redirect(route("home"));
+            }
+
+            if ($e instanceof AuthenticationException) {
+                return redirect(route("register"));
             }
 
             return redirect()->back()->withErrors([
