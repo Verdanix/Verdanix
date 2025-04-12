@@ -72,6 +72,7 @@ $sm-img-dim: 250px;
     img {
         mask-image: linear-gradient(to bottom, rgba(black, 1), rgba($body-color, 0.1));
         background-color: white;
+        z-index: -1;
     }
 }
 
