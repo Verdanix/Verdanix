@@ -271,6 +271,12 @@ $sm-md-options-font-size: 0.9rem;
     }
 }
 
+@include media("sm") {
+    .forms form {
+        width: 70%;
+    }
+}
+
 @include media("sm", "md") {
     .forms {
         padding: $sm-md-forms-padding;
