@@ -61,7 +61,12 @@ export default function Services() {
         return Object.values(['backend', 'frontend', 'fullstack', 'uiux']).map(
             (val, index) => {
                 return (
-                    <ServiceCard t={t} className={val} even={index % 2 === 0} />
+                    <ServiceCard
+                        t={t}
+                        key={index}
+                        className={val}
+                        even={index % 2 === 0}
+                    />
                 );
             },
         );
@@ -69,11 +74,11 @@ export default function Services() {
     return (
         <div id="services">
             <Navbar view="services" />
-            <div className="content">
-                <Text type="h1">{t('h1')}</Text>
-                <Text type="h2">{t('h2')}</Text>
+            <section className="content">
+                <Text type="h2">{t('h1')}</Text>
+                <Text type="h3">{t('h2')}</Text>
                 <div className="cards">{getServices()}</div>
-            </div>
+            </section>
             <ContactForm t={t} />
             <Footer />
         </div>
