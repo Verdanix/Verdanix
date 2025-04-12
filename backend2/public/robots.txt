@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /socials/instagram
-Sitemap: https://masonroot.dev/sitemap.xml
