@@ -271,6 +271,12 @@ $sm-services-img-width: $sm-services-img-width - 5px;
     }
 }
 
+@include media("md") {
+    #section2 .project {
+        min-width: 30%;
+    }
+}
+
 @include media("sm", "md") {
     #hero {
         .text {
@@ -309,7 +315,6 @@ $sm-services-img-width: $sm-services-img-width - 5px;
         padding-bottom: $sm-md-project-info-gap;
         border-radius: $sm-md-project-border-radius;
         max-width: $sm-md-project-max-width;
-        min-width: 30%;
         gap: $sm-md-project-info-gap;
 
         p, h3, .tags {
@@ -518,6 +523,15 @@ $sm-services-img-width: $sm-services-img-width - 5px;
 
     #section3 img {
         width: $sm-services-img-width;
+    }
+
+    #section2 .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #section2 .project {
+        min-width: 100%;
     }
 }
 
