@@ -13,11 +13,15 @@ class RolesAndPermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        Permission::create(['name' => 'receive-inquiries']);
+        Permission::updateOrCreate(['name' => 'receive-inquiries']);
+        Permission::updateOrCreate(['name' => 'view-dashboard']);
 
-        $admin_role = Role::create(['name' => 'admin']);
-        $user_role = Role::create(['name' => 'user']);
+        $admin_role = Role::updateOrCreate(['name' => 'admin']);
+        $user_role = Role::updateOrCreate(['name' => 'user']);
 
         $admin_role->givePermissionTo(['receive-inquiries']);
+        $admin_role->givePermissionTo(['view-dashboard']);
+
+        $user_role->givePermissionTo(['view-dashboard']);
     }
 }
