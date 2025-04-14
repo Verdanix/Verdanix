@@ -6,6 +6,8 @@
 
     <!-- SEO -->
     <meta name="google-site-verification" content="{{ config('app.google_verification') }}">
+    <meta name="msvalidate.01" content="{{ config('app.bing_verification') }}" />
+
     <!-- Base -->
     <title>{{ $page['props']['meta_title'] ?? 'Default Title' }}</title>
     <meta name="description" content="{{ $page['props']['meta_description'] ?? 'Default Description' }}">

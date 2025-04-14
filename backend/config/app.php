@@ -123,5 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
     "career_start_year" => env("CAREER_START_YEAR", 2019),
-    "google_verification" => env("GOOGLE_VERIFICATION")
+    "google_verification" => env("GOOGLE_VERIFICATION"),
+    'bing_verification' => env("BING_VERIFICATION")
 ];
