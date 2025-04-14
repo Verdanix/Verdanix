@@ -60,7 +60,6 @@ class AuthenticatedSessionController extends Controller
             'last_name' => $lastName,
             'email' => $socialiteUser->getEmail(),
             "email_verified_at" => now(),
-            "password" => bcrypt(str()->random(63)),
             'provider' => $provider,
             'provider_token' => $socialiteUser->token,
             'refresh_token' => $socialiteUser->refreshToken
