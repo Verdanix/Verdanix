@@ -1,5 +1,8 @@
 import react from '@vitejs/plugin-react';
+import autoprefixer from 'autoprefixer';
 import laravel from 'laravel-vite-plugin';
+import postcss from 'postcss';
+import postcssPresetEnv from 'postcss-preset-env';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -10,6 +13,19 @@ export default defineConfig({
             refresh: true,
         }),
         react(),
+        postcss({
+            plugins: [
+                autoprefixer(),
+                postcssPresetEnv({
+                    stage: 3,
+                }),
+            ],
+            // Add a debug function to log the processed CSS
+            processCss: (css, styleNode, { path }) => {
+                console.log('Processed CSS for', path);
+                console.log(css);
+            },
+        }),
     ],
     ...(process.env.NODE_ENV === 'development' && {
         server: {
