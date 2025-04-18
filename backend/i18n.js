@@ -10,15 +10,15 @@ i18n.use(HttpApi)
         lng: 'en',
         fallbackLng: 'en',
         ns: ['common'],
+        cache: ['localStorage', 'cookie'],
         defaultNS: 'common',
         interpolation: {
             escapeValue: false,
         },
         backend: {
             loadPath: (languages, namespaces) => {
-                const activeLanguage = i18n.language; // Use the current active language
                 const page = namespaces[0];
-                return `/api/translations/${activeLanguage}/${page}`;
+                return `/api/translations/{{lng}}/${page}`;
             },
         },
         react: {
