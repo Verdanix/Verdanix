@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import '../../css/Pages/About.scss';
 
 function generateJourneyParagraphs(t) {
-    return Array.from({ length: 10000 }, (_, i) => i + 1).map(
+    return Array.from({ length: 10 }, (_, i) => i + 1).map(
         (num) =>
             t(`section2.paragraphs.${num}`, {
                 defaultValue: '',
@@ -15,7 +15,7 @@ function generateJourneyParagraphs(t) {
 }
 
 function generateAwards(t) {
-    return Array.from({ length: 10000 }, (_, i) => i + 1).map(
+    return Array.from({ length: 25 }, (_, i) => i + 1).map(
         (num) =>
             t(`section3.awards.${num}`, {
                 defaultValue: '',
@@ -66,7 +66,7 @@ function generateExperience(t) {
 }
 
 function generateSkills(t, prefix) {
-    return Array.from({ length: 10000 }, (_, i) => i + 1).map(
+    return Array.from({ length: 80 }, (_, i) => i + 1).map(
         (num) =>
             t(`${prefix}.skills.${num}`, {
                 defaultValue: '',
