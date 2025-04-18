@@ -37,7 +37,7 @@ function generateAwards(t) {
 
 function generateExperience(t) {
     const color = (num) => (num % 2 === 0 ? ' even' : ' odd');
-    return Array.from({ length: 10000 }, (_, i) => i + 1).map(
+    return Array.from({ length: 80 }, (_, i) => i + 1).map(
         (num) =>
             t(`section4.experiences.${num}`, {
                 defaultValue: '',
