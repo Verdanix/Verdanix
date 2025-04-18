@@ -10,7 +10,6 @@ i18n.use(HttpApi)
         lng: 'en',
         fallbackLng: 'en',
         ns: ['common'],
-        saveMissing: true,
         cache: ['localStorage', 'cookie'],
         defaultNS: 'common',
         interpolation: {
