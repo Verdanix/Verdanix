@@ -47,10 +47,14 @@ class RegisteredUserController extends Controller
      */
     public function create(Request $request): Response
     {
-        return Inertia::render('Auth/Register', [
+        return Inertia::render('Auth/Register', self::getProps());
+    }
+
+    public static function getProps() {
+        return [
             'meta_title' => trans('seo.register.title'),
             'meta_description' => trans('seo.register.meta.description'),
             'meta_keywords' => trans('seo.register.meta.keywords')
-        ]);
+        ];
     }
 }

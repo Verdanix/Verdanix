@@ -17,12 +17,16 @@ class PasswordResetLinkController extends Controller
      */
     public function create(): Response
     {
-        return Inertia::render('Auth/ForgotPassword', [
+        return Inertia::render('Auth/ForgotPassword', self::getProps());
+    }
+
+    public static function getProps() {
+        return [
             "meta_title" => trans("seo.forgot_password.title"),
             "meta_description" => trans("seo.forgot_password.meta.description"),
             "meta_keywords" => trans("seo.forgot_password.meta.keywords"),
             'status' => session('status'),
-        ]);
+        ];
     }
 
     /**
