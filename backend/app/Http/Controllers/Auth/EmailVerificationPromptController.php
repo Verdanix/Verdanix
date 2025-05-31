@@ -17,11 +17,15 @@ class EmailVerificationPromptController extends Controller
     {
         return $request->user()->hasVerifiedEmail()
             ? redirect()->intended(route('dashboard', absolute: false))
-            : Inertia::render('Auth/VerifyEmail', [
-                'status' => session('status'),
-                "meta_title" => trans("seo.verify_email.title"),
-                "meta_description" => trans("seo.verify_email.description"),
-                "meta_keywords" => trans("seo.verify_email.keywords"),
-            ]);
+            : Inertia::render('Auth/VerifyEmail', self::getProps());
+    }
+
+    public static function getProps() {
+        return [
+            'status' => session('status'),
+            "meta_title" => trans("seo.verify_email.title"),
+            "meta_description" => trans("seo.verify_email.meta.description"),
+            "meta_keywords" => trans("seo.verify_email.meta.keywords"),
+        ];
     }
 }
