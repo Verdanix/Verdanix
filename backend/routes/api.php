@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Project\CategoryController;
+
 Route::get('/translations/{locale}/{page}', function (string $locale, string $page) {
     $commonPath = base_path("lang/{$locale}/pages/common.php");
     $path = base_path("lang/{$locale}/pages/{$page}.php");
@@ -8,3 +10,5 @@ Route::get('/translations/{locale}/{page}', function (string $locale, string $pa
     }
     return response()->json([], 404);
 })->name("translations");
+
+Route::get("/categories", [CategoryController::class, "index"])->name("categories");
