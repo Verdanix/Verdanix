@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('slug')->unique();
             $table->string('title');
-            $table->string("client-name")->nullable();
+            $table->string("client_name")->nullable();
             $table->string("video");
             $table->string("github")->nullable();
             $table->string("live")->nullable();
