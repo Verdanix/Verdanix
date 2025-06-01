@@ -17,12 +17,6 @@ return new class extends Migration
             $table->string("type-name");
             $table->string('name');
         });
-
-        Schema::create('project_tag', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('project_id')->constrained('projects')->onDelete('cascade');
-            $table->foreignId('tag_id')->constrained('tags')->onDelete('cascade');
-        });
     }
 
     /**
@@ -31,6 +25,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('tags');
-        Schema::dropIfExists('project_tag');
     }
 };

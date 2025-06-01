@@ -8,7 +8,7 @@ class CategoryControllerTest extends TestCase
 {
     public function testIndex()
     {
-        $response = $this->getJson('/api/categories');
+        $response = $this->getJson(route("categories.index"));
 
         $response->assertStatus(200) -> assertJsonIsArray();
     }
