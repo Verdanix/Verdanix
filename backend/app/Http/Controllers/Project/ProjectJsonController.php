@@ -10,7 +10,7 @@ class ProjectJsonController extends Controller
 {
     public function getAll()
     {
-        return GalleryProject::get()->toArray();
+        return GalleryProject::get()->groupBy('type')->toArray();
     }
 
     public function getCategory(int $category)
@@ -24,8 +24,9 @@ class ProjectJsonController extends Controller
     }
 
 
-    public function search(Request $request) {
-        $query = (string) $request->input('query', '');
-        return GalleryProject::whereAny(['title', 'description'], 'like', "%$query%") -> get() -> groupBy('type');
+    public function search(Request $request)
+    {
+        $query = (string)$request->input('query', '');
+        return GalleryProject::whereAny(['title', 'description'], 'like', "%$query%")->get()->groupBy('type');
     }
 }

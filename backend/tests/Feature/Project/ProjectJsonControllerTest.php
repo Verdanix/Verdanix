@@ -10,15 +10,17 @@ class ProjectJsonControllerTest extends TestCase
     {
         $response = $this->getJson(route("projects.getAll"));
 
-        $response->assertStatus(200)->assertJsonIsArray()->assertJsonStructure([
+        $response->assertStatus(200)->assertJsonStructure([
             '*' => [
-                'id',
-                'title',
-                'description',
-                'category_id',
-                'type',
-                'created_at',
-                'updated_at',
+                "*" => [
+                    'id',
+                    'title',
+                    'description',
+                    'category_id',
+                    'type',
+                    'created_at',
+                    'updated_at',
+                ]
             ]
         ]);
     }
