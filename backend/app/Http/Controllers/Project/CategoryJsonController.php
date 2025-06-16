@@ -13,6 +13,6 @@ class CategoryJsonController extends Controller
      */
     public function index()
     {
-        return Category::pluck('name') ->toArray();
+        return Category::get(['id', 'name']) ->toArray();
     }
 }

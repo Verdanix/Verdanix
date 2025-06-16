@@ -10,6 +10,11 @@ class CategoryJsonControllerTest extends TestCase
     {
         $response = $this->getJson(route("categories.index"));
 
-        $response->assertStatus(200)->assertJsonIsArray();
+        $response->assertStatus(200)->assertJsonIsArray()->assertJsonStructure([
+            '*' => [
+                'id',
+                'name',
+            ]
+        ]);
     }
 }
