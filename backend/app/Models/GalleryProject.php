@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class GalleryProject extends Model
 {
+
+    use hasFactory;
+
     /**
      * The table associated with the model.
      */
@@ -17,11 +21,18 @@ class GalleryProject extends Model
      * @var array<string>
      */
     protected $fillable = [
-        'title',
         'slug',
+        'title',
+        'client_name',
+        'video',
+        'github',
+        'live',
         'description',
         'challenges',
         'solutions',
+        'category_id',
+        'type',
+        'tech_stack'
     ];
 
     /**
