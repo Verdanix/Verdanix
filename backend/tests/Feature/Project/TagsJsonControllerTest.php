@@ -10,8 +10,7 @@ class TagsJsonControllerTest extends TestCase
     {
         $response = $this->getJson(route("tags.index"));
 
-        echo $response ->content();
-        $response->assertStatus(200)->assertJsonIsArray() -> assertJsonStructure([
+        $response->assertStatus(200)->assertJsonIsArray()->assertJsonStructure([
             '*' => [
                 'type',
                 'type-name',

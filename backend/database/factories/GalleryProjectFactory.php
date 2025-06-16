@@ -24,7 +24,7 @@ class GalleryProjectFactory extends Factory
         return [
             'slug' => Str::slug($name),
             'title' => $name,
-            'client_name' => $this->faker->optional()->company(),
+            'client_name' => $this->faker->randomElement([$this->faker->company, null]),
             'video' => 'video1.mp4',
             'github' => 'https://github.com/example/project1',
             'live' => 'https://example.com/project1',
