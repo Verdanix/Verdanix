@@ -23,6 +23,11 @@ class ProjectJsonController extends Controller
         })->values();
     }
 
+    public function getType(string $type)
+    {
+        return GalleryProject::where('type', $type)->get()->toArray();
+    }
+
 
     public function search(Request $request) {
         $query = (string) $request->input('query', '');

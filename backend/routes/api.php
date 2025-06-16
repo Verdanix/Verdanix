@@ -23,5 +23,6 @@ Route::prefix("")->group(function () {
 Route::prefix("")->group(function () {
     Route::get("/projects", [ProjectJsonController::class, "getAll"])->name("projects.getAll");
     Route::get("/projects/category/{category}", [ProjectJsonController::class, "getCategory"])->name("projects.getCategory");
+    Route::get("/projects/type/{type}", [ProjectJsonController::class, "getType"])->name("projects.getType");
     Route::get("/projects/search", [ProjectJsonController::class, "search"])->name("projects.search");
 });

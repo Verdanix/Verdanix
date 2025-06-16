@@ -60,4 +60,28 @@ class ProjectJsonControllerTest extends TestCase
 
         $response->assertStatus(200) -> assertJsonIsArray() -> assertExactJson([]);
     }
+
+    public function testType()
+    {
+        $response = $this->getJson(route("projects.getType", ['type' => 'featured']));
+
+        $response->assertStatus(200) -> assertJsonIsArray() -> assertJsonStructure([
+            '*' => [
+                'id',
+                'title',
+                'description',
+                'category_id',
+                'type',
+                'created_at',
+                'updated_at',
+            ]
+        ]);
+    }
+
+    public function testInvalidType()
+    {
+        $response = $this->getJson(route("projects.getType", ['type' => 'invalid']));
+
+        $response->assertStatus(200) -> assertJsonIsArray() -> assertExactJson([]);
+    }
 }
