@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Project\CategoryController;
-use App\Http\Controllers\Project\TagsController;
+use App\Http\Controllers\Project\CategoryJsonController;
+use App\Http\Controllers\Project\TagsJsonController;
 
 Route::get('/translations/{locale}/{page}', function (string $locale, string $page) {
     $commonPath = base_path("lang/{$locale}/pages/common.php");
@@ -12,5 +12,5 @@ Route::get('/translations/{locale}/{page}', function (string $locale, string $pa
     return response()->json([], 404);
 })->name("translations");
 
-Route::get("/categories", [CategoryController::class, "index"])->name("categories.index");
-Route::get("/tags", [TagsController::class, "index"])->name("tags.index");
+Route::get("/categories", [CategoryJsonController::class, "index"])->name("categories.index");
+Route::get("/tags", [TagsJsonController::class, "index"])->name("tags.index");

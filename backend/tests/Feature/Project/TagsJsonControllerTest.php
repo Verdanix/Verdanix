@@ -4,7 +4,7 @@ namespace Tests\Feature\Project;
 
 use Tests\TestCase;
 
-class TagsControllerTest extends TestCase
+class TagsJsonControllerTest extends TestCase
 {
     public function testIndex()
     {
