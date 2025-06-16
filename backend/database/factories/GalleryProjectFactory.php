@@ -53,7 +53,7 @@ class GalleryProjectFactory extends Factory
                 )
             ),
             'category_id' => Category::inRandomOrder()->first()->id ?? 1,
-            'type' => $this->faker->randomElement(['featured', ""]),
+            'type' => $this->faker->randomElement(['featured', "client", "personal", "research"]),
         ];
     }
 }
