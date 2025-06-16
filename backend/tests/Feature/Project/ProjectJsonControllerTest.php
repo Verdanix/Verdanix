@@ -37,4 +37,27 @@ class ProjectJsonControllerTest extends TestCase
         $response->assertStatus(200) -> assertJsonIsArray();
         $response->assertStatus(200) -> assertJson([]);
     }
+
+    public function testSearch()
+    {
+        $response = $this->getJson(route("projects.search", ['query' => '']));
+
+        $response->assertStatus(200) -> assertJsonIsArray() -> assertJsonStructure([
+            '*' => [
+                'id',
+                'title',
+                'description',
+                'category_id',
+                'type',
+                'created_at',
+                'updated_at',
+            ]
+        ]);
+    }
+    public function testInvalidSearch()
+    {
+        $response = $this->getJson(route("projects.search", ['query' => 'invalidalsdjfl;ajsdfl;akjsdfkl;ajsdf']));
+
+        $response->assertStatus(200) -> assertJsonIsArray() -> assertExactJson([]);
+    }
 }
