@@ -13,24 +13,19 @@ class ProjectJsonController extends Controller
         return GalleryProject::get()->toArray();
     }
 
-    public function getCategory(string $category)
+    public function getCategory(int $category)
     {
-        return GalleryProject::where('category_id', $category)->get()->groupBy('type')->map(function ($group, $type) {
-            return [
-                'type' => $type,
-                'projects' => $group->toArray(),
-            ];
-        })->values();
+        return GalleryProject::where('category_id', $category)->get()->groupBy('type');
     }
 
     public function getType(string $type)
     {
-        return GalleryProject::where('type', $type)->get()->toArray();
+        return GalleryProject::where('type', $type)->get()->groupBy('type');
     }
 
 
     public function search(Request $request) {
         $query = (string) $request->input('query', '');
-        return GalleryProject::whereAny(['title', 'description'], 'like', "%$query%") -> get() -> toArray();
+        return GalleryProject::whereAny(['title', 'description'], 'like', "%$query%") -> get() -> groupBy('type');
     }
 }
