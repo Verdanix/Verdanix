@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Project\CategoryJsonController;
 use Inertia\Inertia;
 
-class GalleryController extends Controller
+class GalleryPageController extends Controller
 {
 
     public function index()
