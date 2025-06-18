@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Pages\AboutPageController;
 use App\Http\Controllers\Pages\HomePageController;
+use App\Http\Controllers\Pages\ProjectController;
 use App\Http\Controllers\Pages\ServicesPageController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -63,5 +64,8 @@ Route::middleware(["auth", "verified"])->group(function () {
     })->name('dashboard');
 });
 
+Route::prefix("/projects")->group(function () {
+    Route::get('/', [ProjectController::class, 'index'])->name('projects.index');
+});
 
 require __DIR__ . '/auth.php';

@@ -1,0 +1,299 @@
+@use '../variables' as *;
+
+// Variables
+// XXL
+$xxl-header-h2-font-size: 2.3rem;
+$xxl-header-h3-font-size: 1.3rem;
+$xxl-type-section-h2-font-size: 1.8rem;
+$xxl-buttons-gap: 1.5rem;
+$xxl-header-gap: 1.5rem;
+$xxl-section-gap: 4rem;
+$xxl-project-card-width: 35%;
+$xxl-project-card-gap: 10%;
+
+// LG
+$lg-header-h2-font-size: 2rem;
+$lg-header-h3-font-size: 1.2rem;
+$lg-type-section-h2-font-size: 1.5rem;
+$lg-buttons-gap: 1rem;
+$lg-header-gap: 1rem;
+$lg-section-gap: 2rem;
+$lg-project-card-width: 35%;
+$lg-project-card-gap: 10%;
+
+// SM-MD
+$sm-md-header-h2-font-size: 1.7rem;
+$sm-md-header-h3-font-size: 1.3rem;
+$sm-md-type-section-h2-font-size: 1.4rem;
+$sm-md-buttons-gap: 0.7rem;
+$sm-md-header-gap: 1rem;
+$sm-md-section-gap: 2rem;
+$sm-md-project-card-width: 45%;
+$sm-md-project-card-gap: 10%;
+
+
+// Mixins
+
+// Common Styles
+#projects {
+    .body {
+        display: flex;
+        flex-direction: column;
+
+        .error {
+            font-size: 2.5rem;
+            color: $text-color3;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+
+            .bar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .left {
+                    display: flex;
+                    flex-direction: column;
+
+                    h3 {
+                        color: $text-color2;
+                    }
+                }
+
+                .right > input {
+                    background-color: $body-color-shade2;
+                    border: 3px solid $body-color-shade2;
+                    outline: none;
+
+                    &::placeholder {
+                        color: $text-color2;
+                    }
+
+                    &:focus {
+                        border: 3px solid $body-color-shade3;
+                    }
+                }
+            }
+
+            .buttons {
+                display: inline-flex;
+            }
+        }
+
+        .type {
+            display: flex;
+            flex-direction: column;
+
+            .projects {
+                display: flex;
+            }
+        }
+    }
+}
+
+// Responsive Styles
+@include media("xl", "xxl") {
+    #projects {
+        .body {
+            @include default-padding("xxl");
+            gap: $xxl-section-gap;
+
+            .header {
+                gap: $xxl-header-gap;
+
+                .bar {
+                    .left {
+                        gap: $xxl-header-gap;
+
+                        h2 {
+                            font-size: $xxl-header-h2-font-size;
+                        }
+
+                        h3 {
+                            font-size: $xxl-header-h3-font-size;
+                        }
+                    }
+
+                    .right > input {
+                        padding: 7px 15px;
+                        border-radius: 10px;
+                    }
+                }
+
+                .buttons {
+                    gap: $xxl-buttons-gap;
+
+                    button {
+                        @include button($background-color: $body-color-shade3)
+                    }
+
+                    .selected {
+                        @include button($background-color: $primary-color-shade3)
+                    }
+                }
+            }
+
+            .type {
+                gap: $xxl-header-gap;
+
+                h2 {
+                    font-size: $xxl-type-section-h2-font-size;
+                }
+
+                .projects {
+                    gap: $xxl-project-card-gap;
+
+                    .project {
+                        width: $xxl-project-card-width;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media("lg") {
+    #projects {
+        .body {
+            @include default-padding("lg");
+            gap: $lg-section-gap;
+
+            .header {
+                gap: $lg-header-gap;
+
+                .bar {
+                    .left {
+                        gap: $lg-header-gap;
+
+                        h2 {
+                            font-size: $lg-header-h2-font-size;
+                        }
+
+                        h3 {
+                            font-size: $lg-header-h3-font-size;
+                        }
+                    }
+
+                    .right > input {
+                        padding: 5px 10px;
+                        border-radius: 10px;
+                    }
+                }
+
+                .buttons {
+                    gap: $lg-buttons-gap;
+                    flex-wrap: wrap;
+
+                    button {
+                        @include button($background-color: $body-color-shade3);
+                        font-size: 0.9rem;
+                    }
+
+                    .selected {
+                        @include button($background-color: $primary-color-shade3);
+                    }
+                }
+            }
+
+            .type {
+                gap: $lg-header-gap;
+
+                h2 {
+                    font-size: $lg-type-section-h2-font-size;
+                }
+
+                .projects {
+                    gap: $lg-project-card-gap;
+
+                    .project {
+                        width: $lg-project-card-width;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media("sm", "md") {
+    #projects {
+        .body {
+            @include default-padding("sm");
+            gap: $sm-md-section-gap;
+
+            .header {
+                gap: $sm-md-header-gap;
+
+                .bar {
+                    flex-direction: column;
+                    gap: $sm-md-header-gap;
+                    align-items: start;
+
+                    .left {
+                        gap: $sm-md-header-gap;
+
+                        h2 {
+                            font-size: $sm-md-header-h2-font-size;
+                        }
+
+                        h3 {
+                            font-size: $sm-md-header-h3-font-size;
+                        }
+                    }
+
+                    .right > input {
+                        padding: 5px 10px;
+                        border-radius: 10px;
+                    }
+                }
+
+                .buttons {
+                    gap: $sm-md-buttons-gap;
+                    flex-wrap: wrap;
+
+                    button {
+                        @include button($background-color: $body-color-shade3);
+                        font-size: 0.9rem;
+                    }
+
+                    .selected {
+                        @include button($background-color: $primary-color-shade3);
+                    }
+                }
+            }
+
+            .type {
+                gap: $sm-md-header-gap;
+
+                h2 {
+                    font-size: $sm-md-type-section-h2-font-size;
+                }
+
+                .projects {
+                    gap: $sm-md-project-card-gap;
+
+                    .project {
+                        width: $sm-md-project-card-width;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media("sm") {
+    #projects {
+        .type {
+            .projects {
+                gap: 250px;
+                flex-wrap: wrap;
+
+                .project {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}

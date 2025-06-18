@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Pages\AboutPageController;
 use App\Http\Controllers\Pages\HomePageController;
+use App\Http\Controllers\Pages\ProjectController;
 use App\Http\Controllers\Pages\ServicesPageController;
 use Tests\TestCase;
 
@@ -22,7 +23,8 @@ class SeoTest extends TestCase
         RegisteredUserController::class,
         NewPasswordController::class,
         PasswordResetLinkController::class,
-        EmailVerificationPromptController::class
+        EmailVerificationPromptController::class,
+        ProjectController::class,
     ];
 
     public function testTitle()
