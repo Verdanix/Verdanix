@@ -31,7 +31,7 @@ async function search(query) {
 }
 
 export default function Gallery({ categories }) {
-    const { t } = useTranslation('projects');
+    const { t } = useTranslation('gallery');
     const [projects, setProjects] = useState([]);
     const [query, setQuery] = useState('');
 
