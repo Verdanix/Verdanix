@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\GalleryProject;
+use App\Models\ProjectImages;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -15,5 +16,6 @@ class GalleryProjectSeeder extends Seeder
     {
         DB::table("projects")->delete();
         GalleryProject::factory()->count(5)->create();
+        ProjectImages::factory()->count(30)->create();
     }
 }

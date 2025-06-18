@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class ProjectImages extends Model
 {
+    use hasFactory;
+
     /**
      * The table associated with the model.
      */
@@ -20,6 +23,13 @@ class ProjectImages extends Model
         'project_id',
         'url',
         'alt_text',
+    ];
+
+    protected $hidden = [
+        "id",
+        "project_id",
+        "created_at",
+        "updated_at",
     ];
 
     /**

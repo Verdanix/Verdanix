@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Project\CategoryJsonController;
+use App\Http\Controllers\Project\ProjectImagesJsonController;
 use App\Http\Controllers\Project\ProjectJsonController;
 use App\Http\Controllers\Project\TagsJsonController;
 
@@ -25,4 +26,5 @@ Route::prefix("")->group(function () {
     Route::get("/projects/category/{category}", [ProjectJsonController::class, "getCategory"])->name("projects.getCategory");
     Route::get("/projects/type/{type}", [ProjectJsonController::class, "getType"])->name("projects.getType");
     Route::get("/projects/search", [ProjectJsonController::class, "search"])->name("projects.search");
+    Route::get("/projects/images/{projectId}", [ProjectImagesJsonController::class, "getImages"])->name("projects.getImages");
 });

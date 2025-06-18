@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Project;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use Illuminate\Http\Request;
 
 class CategoryJsonController extends Controller
 {
@@ -13,6 +12,6 @@ class CategoryJsonController extends Controller
      */
     public function index()
     {
-        return Category::get(['id', 'name']) ->toArray();
+        return Category::get(['id', 'name'])->toArray();
     }
 }
