@@ -11,7 +11,7 @@ class ProjectController extends Controller
 
     public function index()
     {
-        return Inertia::render('Project', self::getProps());
+        return Inertia::render('Gallery', self::getProps());
     }
 
     public static function getProps(): array

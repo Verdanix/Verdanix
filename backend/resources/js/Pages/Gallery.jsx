@@ -1,4 +1,4 @@
-import '@/../css/Pages/Projects.scss';
+import '../../css/Pages/Gallery.scss';
 import Footer from '@/Components/Footer.jsx';
 import Navbar from '@/Components/Navbar.jsx';
 import ProjectCard from '@/Components/ProjectCard.jsx';
@@ -30,7 +30,7 @@ async function search(query) {
     }
 }
 
-export default function Project({ categories }) {
+export default function Gallery({ categories }) {
     const { t } = useTranslation('projects');
     const [projects, setProjects] = useState([]);
     const [query, setQuery] = useState('');
