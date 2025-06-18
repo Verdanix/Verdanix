@@ -80,6 +80,7 @@ $sm-md-project-card-gap: 10%;
 
             .buttons {
                 display: inline-flex;
+                flex-wrap: wrap;
             }
         }
 
@@ -89,6 +90,7 @@ $sm-md-project-card-gap: 10%;
 
             .projects {
                 display: flex;
+                flex-wrap: wrap;
             }
         }
     }
@@ -185,7 +187,6 @@ $sm-md-project-card-gap: 10%;
 
                 .buttons {
                     gap: $lg-buttons-gap;
-                    flex-wrap: wrap;
 
                     button {
                         @include button($background-color: $body-color-shade3);
@@ -251,7 +252,6 @@ $sm-md-project-card-gap: 10%;
 
                 .buttons {
                     gap: $sm-md-buttons-gap;
-                    flex-wrap: wrap;
 
                     button {
                         @include button($background-color: $body-color-shade3);
@@ -288,7 +288,6 @@ $sm-md-project-card-gap: 10%;
         .type {
             .projects {
                 gap: 250px;
-                flex-wrap: wrap;
 
                 .project {
                     width: 100% !important;

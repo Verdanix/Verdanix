@@ -15,7 +15,7 @@ class GalleryProjectSeeder extends Seeder
     public function run(): void
     {
         DB::table("projects")->delete();
-        GalleryProject::factory()->count(5)->create();
+        GalleryProject::factory()->count(10)->create();
         ProjectImages::factory()->count(30)->create();
     }
 }
