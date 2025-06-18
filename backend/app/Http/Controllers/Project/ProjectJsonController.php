@@ -42,6 +42,8 @@ class ProjectJsonController extends Controller
     public function search(Request $request)
     {
         $query = (string)$request->input('query', '');
-        return GalleryProject::whereAny(['title', 'description'], 'like', "%$query%")->get()->groupBy('type');
+        return GalleryProject::whereAny(['title', 'description'], 'like', "%$query%")->get()->map(function ($project) {
+            return $this->convertTags($project);
+        })->groupBy('type');
     }
 }
