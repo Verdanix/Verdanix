@@ -5,6 +5,7 @@ import ProjectCard from '@/Components/ProjectCard.jsx';
 import Text from '@/Components/Sections/Text.jsx';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import ContactForm from "@/Components/ContactForm.jsx";
 
 async function getProjects(category) {
     try {
@@ -139,6 +140,7 @@ export default function Project({ categories }) {
                     </div>
                 )}
             </div>
+            <ContactForm t={t}/>
             <Footer />
         </div>
     );
