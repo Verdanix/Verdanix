@@ -7,7 +7,6 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rules;
@@ -22,13 +21,19 @@ class NewPasswordController extends Controller
      */
     public function create(Request $request): Response
     {
-        return Inertia::render('Auth/ResetPassword', [
+        return Inertia::render('Auth/ResetPassword', self::getProps($request->email, $request->route('token')));
+    }
+
+    public static function getProps(?string $email = null, ?string $token = null): array
+    {
+        return array_merge([
             "meta_title" => trans("seo.reset_password.title"),
             "meta_description" => trans("seo.reset_password.meta.description"),
             "meta_keywords" => trans("seo.reset_password.meta.keywords"),
-            'email' => $request->email,
-            'token' => $request->route('token'),
-        ]);
+        ], array_filter([
+            'email' => $email,
+            'token' => $token,
+        ]));
     }
 
     /**

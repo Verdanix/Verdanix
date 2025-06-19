@@ -39,15 +39,22 @@ return [
     "verify_email" => [
         "title" => "Verify Your Email!",
         "meta" => [
-         "description" => "Verify your email to activate your account and access all features. Ensure your email is valid and secure your account.",
-         "keywords" => "verify email, email verification, account activation, secure account, user authentication"
+            "description" => "Verify your email to activate your account and access all features. Ensure your email is valid and secure your account.",
+            "keywords" => "verify email, email verification, account activation, secure account, user authentication"
         ]
     ],
     "register" => [
         "title" => "Login or Create New Account",
-       "meta" => [
-           "description" => "Create a new account or log in to work with an amazing Fullstack Software Engineer.",
-           "keywords" => "register, create account, login, user registration, sign up, access account, exclusive features, user authentication"
-       ]
+        "meta" => [
+            "description" => "Create a new account or log in to work with an amazing Fullstack Software Engineer.",
+            "keywords" => "register, create account, login, user registration, sign up, access account, exclusive features, user authentication"
+        ]
     ],
+    "projects" => [
+        "title" => "Mason Root - Project Gallery",
+        "meta" => [
+            "description" => "Explore Mason Root's featured, client, personal, and research projects.",
+            "keywords" => "project, gallery, featured, client, personal, research, projects"
+        ]
+    ]
 ];
