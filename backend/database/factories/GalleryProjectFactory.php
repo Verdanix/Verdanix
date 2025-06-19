@@ -20,15 +20,15 @@ class GalleryProjectFactory extends Factory
      */
     public function definition(): array
     {
-        $name = $this->faker->unique()->sentence();
+        $name = $this->faker->unique()->sentence(6);
         return [
             'slug' => Str::slug($name),
             'title' => $name,
             'client_name' => $this->faker->randomElement([$this->faker->company, null]),
-            'video' => 'video1.mp4',
+            'video' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
             'github' => 'https://github.com/example/project1',
             'live' => 'https://example.com/project1',
-            'description' => $this->faker->paragraphs(1, true),
+            'description' => $this->faker->sentence(10),
             'challenges' => json_encode([
                 $this->faker->sentence(3),
                 $this->faker->sentence(3),
