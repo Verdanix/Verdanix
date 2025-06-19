@@ -28,7 +28,7 @@ class GalleryProjectFactory extends Factory
             'video' => 'https://www.youtube.com/embed/dQw4w9WgXcQ',
             'github' => 'https://github.com/example/project1',
             'live' => 'https://example.com/project1',
-            'description' => $this->faker->sentence(10),
+            'description' => $this->faker->sentences(4, true),
             'challenges' => json_encode([
                 $this->faker->sentence(3),
                 $this->faker->sentence(3),
