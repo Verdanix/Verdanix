@@ -44,6 +44,10 @@ $sm-md-image-width: 100%;
         display: flex;
         flex-direction: column;
 
+        .urls {
+            display: flex;
+        }
+
         h2 {
             color: $text-color3;
         }
@@ -137,6 +141,18 @@ $sm-md-image-width: 100%;
     #project {
         .content {
             gap: $xxl-content-gap;
+
+            .urls {
+                gap: $xxl-content-gap;
+
+                .demo {
+                    @include button($background-color: rgba($primary-color-shade3, 40%), $color: $primary-color-shade4,);
+                }
+
+                .github {
+                    @include button($background-color: rgba($secondary-color-shade3, 100%), $color: $secondary-color-shade4,);
+                }
+            }
 
             h1 {
                 font-size: $xxl-h1-font-size;
@@ -310,4 +326,15 @@ $sm-md-image-width: 100%;
     }
 }
 
+@include media("sm") {
+    #project .content .urls {
+        justify-content: space-between;
+    }
+}
+
+@include media("md") {
+    #project .content .urls {
+        justify-content: space-evenly;
+    }
+}
 

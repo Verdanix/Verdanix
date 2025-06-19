@@ -2,6 +2,8 @@
 
 return [
     "demonstration" => "Demonstration Video",
+    "demo_url" => "Live Demo",
+    "github_url" => "Github",
     "challenges" => [
         "title" => "Challenges",
         "bullet" => [

@@ -25,6 +25,18 @@ export default function Project({ project, images }) {
                 <Navbar view="projects" />
                 <div className="content">
                     <h1>{project.title}</h1>
+                    <div className="urls">
+                        {project.live && (
+                            <a className="demo" href={project.live}>
+                                {t('demo_url')}
+                            </a>
+                        )}
+                        {project.live && (
+                            <a className="github" href={project.github}>
+                                {t('github_url')}
+                            </a>
+                        )}
+                    </div>
                     <div className="images">
                         <iframe
                             src={project.video}
