@@ -154,7 +154,7 @@ $sm-services-img-width: $sm-services-img-width - 5px;
     }
 
     .projects {
-        justify-content: space-between;
+        gap: 10%;
         flex-wrap: wrap;
     }
 
