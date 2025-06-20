@@ -1,0 +1,175 @@
+@use '../variables.scss' as *;
+
+// Variables
+// XXL
+$xxl-border-radius: 1rem;
+$xxl-img-border-radius: 1rem;
+$xxl-title-font-size: 1.6rem;
+$xxl-content-gap: 1rem;
+$xxl-description-font-size: 1.1rem;
+
+// XL
+$xl-title-font-size: 1.2rem;
+$xl-description-font-size: 1rem;
+
+// LG
+$lg-border-radius: 1rem;
+$lg-img-border-radius: 1rem;
+$lg-title-font-size: 1.6rem;
+$lg-content-gap: 1rem;
+$lg-description-font-size: 1.1rem;
+
+// SM-MD
+$sm-md-border-radius: 1rem;
+$sm-md-img-border-radius: 1rem;
+$sm-md-title-font-size: 1.6rem;
+$sm-md-content-gap: 1rem;
+$sm-md-description-font-size: 1.1rem;
+
+// Mixins
+@mixin tag($width, $height, $radius) {
+    .even {
+        @include button($width, $height, $radius, $background-color: rgba($primary-color-shade3, 40%), $color: $primary-color-shade4, $border: false, $hover: false, $cursor: false)
+    }
+
+    .odd {
+        @include button($width, $height, $radius, $background-color: rgba($secondary-color-shade3, 100%), $color: $secondary-color-shade4, $border: false, $hover: false, $cursor: false)
+    }
+}
+
+// Common Styles
+.project {
+    display: flex;
+    flex-direction: column;
+    background-color: $body-color-shade2;
+    transition: all 0.5s;
+
+    &:hover {
+        opacity: 0.4;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        strong {
+            font-weight: bolder;
+        }
+
+        p {
+            color: $text-color3;
+        }
+    }
+
+    .stack {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+// Responsive Styles
+@include media("xxl") {
+    .project {
+        .content {
+            strong {
+                font-size: $xxl-title-font-size;
+            }
+
+            p {
+                font-size: $xxl-description-font-size;
+            }
+        }
+    }
+}
+
+@include media("xl", "xxl") {
+    .project {
+        gap: $xxl-content-gap;
+        border-radius: $xxl-border-radius;
+        padding-bottom: $xxl-content-gap;
+
+        img {
+            border-radius: $xxl-img-border-radius $xxl-img-border-radius 0 0;
+        }
+
+
+        .content {
+            @include default-padding("xxl");
+            gap: $xxl-content-gap;
+        }
+
+        .stack {
+            @include default-padding("xxl");
+            @include tag(10px, 7px, 13px);
+            gap: 10px;
+        }
+    }
+}
+
+@include media("lg", "xl") {
+    .project {
+        gap: $lg-content-gap;
+        border-radius: $lg-border-radius;
+        padding-bottom: $lg-content-gap;
+
+        img {
+            border-radius: $lg-img-border-radius $lg-img-border-radius 0 0;
+        }
+
+        .content {
+            @include default-padding("lg");
+            gap: $lg-content-gap;
+
+            strong {
+                font-size: $xl-title-font-size;
+            }
+
+            p {
+                font-size: $xl-description-font-size;
+            }
+        }
+
+        .stack {
+            @include default-padding("lg");
+            @include tag(10px, 7px, 13px);
+            gap: 5px;
+        }
+    }
+}
+
+@include media("sm", "md") {
+    .project {
+        gap: $sm-md-content-gap;
+        border-radius: $sm-md-border-radius;
+        padding-bottom: $sm-md-content-gap;
+
+        img {
+            border-radius: $sm-md-img-border-radius $sm-md-img-border-radius 0 0;
+        }
+
+        .content {
+            @include default-padding("sm");
+            gap: $sm-md-content-gap;
+
+            strong {
+                font-size: $xl-title-font-size;
+            }
+
+            p {
+                font-size: $xl-description-font-size;
+            }
+        }
+
+        .stack {
+            @include default-padding("sm");
+            @include tag(10px, 7px, 13px);
+            gap: 5px;
+        }
+    }
+}
+
+@include media("sm") {
+    .project {
+
+    }
+}

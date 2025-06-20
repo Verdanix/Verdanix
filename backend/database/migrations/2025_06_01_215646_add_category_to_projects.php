@@ -12,11 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table ->string('description');
-            $table ->string('keywords')->nullable();
-            $table ->string('image')->nullable();
-            $table->string('visit_url')->nullable();
-            $table->string('more_url')->nullable();
+            $table->foreignId('category_id')->constrained('categories');
+            $table->string("type")->default("featured");
         });
     }
 
@@ -25,6 +22,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::table('projects', function (Blueprint $table) {
+            $table->dropForeign(['category_id']);
+            $table->dropColumn('category_id');
+            $table->dropColumn('type');
+        });
     }
 };
