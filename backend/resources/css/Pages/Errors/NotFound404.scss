@@ -1,0 +1,36 @@
+@use '../../variables.scss' as *;
+
+// Variables
+
+// Mixins
+
+// Common Styles
+
+#not_found {
+    h1, h2 {
+        text-align: center;
+    }
+
+    h2 {
+        color: $text-color2;
+    }
+}
+
+// Responsive Styles
+@include media("xl", "xxl") {
+    #not_found > div {
+        @include default-padding("xxl");
+    }
+}
+
+@include media("lg") {
+    #not_found > div {
+        @include default-padding("lg");
+    }
+}
+
+@include media("sm", "md") {
+    #not_found > div {
+        @include default-padding("sm");
+    }
+}
