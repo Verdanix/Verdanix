@@ -9,6 +9,7 @@ use Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
@@ -33,10 +34,10 @@ return Application::configure(basePath: dirname(__DIR__))
 
             if ($e instanceof NotFoundHttpException) {
                 return Inertia::render("Errors/NotFound404", [
-                    "meta_title" => trans("pages/errors.404.seo.title"),
-                    "meta_description" => trans("pages/errors.404.seo.meta.description"),
-                    "meta_keywords" => trans("pages/errors.404.seo.meta.keywords"),
-                ]);
+                    "meta_title" => trans("pages/errors.not_found.seo.title"),
+                    "meta_description" => trans("pages/errors.not_found.seo.meta.description"),
+                    "meta_keywords" => trans("pages/errors.not_found.seo.meta.keywords"),
+                    ])->toResponse($request) -> setStatusCode(Response::HTTP_NOT_FOUND);
             }
 
             if ($e instanceof AuthenticationException) {
