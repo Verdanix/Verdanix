@@ -16,7 +16,7 @@ Route::get('/about', [AboutPageController::class, 'index'])->name('about');
 Route::get("/services", [ServicesPageController::class, 'index'])->name('services');
 
 Route::middleware("throttle:contact")->post('/contact', [ContactController::class, 'store'])->name('contact');
-
+/*
 Route::middleware(["auth", "verified"])->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('Home', [
@@ -63,7 +63,7 @@ Route::middleware(["auth", "verified"])->group(function () {
             ],
         ]);
     })->name('dashboard');
-});
+});*/
 
 Route::prefix("/projects")->group(function () {
     Route::get('/', [GalleryPageController::class, 'index'])->name('projects.index');

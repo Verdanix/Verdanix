@@ -48,7 +48,7 @@ function ServiceCard({ t, className, even }) {
                 {generateDescription(t, className)}
             </div>
             <hr />
-            <a href={route('dashboard')} className={even ? 'even' : 'odd'}>
+            <a href={'#contact'} className={even ? 'even' : 'odd'}>
                 {t('select')}
             </a>
         </div>
