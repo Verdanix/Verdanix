@@ -90,7 +90,7 @@ export default function About() {
             <Navbar view="about" />
             <section className="section1">
                 <img
-                    src="https://images.deepai.org/art-image/7f5487afe24544ecb641b1db77c823d4/create-an-image-of-a-guy-with-glasses-in-a-suit-stand.jpg"
+                    src="/images/about/me.png"
                     alt={t('section1.alt')}
                 />
                 <div className="content">
