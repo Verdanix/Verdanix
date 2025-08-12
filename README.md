@@ -1,19 +1,19 @@
 <h2 align="center">Hi 👋! My name is Mason and I'm a software developer, from California.</h2>
 
 **About Me**:<br>
-I'm a software developer based in California with a strong passion for building innovative solutions. As an Eagle Scout,
-I've developed valuable leadership interpersonal, and life skills that complement my technical expertise.
+I’m a self-taught Software & Electrical Engineer specializing in full-stack development, DevOps, and electrical/robotics projects. My work blends creativity with engineering discipline; from designing scalable applications to building and optimizing robotics systems for real-world challenges.
 
-**Technical Focus**:<br>
-My primary focus areas are Java and Spring Boot development, with a current
-project, [Nora](https://github.com/Verdanix/Nora), aiming to create a secure, fast, robust, and reliable voice
-assistant. I'm also exploring the intersection of software development and electrical engineering through self-study in
-computer architecture and electrical engineering.
+**Achievements & Recognitions:** <br>
+- Eagle Scout - honored for leadership, service, and technical expertise.
+- Subject Excellence Award - in Entrepreneurship and Intro to Robotics.
+- In Entrepreneurship, developed and deployed an automated scheduling solution, saving managers 7 hours per month.
+- In Robotics, mentored students in hands-on projects, served as the go-to resource for hardware/software debugging, and implemented effective troubleshooting methodologies for complex systems.
 
-**Personal Values**:<br>
-I believe in using technology for good, which drives my work on an e-learning startup focused on accessible, affordable,
-and high-quality education. My projects aim to positively impact people's lives while fostering growth and giving back
-to the world.
+**Mission**<br>
+I help organizations build secure, performant, and scalable software that solves real-world problems;  I strive to leave a lasting impact wherever I go.
+
+**Outside of Tech**<br>
+When I’m not coding or soldering circuit boards, I’m usually weightlifting, meal prepping, or exploring new topics just to see how deep the rabbit hole goes.
 
 <hr>
 
