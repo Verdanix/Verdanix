@@ -16,8 +16,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '23.5.0'
-      - name: Change to project directory
-        run: cd ./backend/
       - name: Run setup
         run: composer run setup -vvv
       - name: Run Pre-commit hook
