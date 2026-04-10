@@ -1,0 +1,22 @@
+name: Enforce Standards
+on: [pull_request]
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+      - name: Setup DDEV
+        uses: ddev/github-action-setup-ddev@v1
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '23.5.0'
+      - name: Run setup
+        run: composer run setup -vvv
+      - name: Run Pre-commit hook
+        run: composer run hooks:pre-commit -vvv

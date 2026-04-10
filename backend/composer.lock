@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d5a7d4c74b2d030ea1eef46b75c4f80",
+    "content-hash": "8dce469b9c1277b3e203b4533c8d6384",
     "packages": [
         {
             "name": "brick/math",
@@ -1052,6 +1052,84 @@
                 }
             ],
             "time": "2025-08-22T14:27:06+00:00"
+        },
+        {
+            "name": "igorsgm/laravel-git-hooks",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igorsgm/laravel-git-hooks.git",
+                "reference": "07e541512dd3f32ad5176b98463c23bee99538bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igorsgm/laravel-git-hooks/zipball/07e541512dd3f32ad5176b98463c23bee99538bb",
+                "reference": "07e541512dd3f32ad5176b98463c23bee99538bb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "^11.0|^12.0|^13.0",
+                "illuminate/console": "^11.0|^12.0|^13.0",
+                "illuminate/container": "^11.0|^12.0|^13.0",
+                "illuminate/contracts": "^11.0|^12.0|^13.0",
+                "illuminate/pipeline": "^11.0|^12.0|^13.0",
+                "illuminate/support": "^11.0|^12.0|^13.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "larastan/larastan": "^2.0|^3.0",
+                "laravel/pint": "^1.2",
+                "mockery/mockery": "^1.6.1",
+                "nunomaduro/phpinsights": "^2.13",
+                "orchestra/testbench": "^v8.0|^v9.0|^v10.0|^v11.0",
+                "pestphp/pest": "^2.0|^3.0",
+                "pestphp/pest-plugin-laravel": "^2.0|^3.0",
+                "rector/rector": "^1.0|^2.0|^3.0",
+                "squizlabs/php_codesniffer": "^3.11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "GitHooks": "Igorsgm\\GitHooks\\Facades\\GitHooks"
+                    },
+                    "providers": [
+                        "Igorsgm\\GitHooks\\GitHooksServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Igorsgm\\GitHooks\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Moraes",
+                    "email": "igor.sgm@gmail.com"
+                }
+            ],
+            "description": "🪝• Efficiently manage Git hooks in Laravel projects. Enhance code quality, save time on reviews, and prevent bugs from entering your repository.",
+            "homepage": "https://github.com/igorsgm/laravel-git-hooks",
+            "keywords": [
+                "git",
+                "git-hooks",
+                "igorsgm",
+                "laravel-git-hooks",
+                "pint-pre-commit",
+                "pre-commit",
+                "pre-commit-hook"
+            ],
+            "support": {
+                "issues": "https://github.com/igorsgm/laravel-git-hooks/issues",
+                "source": "https://github.com/igorsgm/laravel-git-hooks/tree/2.1.0"
+            },
+            "time": "2026-03-18T07:36:26+00:00"
         },
         {
             "name": "inertiajs/inertia-laravel",
