@@ -1,18 +1,12 @@
 # Security Policy
 
-[NAME] is committed to maintaining the security and integrity of my open-source projects. Everyone appreciates your help in keeping [NAME] secure.
-
-## Supported Versions
-
-I currently support the following versions of our project:
-
-TODO: List supported versions
+I'm committed to maintaining the security and integrity of my open-source projects. I appreciate your help in keeping everything secure.
 
 ## Reporting a Vulnerability
 
-If you discover a potential security vulnerability in our project, please report it to me privately. Here's how:
+If you discover a potential security vulnerability in my project, please report it to me privately. Here's how:
 
-1. Email me [[SECURITY_EMAIL]](mailto:[SECURITY_EMAIL])
+1. Email me [security@masonroot.dev](mailto:security@masonroot.dev)
 2. Include as much detail as possible about the vulnerability
 3. I'll respond within **5 days** to acknowledge receipt of your report
 
