@@ -10,6 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
+        "igorsgm/laravel-git-hooks": "^2.1",
         "inertiajs/inertia-laravel": "^2.0",
         "laravel/framework": "^13.0",
         "laravel/sanctum": "^4.0",
@@ -40,13 +41,32 @@
     },
     "scripts": {
         "setup": [
-            "composer install",
+            "ddev composer install",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "@php artisan key:generate",
-            "@php artisan migrate --force",
-            "npm install --ignore-scripts",
-            "npm run build"
+            "ddev artisan key:generate",
+            "ddev artisan migrate --force",
+            "ddev npm install --ignore-scripts",
+            "ddev npm run build"
         ],
+        "prod:setup": [
+            "rm -rf vendor/",
+            "composer install --ignore-platform-reqs --optimize-autoloader --no-dev"
+        ],
+        "prod-setup:post": [
+            "php artisan config:clear",
+            "php artisan route:clear",
+            "php artisan view:clear",
+            "php artisan config:cache",
+            "php artisan route:cache",
+            "php artisan view:cache",
+            "php artisan inertia:start-ssr",
+            "php artisan migrate --force",
+            "php artisan queue:restart"
+        ],
+        "hooks:pre-commit": [
+            "php artisan git-hooks:register; php artisan git-hooks:pre-commit"
+        ],
+
         "dev": [
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
