@@ -10,7 +10,6 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "igorsgm/laravel-git-hooks": "^2.1",
         "inertiajs/inertia-laravel": "^2.0",
         "laravel/framework": "^13.0",
         "laravel/sanctum": "^4.0",
@@ -19,6 +18,7 @@
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {
+        "igorsgm/laravel-git-hooks": "^2.1",
         "fakerphp/faker": "^1.23",
         "laravel/breeze": "^2.4",
         "laravel/pail": "^1.2.5",
