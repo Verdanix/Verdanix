@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
+    <!-- SEO -->
+    <meta name="google-site-verification" content="{{ config('app.google_verification') }}">
+    <meta name="msvalidate.01" content="{{ config('app.bing_verification') }}" />
+
     <!-- Base -->
     <title>{{ trim($page['props']['meta_title'] ?? '') ?: 'Default Title' }}</title>
     <meta name="description" content="{{ trim($page['props']['meta_description'] ?? '') ?: 'Default Description' }}">
