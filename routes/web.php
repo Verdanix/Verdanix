@@ -6,7 +6,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'Landing', 'key' => 'about'])->name('landing');
+Route::get('/', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'Landing', 'key' => 'landing'])->name('landing');
 Route::get('/about', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('about');
 Route::get('/projects', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('projects');
 Route::get('/hobbies/motorcycling', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('hobbies.motorcycling');
