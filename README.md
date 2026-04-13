@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/Verdanix/Verdanix/refs/heads/main/github_banner.png"  />
+<img src="https://github.com/Verdanix/Verdanix/blob/2d53acccb20fe14a63f9a364091b4c511ff66fff/github_banner.png"  />
 
 <h2 align="center">:wave: I'm Mason, a Mid-level Fullstack Software Engineer</h2>
 
