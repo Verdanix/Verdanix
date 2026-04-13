@@ -158,7 +158,7 @@ const About = () => {
                         <span className="text-gradient">{title}</span>
                         <span className="ml-1 inline-block h-8 w-0.5 animate-pulse bg-primary align-middle md:h-12" />
                     </h1>
-                    <p className="sm mb-10 font-mono tracking-widest text-muted-foreground md:text-base">
+                    <p className="mb-10 font-mono text-sm tracking-widest text-muted-foreground md:text-base">
                         CLEARANCE: SENIOR_LEVEL &nbsp;|&nbsp; STATUS:
                         OPERATIONAL &nbsp;|&nbsp; ORIGIN: SANTA_ROSA_CA
                     </p>
@@ -216,7 +216,7 @@ const About = () => {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="mb-8 font-mono text-xs tracking-[0.3em] text-primary"
+                        className="mb-8 font-mono text-xs tracking-[0.3em] text-primary sm:text-xl"
                     >
                         ▸ STRATEGIC_EXPERTISE
                     </motion.h2>
@@ -261,7 +261,7 @@ const About = () => {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="mb-8 font-mono text-xs tracking-[0.3em] text-primary"
+                        className="mb-8 font-mono text-xs tracking-[0.3em] text-primary sm:text-xl"
                     >
                         ▸ OPERATIONAL_LOG
                     </motion.h2>
@@ -325,7 +325,7 @@ const About = () => {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            className="mb-6 font-mono text-xs tracking-[0.3em] text-primary"
+                            className="mb-6 font-mono text-xs tracking-[0.3em] text-primary sm:text-lg"
                         >
                             ▸ CORE_DIRECTIVE
                         </motion.h2>
@@ -353,7 +353,7 @@ const About = () => {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="mb-8 font-mono text-xs tracking-[0.3em] text-primary"
+                        className="mb-8 font-mono text-xs tracking-[0.3em] text-primary sm:text-xl"
                     >
                         ▸ ENGINEERING_PHILOSOPHY
                     </motion.h2>
