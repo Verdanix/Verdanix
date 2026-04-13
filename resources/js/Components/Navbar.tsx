@@ -58,7 +58,6 @@ const Navbar = () => {
                     <a
                         href={route('landing')}
                         onClick={(e) => {
-                            e.preventDefault();
                             scrollTo(route('landing'));
                         }}
                         className="text-lg font-bold tracking-tight text-foreground"
@@ -73,7 +72,6 @@ const Navbar = () => {
                                 key={link.label}
                                 href={link.href}
                                 onClick={(e) => {
-                                    e.preventDefault();
                                     scrollTo(link.href);
                                 }}
                                 className="rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary/50 hover:text-primary"
@@ -114,7 +112,6 @@ const Navbar = () => {
                                                 key={item.label}
                                                 href={item.href}
                                                 onClick={(e) => {
-                                                    e.preventDefault();
                                                     scrollTo(item.href);
                                                     setHobbyOpen(false);
                                                 }}
@@ -132,7 +129,6 @@ const Navbar = () => {
                         <a
                             href={route('contact')}
                             onClick={(e) => {
-                                e.preventDefault();
                                 scrollTo(route('contact'));
                             }}
                             className="ml-2 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
@@ -172,7 +168,6 @@ const Navbar = () => {
                                     key={link.label}
                                     href={link.href}
                                     onClick={(e) => {
-                                        e.preventDefault();
                                         scrollTo(link.href);
                                     }}
                                     className="rounded-lg px-4 py-3.5 text-lg font-medium text-muted-foreground transition-colors hover:bg-secondary/30 hover:text-primary"
@@ -209,7 +204,6 @@ const Navbar = () => {
                                                     key={item.label}
                                                     href={item.href}
                                                     onClick={(e) => {
-                                                        e.preventDefault();
                                                         scrollTo(item.href);
                                                     }}
                                                     className="flex items-center gap-3 rounded-lg px-4 py-2.5 text-base text-muted-foreground transition-colors hover:text-primary"
@@ -226,7 +220,6 @@ const Navbar = () => {
                             <a
                                 href={route('contact')}
                                 onClick={(e) => {
-                                    e.preventDefault();
                                     scrollTo(route('contact'));
                                 }}
                                 className="rounded-lg px-4 py-3.5 text-lg font-medium text-muted-foreground transition-colors hover:bg-secondary/30 hover:text-primary"
@@ -239,7 +232,6 @@ const Navbar = () => {
                             <a
                                 href={route('contact')}
                                 onClick={(e) => {
-                                    e.preventDefault();
                                     scrollTo(route('contact'));
                                 }}
                                 className="block w-full rounded-xl bg-primary px-6 py-3.5 text-center text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
