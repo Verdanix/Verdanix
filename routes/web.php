@@ -1,9 +1,16 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Services\PageRenderingService;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
+Route::get('/', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'Landing', 'key' => 'landing'])->name('landing');
+Route::get('/about', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('about');
+Route::get('/projects', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('projects');
+Route::get('/hobbies/motorcycling', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('hobbies.motorcycling');
+Route::get('/contact', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('contact');
 /*
 Route::get('/', function () {
     return Inertia::render('Welcome', [
