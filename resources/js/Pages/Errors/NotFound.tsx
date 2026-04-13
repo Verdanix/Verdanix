@@ -1,11 +1,17 @@
 import '@/../css/NotFound.css';
 import { router, usePage } from '@inertiajs/react';
+import { Check, Loader, Play } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 
 const BRAINFUCK_CODE =
-    '++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.';
+    '>+++++++[<++++++++++++>-]<.>>++++++++[<+++++++++++++>-]<.>>++++++++++[<++++++++++>-]<+.>>++++++++[<++++++++++++++>-]<++.>>++++++++++[<++++++++++>-]<+.>>++++++[<++++++>-]<+++.>>++++++++[<++++++++++++++>-]<+++.' +
+    '>>++++[<++++++++>-]<.' +
+    '>>+++++++++++[<++++++++++>-]<.>>+++++++++++[<++++++++++>-]<+.>>++++++++[<++++++++++++++>-]<++++.>>++++++++[<+++++++++++++>-]<.>>+++++++[<+++++++++++++++>-]<.>>+++++++++++[<++++++++++>-]<.>>++++++++++[<++++++++++>-]<+++.' +
+    '>>++++[<++++++++>-]<.' +
+    '>>++++++++[<+++++++++++++>-]<.>>++++++++++[<++++++++++>-]<+.>>++++++++[<++++++++++++++>-]<++.>>++++++++++[<++++++++++>-]<+.' +
+    '>>+++[<+++++++++++>-]<.';
 
-const BF_OUTPUT = 'Hello World!\n';
+const BF_OUTPUT = "There's nothing here!";
 
 const NotFound = () => {
     const locationPathName = usePage().url;
@@ -20,7 +26,7 @@ const NotFound = () => {
         let i = 0;
         const id = setInterval(() => {
             if (i < BF_OUTPUT.length) {
-                setOutput((prev) => prev + BF_OUTPUT[i]);
+                setOutput((prev) => prev + BF_OUTPUT[i - 1]);
                 i++;
             } else {
                 clearInterval(id);
@@ -84,35 +90,24 @@ const NotFound = () => {
                     deployment manifest.
                 </p>
 
-                {/* Error code */}
-                <p
-                    className="xs:block mb-8 hidden text-[10px] uppercase tracking-[0.3em] md:text-xs"
-                    style={{
-                        fontFamily: "'JetBrains Mono', monospace",
-                        color: 'hsl(var(--muted-foreground) / 0.5)',
-                    }}
-                >
-                    ERROR_CODE: 0xDEADCODE
-                </p>
-
                 {/* Terminal Easter Egg */}
                 <div className="terminal-box mb-8 w-full max-w-[700px] rounded-lg px-4 py-3 text-left">
                     <div className="mb-1 flex items-center justify-between">
                         <div className="flex items-center gap-2">
                             <span
-                                className="h-2 w-2 rounded-full"
+                                className="h-2 w-2 rounded-full sm:h-4 sm:w-4"
                                 style={{ background: '#ff5f57' }}
                             />
                             <span
-                                className="h-2 w-2 rounded-full"
+                                className="h-2 w-2 rounded-full sm:h-4 sm:w-4"
                                 style={{ background: '#febc2e' }}
                             />
                             <span
-                                className="h-2 w-2 rounded-full"
+                                className="h-2 w-2 rounded-full sm:h-4 sm:w-4"
                                 style={{ background: '#28c840' }}
                             />
                             <span
-                                className="ml-2 text-[10px] uppercase tracking-widest"
+                                className="ml-2 text-[10px] uppercase tracking-widest sm:text-[14px]"
                                 style={{
                                     color: 'hsl(var(--muted-foreground) / 0.5)',
                                 }}
@@ -123,7 +118,7 @@ const NotFound = () => {
                         <button
                             onClick={handleRun}
                             disabled={running || done}
-                            className="rounded px-3 py-1 text-[10px] font-bold uppercase tracking-widest transition-all disabled:opacity-30"
+                            className="rounded text-[8px] font-bold uppercase tracking-widest transition-all disabled:opacity-30 sm:px-3 sm:py-1 sm:text-[14px]"
                             style={{
                                 fontFamily: "'JetBrains Mono', monospace",
                                 background: 'hsl(var(--primary) / 0.15)',
@@ -131,11 +126,11 @@ const NotFound = () => {
                                 border: '1px solid hsl(var(--primary) / 0.3)',
                             }}
                         >
-                            {running ? 'Running…' : done ? 'Done' : '▶ Run'}
+                            {running ? <Loader /> : done ? <Check /> : <Play />}
                         </button>
                     </div>
                     <code
-                        className="block overflow-x-auto whitespace-pre-wrap break-all text-[11px] leading-relaxed md:text-xs"
+                        className="block overflow-x-auto whitespace-pre-wrap break-all text-[11px] leading-relaxed md:text-sm"
                         style={{ color: 'hsl(var(--primary) / 0.7)' }}
                     >
                         <span
@@ -179,7 +174,7 @@ const NotFound = () => {
                 {/* CTA Button */}
                 <a
                     href="/"
-                    className="neon-btn inline-flex min-h-[44px] items-center rounded-md px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] transition-colors"
+                    className="neon-btn inline-flex min-h-[44px] items-center rounded-md px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.2em] transition-colors"
                     style={{
                         background: 'hsl(var(--primary))',
                         color: 'hsl(var(--primary-foreground))',
