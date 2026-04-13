@@ -158,12 +158,12 @@ const About = () => {
                         <span className="text-gradient">{title}</span>
                         <span className="ml-1 inline-block h-8 w-0.5 animate-pulse bg-primary align-middle md:h-12" />
                     </h1>
-                    <p className="mb-10 font-mono text-xs tracking-widest text-muted-foreground md:text-sm">
+                    <p className="sm mb-10 font-mono tracking-widest text-muted-foreground md:text-base">
                         CLEARANCE: SENIOR_LEVEL &nbsp;|&nbsp; STATUS:
                         OPERATIONAL &nbsp;|&nbsp; ORIGIN: SANTA_ROSA_CA
                     </p>
 
-                    <div className="max-w-3xl space-y-5 text-sm leading-relaxed text-secondary-foreground md:text-base">
+                    <div className="max-w-3xl space-y-5 text-base leading-relaxed text-secondary-foreground lg:text-lg">
                         <motion.p
                             initial={{ opacity: 0, y: 16 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -242,12 +242,12 @@ const About = () => {
                                         <h3 className="font-mono text-sm font-bold tracking-wider">
                                             {item.title}
                                         </h3>
-                                        <p className="font-mono text-[10px] tracking-wider text-muted-foreground">
+                                        <p className="font-mono text-xs font-semibold tracking-wider text-muted-foreground md:text-sm">
                                             {item.subtitle}
                                         </p>
                                     </div>
                                 </div>
-                                <p className="text-sm leading-relaxed text-muted-foreground">
+                                <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
                                     {item.desc}
                                 </p>
                             </motion.div>
@@ -294,14 +294,14 @@ const About = () => {
                                             <span className="font-mono text-sm font-bold text-primary">
                                                 {m.year}
                                             </span>
-                                            <span className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                                            <span className="font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground md:text-sm">
                                                 {m.org}
                                             </span>
                                         </div>
                                         <h3 className="mb-1 text-base font-bold">
                                             {m.title}
                                         </h3>
-                                        <p className="text-sm leading-relaxed text-muted-foreground">
+                                        <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
                                             {m.impact}
                                         </p>
                                     </div>
@@ -332,7 +332,7 @@ const About = () => {
                         <h3 className="mb-4 text-2xl font-bold md:text-3xl">
                             Eagle <span className="text-gradient">Scout</span>
                         </h3>
-                        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                        <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground lg:text-lg">
                             The Eagle Scout rank isn't a line on a résumé — it's
                             an operating system. The grit to push through when
                             the project is at 90% and the last 10% is the
@@ -375,10 +375,10 @@ const About = () => {
                                 <h3 className="mb-2 font-mono text-sm font-bold tracking-wider">
                                     {p.title}
                                 </h3>
-                                <p className="mb-3 text-sm font-semibold italic text-primary">
+                                <p className="mb-3 text-base font-semibold italic text-primary">
                                     "{p.quote}"
                                 </p>
-                                <p className="text-xs leading-relaxed text-muted-foreground">
+                                <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
                                     {p.desc}
                                 </p>
                             </motion.div>
