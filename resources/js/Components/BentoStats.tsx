@@ -28,7 +28,7 @@ const BentoStats = () => (
                             <span className="text-gradient mb-3 block text-4xl font-black leading-none md:text-5xl lg:text-6xl">
                                 {stat.value}
                             </span>
-                            <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground md:text-sm">
+                            <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground md:text-base">
                                 {stat.label}
                             </span>
                         </div>

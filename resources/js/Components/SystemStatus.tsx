@@ -8,7 +8,7 @@ const SystemStatus = () => (
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
                     <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500" />
                 </span>
-                <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground md:text-sm">
+                <span className="font-mono text-sm font-semibold uppercase tracking-wider text-muted-foreground md:text-base">
                     System Status:{' '}
                     <span className="text-green-400">Operational</span>{' '}
                     <span className="hidden sm:inline">

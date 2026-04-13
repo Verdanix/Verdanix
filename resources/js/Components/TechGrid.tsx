@@ -48,14 +48,14 @@ const TechGrid = () => (
                         transition={{ delay: i * 0.1 }}
                         className="glow-border rounded-2xl bg-card p-5"
                     >
-                        <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-primary">
+                        <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-primary md:text-base">
                             {cat.label}
                         </h3>
                         <div className="flex flex-wrap gap-2">
                             {cat.pills.map((p) => (
                                 <span
                                     key={p}
-                                    className="rounded-full bg-secondary px-3 py-1.5 text-xs font-medium text-secondary-foreground"
+                                    className="rounded-full bg-secondary px-3 py-1.5 text-xs font-semibold text-secondary-foreground md:text-sm"
                                 >
                                     {p}
                                 </span>

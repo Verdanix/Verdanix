@@ -46,7 +46,7 @@ const ExpertiseSection = () => (
                             <item.icon size={22} className="text-primary" />
                         </div>
                         <h3 className="mb-3 text-xl font-bold">{item.title}</h3>
-                        <p className="text-sm leading-relaxed text-muted-foreground">
+                        <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
                             {item.desc}
                         </p>
                     </motion.div>
