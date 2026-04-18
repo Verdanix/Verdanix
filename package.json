@@ -11,7 +11,7 @@
     "devDependencies": {
         "@eslint/js": "^9.39.1",
         "@headlessui/react": "^2.0.0",
-        "@inertiajs/react": "^2.0.0",
+        "@inertiajs/react": "^3.0.3",
         "@tailwindcss/forms": "^0.5.3",
         "@tailwindcss/vite": "^4.0.0",
         "@types/node": "^24.10.0",
@@ -29,7 +29,7 @@
         "eslint-plugin-react": "^7.34.4",
         "eslint-plugin-react-hooks": "^4.6.2",
         "laravel-vite-plugin": "^2.0.0",
-        "postcss": "^8.4.31",
+        "postcss": "^8.5.10",
         "prettier": "^3.3.0",
         "prettier-plugin-organize-imports": "^4.0.0",
         "prettier-plugin-tailwindcss": "^0.6.5",
