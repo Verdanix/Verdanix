@@ -29,4 +29,23 @@ class InquiryRequest extends FormRequest
             'message' => ['required', 'string', 'max:1500'],
         ];
     }
+
+    #[\Override]
+    public function messages(): array
+    {
+        return [
+            'name.required' => 'Your name is required.',
+            'name.string' => 'Your name must be a set of words.',
+            'name.max' => 'Your name must not exceed 45 characters.',
+            'email.required' => 'Your email is required.',
+            'email.email' => 'Your email must be a valid email address.',
+            'email.max' => 'Your email must not exceed 50 characters.',
+            'subject.required' => 'The subject is required.',
+            'subject.string' => 'The subject must be a set of words.',
+            'subject.max' => 'The subject must not exceed 100 characters.',
+            'message.required' => 'The message is required.',
+            'message.string' => 'The message must be a few sentences.',
+            'message.max' => 'The message must not exceed 1500 characters.',
+        ];
+    }
 }
