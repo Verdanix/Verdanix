@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\InquiryRequest;
+use App\Services\InquiryService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class InquiryController extends Controller
 {
@@ -13,9 +13,9 @@ class InquiryController extends Controller
      */
     public function store(InquiryRequest $request)
     {
-        // TODO Email
-        Log::info('NEW INQUIRY', $request->validated());
 
-        return response()->json([])->setStatusCode(200);
+        (new InquiryService)->sendEmail($request);
+
+        return redirect()->back();
     }
 }
