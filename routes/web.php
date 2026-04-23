@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InquiryController;
 use App\Http\Controllers\ProfileController;
 use App\Services\PageRenderingService;
 use Illuminate\Foundation\Application;
@@ -10,7 +11,9 @@ Route::get('/', [PageRenderingService::class, 'renderPage'])->setDefaults(['page
 Route::get('/about', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('about');
 Route::get('/projects', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('projects');
 Route::get('/hobbies/motorcycling', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('hobbies.motorcycling');
-Route::get('/contact', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('contact');
+Route::get('/contact', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'Contact', 'key' => 'contact'])->name('contact');
+Route::post('/contact', [InquiryController::class, 'store'])->name('submit.inquiry')->middleware(['throttle:contact-inquiry']);
+
 /*
 Route::get('/', function () {
     return Inertia::render('Welcome', [
