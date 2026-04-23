@@ -25,6 +25,9 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->respond(function ($response, Throwable $exception, Request $request) {
+            if ($request->expectsJson()) {
+                return $response;
+            }
             $pageRenderingService = new ErrorPageRenderingService;
 
             return $pageRenderingService->renderPage($request, $response->getStatusCode());
