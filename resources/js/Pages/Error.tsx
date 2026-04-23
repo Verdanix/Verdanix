@@ -54,7 +54,10 @@ const Error = () => {
                 style={{ background: '#000' }}
             >
                 {/* Glitch 404 */}
-                <h1 className="glitch-404 mb-6 select-none text-6xl font-black leading-none tracking-tighter md:text-9xl">
+                <h1
+                    className="glitch-404 mb-6 select-none text-6xl font-black leading-none tracking-tighter md:text-9xl"
+                    status-code={status_code}
+                >
                     {status_code}
                 </h1>
 

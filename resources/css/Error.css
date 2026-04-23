@@ -23,7 +23,7 @@
 }
 .glitch-404::before,
 .glitch-404::after {
-    content: '404';
+    content: attr(status-code);
     position: absolute;
     top: 0;
     left: 0;
