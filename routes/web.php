@@ -7,11 +7,11 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'Landing', 'key' => 'landing'])->name('landing');
-Route::get('/about', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('about');
-Route::get('/projects', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('projects');
-Route::get('/hobbies/motorcycling', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About', 'key' => 'about'])->name('hobbies.motorcycling');
-Route::get('/contact', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'Contact', 'key' => 'contact'])->name('contact');
+Route::get('/', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'Landing'])->name('landing');
+Route::get('/about', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About'])->name('about');
+Route::get('/projects', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About'])->name('projects');
+Route::get('/hobbies/motorcycling', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'About'])->name('hobbies.motorcycling');
+Route::get('/contact', [PageRenderingService::class, 'renderPage'])->setDefaults(['page' => 'Contact'])->name('contact');
 Route::post('/contact', [InquiryController::class, 'store'])->name('submit.inquiry')->middleware(['throttle:contact-inquiry']);
 
 /*

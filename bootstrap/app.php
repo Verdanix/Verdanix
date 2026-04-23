@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Middleware\HandleInertiaRequests;
-use App\Services\PageRenderingService;
+use App\Services\ErrorPageRenderingService;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -25,12 +25,8 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->respond(function ($response, Throwable $exception, Request $request) {
-            $pageRenderingService = new PageRenderingService;
-            // Only handle 404 for non-local environments and GET requests
-            if ($response->getStatusCode() === 404) {
-                return $pageRenderingService->renderPage('Errors/NotFound', 'errors/not-found')->toResponse($request)->setStatusCode(404);
-            }
+            $pageRenderingService = new ErrorPageRenderingService;
 
-            return $response;
+            return $pageRenderingService->renderPage($request, $response->getStatusCode());
         });
     })->create();

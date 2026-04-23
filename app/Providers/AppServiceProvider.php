@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\ErrorPageRenderingService;
 use App\Services\InquiryService;
 use App\Services\PageRenderingService;
 use Illuminate\Support\Facades\Vite;
@@ -17,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton('page_rendering_service', fn () => new PageRenderingService);
         $this->app->singleton('inquiry_service', fn () => new InquiryService);
+        $this->app->singleton('error_page_rendering_service', fn () => new ErrorPageRenderingService);
     }
 
     /**
