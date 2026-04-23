@@ -1,21 +1,30 @@
-import '@/../css/NotFound.css';
-import { router, usePage } from '@inertiajs/react';
+import '@/../css/Error.css';
+import { usePage } from '@inertiajs/react';
 import { Check, Loader, Play } from 'lucide-react';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
-const BRAINFUCK_CODE =
-    '>+++++++[<++++++++++++>-]<.>>++++++++[<+++++++++++++>-]<.>>++++++++++[<++++++++++>-]<+.>>++++++++[<++++++++++++++>-]<++.>>++++++++++[<++++++++++>-]<+.>>++++++[<++++++>-]<+++.>>++++++++[<++++++++++++++>-]<+++.' +
-    '>>++++[<++++++++>-]<.' +
-    '>>+++++++++++[<++++++++++>-]<.>>+++++++++++[<++++++++++>-]<+.>>++++++++[<++++++++++++++>-]<++++.>>++++++++[<+++++++++++++>-]<.>>+++++++[<+++++++++++++++>-]<.>>+++++++++++[<++++++++++>-]<.>>++++++++++[<++++++++++>-]<+++.' +
-    '>>++++[<++++++++>-]<.' +
-    '>>++++++++[<+++++++++++++>-]<.>>++++++++++[<++++++++++>-]<+.>>++++++++[<++++++++++++++>-]<++.>>++++++++++[<++++++++++>-]<+.' +
-    '>>+++[<+++++++++++>-]<.';
+type PageProps = {
+    data: {
+        title: string;
+        status_code: number;
+        description: string;
+        show_route: string;
+        brain_fuck: string;
+        bf_output: string;
+    };
+};
 
-const BF_OUTPUT = "There's nothing here!";
-
-const NotFound = () => {
+const Error = () => {
     const locationPathName = usePage().url;
-    const [glitching, setGlitching] = useState(false);
+    const {
+        title,
+        status_code,
+        description,
+        show_route,
+        brain_fuck,
+        bf_output,
+    } = usePage<PageProps>().props.data;
+
     const [running, setRunning] = useState(false);
     const [output, setOutput] = useState('');
     const [done, setDone] = useState(false);
@@ -25,8 +34,8 @@ const NotFound = () => {
         setRunning(true);
         let i = 0;
         const id = setInterval(() => {
-            if (i < BF_OUTPUT.length) {
-                setOutput((prev) => prev + BF_OUTPUT[i - 1]);
+            if (i < bf_output.length) {
+                setOutput((prev) => prev + bf_output[i - 1]);
                 i++;
             } else {
                 clearInterval(id);
@@ -36,34 +45,20 @@ const NotFound = () => {
         }, 80);
     }, [running, done]);
 
-    useEffect(() => {
-        console.error(
-            '404 Error: User attempted to access non-existent route:',
-            locationPathName,
-        );
-    }, [locationPathName]);
-
-    const handleTerminalClick = useCallback(() => {
-        if (glitching) return;
-        setGlitching(true);
-        setTimeout(() => {
-            router.visit(route('landing'));
-        }, 2000);
-    }, [glitching]);
-
     return (
         <>
             <div className="scanlines" />
-
-            {glitching && <MatrixOverlay />}
 
             <div
                 className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6"
                 style={{ background: '#000' }}
             >
                 {/* Glitch 404 */}
-                <h1 className="glitch-404 mb-6 select-none text-6xl font-black leading-none tracking-tighter md:text-9xl">
-                    404
+                <h1
+                    className="glitch-404 mb-6 select-none text-6xl font-black leading-none tracking-tighter md:text-9xl"
+                    status-code={status_code}
+                >
+                    {status_code}
                 </h1>
 
                 {/* Headline */}
@@ -74,9 +69,9 @@ const NotFound = () => {
                         color: 'hsl(var(--muted-foreground))',
                     }}
                 >
-                    ROUTE_NOT_FOUND //{' '}
+                    {title} {show_route && '// '}
                     <span style={{ color: 'hsl(var(--primary))' }}>
-                        {location.pathname}
+                        {show_route && locationPathName}
                     </span>
                 </p>
 
@@ -85,9 +80,7 @@ const NotFound = () => {
                     className="mb-6 max-w-[600px] text-center text-sm leading-relaxed md:text-base"
                     style={{ color: 'hsl(var(--muted-foreground))' }}
                 >
-                    The requested namespace could not be resolved. The route you
-                    attempted to access does not exist within the current
-                    deployment manifest.
+                    {description}
                 </p>
 
                 {/* Terminal Easter Egg */}
@@ -140,7 +133,7 @@ const NotFound = () => {
                         >
                             ${' '}
                         </span>
-                        {BRAINFUCK_CODE}
+                        {brain_fuck}
                     </code>
                     {(output || running) && (
                         <div
@@ -188,49 +181,4 @@ const NotFound = () => {
     );
 };
 
-/* ── Matrix rain overlay ────────────────────────────────── */
-function MatrixOverlay() {
-    const canvasRef = useCallback((canvas: HTMLCanvasElement | null) => {
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
-
-        const dpr = window.devicePixelRatio || 1;
-        const W = window.innerWidth;
-        const H = window.innerHeight;
-        canvas.width = W * dpr;
-        canvas.height = H * dpr;
-        ctx.scale(dpr, dpr);
-
-        const fontSize = 14;
-        const cols = Math.floor(W / fontSize);
-        const drops = new Array(cols).fill(1);
-        const chars = '01アイウエオカキクケコサシスセソ';
-
-        const draw = () => {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, W, H);
-            ctx.fillStyle = '#0fa';
-            ctx.font = `${fontSize}px monospace`;
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = chars[Math.floor(Math.random() * chars.length)];
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                if (drops[i] * fontSize > H && Math.random() > 0.975)
-                    drops[i] = 0;
-                drops[i]++;
-            }
-        };
-
-        const id = setInterval(draw, 33);
-        return () => clearInterval(id);
-    }, []);
-
-    return (
-        <div className="matrix-overlay">
-            <canvas ref={canvasRef} />
-        </div>
-    );
-}
-
-export default NotFound;
+export default Error;

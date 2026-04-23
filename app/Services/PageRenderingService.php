@@ -6,6 +6,14 @@ use Inertia\Inertia;
 
 class PageRenderingService
 {
+    public function renderPage(string $page, ?string $key = '')
+    {
+        $path = strtolower($key ? "$page.{$key}" : $page);
+        $seoContent = $this->getPageSeo($path);
+
+        return Inertia::render($page, $seoContent);
+    }
+
     public function getPageSeo(string $page): array
     {
         return [
@@ -13,12 +21,5 @@ class PageRenderingService
             'meta_description' => __("seo/$page.meta_description"),
             'meta_keywords' => __("seo/$page.meta_keywords"),
         ];
-    }
-
-    public function renderPage(string $page, ?string $key = null)
-    {
-        $seoContent = $this->getPageSeo($key ?? $page);
-
-        return Inertia::render($page, $seoContent);
     }
 }
