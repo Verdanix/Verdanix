@@ -17,9 +17,9 @@ class PageRenderingService
     public function getPageSeo(string $page): array
     {
         return [
-            'meta_title' => __("seo/$page.meta_title"),
-            'meta_description' => __("seo/$page.meta_description"),
-            'meta_keywords' => __("seo/$page.meta_keywords"),
+            'meta_title' => trans("seo/$page.meta_title"),
+            'meta_description' => trans("seo/$page.meta_description"),
+            'meta_keywords' => trans("seo/$page.meta_keywords"),
         ];
     }
 }
