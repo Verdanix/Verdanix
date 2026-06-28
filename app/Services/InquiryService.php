@@ -12,7 +12,7 @@ class InquiryService
     public function sendEmails(string $name, string $email, string $subject, string $message, string $timestamp, string $adminEmail)
     {
         Mail::to($adminEmail)->send(new NewInquiryNotification($name, $email, $subject, $message, $timestamp));
-        Mail::to($adminEmail)->send(new InquiryReceivedConfirmation($adminEmail, $subject, $timestamp));
+        Mail::to($email)->send(new InquiryReceivedConfirmation($adminEmail, $subject, $timestamp));
     }
 
     public function sendEmail(InquiryRequest $request)
