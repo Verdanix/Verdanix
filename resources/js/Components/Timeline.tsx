@@ -60,7 +60,7 @@ const Timeline = () => (
 
             <div className="relative mx-auto max-w-2xl">
                 {/* Vertical line */}
-                <div className="absolute bottom-0 left-6 top-0 w-px bg-border md:left-8" />
+                <div className="bg-border absolute top-0 bottom-0 left-6 w-px md:left-8" />
 
                 <div className="space-y-12">
                     {milestones.map((m, i) => (
@@ -72,17 +72,17 @@ const Timeline = () => (
                             transition={{ delay: i * 0.1 }}
                             className="relative flex gap-6 md:gap-8"
                         >
-                            <div className="glow-border relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-secondary md:h-16 md:w-16">
+                            <div className="glow-border bg-secondary relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-xl md:h-16 md:w-16">
                                 <m.icon size={20} className="text-primary" />
                             </div>
                             <div className="pt-1">
-                                <span className="text-sm font-semibold tracking-wider text-primary">
+                                <span className="text-primary text-sm font-semibold tracking-wider">
                                     {m.year}
                                 </span>
                                 <h3 className="mt-1 text-xl font-bold">
                                     {m.title}
                                 </h3>
-                                <p className="mt-1 leading-relaxed text-muted-foreground">
+                                <p className="text-muted-foreground mt-1 leading-relaxed">
                                     {m.desc}
                                 </p>
                             </div>

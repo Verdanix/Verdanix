@@ -123,7 +123,7 @@ const About = () => {
     const title = useTypewriter('MISSION_BRIEF: MASON_ROOT', 50, 300);
 
     return (
-        <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
+        <div className="bg-background text-foreground relative min-h-screen overflow-x-hidden">
             {/* Grid bg */}
             <div
                 className="pointer-events-none fixed inset-0 z-0"
@@ -135,7 +135,7 @@ const About = () => {
             />
             {/* Scanline overlay */}
             <div
-                className="pointer-events-none fixed inset-0 z-[1]"
+                className="pointer-events-none fixed inset-0 z-1"
                 style={{
                     backgroundImage:
                         'repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(var(--foreground) / 0.015) 2px, hsl(var(--foreground) / 0.015) 4px)',
@@ -145,25 +145,25 @@ const About = () => {
             {/* Back button */}
             <a
                 href={route('landing')}
-                className="fixed left-5 top-5 z-50 flex items-center gap-2 rounded-lg border border-border bg-card/80 px-4 py-2 font-mono text-xs font-semibold text-muted-foreground backdrop-blur-md transition-colors hover:text-primary"
+                className="border-border bg-card/80 text-muted-foreground hover:text-primary fixed top-5 left-5 z-50 flex items-center gap-2 rounded-lg border px-4 py-2 font-mono text-xs font-semibold backdrop-blur-md transition-colors"
             >
                 <ArrowLeft size={14} />
                 BACK TO MAINFRAME
             </a>
 
-            <div className="relative z-10 mx-auto max-w-5xl px-6 pb-20 pt-28">
+            <div className="relative z-10 mx-auto max-w-5xl px-6 pt-28 pb-20">
                 {/* ── Briefing Header ── */}
                 <section className="mb-20">
                     <h1 className="mb-4 font-mono text-3xl font-black tracking-tight md:text-5xl">
                         <span className="text-gradient">{title}</span>
-                        <span className="ml-1 inline-block h-8 w-0.5 animate-pulse bg-primary align-middle md:h-12" />
+                        <span className="bg-primary ml-1 inline-block h-8 w-0.5 animate-pulse align-middle md:h-12" />
                     </h1>
-                    <p className="mb-10 font-mono text-sm tracking-widest text-muted-foreground md:text-base">
+                    <p className="text-muted-foreground mb-10 font-mono text-sm tracking-widest md:text-base">
                         CLEARANCE: SENIOR_LEVEL &nbsp;|&nbsp; STATUS:
                         OPERATIONAL &nbsp;|&nbsp; ORIGIN: SANTA_ROSA_CA
                     </p>
 
-                    <div className="max-w-3xl space-y-5 text-base leading-relaxed text-secondary-foreground lg:text-lg">
+                    <div className="text-secondary-foreground max-w-3xl space-y-5 text-base leading-relaxed lg:text-lg">
                         <motion.p
                             initial={{ opacity: 0, y: 16 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -216,7 +216,7 @@ const About = () => {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="mb-8 font-mono text-xs tracking-[0.3em] text-primary sm:text-xl"
+                        className="text-primary mb-8 font-mono text-xs tracking-[0.3em] sm:text-xl"
                     >
                         ▸ STRATEGIC_EXPERTISE
                     </motion.h2>
@@ -229,10 +229,10 @@ const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1, duration: 0.5 }}
                                 style={{ transform: 'translate3d(0,0,0)' }}
-                                className="glow-border hover:glow-accent group rounded-2xl bg-card p-6 transition-shadow duration-500"
+                                className="glow-border hover:glow-accent group bg-card rounded-2xl p-6 transition-shadow duration-500"
                             >
                                 <div className="mb-4 flex items-center gap-3">
-                                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary transition-colors group-hover:bg-primary/10">
+                                    <div className="bg-secondary group-hover:bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg transition-colors">
                                         <item.icon
                                             size={18}
                                             className="text-primary"
@@ -242,12 +242,12 @@ const About = () => {
                                         <h3 className="font-mono text-sm font-bold tracking-wider">
                                             {item.title}
                                         </h3>
-                                        <p className="font-mono text-xs font-semibold tracking-wider text-muted-foreground md:text-sm">
+                                        <p className="text-muted-foreground font-mono text-xs font-semibold tracking-wider md:text-sm">
                                             {item.subtitle}
                                         </p>
                                     </div>
                                 </div>
-                                <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
+                                <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">
                                     {item.desc}
                                 </p>
                             </motion.div>
@@ -261,13 +261,13 @@ const About = () => {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="mb-8 font-mono text-xs tracking-[0.3em] text-primary sm:text-xl"
+                        className="text-primary mb-8 font-mono text-xs tracking-[0.3em] sm:text-xl"
                     >
                         ▸ OPERATIONAL_LOG
                     </motion.h2>
 
                     <div className="relative mx-auto max-w-2xl">
-                        <div className="absolute bottom-0 left-5 top-0 w-px bg-primary/20 md:left-6" />
+                        <div className="bg-primary/20 absolute top-0 bottom-0 left-5 w-px md:left-6" />
                         <div className="space-y-10">
                             {timeline.map((m, i) => (
                                 <motion.div
@@ -283,7 +283,7 @@ const About = () => {
                                     className="relative flex gap-5 md:gap-7"
                                 >
                                     {/* Glowing node */}
-                                    <div className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-primary/30 bg-card shadow-[0_0_12px_-2px_hsl(var(--primary)/0.4)] md:h-12 md:w-12">
+                                    <div className="border-primary/30 bg-card relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border shadow-[0_0_12px_-2px_hsl(var(--primary)/0.4)] md:h-12 md:w-12">
                                         <m.icon
                                             size={16}
                                             className="text-primary"
@@ -291,17 +291,17 @@ const About = () => {
                                     </div>
                                     <div className="pt-0.5">
                                         <div className="mb-1 flex items-center gap-3">
-                                            <span className="font-mono text-sm font-bold text-primary">
+                                            <span className="text-primary font-mono text-sm font-bold">
                                                 {m.year}
                                             </span>
-                                            <span className="font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground md:text-sm">
+                                            <span className="text-muted-foreground font-mono text-xs font-semibold tracking-widest uppercase md:text-sm">
                                                 {m.org}
                                             </span>
                                         </div>
                                         <h3 className="mb-1 text-base font-bold">
                                             {m.title}
                                         </h3>
-                                        <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
+                                        <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">
                                             {m.impact}
                                         </p>
                                     </div>
@@ -319,20 +319,20 @@ const About = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                         style={{ transform: 'translate3d(0,0,0)' }}
-                        className="glow-border rounded-2xl bg-card p-8 text-center md:p-12"
+                        className="glow-border bg-card rounded-2xl p-8 text-center md:p-12"
                     >
                         <motion.h2
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            className="mb-6 font-mono text-xs tracking-[0.3em] text-primary sm:text-lg"
+                            className="text-primary mb-6 font-mono text-xs tracking-[0.3em] sm:text-lg"
                         >
                             ▸ CORE_DIRECTIVE
                         </motion.h2>
                         <h3 className="mb-4 text-2xl font-bold md:text-3xl">
                             Eagle <span className="text-gradient">Scout</span>
                         </h3>
-                        <p className="mx-auto max-w-2xl text-base leading-relaxed text-muted-foreground lg:text-lg">
+                        <p className="text-muted-foreground mx-auto max-w-2xl text-base leading-relaxed lg:text-lg">
                             The Eagle Scout rank isn't a line on a résumé — it's
                             an operating system. The grit to push through when
                             the project is at 90% and the last 10% is the
@@ -353,7 +353,7 @@ const About = () => {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        className="mb-8 font-mono text-xs tracking-[0.3em] text-primary sm:text-xl"
+                        className="text-primary mb-8 font-mono text-xs tracking-[0.3em] sm:text-xl"
                     >
                         ▸ ENGINEERING_PHILOSOPHY
                     </motion.h2>
@@ -366,19 +366,19 @@ const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1, duration: 0.5 }}
                                 style={{ transform: 'translate3d(0,0,0)' }}
-                                className="rounded-2xl border border-border bg-transparent p-6 transition-colors duration-500 hover:bg-card/50"
+                                className="border-border hover:bg-card/50 rounded-2xl border bg-transparent p-6 transition-colors duration-500"
                             >
                                 <p.icon
                                     size={20}
-                                    className="mb-4 text-primary"
+                                    className="text-primary mb-4"
                                 />
                                 <h3 className="mb-2 font-mono text-sm font-bold tracking-wider">
                                     {p.title}
                                 </h3>
-                                <p className="mb-3 text-base font-semibold italic text-primary">
+                                <p className="text-primary mb-3 text-base font-semibold italic">
                                     "{p.quote}"
                                 </p>
-                                <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
+                                <p className="text-muted-foreground text-base leading-relaxed lg:text-lg">
                                     {p.desc}
                                 </p>
                             </motion.div>

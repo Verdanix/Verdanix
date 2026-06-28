@@ -22,7 +22,7 @@ const Navbar = () => {
     const [mobileHobbyOpen, setMobileHobbyOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const dropdownRef = useRef<HTMLDivElement>(null);
-    const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+    const timeoutRef = useRef<ReturnType<typeof setTimeout>>(0);
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 20);
@@ -48,9 +48,9 @@ const Navbar = () => {
     return (
         <>
             <nav
-                className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${
+                className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
                     scrolled
-                        ? 'border-b border-border/50 bg-background/70 shadow-lg shadow-background/20 backdrop-blur-xl'
+                        ? 'border-border/50 bg-background/70 shadow-background/20 border-b shadow-lg backdrop-blur-xl'
                         : 'bg-transparent'
                 }`}
             >
@@ -60,7 +60,7 @@ const Navbar = () => {
                         onClick={(e) => {
                             scrollTo(route('landing'));
                         }}
-                        className="text-lg font-bold tracking-tight text-foreground"
+                        className="text-foreground text-lg font-bold tracking-tight"
                     >
                         mason<span className="text-primary">root</span>
                     </a>
@@ -74,7 +74,7 @@ const Navbar = () => {
                                 onClick={(e) => {
                                     scrollTo(link.href);
                                 }}
-                                className="rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary/50 hover:text-primary"
+                                className="text-muted-foreground hover:bg-secondary/50 hover:text-primary rounded-lg px-4 py-2 text-sm font-medium transition-colors"
                             >
                                 {link.label}
                             </a>
@@ -87,7 +87,7 @@ const Navbar = () => {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         >
-                            <button className="flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary/50 hover:text-primary">
+                            <button className="text-muted-foreground hover:bg-secondary/50 hover:text-primary flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium transition-colors">
                                 Hobbies
                                 <ChevronDown
                                     size={14}
@@ -105,7 +105,7 @@ const Navbar = () => {
                                         animate={{ opacity: 1, y: 0, scale: 1 }}
                                         exit={{ opacity: 0, y: 8, scale: 0.96 }}
                                         transition={{ duration: 0.15 }}
-                                        className="absolute left-0 top-full mt-1 w-48 rounded-xl border border-border bg-card/95 p-1.5 shadow-xl backdrop-blur-xl"
+                                        className="border-border bg-card/95 absolute top-full left-0 mt-1 w-48 rounded-xl border p-1.5 shadow-xl backdrop-blur-xl"
                                     >
                                         {hobbyItems.map((item) => (
                                             <a
@@ -115,7 +115,7 @@ const Navbar = () => {
                                                     scrollTo(item.href);
                                                     setHobbyOpen(false);
                                                 }}
-                                                className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-secondary/50 hover:text-primary"
+                                                className="text-muted-foreground hover:bg-secondary/50 hover:text-primary flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors"
                                             >
                                                 <item.icon size={16} />
                                                 {item.label}
@@ -131,7 +131,7 @@ const Navbar = () => {
                             onClick={(e) => {
                                 scrollTo(route('contact'));
                             }}
-                            className="ml-2 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+                            className="bg-primary text-primary-foreground ml-2 rounded-lg px-5 py-2 text-sm font-semibold transition-opacity hover:opacity-90"
                         >
                             Contact
                         </a>
@@ -139,7 +139,7 @@ const Navbar = () => {
 
                     {/* Mobile toggle */}
                     <button
-                        className="p-2 text-muted-foreground transition-colors hover:text-foreground md:hidden"
+                        className="text-muted-foreground hover:text-foreground p-2 transition-colors md:hidden"
                         onClick={() => setMobileOpen(!mobileOpen)}
                         aria-label="Toggle menu"
                     >
@@ -160,7 +160,7 @@ const Navbar = () => {
                             damping: 30,
                             stiffness: 300,
                         }}
-                        className="fixed inset-0 z-40 flex flex-col bg-background/95 px-6 pt-20 backdrop-blur-xl md:hidden"
+                        className="bg-background/95 fixed inset-0 z-40 flex flex-col px-6 pt-20 backdrop-blur-xl md:hidden"
                     >
                         <div className="flex flex-col gap-1">
                             {navLinks.map((link) => (
@@ -170,7 +170,7 @@ const Navbar = () => {
                                     onClick={(e) => {
                                         scrollTo(link.href);
                                     }}
-                                    className="rounded-lg px-4 py-3.5 text-lg font-medium text-muted-foreground transition-colors hover:bg-secondary/30 hover:text-primary"
+                                    className="text-muted-foreground hover:bg-secondary/30 hover:text-primary rounded-lg px-4 py-3.5 text-lg font-medium transition-colors"
                                 >
                                     {link.label}
                                 </a>
@@ -181,7 +181,7 @@ const Navbar = () => {
                                 onClick={() =>
                                     setMobileHobbyOpen(!mobileHobbyOpen)
                                 }
-                                className="flex items-center justify-between rounded-lg px-4 py-3.5 text-lg font-medium text-muted-foreground transition-colors hover:bg-secondary/30 hover:text-primary"
+                                className="text-muted-foreground hover:bg-secondary/30 hover:text-primary flex items-center justify-between rounded-lg px-4 py-3.5 text-lg font-medium transition-colors"
                             >
                                 Hobbies
                                 <ChevronDown
@@ -206,7 +206,7 @@ const Navbar = () => {
                                                     onClick={(e) => {
                                                         scrollTo(item.href);
                                                     }}
-                                                    className="flex items-center gap-3 rounded-lg px-4 py-2.5 text-base text-muted-foreground transition-colors hover:text-primary"
+                                                    className="text-muted-foreground hover:text-primary flex items-center gap-3 rounded-lg px-4 py-2.5 text-base transition-colors"
                                                 >
                                                     <item.icon size={16} />
                                                     {item.label}
@@ -222,7 +222,7 @@ const Navbar = () => {
                                 onClick={(e) => {
                                     scrollTo(route('contact'));
                                 }}
-                                className="rounded-lg px-4 py-3.5 text-lg font-medium text-muted-foreground transition-colors hover:bg-secondary/30 hover:text-primary"
+                                className="text-muted-foreground hover:bg-secondary/30 hover:text-primary rounded-lg px-4 py-3.5 text-lg font-medium transition-colors"
                             >
                                 Contact
                             </a>
@@ -234,7 +234,7 @@ const Navbar = () => {
                                 onClick={(e) => {
                                     scrollTo(route('contact'));
                                 }}
-                                className="block w-full rounded-xl bg-primary px-6 py-3.5 text-center text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+                                className="bg-primary text-primary-foreground block w-full rounded-xl px-6 py-3.5 text-center text-base font-semibold transition-opacity hover:opacity-90"
                             >
                                 Get in Touch
                             </a>
