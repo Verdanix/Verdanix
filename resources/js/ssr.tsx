@@ -12,6 +12,7 @@ createServer((page) =>
         render: ReactDOMServer.renderToString,
         title: (title) => `${title} - ${appName}`,
         resolve: (name) =>
+            // @ts-expect-error It's expected due to the resolvePageComponent and InertiaAppSSRResponse
             resolvePageComponent(
                 `./Pages/${name}.tsx`,
                 import.meta.glob('./Pages/**/*.tsx'),
