@@ -10,8 +10,8 @@ import {
 const milestones = [
     {
         year: 'Present',
-        title: 'Industrial Systems Support (Iconic Machinery)',
-        desc: 'Operating as a Level 1 Technician. Providing high-stakes maintenance and systems troubleshooting for industrial machinery environments.',
+        title: 'IT Technician & Infrastructure Support',
+        desc: 'Operating as IT Technician across the Iconic Machinery and Rental Guys networks. Delivering critical infrastructure support and rapid troubleshooting for 23 distinct dealership and rental locations.',
         icon: Settings,
     },
     {

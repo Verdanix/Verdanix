@@ -45,7 +45,7 @@ const expertise = [
     {
         icon: Server,
         title: 'BACKEND ARCHITECTURE',
-        subtitle: 'Laravel · Spring · FastAPI',
+        subtitle: 'Laravel · Spring · FastAPI · Django',
         desc: 'Building resilient server-side logic and high-performance APIs. Focused on data integrity and fault tolerance using Redis for caching and Spring/Django for enterprise-scale backends.',
     },
     {
@@ -62,8 +62,8 @@ const expertise = [
     },
     {
         icon: Binary,
-        title: 'FULL-STACK INTEGRATION',
-        subtitle: 'React · TypeScript · Next.js',
+        title: 'FRONTEND INTEGRATION',
+        subtitle: 'React · TypeScript · Tailwind · SASS',
         desc: 'Bridging the gap between complex system logic and clean user interfaces. Leveraging Tailwind and SASS to build high-performance, responsive dashboards for system monitoring.',
     },
 ];
@@ -72,8 +72,8 @@ const timeline = [
     {
         year: 'Present',
         org: 'Iconic Machinery',
-        title: 'Systems Technician',
-        impact: 'Providing high-stakes technical support and maintenance for industrial machinery systems, ensuring operational integrity in heavy-duty environments.',
+        title: 'IT Technician',
+        impact: 'Operating as IT Technician across the Iconic Machinery and Rental Guys networks. Delivering critical infrastructure support and rapid troubleshooting for 23 distinct dealership and rental locations.',
         icon: Settings,
     },
     {
