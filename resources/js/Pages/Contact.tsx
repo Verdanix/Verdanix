@@ -65,7 +65,7 @@ const Contact = () => {
     };
 
     return (
-        <div className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
+        <div className="bg-background text-foreground relative min-h-screen overflow-x-hidden">
             {/* Grid background */}
             <div
                 aria-hidden
@@ -79,7 +79,7 @@ const Contact = () => {
             {/* Scanline overlay */}
             <div
                 aria-hidden
-                className="pointer-events-none fixed inset-0 z-[1] opacity-[0.04]"
+                className="pointer-events-none fixed inset-0 z-1 opacity-[0.04]"
                 style={{
                     backgroundImage:
                         'repeating-linear-gradient(0deg, hsl(var(--foreground)) 0px, hsl(var(--foreground)) 1px, transparent 1px, transparent 3px)',
@@ -88,10 +88,10 @@ const Contact = () => {
 
             <Navbar />
 
-            <main className="container relative z-10 mx-auto px-6 pb-24 pt-32">
+            <main className="relative z-10 container mx-auto px-6 pt-32 pb-24">
                 <a
                     href={route('landing')}
-                    className="mb-10 inline-flex items-center gap-2 font-mono text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
+                    className="text-muted-foreground hover:text-primary mb-10 inline-flex items-center gap-2 font-mono text-xs font-semibold transition-colors"
                 >
                     <ArrowLeft size={14} />
                     [BACK_TO_MAINFRAME]
@@ -105,7 +105,7 @@ const Contact = () => {
                     className="mb-16"
                     style={{ transform: 'translate3d(0,0,0)' }}
                 >
-                    <div className="mb-3 font-mono text-xs font-bold tracking-widest text-primary sm:text-sm">
+                    <div className="text-primary mb-3 font-mono text-xs font-bold tracking-widest sm:text-sm">
                         {'// CONTACT_CHANNEL :: OPEN'}
                     </div>
                     <h1 className="font-mono text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
@@ -125,7 +125,7 @@ const Contact = () => {
                         <h2 className="mb-4 font-mono text-2xl font-bold sm:text-3xl">
                             Technical Inquiry Guidelines
                         </h2>
-                        <p className="mb-10 text-base leading-relaxed text-muted-foreground lg:text-lg">
+                        <p className="text-muted-foreground mb-10 text-base leading-relaxed lg:text-lg">
                             I am currently accepting inquiries for high-stakes
                             systems architecture, industrial automation, and
                             specialized full-stack development.
@@ -141,9 +141,9 @@ const Contact = () => {
                                         duration: 0.4,
                                         delay: 0.2 + i * 0.1,
                                     }}
-                                    className="glow-border flex gap-4 rounded-xl bg-card/40 p-5 transition-colors hover:border-primary/40"
+                                    className="glow-border bg-card/40 hover:border-primary/40 flex gap-4 rounded-xl p-5 transition-colors"
                                 >
-                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-primary/10">
+                                    <div className="border-primary/30 bg-primary/10 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border">
                                         <g.icon
                                             className="text-primary"
                                             size={20}
@@ -153,7 +153,7 @@ const Contact = () => {
                                         <h3 className="mb-1 font-mono text-base font-bold lg:text-lg">
                                             {g.title}
                                         </h3>
-                                        <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                                        <p className="text-muted-foreground text-sm leading-relaxed md:text-base">
                                             {g.desc}
                                         </p>
                                     </div>
@@ -161,14 +161,14 @@ const Contact = () => {
                             ))}
                         </ul>
 
-                        <div className="mt-10 rounded-xl border border-border bg-card/30 p-5 font-mono text-sm">
-                            <div className="mb-2 flex items-center gap-2 font-semibold text-primary">
+                        <div className="border-border bg-card/30 mt-10 rounded-xl border p-5 font-mono text-sm">
+                            <div className="text-primary mb-2 flex items-center gap-2 font-semibold">
                                 <Mail size={14} />
                                 DIRECT_CHANNEL
                             </div>
                             <a
                                 href="mailto:contact@masonroot.dev"
-                                className="break-all text-foreground transition-colors hover:text-primary"
+                                className="text-foreground hover:text-primary break-all transition-colors"
                             >
                                 contact@masonroot.dev
                             </a>
@@ -182,20 +182,20 @@ const Contact = () => {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         style={{ transform: 'translate3d(0,0,0)' }}
                     >
-                        <div className="rounded-2xl border border-border bg-card/40 p-6 backdrop-blur-sm sm:p-8">
+                        <div className="border-border bg-card/40 rounded-2xl border p-6 backdrop-blur-sm sm:p-8">
                             {state === 'success' ? (
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.96 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     className="py-12 text-center"
                                 >
-                                    <div className="mb-4 font-mono text-sm font-bold tracking-widest text-primary">
+                                    <div className="text-primary mb-4 font-mono text-sm font-bold tracking-widest">
                                         [TRANSMISSION_SUCCESSFUL]
                                     </div>
-                                    <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-primary/40 bg-primary/10">
-                                        <div className="h-3 w-3 animate-pulse rounded-full bg-primary" />
+                                    <div className="border-primary/40 bg-primary/10 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full border">
+                                        <div className="bg-primary h-3 w-3 animate-pulse rounded-full" />
                                     </div>
-                                    <p className="mx-auto max-w-md text-base leading-relaxed text-foreground lg:text-lg">
+                                    <p className="text-foreground mx-auto max-w-md text-base leading-relaxed lg:text-lg">
                                         Message logged. Telemetry received. I
                                         will review your inquiry and respond
                                         within 3 business days.
@@ -233,7 +233,7 @@ const Contact = () => {
                                     <div>
                                         <label
                                             htmlFor="message"
-                                            className="mb-2 block font-mono text-xs font-bold tracking-widest text-primary"
+                                            className="text-primary mb-2 block font-mono text-xs font-bold tracking-widest"
                                         >
                                             MESSAGE_BODY
                                         </label>
@@ -245,10 +245,10 @@ const Contact = () => {
                                             onChange={handleChange}
                                             disabled={state !== 'idle'}
                                             maxLength={2000}
-                                            className="w-full resize-none rounded-lg border border-border bg-background/60 px-4 py-3 font-sans text-base text-foreground transition-all placeholder:text-muted-foreground focus:border-primary focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.15)] focus:outline-none disabled:opacity-50"
+                                            className="border-border bg-background/60 text-foreground placeholder:text-muted-foreground focus:border-primary w-full resize-none rounded-lg border px-4 py-3 font-sans text-base transition-all focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.15)] focus:outline-none disabled:opacity-50"
                                         />
                                         {errors.message && (
-                                            <p className="mt-1.5 font-mono text-xs text-destructive">
+                                            <p className="text-destructive mt-1.5 font-mono text-xs">
                                                 {errors.message}
                                             </p>
                                         )}
@@ -257,13 +257,13 @@ const Contact = () => {
                                     <button
                                         type="submit"
                                         disabled={state !== 'idle'}
-                                        className="glow-accent w-full rounded-lg bg-primary px-6 py-4 font-mono text-sm font-bold tracking-widest text-primary-foreground transition-all hover:opacity-90 disabled:cursor-wait disabled:opacity-100"
+                                        className="glow-accent bg-primary text-primary-foreground w-full rounded-lg px-6 py-4 font-mono text-sm font-bold tracking-widest transition-all hover:opacity-90 disabled:cursor-wait disabled:opacity-100"
                                     >
                                         {state === 'idle' &&
                                             '>> TRANSMIT_MESSAGE'}
                                         {state === 'handshake' && (
                                             <span className="inline-flex items-center gap-2">
-                                                <span className="h-2 w-2 animate-pulse rounded-full bg-primary-foreground" />
+                                                <span className="bg-primary-foreground h-2 w-2 animate-pulse rounded-full" />
                                                 [INITIATING_HANDSHAKE...]
                                             </span>
                                         )}
@@ -271,7 +271,7 @@ const Contact = () => {
                                             '[TRANSMISSION_SUCCESSFUL]'}
                                     </button>
 
-                                    <p className="pt-2 text-center font-mono text-xs text-muted-foreground">
+                                    <p className="text-muted-foreground pt-2 text-center font-mono text-xs">
                                         SECURE_CHANNEL :: END_TO_END_ENCRYPTED
                                     </p>
                                 </form>
@@ -308,7 +308,7 @@ const Field = ({
     <div>
         <label
             htmlFor={name}
-            className="mb-2 block font-mono text-xs font-bold tracking-widest text-primary"
+            className="text-primary mb-2 block font-mono text-xs font-bold tracking-widest"
         >
             {label}
         </label>
@@ -320,10 +320,10 @@ const Field = ({
             onChange={onChange}
             disabled={disabled}
             maxLength={type === 'email' ? 255 : 150}
-            className="w-full rounded-lg border border-border bg-background/60 px-4 py-3 font-sans text-base text-foreground transition-all placeholder:text-muted-foreground focus:border-primary focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.15)] focus:outline-none disabled:opacity-50"
+            className="border-border bg-background/60 text-foreground placeholder:text-muted-foreground focus:border-primary w-full rounded-lg border px-4 py-3 font-sans text-base transition-all focus:shadow-[0_0_0_3px_hsl(var(--primary)/0.15)] focus:outline-none disabled:opacity-50"
         />
         {error && (
-            <p className="mt-1.5 font-mono text-xs text-destructive">{error}</p>
+            <p className="text-destructive mt-1.5 font-mono text-xs">{error}</p>
         )}
     </div>
 );

@@ -42,7 +42,7 @@ const HobbiesGallery = () => (
                             loading="lazy"
                             className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105 md:h-56"
                         />
-                        <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/80 to-transparent p-4">
+                        <div className="from-background/80 absolute inset-0 flex items-end bg-linear-to-t to-transparent p-4">
                             <span className="text-sm font-semibold">
                                 {img.label}
                             </span>

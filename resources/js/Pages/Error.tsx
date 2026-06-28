@@ -55,7 +55,7 @@ const Error = () => {
             >
                 {/* Glitch 404 */}
                 <h1
-                    className="glitch-404 mb-6 select-none text-6xl font-black leading-none tracking-tighter md:text-9xl"
+                    className="glitch-404 mb-6 text-6xl leading-none font-black tracking-tighter select-none md:text-9xl"
                     status-code={status_code}
                 >
                     {status_code}
@@ -63,7 +63,7 @@ const Error = () => {
 
                 {/* Headline */}
                 <p
-                    className="mb-3 text-sm uppercase tracking-[0.2em] md:text-xl"
+                    className="mb-3 text-sm tracking-[0.2em] uppercase md:text-xl"
                     style={{
                         fontFamily: "'JetBrains Mono', monospace",
                         color: 'hsl(var(--muted-foreground))',
@@ -100,7 +100,7 @@ const Error = () => {
                                 style={{ background: '#28c840' }}
                             />
                             <span
-                                className="ml-2 text-[10px] uppercase tracking-widest sm:text-[14px]"
+                                className="ml-2 text-[10px] tracking-widest uppercase sm:text-[14px]"
                                 style={{
                                     color: 'hsl(var(--muted-foreground) / 0.5)',
                                 }}
@@ -111,7 +111,7 @@ const Error = () => {
                         <button
                             onClick={handleRun}
                             disabled={running || done}
-                            className="rounded text-[8px] font-bold uppercase tracking-widest transition-all disabled:opacity-30 sm:px-3 sm:py-1 sm:text-[14px]"
+                            className="rounded text-[8px] font-bold tracking-widest uppercase transition-all disabled:opacity-30 sm:px-3 sm:py-1 sm:text-[14px]"
                             style={{
                                 fontFamily: "'JetBrains Mono', monospace",
                                 background: 'hsl(var(--primary) / 0.15)',
@@ -123,7 +123,7 @@ const Error = () => {
                         </button>
                     </div>
                     <code
-                        className="block overflow-x-auto whitespace-pre-wrap break-all text-[11px] leading-relaxed md:text-sm"
+                        className="block overflow-x-auto text-[11px] leading-relaxed break-all whitespace-pre-wrap md:text-sm"
                         style={{ color: 'hsl(var(--primary) / 0.7)' }}
                     >
                         <span
@@ -154,7 +154,7 @@ const Error = () => {
                             {output}
                             {running && (
                                 <span
-                                    className="ml-[1px] inline-block h-[14px] w-[2px] animate-pulse align-middle"
+                                    className="ml-px inline-block h-[14px] w-[2px] animate-pulse align-middle"
                                     style={{
                                         background: 'hsl(var(--primary))',
                                     }}
@@ -167,7 +167,7 @@ const Error = () => {
                 {/* CTA Button */}
                 <a
                     href="/"
-                    className="neon-btn inline-flex min-h-[44px] items-center rounded-md px-8 py-3 text-center text-sm font-semibold uppercase tracking-[0.2em] transition-colors"
+                    className="neon-btn inline-flex min-h-[44px] items-center rounded-md px-8 py-3 text-center text-sm font-semibold tracking-[0.2em] uppercase transition-colors"
                     style={{
                         background: 'hsl(var(--primary))',
                         color: 'hsl(var(--primary-foreground))',

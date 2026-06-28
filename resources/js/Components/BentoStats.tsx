@@ -21,14 +21,14 @@ const BentoStats = () => (
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1, duration: 0.5 }}
                         style={{ transform: 'translate3d(0,0,0)' }}
-                        className="glow-border hover:glow-accent group relative overflow-hidden rounded-2xl bg-card p-6 transition-shadow duration-500 md:p-8"
+                        className="glow-border hover:glow-accent group bg-card relative overflow-hidden rounded-2xl p-6 transition-shadow duration-500 md:p-8"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                        <div className="from-primary/5 absolute inset-0 bg-linear-to-br to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                         <div className="relative z-10">
-                            <span className="text-gradient mb-3 block text-4xl font-black leading-none md:text-5xl lg:text-6xl">
+                            <span className="text-gradient mb-3 block text-4xl leading-none font-black md:text-5xl lg:text-6xl">
                                 {stat.value}
                             </span>
-                            <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground md:text-base">
+                            <span className="text-muted-foreground text-sm font-semibold tracking-wider uppercase md:text-base">
                                 {stat.label}
                             </span>
                         </div>
