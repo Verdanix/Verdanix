@@ -4,10 +4,10 @@ on:
     branches:
       - production
 jobs:
-  predeploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Pre Deployment
+      - name: Deployment
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{secrets.SERVER_IP}}
