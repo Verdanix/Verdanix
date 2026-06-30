@@ -51,11 +51,11 @@
             "ddev npm install --ignore-scripts",
             "ddev npm run build"
         ],
-        "prod:setup": [
+        "prod:reinstall-packages": [
             "rm -rf vendor/",
             "composer install --ignore-platform-reqs --optimize-autoloader --no-dev"
         ],
-        "prod-setup:post": [
+        "prod:kickstart": [
             "php artisan config:clear",
             "php artisan route:clear",
             "php artisan view:clear",
