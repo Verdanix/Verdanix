@@ -3,7 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "prod:setup": "rm -rf node_modules/ && npm install && npm run build",
+        "prod:reinstall-packages": "rm -rf node_modules/ && npm install && npm run build",
         "build": "tsc && vite build && vite build --ssr",
         "dev": "vite",
         "lint": "eslint resources/js --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore --fix"

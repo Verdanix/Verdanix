@@ -4,10 +4,10 @@ on:
     branches:
       - production
 jobs:
-  deploy:
+  predeploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy
+      - name: Pre Deployment
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{secrets.SERVER_IP}}
@@ -16,12 +16,6 @@ jobs:
           # Change the branch to be the specific environment you want to use
           script: |
             cd ${{secrets.PROJECT_PATH}}
-            source ../../nvm.sh
-            nvm use 25
-            php artisan down
-            git switch production
-            git pull
-            composer run prod:setup
-            composer run prod-setup:post
-            npm run prod:setup
-            php artisan up
+            ./scripts/predeploy.sh
+            ./scripts/deploy.sh
+            ./scripts/postdeploy.sh
