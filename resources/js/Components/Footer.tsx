@@ -10,11 +10,6 @@ const quickLinks = [
 ];
 
 const Footer = () => {
-    const scrollTo = (href: string) => {
-        const el = document.querySelector(href);
-        el?.scrollIntoView({ behavior: 'smooth' });
-    };
-
     return (
         <footer className="border-border bg-card/30 border-t">
             <div className="container mx-auto px-6 py-16">
@@ -46,10 +41,6 @@ const Footer = () => {
                                 <a
                                     key={link.label}
                                     href={link.href}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        scrollTo(link.href);
-                                    }}
                                     className="text-muted-foreground hover:text-primary w-fit text-sm transition-colors"
                                 >
                                     {link.label}
