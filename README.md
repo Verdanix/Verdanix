@@ -23,11 +23,11 @@
 <div align="center">
   <picture>
     <source
-      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=false&show=prs_merged&show_icons=true&theme=material-palenight&custom_title=My%20Statistics"
+      srcset="https://github-stats-extended.vercel.app/api?username=Verdanix&include_all_commits=false&show=prs_merged&show_icons=true&theme=material-palenight&custom_title=My%20Statistics"
       media="(prefers-color-scheme: dark)"
     />
     <source
-      srcset="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=false&show=prs_merged&show_icons=true&custom_title=My%20Statistics"
+      srcset="https://github-stats-extended.vercel.app/api?username=Verdanix&include_all_commits=false&show=prs_merged&show_icons=true&custom_title=My%20Statistics"
       media="(prefers-color-scheme: light)"
     />
     <img src="https://verdanix-readme-stats.vercel.app/api?username=Verdanix&include_all_commits=false&show=prs_merged&show_icons=true&custom_title=My%20Statistics" height="150" alt="Github statistics graph"/>
@@ -35,17 +35,17 @@
 
   <picture>
       <source
-        srcset="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10&theme=material-palenight"
+        srcset="https://github-stats-extended.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10&theme=material-palenight"
         media="(prefers-color-scheme: dark)"
       />
       <source
-        srcset="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10"
+        srcset="https://github-stats-extended.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10"
         media="(prefers-color-scheme: light)"
       />
-      <img src="https://verdanix-readme-stats.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10" height="150" alt="Programming languages graph"/>
+      <img src="https://github-stats-extended.vercel.app/api/top-langs?username=Verdanix&locale=en&layout=compact&card_width=320&langs_count=5&hide_border=false&lang_count=10" height="150" alt="Programming languages graph"/>
   </picture>
 </div>
 
 ####
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Verdanix&radius=16&theme=react&area=true&order=5" alt="activity-graph graph"  />
+<!-- <img src="https://github-readme-activity-graph.vercel.app/graph?username=Verdanix&radius=16&theme=react&area=true&order=5" alt="activity-graph graph"  /> -->
