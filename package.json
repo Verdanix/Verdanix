@@ -51,6 +51,6 @@
         "postcss": "^8.5.15",
         "tailwind-merge": "^3.6.0",
         "tailwindcss-animate": "^1.0.7",
-        "ziggy-js": "^2.6.3"
+        "ziggy-js": "^2.6.4"
     }
 }
