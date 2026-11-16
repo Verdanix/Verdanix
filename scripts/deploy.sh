@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ../../nvm.sh
+
 # Ensure the packages are installed and up to date. See package.json for the actual commands that are run.
 npm run prod:reinstall-packages
 

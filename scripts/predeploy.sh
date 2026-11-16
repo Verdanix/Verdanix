@@ -2,7 +2,7 @@
 
 # Ensure NVM is selected and the correct Node.js version is used.
 # This is the best option, due to privileges and the fact that the server is running multiple Node.js versions for different applications.
-../../nvm.sh
+source ../../nvm.sh
 
 # Stop the Laravel application and put it into maintenance mode
 php artisan down
