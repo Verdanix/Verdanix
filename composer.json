@@ -67,8 +67,8 @@
             "php artisan queue:restart"
         ],
         "hooks:pre-commit": [
-            "@php artisan git-hooks:register",
-            "@php artisan git-hooks:pre-commit"
+            "php artisan git-hooks:register",
+            "php artisan git-hooks:pre-commit"
         ],
 
         "dev": [
