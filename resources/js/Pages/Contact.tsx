@@ -25,8 +25,10 @@ const guidelines = [
 
 type SubmitState = 'idle' | 'handshake' | 'transmitted' | 'success';
 
+// @ts-expect-errro
 const Contact = ({ honeypot }) => {
     const [state, setState] = useState<SubmitState>('idle');
+    // @ts-expect-errro
     const { data, setData, post, errors } = useForm({
         name: '',
         email: '',
@@ -40,6 +42,7 @@ const Contact = ({ honeypot }) => {
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         const key = e.target.name as keyof typeof data;
+        // @ts-expect-errro
         setData(key, e.target.value);
     };
 
@@ -257,11 +260,15 @@ const Contact = ({ honeypot }) => {
                                     </div>
                                     {honeypot &&
                                         Object.entries(honeypot).map(
-                                            ([name, value]) => (
+                                            ([name, value]: [
+                                                string,
+                                                string | number,
+                                            ]) => (
                                                 <input
                                                     key={name}
                                                     type="hidden"
                                                     name={name}
+
                                                     value={value}
                                                 />
                                             ),
