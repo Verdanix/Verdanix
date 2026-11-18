@@ -23,7 +23,7 @@ return Application::configure(basePath: dirname(__DIR__))
             ProtectAgainstSpam::class,
         ]);
 
-        //
+        // h
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->respond(function ($response, Throwable $exception, Request $request) {
