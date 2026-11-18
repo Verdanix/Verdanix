@@ -15,7 +15,8 @@
         "laravel/sanctum": "^v4.3.2",
         "laravel/telescope": "^5.20",
         "laravel/tinker": "^3.0",
-        "predis/predis": "^3.5.1",
+        "predis/predis": "^3.7",
+        "spatie/laravel-honeypot": "^4.7",
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {
@@ -66,7 +67,8 @@
             "php artisan queue:restart"
         ],
         "hooks:pre-commit": [
-            "php artisan git-hooks:register; php artisan git-hooks:pre-commit"
+            "php artisan git-hooks:register",
+            "php artisan git-hooks:pre-commit"
         ],
 
         "dev": [

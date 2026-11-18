@@ -25,19 +25,22 @@ const guidelines = [
 
 type SubmitState = 'idle' | 'handshake' | 'transmitted' | 'success';
 
-const Contact = () => {
+const Contact = ({ honeypot }) => {
     const [state, setState] = useState<SubmitState>('idle');
     const { data, setData, post, errors } = useForm({
         name: '',
         email: '',
         subject: '',
         message: '',
+        [honeypot.nameFieldName]: '',
+        [honeypot.validFromFieldName]: honeypot.encryptedValidFrom,
     });
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
         const key = e.target.name as keyof typeof data;
+
         setData(key, e.target.value);
     };
 
@@ -253,7 +256,25 @@ const Contact = () => {
                                             </p>
                                         )}
                                     </div>
-
+                                    {honeypot &&
+                                        Object.entries(honeypot).map(
+                                            ([name, value]: [
+                                                string,
+                                                (
+                                                    | string
+                                                    | readonly string[]
+                                                    | number
+                                                    | undefined
+                                                ),
+                                            ]) => (
+                                                <input
+                                                    key={name}
+                                                    type="hidden"
+                                                    name={name}
+                                                    value={value}
+                                                />
+                                            ),
+                                        )}
                                     <button
                                         type="submit"
                                         disabled={state !== 'idle'}

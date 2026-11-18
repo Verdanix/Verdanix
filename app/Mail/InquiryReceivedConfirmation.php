@@ -21,6 +21,7 @@ class InquiryReceivedConfirmation extends Mailable
     {
         return new Envelope(
             subject: 'RECEIVED: '.$this->subjectLine,
+            to: $this->adminEmail,
         );
     }
 
