@@ -258,7 +258,15 @@ const Contact = ({ honeypot }) => {
                                     </div>
                                     {honeypot &&
                                         Object.entries(honeypot).map(
-                                            ([name, value]: [string]) => (
+                                            ([name, value]: [
+                                                string,
+                                                (
+                                                    | string
+                                                    | readonly string[]
+                                                    | number
+                                                    | undefined
+                                                ),
+                                            ]) => (
                                                 <input
                                                     key={name}
                                                     type="hidden"
