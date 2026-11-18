@@ -21,6 +21,7 @@ class NewInquiryNotification extends Mailable
     {
         return new Envelope(
             subject: 'NEW_INQUIRY: '.$this->subjectLine,
+            to: $this->email
         );
     }
 
