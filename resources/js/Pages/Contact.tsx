@@ -32,6 +32,8 @@ const Contact = ({ honeypot }) => {
         email: '',
         subject: '',
         message: '',
+        [honeypot.nameFieldName]: '',
+        [honeypot.validFromFieldName]: honeypot.encryptedValidFrom,
     });
 
     const handleChange = (

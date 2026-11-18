@@ -21,7 +21,7 @@ class RateLimitingProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        RateLimiter::for('contact-inquiry', fn (Request $request) => Limit::perDay(100)->by($request->ip())->response(function (): void {
+        RateLimiter::for('contact-inquiry', fn (Request $request) => Limit::perDay(2)->by($request->ip())->response(function (): void {
             throw new TooManyRequestsHttpException;
         }));
     }
