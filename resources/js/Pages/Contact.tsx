@@ -25,7 +25,7 @@ const guidelines = [
 
 type SubmitState = 'idle' | 'handshake' | 'transmitted' | 'success';
 
-const Contact = () => {
+const Contact = ({ honeypot }) => {
     const [state, setState] = useState<SubmitState>('idle');
     const { data, setData, post, errors } = useForm({
         name: '',
@@ -253,7 +253,17 @@ const Contact = () => {
                                             </p>
                                         )}
                                     </div>
-
+                                    {honeypot &&
+                                        Object.entries(honeypot).map(
+                                            ([name, value]) => (
+                                                <input
+                                                    key={name}
+                                                    type="hidden"
+                                                    name={name}
+                                                    value={value}
+                                                />
+                                            ),
+                                        )}
                                     <button
                                         type="submit"
                                         disabled={state !== 'idle'}
